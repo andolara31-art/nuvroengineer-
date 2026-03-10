@@ -4,12 +4,13 @@ import { ExternalLink, Github } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'Proyecto Uno',
-    type: 'Landing Page Premium',
-    description: 'Descripción breve del proyecto, el problema que resolvía y el impacto que tuvo en el negocio del cliente.',
-    stack: ['React', 'Tailwind', 'Framer Motion'],
-    liveUrl: '#',
+    title: 'LAST SIGNAL',
+    type: 'EXPERIENCIA INTERACTIVA',
+    description: 'Demo interactivo con enfoque narrativo y visual, diseñado para mostrar experiencia web, dirección creativa y construcción de interfaces inmersivas.',
+    stack: ['React', 'Three.js', 'Framer Motion', 'Tailwind CSS'],
+    liveUrl: 'https://last-signal-eta.vercel.app/',
     githubUrl: '#',
+    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/Captura%20desde%202026-03-10%2008-54-30.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvQ2FwdHVyYSBkZXNkZSAyMDI2LTAzLTEwIDA4LTU0LTMwLnBuZyIsImlhdCI6MTc3MzE1NDg3OSwiZXhwIjoxODA0NjkwODc5fQ.r8h4YWqRDuQWKap1GFQlmSEa6yW7CR-9M_JnJeAqwvU',
   },
   {
     id: 2,
@@ -19,15 +20,17 @@ const projects = [
     stack: ['Next.js', 'TypeScript', 'Supabase'],
     liveUrl: '#',
     githubUrl: '#',
+    imageUrl: '',
   },
   {
     id: 3,
-    title: 'Proyecto Tres',
+    title: 'CLARIO ADVISORY',
     type: 'Web Corporativa',
-    description: 'Rediseño completo de presencia digital para firma de consultoría, enfocada en captación de leads.',
-    stack: ['Astro', 'Tailwind', 'CMS'],
-    liveUrl: '#',
+    description: 'Web corporativa premium para firma de consultoría, diseñada para comunicar confianza, estructura estratégica y una presencia digital más clara y profesional.',
+    stack: ['React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
+    liveUrl: 'https://clario-advisory.vercel.app/',
     githubUrl: '#',
+    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/Captura%20desde%202026-03-10%2008-15-07.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvQ2FwdHVyYSBkZXNkZSAyMDI2LTAzLTEwIDA4LTE1LTA3LnBuZyIsImlhdCI6MTc3MzE1NDg2MywiZXhwIjoxODA0NjkwODYzfQ.YIXvHWgUh0F09PJRDUWqgVGNuElhmcLFc8r5gSM5css',
   }
 ];
 
@@ -59,12 +62,21 @@ export default function Projects() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className={`grid lg:grid-cols-12 gap-12 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
             >
-              {/* Image Placeholder */}
+              {/* Project Image */}
               <div className={`lg:col-span-7 aspect-[16/10] rounded-3xl overflow-hidden border border-white/10 bg-brand-black relative group ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
-                <div className="absolute inset-0 flex items-center justify-center text-brand-platinum/20 font-mono text-sm">
-                  [ Imagen del Proyecto: {project.title} ]
-                </div>
-                <div className="absolute inset-0 bg-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {project.imageUrl ? (
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center text-brand-platinum/20 font-mono text-sm">
+                    [ Imagen del Proyecto: {project.title} ]
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
 
               {/* Content */}

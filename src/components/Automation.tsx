@@ -37,12 +37,19 @@ export default function Automation() {
           </div>
           
           <div className="relative">
-            <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-brand-dark relative group">
-              {/* Placeholder for Automation/Creativity visual */}
-              <div className="absolute inset-0 flex items-center justify-center text-brand-platinum/20 font-mono text-sm text-center px-8">
-                [ Espacio para visual de automatización o demo interactivo ]
-              </div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(242,125,38,0.1)_0%,transparent_70%)] opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 bg-brand-dark relative group shadow-2xl shadow-brand-accent/5">
+              {/* Automation Visual Image */}
+              <img 
+                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260309_172504_835824f9-67f6-4cd5-881e-a467ed88e14d%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMDlfMTcyNTA0XzgzNTgyNGY5LTY3ZjYtNGNkNS04ODFlLWE0NjdlZDg4ZTE0ZCAoMSkucG5nIiwiaWF0IjoxNzczMTU3NDA1LCJleHAiOjE4MDQ2OTM0MDV9.nd4aUAbhJKTTA27pmCnv3bLjrjANi71FpWOSfJ1Y84E" 
+                alt="Automatización y Creatividad Digital" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                referrerPolicy="no-referrer"
+              />
+              
+              {/* Premium Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand-black/40 via-transparent to-transparent opacity-40" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(242,125,38,0.1)_0%,transparent_70%)] opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
+              <div className="absolute inset-0 border border-white/5 rounded-3xl pointer-events-none" />
             </div>
           </div>
         </div>

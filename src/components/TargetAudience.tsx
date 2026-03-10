@@ -35,33 +35,56 @@ export default function TargetAudience() {
           </div>
           
           <div className="relative">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-brand-black relative">
-              {/* Abstract visual representation of growth/leveling up */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8 gap-4">
-                <motion.div 
-                  initial={{ height: '20%' }}
-                  whileInView={{ height: '40%' }}
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-brand-black relative p-6 md:p-8 flex flex-col gap-6 justify-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(242,125,38,0.05)_0%,transparent_70%)]" />
+              
+              {[
+                {
+                  name: 'Carlos Méndez',
+                  role: 'Propietario de Clínica Dental',
+                  text: 'La diferencia en percepción fue inmediata. Pasamos de una web genérica a una plataforma que realmente transmite la calidad de nuestro servicio.',
+                  delay: 0.2
+                },
+                {
+                  name: 'Elena Rivas',
+                  role: 'Consultora Estratégica',
+                  text: 'Ahora mi marca se ve mucho más seria y clara online. El proceso de contacto es más ordenado y mis clientes lo notan desde el primer clic.',
+                  delay: 0.4
+                },
+                {
+                  name: 'Javier Soto',
+                  role: 'Director en Logística Global',
+                  text: 'NUVRO logró que nuestra presencia digital estuviera al nivel de nuestra operación física. El resultado es premium y genera confianza instantánea.',
+                  delay: 0.6
+                }
+              ].map((testimonial, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                  className="w-full bg-white/5 rounded-t-xl border border-white/10 border-b-0"
-                />
-                <motion.div 
-                  initial={{ height: '30%' }}
-                  whileInView={{ height: '60%' }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                  className="w-full bg-white/10 rounded-t-xl border border-white/10 border-b-0"
-                />
-                <motion.div 
-                  initial={{ height: '40%' }}
-                  whileInView={{ height: '80%' }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                  className="w-full bg-brand-accent/20 rounded-t-xl border border-brand-accent/30 border-b-0 relative overflow-hidden"
+                  transition={{ duration: 0.8, delay: testimonial.delay, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:border-brand-accent/30 transition-colors group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-accent/40 to-transparent" />
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="w-1.5 h-1.5 rounded-full bg-brand-accent/60" />
+                    ))}
+                  </div>
+                  <p className="text-brand-platinum/80 text-sm md:text-base leading-relaxed mb-4 italic">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="block text-brand-white font-medium text-sm">{testimonial.name}</span>
+                      <span className="block text-brand-platinum/40 text-xs uppercase tracking-wider">{testimonial.role}</span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Rocket size={14} />
+                    </div>
+                  </div>
                 </motion.div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

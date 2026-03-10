@@ -48,14 +48,20 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative aspect-square md:aspect-[4/3] lg:aspect-square w-full max-w-lg mx-auto lg:ml-auto rounded-3xl overflow-hidden border border-white/10 bg-brand-dark"
+          className="relative aspect-square md:aspect-[4/3] lg:aspect-square w-full max-w-lg mx-auto lg:ml-auto rounded-3xl overflow-hidden border border-white/10 bg-brand-dark group shadow-2xl shadow-brand-accent/5"
         >
-          {/* Placeholder for Hero Image */}
-          <div className="absolute inset-0 flex items-center justify-center text-brand-platinum/20 font-mono text-sm">
-            [ Espacio para imagen principal ]
-          </div>
-          {/* Optional: Add a subtle gradient overlay to make it look premium even when empty */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-brand-black/80 to-transparent" />
+          {/* Hero Image */}
+          <img 
+            src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260309_163429_58dc34e6-4fba-485d-85b1-1b892b1b4753.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMDlfMTYzNDI5XzU4ZGMzNGU2LTRmYmEtNDg1ZC04NWIxLTFiODkyYjFiNDc1My5qcGVnIiwiaWF0IjoxNzczMTU2Nzk0LCJleHAiOjE4MDQ2OTI3OTR9.2r8RS2hxsxoZvOh0773pyT8KWskZ5eS863Ujwqhf64g" 
+            alt="NUVRO ENGINEER Digital Excellence" 
+            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
+            referrerPolicy="no-referrer"
+          />
+          
+          {/* Premium Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent opacity-60" />
+          <div className="absolute inset-0 bg-brand-accent/5 mix-blend-overlay" />
+          <div className="absolute inset-0 border border-white/5 rounded-3xl pointer-events-none" />
         </motion.div>
       </div>
     </section>
