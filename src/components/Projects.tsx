@@ -10,17 +10,17 @@ const projects = [
     stack: ['React', 'Three.js', 'Framer Motion', 'Tailwind CSS'],
     liveUrl: 'https://last-signal-eta.vercel.app/',
     githubUrl: '#',
-    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/Captura%20desde%202026-03-10%2008-54-30.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvQ2FwdHVyYSBkZXNkZSAyMDI2LTAzLTEwIDA4LTU0LTMwLnBuZyIsImlhdCI6MTc3MzE1NDg3OSwiZXhwIjoxODA0NjkwODc5fQ.r8h4YWqRDuQWKap1GFQlmSEa6yW7CR-9M_JnJeAqwvU',
+    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260310_170142_ef719d30-a18e-4af5-8840-dec1af03812e.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTBfMTcwMTQyX2VmNzE5ZDMwLWExOGUtNGFmNS04ODQwLWRlYzFhZjAzODEyZS5qcGVnIiwiaWF0IjoxNzczMTYyNTQ5LCJleHAiOjE4MDQ2OTg1NDl9.jC4WWeYlovKBVrUEYP9EHk6fci1T5z5LiSzvNr0mQ1Y',
   },
   {
     id: 2,
-    title: 'Proyecto Dos',
+    title: 'LEADPILOT CRM',
     type: 'Mini SaaS B2B',
-    description: 'Sistema interno para gestión de prospectos y automatización de correos de seguimiento comercial.',
+    description: 'Plataforma CRM diseñada para organizar prospectos, automatizar seguimientos y mantener un control claro del proceso comercial. Permite centralizar oportunidades, mejorar la comunicación con clientes potenciales y transformar contactos en ventas con mayor eficiencia.',
     stack: ['Next.js', 'TypeScript', 'Supabase'],
     liveUrl: '#',
     githubUrl: '#',
-    imageUrl: '',
+    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260310_174747_cb690a5e-b364-46ae-b767-c6b90f59322b.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTBfMTc0NzQ3X2NiNjkwYTVlLWIzNjQtNDZhZS1iNzY3LWM2YjkwZjU5MzIyYi5qcGVnIiwiaWF0IjoxNzczMTY1NDc2LCJleHAiOjE4MDQ3MDE0NzZ9.2A8YdsACP-hD7g-xg1Vw7IHenOc4-JFq1DfIW847S4o',
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const projects = [
     stack: ['React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
     liveUrl: 'https://clario-advisory.vercel.app/',
     githubUrl: '#',
-    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/Captura%20desde%202026-03-10%2008-15-07.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvQ2FwdHVyYSBkZXNkZSAyMDI2LTAzLTEwIDA4LTE1LTA3LnBuZyIsImlhdCI6MTc3MzE1NDg2MywiZXhwIjoxODA0NjkwODYzfQ.YIXvHWgUh0F09PJRDUWqgVGNuElhmcLFc8r5gSM5css',
+    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260310_170059_b0835621-64a8-48cb-94b1-aa2e4c8d30bf.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTBfMTcwMDU5X2IwODM1NjIxLTY0YTgtNDhjYi05NGIxLWFhMmU0YzhkMzBiZi5qcGVnIiwiaWF0IjoxNzczMTYyNTI3LCJleHAiOjE4MDQ2OTg1Mjd9.NOTcA91U9dVUwjUb_3qB1eCuzDkkfFqofEkQXk7MzFk',
   }
 ];
 
