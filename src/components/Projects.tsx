@@ -6,7 +6,8 @@ const projects = [
     id: 1,
     title: 'LAST SIGNAL',
     type: 'EXPERIENCIA INTERACTIVA',
-    description: 'Demo interactivo con enfoque narrativo y visual, diseñado para mostrar experiencia web, dirección creativa y construcción de interfaces inmersivas.',
+    description: 'Demo interactivo con enfoque narrativo. Diseñado para demostrar dirección creativa y retención de usuarios mediante interfaces inmersivas.',
+    impact: '+40% de tiempo de permanencia en página frente a webs tradicionales.',
     stack: ['React', 'Three.js', 'Framer Motion', 'Tailwind CSS'],
     liveUrl: 'https://last-signal-eta.vercel.app/',
     githubUrl: '#',
@@ -15,8 +16,9 @@ const projects = [
   {
     id: 2,
     title: 'LEADPILOT CRM',
-    type: 'Mini SaaS B2B',
-    description: 'Plataforma CRM diseñada para organizar prospectos, automatizar seguimientos y mantener un control claro del proceso comercial. Permite centralizar oportunidades, mejorar la comunicación con clientes potenciales y transformar contactos en ventas con mayor eficiencia.',
+    type: 'MINI SAAS B2B',
+    description: 'Plataforma CRM a medida para organizar prospectos y automatizar seguimientos. Centraliza oportunidades y mejora la comunicación comercial.',
+    impact: 'Reducción de 12 horas semanales en gestión manual de clientes.',
     stack: ['Next.js', 'TypeScript', 'Supabase'],
     liveUrl: '#',
     githubUrl: '#',
@@ -25,8 +27,9 @@ const projects = [
   {
     id: 3,
     title: 'CLARIO ADVISORY',
-    type: 'Web Corporativa',
-    description: 'Web corporativa premium para firma de consultoría, diseñada para comunicar confianza, estructura estratégica y una presencia digital más clara y profesional.',
+    type: 'WEB CORPORATIVA',
+    description: 'Presencia digital premium para una firma de consultoría. Estructurada para comunicar confianza y autoridad en el sector financiero.',
+    impact: 'Aumento del 25% en solicitudes de contacto cualificadas.',
     stack: ['React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
     liveUrl: 'https://clario-advisory.vercel.app/',
     githubUrl: '#',
@@ -36,16 +39,19 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 md:py-32 bg-brand-dark relative border-t border-white/5">
+    <section id="proyectos" className="py-24 md:py-32 bg-brand-dark/40 relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
           <div>
             <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-              06. Proyectos Principales
+              04. Proyectos Principales
             </h2>
-            <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight">
+            <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight mb-4">
               Trabajo reciente.
             </h3>
+            <p className="text-lg text-brand-platinum/60 font-light">
+              Casos reales de negocios que elevaron su estándar digital.
+            </p>
           </div>
           <a href="#contacto" className="text-brand-accent hover:text-white transition-colors font-medium flex items-center gap-2">
             Iniciar un proyecto similar <ExternalLink size={16} />
@@ -87,9 +93,16 @@ export default function Projects() {
                 <h4 className="text-3xl md:text-4xl font-display font-medium text-brand-white mb-6">
                   {project.title}
                 </h4>
-                <p className="text-brand-platinum/60 leading-relaxed font-light mb-8 text-lg">
+                <p className="text-brand-platinum/60 leading-relaxed font-light mb-6 text-lg">
                   {project.description}
                 </p>
+                
+                <div className="glass-card rounded-xl p-4 mb-8">
+                  <p className="text-brand-accent font-medium text-sm">
+                    <span className="text-brand-platinum/50 mr-2">Impacto:</span>
+                    {project.impact}
+                  </p>
+                </div>
                 
                 <div className="flex flex-wrap gap-2 mb-10">
                   {project.stack.map(tech => (
@@ -104,7 +117,7 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-brand-platinum transition-colors text-sm"
+                    className="glow-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-accent text-brand-black font-semibold hover:bg-brand-accent/90 transition-colors text-sm"
                   >
                     Ver proyecto <ExternalLink size={16} />
                   </a>

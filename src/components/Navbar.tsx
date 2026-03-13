@@ -18,13 +18,14 @@ export default function Navbar() {
     { name: 'Servicios', href: '#servicios' },
     { name: 'Proyectos', href: '#proyectos' },
     { name: 'Proceso', href: '#proceso' },
+    { name: 'Inversión', href: '#inversion' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-brand-black/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-brand-black/40 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -45,7 +46,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contacto"
-            className="px-5 py-2.5 rounded-full bg-white text-black text-sm font-semibold hover:bg-brand-platinum transition-colors"
+            className="glow-button px-5 py-2.5 rounded-full bg-brand-accent text-brand-black text-sm font-semibold hover:bg-brand-accent/90 transition-colors"
           >
             Iniciar Proyecto
           </a>
@@ -66,7 +67,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="absolute top-full left-0 right-0 bg-brand-dark border-b border-white/5 p-6 md:hidden flex flex-col gap-4 shadow-2xl"
+          className="absolute top-full left-0 right-0 bg-brand-dark/90 backdrop-blur-md border-b border-white/5 p-6 md:hidden flex flex-col gap-4 shadow-2xl"
         >
           {navLinks.map((link) => (
             <a
@@ -81,7 +82,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 px-6 py-3 rounded-full bg-white text-black text-center font-semibold"
+            className="glow-button mt-4 px-6 py-3 rounded-full bg-brand-accent text-brand-black text-center font-semibold"
           >
             Iniciar Proyecto
           </a>

@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(26,26,26,0.5)_0%,rgba(5,5,5,1)_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,229,255,0.05)_0%,rgba(10,10,10,1)_70%)]" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
@@ -14,25 +14,24 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-medium tracking-wide uppercase text-brand-platinum/80">Disponible para proyectos</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card mb-8">
+            <span className="text-xs font-medium tracking-wide uppercase text-brand-platinum/80">FIRMA DE DISEÑO Y DESARROLLO WEB</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-display font-medium leading-[1.1] tracking-tight text-brand-white mb-6 text-balance">
-            Webs premium y mini SaaS para negocios que necesitan <span className="text-brand-platinum/40 italic">verse mejor</span>.
+          <h1 className="text-5xl md:text-7xl font-display font-medium leading-[1.1] tracking-tight text-brand-white mb-6 text-balance uppercase">
+            Sitios web y sistemas digitales que imponen respeto y <span className="text-brand-accent italic">cierran ventas</span>.
           </h1>
           
           <p className="text-lg md:text-xl text-brand-platinum/60 max-w-xl mb-10 leading-relaxed font-light">
-            Construimos páginas web, MVPs y sistemas digitales claros, modernos y útiles para negocios que necesitan una presencia online más profesional.
+            Construimos plataformas premium para clínicas, consultores y negocios en crecimiento que necesitan dejar de perder clientes por una mala imagen en internet.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
               href="#contacto"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-brand-platinum transition-all group"
+              className="glow-button inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-brand-accent text-brand-black font-semibold hover:bg-brand-accent/90 transition-all group"
             >
-              Trabajar conmigo
+              Agendar llamada
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a

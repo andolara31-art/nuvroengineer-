@@ -3,41 +3,41 @@ import { motion } from 'motion/react';
 const steps = [
   {
     number: '01',
-    title: 'Idea o Brief',
-    description: 'Entendemos tu negocio, tu oferta y el problema real que necesitas resolver con tu nueva presencia digital.'
+    title: 'Descubrimiento',
+    description: 'Llamada inicial para entender tu negocio, tus clientes y tus objetivos comerciales.'
   },
   {
     number: '02',
-    title: 'Estructura y Diseño',
-    description: 'Creamos la arquitectura de la información y el diseño visual premium, enfocado en claridad y conversión.'
+    title: 'Estrategia',
+    description: 'Definimos la estructura de la información para maximizar la conversión antes de tocar el diseño.'
   },
   {
     number: '03',
-    title: 'Desarrollo',
-    description: 'Construimos la web con código limpio, rápido y escalable, asegurando un rendimiento óptimo en cualquier dispositivo.'
+    title: 'Diseño Visual',
+    description: 'Creamos una interfaz premium, alineada a tu marca y orientada a generar confianza.'
   },
   {
     number: '04',
-    title: 'Revisión',
-    description: 'Afinamos detalles, animaciones y flujos de usuario para garantizar una experiencia impecable.'
+    title: 'Desarrollo',
+    description: 'Escribimos código limpio y rápido. Tu sitio funcionará perfecto en cualquier dispositivo.'
   },
   {
     number: '05',
-    title: 'Entrega y Publicación',
-    description: 'Lanzamos tu nuevo activo digital y lo conectamos con tus herramientas de negocio.'
+    title: 'Lanzamiento',
+    description: 'Desplegamos tu proyecto, conectamos tu dominio y te entregamos las llaves.'
   }
 ];
 
 export default function Process() {
   return (
-    <section id="proceso" className="py-24 md:py-32 bg-brand-dark relative">
+    <section id="proceso" className="py-24 md:py-32 bg-brand-black/40 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16 md:mb-24">
           <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-            08. Cómo trabajamos
+            05. Cómo trabajamos
           </h2>
-          <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight max-w-2xl">
-            Un proceso claro, sin sorpresas.
+          <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight max-w-2xl mb-6">
+            Un proceso estructurado para lanzar tu proyecto sin contratiempos.
           </h3>
         </div>
 
