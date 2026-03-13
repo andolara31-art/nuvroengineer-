@@ -20,7 +20,7 @@ export default function Founder() {
           
           <div className="lg:col-span-7 lg:pl-12">
             <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-              06. Detrás de la firma
+              07. Detrás de la firma
             </h2>
             <h3 className="text-3xl md:text-4xl font-display font-medium text-brand-white leading-tight mb-8">
               Anderson Agüero Lara

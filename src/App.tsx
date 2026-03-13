@@ -11,6 +11,7 @@ import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
 import Process from './components/Process';
 import Pricing from './components/Pricing';
+import PaymentMethods from './components/PaymentMethods';
 import Founder from './components/Founder';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -29,6 +30,7 @@ export default function App() {
         <Testimonials />
         <Process />
         <Pricing />
+        <PaymentMethods />
         <Founder />
         <Contact />
       </main>
