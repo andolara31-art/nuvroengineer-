@@ -9,18 +9,18 @@ export default function Founder() {
             <div className="aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-white/10 bg-brand-dark relative group">
               <img 
                 src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/63ce2d3b-5e26-48ba-962e-d5c656921f0d.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvNjNjZTJkM2ItNWUyNi00OGJhLTk2MmUtZDVjNjU2OTIxZjBkLmpwZWciLCJpYXQiOjE3NzMwMDY0NjEsImV4cCI6MTgwNDU0MjQ2MX0.jfKa8AnXj27byDTL-WzdwN1MOioarcycjhhlyR1OvbE" 
-                alt="Anderson Agüero Lara - Fundador de LEADPILOT CRM" 
+                alt="Anderson Agüero Lara - Fundador de NUVRO ENGINEER" 
                 className="w-full h-full object-cover object-center grayscale-[15%] contrast-[1.1] brightness-90 group-hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-brand-black/10 to-transparent opacity-90" />
-              <div className="absolute inset-0 bg-brand-accent/5 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-brand-blue/5 mix-blend-overlay" />
             </div>
           </div>
           
           <div className="lg:col-span-7 lg:pl-12">
             <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-              07. Detrás de la firma
+              06. Detrás de la firma
             </h2>
             <h3 className="text-3xl md:text-4xl font-display font-medium text-brand-white leading-tight mb-8">
               Anderson Agüero Lara
@@ -33,7 +33,7 @@ export default function Founder() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="text-lg md:text-xl text-brand-platinum/80 leading-relaxed font-light mb-6"
             >
-              Soy Anderson Agüero Lara, ingeniero de software y diseñador. Fundé LEADPILOT CRM para ayudar a dueños de negocios y equipos de ventas a dejar de perder oportunidades por culpa de seguimientos manuales y desorganización.
+              Soy ingeniero de software y diseñador enfocado en resultados. Fundé Nuvro Engineer al ver cómo negocios excelentes perdían clientes por culpa de webs genéricas y procesos manuales.
             </motion.p>
             
             <motion.p
@@ -43,7 +43,7 @@ export default function Founder() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-lg md:text-xl text-brand-platinum/80 leading-relaxed font-light mb-10"
             >
-              Mi objetivo es simple: construir un sistema comercial que haga crecer tu facturación, automatice tus seguimientos y te dé control total sobre tus ventas.
+              Mi objetivo es traducir tu experiencia y calidad en un sistema digital que comunique autoridad, genere confianza y cierre más ventas de forma automática.
             </motion.p>
             
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium text-brand-platinum/80">

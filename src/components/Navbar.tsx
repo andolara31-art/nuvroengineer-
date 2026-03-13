@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <a href="#" className="text-xl font-display font-bold tracking-tight text-brand-white">
-          LEAD<span className="text-brand-platinum/50 font-light">PILOT</span>
+          NUVRO<span className="text-brand-platinum/50 font-light"> ENGINEER</span>
         </a>
 
         {/* Desktop Nav */}
@@ -46,7 +46,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contacto"
-            className="glow-button px-5 py-2.5 rounded-full bg-brand-accent text-brand-black text-sm font-semibold hover:bg-brand-accent/90 transition-colors"
+            className="glow-button px-5 py-2.5 rounded-full bg-brand-accent text-brand-white text-sm font-semibold hover:bg-brand-accent/90 transition-colors"
           >
             Iniciar Proyecto
           </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="glow-button mt-4 px-6 py-3 rounded-full bg-brand-accent text-brand-black text-center font-semibold"
+            className="glow-button mt-4 px-6 py-3 rounded-full bg-brand-accent text-brand-white text-center font-semibold"
           >
             Iniciar Proyecto
           </a>

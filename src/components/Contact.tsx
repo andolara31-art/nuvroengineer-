@@ -34,8 +34,8 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: '63d09dec-85b0-4fcb-bf6f-480e8d6909d4',
-          subject: 'Nueva solicitud desde LEADPILOT CRM',
-          from_name: 'LEADPILOT CRM',
+          subject: 'Nueva solicitud desde NUVRO ENGINEER',
+          from_name: 'NUVRO ENGINEER',
           ...formData
         })
       });
@@ -64,12 +64,12 @@ export default function Contact() {
 
   return (
     <section id="contacto" className="py-32 md:py-48 bg-brand-dark/40 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(0,229,255,0.1)_0%,rgba(10,10,10,1)_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(0,85,255,0.1)_0%,rgba(10,10,10,1)_60%)]" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-            08. Contacto
+            07. Contacto
           </h2>
           
           <motion.h3
@@ -134,9 +134,9 @@ export default function Contact() {
                   className="w-full bg-brand-black border border-white/10 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-accent transition-colors appearance-none"
                 >
                   <option value="" disabled>Seleccionar...</option>
-                  <option value="Implementación CRM">Implementación CRM</option>
-                  <option value="Automatización de Ventas">Automatización de Ventas</option>
-                  <option value="Consultoría Comercial">Consultoría Comercial</option>
+                  <option value="Landing Page">Landing Page</option>
+                  <option value="Web para Negocios">Web para Negocios</option>
+                  <option value="Mini SaaS / MVP">Mini SaaS / MVP</option>
                   <option value="Otro">Otro</option>
                 </select>
               </div>
@@ -175,7 +175,7 @@ export default function Contact() {
             <button 
               type="submit"
               disabled={isSubmitting}
-              className="glow-button w-full py-4 rounded-xl bg-brand-accent text-brand-black font-semibold hover:bg-brand-accent/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="glow-button w-full py-4 rounded-xl bg-brand-accent text-brand-white font-semibold hover:bg-brand-accent/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>
@@ -183,7 +183,7 @@ export default function Contact() {
                   Enviando...
                 </>
               ) : (
-                'Solicitar propuesta'
+                'Solicitar presupuesto'
               )}
             </button>
 
@@ -194,7 +194,7 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-brand-black/95 backdrop-blur-sm rounded-3xl p-8 text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent mb-6">
+                <div className="w-16 h-16 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-white mb-6">
                   <CheckCircle2 size={32} />
                 </div>
                 <h4 className="text-2xl font-display font-medium text-brand-white mb-2">¡Solicitud enviada!</h4>

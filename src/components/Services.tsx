@@ -1,21 +1,21 @@
 import { motion } from 'motion/react';
-import { Users, Zap, BarChart3 } from 'lucide-react';
+import { LayoutTemplate, Globe, Code2 } from 'lucide-react';
 
 const services = [
   {
-    icon: <Users size={24} />,
-    title: 'Gestión de Prospectos',
-    description: 'Centraliza todos tus leads en un solo lugar. Asigna, etiqueta y da seguimiento sin perder ninguna oportunidad.',
+    icon: <LayoutTemplate size={24} />,
+    title: 'Landing Pages',
+    description: 'Diseño enfocado en conversión para captar leads o vender un servicio específico de forma directa.',
   },
   {
-    icon: <Zap size={24} />,
-    title: 'Automatización Comercial',
-    description: 'Crea flujos de trabajo que envían correos, asignan tareas y mueven prospectos automáticamente según su comportamiento.',
+    icon: <Globe size={24} />,
+    title: 'Webs para Negocios',
+    description: 'Sitios corporativos premium que transmiten autoridad y confianza a tus clientes potenciales.',
   },
   {
-    icon: <BarChart3 size={24} />,
-    title: 'Métricas y Reportes',
-    description: 'Visualiza el rendimiento de tu equipo en tiempo real. Descubre qué canales convierten más y dónde se estancan las ventas.',
+    icon: <Code2 size={24} />,
+    title: 'Mini SaaS / MVPs',
+    description: 'Aplicaciones a medida para automatizar procesos o lanzar tu propia herramienta digital al mercado.',
   },
 ];
 
@@ -25,13 +25,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16 md:mb-24">
           <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-            02. Qué hacemos
+            01. Qué hacemos
           </h2>
           <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight max-w-2xl mb-6">
-            Todo lo que necesitas para vender más.
+            Sistemas digitales que multiplican resultados.
           </h3>
           <p className="text-lg md:text-xl text-brand-platinum/60 max-w-2xl leading-relaxed font-light">
-            Herramientas diseñadas para equipos comerciales que buscan eficiencia y resultados.
+            Construimos herramientas y webs que simplifican tu negocio y elevan tu posicionamiento.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function Services() {
               transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="p-8 rounded-2xl glass-card transition-colors group"
             >
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-brand-platinum mb-6 group-hover:bg-brand-accent group-hover:text-brand-black transition-colors">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-brand-platinum mb-6 group-hover:bg-brand-accent group-hover:text-brand-white transition-colors">
                 {service.icon}
               </div>
               <h4 className="text-xl font-medium text-brand-white mb-3">{service.title}</h4>

@@ -3,28 +3,28 @@ import { motion } from 'motion/react';
 const steps = [
   {
     number: '01',
-    title: 'Auditoría',
-    description: 'Analizamos tu proceso de ventas actual para identificar cuellos de botella y oportunidades.'
+    title: 'Descubrimiento',
+    description: 'Analizamos tu negocio, tu cliente ideal y tus objetivos comerciales para definir la estrategia.'
   },
   {
     number: '02',
-    title: 'Estrategia CRM',
-    description: 'Diseñamos el pipeline ideal para tu equipo, definiendo etapas y automatizaciones clave.'
+    title: 'Propuesta',
+    description: 'Presentamos un plan de acción claro, con estructura, tiempos y presupuesto definido.'
   },
   {
     number: '03',
-    title: 'Implementación',
-    description: 'Configuramos LEADPILOT CRM a medida de tu negocio, importando tus datos actuales.'
+    title: 'Diseño UI/UX',
+    description: 'Creamos la interfaz visual enfocada en la conversión y la experiencia del usuario.'
   },
   {
     number: '04',
-    title: 'Capacitación',
-    description: 'Entrenamos a tu equipo comercial para que dominen la herramienta desde el día uno.'
+    title: 'Desarrollo',
+    description: 'Construimos el sitio o aplicación con código limpio, rápido y optimizado para SEO.'
   },
   {
     number: '05',
-    title: 'Optimización',
-    description: 'Monitoreamos los resultados y ajustamos el sistema para maximizar la conversión.'
+    title: 'Lanzamiento',
+    description: 'Publicamos tu proyecto, verificamos que todo funcione perfecto y te enseñamos a usarlo.'
   }
 ];
 
@@ -34,11 +34,14 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16 md:mb-24">
           <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-            05. Cómo trabajamos
+            04. Proceso
           </h2>
           <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight max-w-2xl mb-6">
-            Un proceso estructurado para escalar tus ventas.
+            Cómo trabajamos.
           </h3>
+          <p className="text-lg text-brand-platinum/60 max-w-2xl leading-relaxed font-light">
+            Un método claro y estructurado para llevar tu proyecto de la idea a la realidad sin fricciones.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">

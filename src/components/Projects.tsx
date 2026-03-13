@@ -44,7 +44,7 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
           <div>
             <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-              04. Proyectos Principales
+              03. Proyectos Principales
             </h2>
             <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight mb-4">
               Trabajo reciente.
@@ -117,7 +117,7 @@ export default function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glow-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-accent text-brand-black font-semibold hover:bg-brand-accent/90 transition-colors text-sm"
+                    className="glow-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-accent text-brand-white font-semibold hover:bg-brand-accent/90 transition-colors text-sm"
                   >
                     Ver proyecto <ExternalLink size={16} />
                   </a>
