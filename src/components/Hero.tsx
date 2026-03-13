@@ -15,15 +15,15 @@ export default function Hero() {
           className="flex flex-col items-start"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card mb-8">
-            <span className="text-xs font-medium tracking-wide uppercase text-brand-platinum/80">CRM B2B PARA EQUIPOS COMERCIALES</span>
+            <span className="text-xs font-medium tracking-wide uppercase text-brand-platinum/80">FIRMA DE DISEÑO Y DESARROLLO WEB</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-display font-medium leading-[1.1] tracking-tight text-brand-white mb-6 text-balance uppercase">
-            Gestión de prospectos que <span className="text-brand-accent italic">cierra ventas</span>.
+            Sitios web y sistemas digitales que imponen respeto y <span className="text-brand-accent italic">cierran ventas</span>.
           </h1>
           
           <p className="text-lg md:text-xl text-brand-platinum/60 max-w-xl mb-10 leading-relaxed font-light">
-            CRM para organizar prospectos, automatizar seguimientos y gestionar oportunidades comerciales con más claridad, control y eficiencia.
+            Construimos plataformas premium para clínicas, consultores y negocios en crecimiento que necesitan dejar de perder clientes por una mala imagen en internet.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Hero Image */}
           <img 
             src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260309_163429_58dc34e6-4fba-485d-85b1-1b892b1b4753.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMDlfMTYzNDI5XzU4ZGMzNGU2LTRmYmEtNDg1ZC04NWIxLTFiODkyYjFiNDc1My5qcGVnIiwiaWF0IjoxNzczMTU2Nzk0LCJleHAiOjE4MDQ2OTI3OTR9.2r8RS2hxsxoZvOh0773pyT8KWskZ5eS863Ujwqhf64g" 
-            alt="LEADPILOT CRM Dashboard" 
+            alt="NUVRO ENGINEER Digital Excellence" 
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
             referrerPolicy="no-referrer"
           />

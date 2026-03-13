@@ -1,21 +1,21 @@
 import { motion } from 'motion/react';
-import { Users, Zap, BarChart3 } from 'lucide-react';
+import { Layout, Globe, Code2 } from 'lucide-react';
 
 const services = [
   {
-    icon: <Users size={24} />,
-    title: 'Gestión de Prospectos',
-    description: 'Centraliza todos tus leads en un solo lugar. Asigna, etiqueta y da seguimiento sin perder ninguna oportunidad.',
+    icon: <Layout size={24} />,
+    title: 'Landing Pages',
+    description: 'Páginas de alta conversión diseñadas para un solo objetivo: captar clientes. Ideales para campañas de anuncios y lanzamientos de servicios.',
   },
   {
-    icon: <Zap size={24} />,
-    title: 'Automatización Comercial',
-    description: 'Crea flujos de trabajo que envían correos, asignan tareas y mueven prospectos automáticamente según su comportamiento.',
+    icon: <Globe size={24} />,
+    title: 'Webs para Negocios',
+    description: 'Sitios corporativos completos que comunican autoridad. Estructuramos tu oferta para que tu cliente ideal confíe en vos al instante.',
   },
   {
-    icon: <BarChart3 size={24} />,
-    title: 'Métricas y Reportes',
-    description: 'Visualiza el rendimiento de tu equipo en tiempo real. Descubre qué canales convierten más y dónde se estancan las ventas.',
+    icon: <Code2 size={24} />,
+    title: 'Mini SaaS / MVPs',
+    description: 'Sistemas a medida para automatizar procesos internos o lanzar tu propio producto digital. Software rápido, seguro y escalable.',
   },
 ];
 
@@ -28,10 +28,10 @@ export default function Services() {
             02. Qué hacemos
           </h2>
           <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight max-w-2xl mb-6">
-            Todo lo que necesitas para vender más.
+            Lo que construimos.
           </h3>
           <p className="text-lg md:text-xl text-brand-platinum/60 max-w-2xl leading-relaxed font-light">
-            Herramientas diseñadas para equipos comerciales que buscan eficiencia y resultados.
+            Infraestructura digital diseñada para generar confianza y conversiones.
           </p>
         </div>
 

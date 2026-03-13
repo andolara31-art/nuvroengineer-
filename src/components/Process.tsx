@@ -3,28 +3,28 @@ import { motion } from 'motion/react';
 const steps = [
   {
     number: '01',
-    title: 'Auditoría',
-    description: 'Analizamos tu proceso de ventas actual para identificar cuellos de botella y oportunidades.'
+    title: 'Descubrimiento',
+    description: 'Llamada inicial para entender tu negocio, tus clientes y tus objetivos comerciales.'
   },
   {
     number: '02',
-    title: 'Estrategia CRM',
-    description: 'Diseñamos el pipeline ideal para tu equipo, definiendo etapas y automatizaciones clave.'
+    title: 'Estrategia',
+    description: 'Definimos la estructura de la información para maximizar la conversión antes de tocar el diseño.'
   },
   {
     number: '03',
-    title: 'Implementación',
-    description: 'Configuramos LEADPILOT CRM a medida de tu negocio, importando tus datos actuales.'
+    title: 'Diseño Visual',
+    description: 'Creamos una interfaz premium, alineada a tu marca y orientada a generar confianza.'
   },
   {
     number: '04',
-    title: 'Capacitación',
-    description: 'Entrenamos a tu equipo comercial para que dominen la herramienta desde el día uno.'
+    title: 'Desarrollo',
+    description: 'Escribimos código limpio y rápido. Tu sitio funcionará perfecto en cualquier dispositivo.'
   },
   {
     number: '05',
-    title: 'Optimización',
-    description: 'Monitoreamos los resultados y ajustamos el sistema para maximizar la conversión.'
+    title: 'Lanzamiento',
+    description: 'Desplegamos tu proyecto, conectamos tu dominio y te entregamos las llaves.'
   }
 ];
 
@@ -37,7 +37,7 @@ export default function Process() {
             05. Cómo trabajamos
           </h2>
           <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight max-w-2xl mb-6">
-            Un proceso estructurado para escalar tus ventas.
+            Un proceso estructurado para lanzar tu proyecto sin contratiempos.
           </h3>
         </div>
 

@@ -3,38 +3,38 @@ import { Check } from 'lucide-react';
 
 const tiers = [
   {
-    name: 'Starter',
-    price: '49',
-    description: 'Para equipos pequeños que necesitan organizar sus ventas.',
+    name: 'Landing Page',
+    price: '499',
+    description: 'Para campañas de anuncios y lanzamientos de servicios.',
     features: [
-      'Hasta 3 usuarios',
-      'Gestión de contactos ilimitada',
-      'Pipeline visual de ventas',
-      'Soporte por email'
+      'Diseño de una sola página (One-Pager)',
+      'Copywriting orientado a conversión',
+      'Formulario de captura de leads',
+      'Optimización móvil perfecta'
     ],
     highlighted: false
   },
   {
-    name: 'Pro',
-    price: '99',
-    description: 'Para equipos en crecimiento que buscan automatización.',
+    name: 'Web Corporativa',
+    price: '999',
+    description: 'Para negocios que necesitan comunicar autoridad.',
     features: [
-      'Hasta 10 usuarios',
-      'Automatización de correos',
-      'Reportes avanzados',
-      'Soporte prioritario 24/7'
+      'Hasta 5 páginas internas',
+      'Diseño premium a medida',
+      'Integración con WhatsApp o CRM',
+      'Optimización SEO técnica'
     ],
     highlighted: true
   },
   {
-    name: 'Enterprise',
-    price: '299',
-    description: 'Para empresas con procesos comerciales complejos.',
+    name: 'Mini SaaS / MVP',
+    price: '2,499',
+    description: 'Para automatizar procesos o lanzar productos digitales.',
     features: [
-      'Usuarios ilimitados',
-      'Integraciones a medida (API)',
-      'Onboarding personalizado',
-      'Account Manager dedicado'
+      'Desarrollo de aplicación web a medida',
+      'Panel de administración privado',
+      'Base de datos y autenticación de usuarios',
+      'Arquitectura escalable en la nube'
     ],
     highlighted: false
   }
@@ -49,10 +49,10 @@ export default function Pricing() {
             06. Inversión
           </h2>
           <h3 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight mb-6">
-            Planes simples. Sin sorpresas.
+            Inversión clara. Sin sorpresas.
           </h3>
           <p className="text-lg md:text-xl text-brand-platinum/60 leading-relaxed font-light">
-            Elegí el plan que mejor se adapte al tamaño de tu equipo comercial.
+            Seleccioná el nivel de infraestructura digital que tu negocio necesita hoy.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function Pricing() {
               <div className="mb-8">
                 <span className="text-brand-platinum/50 text-sm">Desde</span>
                 <div className="text-4xl font-display font-bold text-brand-white mt-1">
-                  {tier.price} <span className="text-lg text-brand-platinum/40 font-normal">USD/mes</span>
+                  {tier.price} <span className="text-lg text-brand-platinum/40 font-normal">USD</span>
                 </div>
               </div>
               

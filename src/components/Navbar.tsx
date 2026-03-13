@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <a href="#" className="text-xl font-display font-bold tracking-tight text-brand-white">
-          LEAD<span className="text-brand-platinum/50 font-light">PILOT</span>
+          NUVRO<span className="text-brand-platinum/50 font-light">ENGINEER</span>
         </a>
 
         {/* Desktop Nav */}

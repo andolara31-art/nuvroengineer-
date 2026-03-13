@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle, Loader2, CheckCircle2, XCircle } from 'lucide-react';
 
@@ -34,8 +34,8 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: '63d09dec-85b0-4fcb-bf6f-480e8d6909d4',
-          subject: 'Nueva solicitud desde LEADPILOT CRM',
-          from_name: 'LEADPILOT CRM',
+          subject: 'Nueva solicitud desde Nuvro Engineer',
+          from_name: 'Nuvro Engineer',
           ...formData
         })
       });
@@ -134,9 +134,9 @@ export default function Contact() {
                   className="w-full bg-brand-black border border-white/10 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-accent transition-colors appearance-none"
                 >
                   <option value="" disabled>Seleccionar...</option>
-                  <option value="Implementación CRM">Implementación CRM</option>
-                  <option value="Automatización de Ventas">Automatización de Ventas</option>
-                  <option value="Consultoría Comercial">Consultoría Comercial</option>
+                  <option value="Landing Page">Landing Page</option>
+                  <option value="Web Corporativa">Web Corporativa</option>
+                  <option value="Mini SaaS">Mini SaaS</option>
                   <option value="Otro">Otro</option>
                 </select>
               </div>
