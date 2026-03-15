@@ -22,7 +22,7 @@ const projects = [
     stack: ['Next.js', 'TypeScript', 'Supabase'],
     liveUrl: 'https://leadpilot-eta.vercel.app/',
     githubUrl: '#',
-    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260310_174747_cb690a5e-b364-46ae-b767-c6b90f59322b.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTBfMTc0NzQ3X2NiNjkwYTVlLWIzNjQtNDZhZS1iNzY3LWM2YjkwZjU5MzIyYi5qcGVnIiwiaWF0IjoxNzczMTY1NDc2LCJleHAiOjE4MDQ3MDE0NzZ9.2A8YdsACP-hD7g-xg1Vw7IHenOc4-JFq1DfIW847S4o',
+    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260315_144821_292329d5-191d-46bd-a75f-d73a0598a277%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTVfMTQ0ODIxXzI5MjMyOWQ1LTE5MWQtNDZiZC1hNzVmLWQ3M2EwNTk4YTI3NyAoMSkucG5nIiwiaWF0IjoxNzczNTg3MzQ1LCJleHAiOjE4MDUxMjMzNDV9.cT5J5jtOkiiYAfT7IVEFM1ujDVy88l4Us3h8VbubiQE',
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const projects = [
     stack: ['React', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
     liveUrl: 'https://clario-advisory.vercel.app/',
     githubUrl: '#',
-    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260310_170059_b0835621-64a8-48cb-94b1-aa2e4c8d30bf.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTBfMTcwMDU5X2IwODM1NjIxLTY0YTgtNDhjYi05NGIxLWFhMmU0YzhkMzBiZi5qcGVnIiwiaWF0IjoxNzczMTYyNTI3LCJleHAiOjE4MDQ2OTg1Mjd9.NOTcA91U9dVUwjUb_3qB1eCuzDkkfFqofEkQXk7MzFk',
+    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/WhatsApp%20Image%202026-03-15%20at%209.33.12%20AM.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvV2hhdHNBcHAgSW1hZ2UgMjAyNi0wMy0xNSBhdCA5LjMzLjEyIEFNLmpwZWciLCJpYXQiOjE3NzM1ODg5MTQsImV4cCI6MTgwNTEyNDkxNH0.6caFs2Vdl8f3BbvRMij1dh5Ne3Mm4452xYFOsYxzidE',
   }
 ];
 
@@ -74,7 +74,7 @@ export default function Projects() {
                   <img 
                     src={project.imageUrl} 
                     alt={project.title} 
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
                 ) : (
