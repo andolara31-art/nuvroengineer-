@@ -20,7 +20,7 @@ const projects = [
     description: 'Plataforma CRM a medida para organizar prospectos y automatizar seguimientos. Centraliza oportunidades y mejora la comunicación comercial.',
     impact: 'Reducción de 12 horas semanales en gestión manual de clientes.',
     stack: ['Next.js', 'TypeScript', 'Supabase'],
-    liveUrl: 'https://leadpilot-eta.vercel.app/',
+    liveUrl: 'https://leadpilot-pi.vercel.app/',
     githubUrl: '#',
     imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260315_144821_292329d5-191d-46bd-a75f-d73a0598a277%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTVfMTQ0ODIxXzI5MjMyOWQ1LTE5MWQtNDZiZC1hNzVmLWQ3M2EwNTk4YTI3NyAoMSkucG5nIiwiaWF0IjoxNzczNTg3MzQ1LCJleHAiOjE4MDUxMjMzNDV9.cT5J5jtOkiiYAfT7IVEFM1ujDVy88l4Us3h8VbubiQE',
   },
