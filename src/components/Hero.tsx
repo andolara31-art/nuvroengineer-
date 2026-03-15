@@ -47,7 +47,7 @@ export default function Hero() {
         >
           {/* Hero Image */}
           <img 
-            src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260314_150820_af462bf8-34fb-48ef-87df-3c1c08f48a9f.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTRfMTUwODIwX2FmNDYyYmY4LTM0ZmItNDhlZi04N2RmLTNjMWMwOGY0OGE5Zi5qcGVnIiwiaWF0IjoxNzczNTgxNzI3LCJleHAiOjE4MDUxMTc3Mjd9.RsTAKavdaPcqKY8awe2Q4Rkd5ViRZfqvTRthjRyLXx8" 
+            src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/0a58b917-4adb-4da8-aed0-e3df40c07cbc.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvMGE1OGI5MTctNGFkYi00ZGE4LWFlZDAtZTNkZjQwYzA3Y2JjLmpwZWciLCJpYXQiOjE3NzM1OTQwODAsImV4cCI6MTgwNTEzMDA4MH0.biXOJfw_nSQSTiLdLG5UtiUTVkAbaoo16E_lNIuU3yI" 
             alt="NUVRO ENGINEER Dashboard" 
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out"
             referrerPolicy="no-referrer"
