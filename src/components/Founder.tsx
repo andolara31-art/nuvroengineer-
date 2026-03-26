@@ -8,7 +8,7 @@ export default function Founder() {
           <div className="lg:col-span-5 mb-10 lg:mb-0">
             <div className="aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-white/10 bg-brand-dark relative group">
               <img 
-                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/63ce2d3b-5e26-48ba-962e-d5c656921f0d.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvNjNjZTJkM2ItNWUyNi00OGJhLTk2MmUtZDVjNjU2OTIxZjBkLmpwZWciLCJpYXQiOjE3NzMwMDY0NjEsImV4cCI6MTgwNDU0MjQ2MX0.jfKa8AnXj27byDTL-WzdwN1MOioarcycjhhlyR1OvbE" 
+                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260326_192810_29431f91-08f5-4a98-952e-964a99307e80%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMjZfMTkyODEwXzI5NDMxZjkxLTA4ZjUtNGE5OC05NTJlLTk2NGE5OTMwN2U4MCAoMSkucG5nIiwiaWF0IjoxNzc0NTU5MjU4LCJleHAiOjE4MDYwOTUyNTh9.ej3gtYE1To8xpk3aWllkXA0Gbcmbgc36u34JF4zwZGQ" 
                 alt="Anderson Agüero Lara - Fundador de NUVRO ENGINEER" 
                 className="w-full h-full object-cover object-center grayscale-[15%] contrast-[1.1] brightness-90 group-hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
