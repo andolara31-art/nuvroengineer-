@@ -1,244 +1,103 @@
-import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MessageCircle, Loader2, CheckCircle2, XCircle } from 'lucide-react';
+import { MessageSquare, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    project: '',
-    budget: '',
-    message: ''
-  });
+  const whatsappNumber = "50671757171";
+  const whatsappUrl = (msg: string) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: '63d09dec-85b0-4fcb-bf6f-480e8d6909d4',
-          subject: 'Nueva solicitud desde NUVRO ENGINEER',
-          from_name: 'NUVRO ENGINEER',
-          ...formData
-        })
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          project: '',
-          budget: '',
-          message: ''
-        });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const quickButtons = [
+    { label: 'Menú QR para mi local', msg: 'Hola NUVRO, quiero cotizar un menú QR para mi negocio.' },
+    { label: 'Link Bio Pro para redes', msg: 'Hola NUVRO, quiero un Link Bio para mi Instagram.' },
+    { label: 'Invitación digital para evento', msg: 'Hola NUVRO, quiero una invitación digital.' },
+    { label: 'Catálogo rápido de productos', msg: 'Hola NUVRO, quiero un catálogo express.' },
+    { label: 'Página de promoción activa', msg: 'Hola NUVRO, quiero una página para una promoción.' },
+    { label: 'Proyecto CUSTOM grande', msg: 'Hola NUVRO, quiero hablar sobre un proyecto custom grande.' },
+  ];
 
   return (
-    <section id="contacto" className="py-32 md:py-48 bg-brand-dark/40 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(0,85,255,0.1)_0%,rgba(10,10,10,1)_60%)]" />
+    <section id="contacto" className="py-24 relative overflow-hidden bg-brand-black border-t border-white/5">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-accent/20 to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
-            08. Contacto
-          </h2>
-          
-          <motion.h3
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-medium text-brand-white leading-[1.1] tracking-tight mb-6"
-          >
-            Es momento de elevar el nivel de tu negocio.
-          </motion.h3>
-          
-          <p className="text-lg md:text-xl text-brand-platinum/60 leading-relaxed font-light">
-            Completá el formulario y te responderemos en menos de 24 horas para agendar una llamada exploratoria.
-          </p>
-        </div>
-        
-        <div className="max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-6 glass-card p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div>
+            <span className="text-[10px] font-mono tracking-[0.4em] text-brand-accent uppercase mb-6 block">
+              CANAL DE VENTA DIRECTA
+            </span>
+            <h2 className="text-5xl md:text-8xl font-display font-medium text-brand-white leading-[0.9] mb-10 uppercase tracking-tighter">
+              ¿Listo para dar el <br/> <span className="text-brand-accent italic">salto digital?</span>
+            </h2>
             
-            {/* Honeypot */}
-            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+            <p className="text-xl text-brand-platinum/40 mb-12 font-light leading-relaxed max-w-lg">
+              No perdás más tiempo. El 90% de nuestros clientes eligen su producto, mandan el contenido y están vendiendo en menos de 72 horas.
+            </p>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-brand-platinum/80">Nombre completo</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-brand-black border border-white/10 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-accent transition-colors"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-brand-platinum/80">Email profesional</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-brand-black border border-white/10 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-accent transition-colors"
-                  placeholder="tu@empresa.com"
-                />
-              </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="project" className="text-sm font-medium text-brand-platinum/80">Tipo de proyecto</label>
-                <select 
-                  id="project" 
-                  name="project"
-                  value={formData.project}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-brand-black border border-white/10 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-accent transition-colors appearance-none"
-                >
-                  <option value="" disabled>Seleccionar...</option>
-                  <option value="Landing Page">Landing Page</option>
-                  <option value="Web para Negocios">Web para Negocios</option>
-                  <option value="Mini SaaS / MVP">Mini SaaS / MVP</option>
-                  <option value="Otro">Otro</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="budget" className="text-sm font-medium text-brand-platinum/80">Presupuesto estimado</label>
-                <select 
-                  id="budget" 
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-brand-black border border-white/10 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-accent transition-colors appearance-none"
-                >
-                  <option value="" disabled>Seleccionar...</option>
-                  <option value="Menos de $1,000">Menos de $1,000</option>
-                  <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                  <option value="Más de $3,000">Más de $3,000</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-brand-platinum/80">Mensaje</label>
-              <textarea 
-                id="message" 
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full bg-brand-black border border-white/10 rounded-xl px-4 py-3 text-brand-white focus:outline-none focus:border-brand-accent transition-colors resize-none"
-                placeholder="Contanos brevemente sobre tu negocio y qué necesitás"
-              ></textarea>
-            </div>
-            
-            <button 
-              type="submit"
-              disabled={isSubmitting}
-              className="glow-button w-full py-4 rounded-xl bg-brand-accent text-brand-white font-semibold hover:bg-brand-accent/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="animate-spin" size={20} />
-                  Enviando...
-                </>
-              ) : (
-                'Solicitar presupuesto'
-              )}
-            </button>
-
-            {/* Status Messages */}
-            {submitStatus === 'success' && (
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-brand-black/95 backdrop-blur-sm rounded-3xl p-8 text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-white mb-6">
-                  <CheckCircle2 size={32} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="flex items-center gap-5 text-brand-platinum/60 hover:text-brand-accent transition-colors group cursor-default">
+                <div className="w-14 h-14 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform shadow-xl">
+                  <Mail size={24} />
                 </div>
-                <h4 className="text-2xl font-display font-medium text-brand-white mb-2">¡Solicitud enviada!</h4>
-                <p className="text-brand-platinum/70 mb-8">
-                  Hemos recibido tu información correctamente. Nos pondremos en contacto con vos en menos de 24 horas.
-                </p>
-                <button 
-                  type="button"
-                  onClick={() => setSubmitStatus('idle')}
-                  className="px-6 py-3 rounded-full border border-white/20 text-brand-white font-medium hover:bg-white/5 transition-colors"
-                >
-                  Enviar otra solicitud
-                </button>
-              </motion.div>
-            )}
+                <div>
+                   <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-brand-platinum/30 mb-0.5">Ventas</div>
+                   <div className="text-sm font-bold tracking-tight">hola@nuvroengineer.com</div>
+                </div>
+              </div>
 
-            {submitStatus === 'error' && (
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 flex items-start gap-3 mt-4"
-              >
-                <XCircle size={20} className="shrink-0 mt-0.5" />
-                <p className="text-sm">
-                  Hubo un error al enviar tu solicitud. Por favor, intentá nuevamente o contactanos por WhatsApp.
-                </p>
-              </motion.div>
-            )}
-          </form>
-          
-          <div className="mt-12 text-center">
-            <p className="text-brand-platinum/60 mb-4">¿Preferís un trato más directo?</p>
-            <a
-              href="https://wa.me/50671757171"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-white/20 text-brand-white font-medium hover:bg-white/5 transition-colors"
-            >
-              <MessageCircle size={18} />
-              Escribinos por WhatsApp
-            </a>
+              <div className="flex items-center gap-5 text-brand-platinum/60 hover:text-brand-accent transition-colors group cursor-default">
+                <div className="w-14 h-14 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-accent group-hover:scale-110 transition-transform shadow-xl">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                   <div className="text-[9px] font-mono uppercase tracking-[0.2em] text-brand-platinum/30 mb-0.5">Base</div>
+                   <div className="text-sm font-bold tracking-tight">Escazú, Costa Rica</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-brand-accent/5 rounded-[60px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative glass-card p-8 md:p-14 rounded-[50px] border-white/5 bg-white/[0.02] backdrop-blur-3xl border">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
+              
+              <h3 className="text-2xl font-display font-black text-brand-white mb-10 uppercase tracking-tight italic">Elegí tu producto:</h3>
+              
+              <div className="grid grid-cols-1 gap-3 mb-12">
+                 {quickButtons.map((btn, i) => (
+                   <motion.a
+                     key={i}
+                     whileHover={{ x: 10 }}
+                     href={whatsappUrl(btn.msg)}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-accent/40 hover:bg-brand-accent/5 transition-all group"
+                   >
+                     <span className="text-sm font-bold text-brand-platinum/50 group-hover:text-brand-white uppercase tracking-tighter">{btn.label}</span>
+                     <ArrowRight size={18} className="text-brand-accent opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0" />
+                   </motion.a>
+                 ))}
+              </div>
+
+              <div className="pt-10 border-t border-white/5">
+                 <a
+                   href={whatsappUrl("Hola NUVRO, tengo un negocio y quiero saber qué me conviene.")}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="w-full inline-flex items-center justify-center gap-4 py-7 rounded-3xl bg-brand-white text-brand-black font-black uppercase tracking-tighter hover:scale-[1.02] active:scale-95 transition-all shadow-2xl"
+                 >
+                   <MessageSquare size={24} />
+                   Chatear con un experto
+                 </a>
+                 <div className="flex items-center justify-center gap-2 mt-8">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                    <p className="text-[10px] text-brand-platinum/30 uppercase tracking-[0.3em] font-mono">Un humano te responde en minutos</p>
+                 </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

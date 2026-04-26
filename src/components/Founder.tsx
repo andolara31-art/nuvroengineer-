@@ -6,15 +6,21 @@ export default function Founder() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 mb-10 lg:mb-0">
-            <div className="aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-white/10 bg-brand-dark relative group">
+            <div className="aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-white/10 bg-brand-dark/50 relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/20 to-transparent animate-pulse" />
               <img 
-                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260326_192810_29431f91-08f5-4a98-952e-964a99307e80%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMjZfMTkyODEwXzI5NDMxZjkxLTA4ZjUtNGE5OC05NTJlLTk2NGE5OTMwN2U4MCAoMSkucG5nIiwiaWF0IjoxNzc0NTU5MjU4LCJleHAiOjE4MDYwOTUyNTh9.ej3gtYE1To8xpk3aWllkXA0Gbcmbgc36u34JF4zwZGQ" 
+                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/hf_20260326_192810_29431f91-08f5-4a98-952e-964a99307e80%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi9oZl8yMDI2MDMyNl8xOTI4MTBfMjk0MzFmOTEtMDhmNS00YTk4LTk1MmUtOTY0YTk5MzA3ZTgwICgxKS5wbmciLCJpYXQiOjE3NzU5ODYxODIsImV4cCI6MTgwNzUyMjE4Mn0.nmCRljTgHh-PAtusyBD_IlaKjMEn3TiEUc6Ul7y7S7I" 
                 alt="Anderson Agüero Lara - Fundador de NUVRO ENGINEER" 
-                className="w-full h-full object-cover object-center grayscale-[15%] contrast-[1.1] brightness-90 group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover object-top grayscale-[30%] contrast-[1.1] group-hover:grayscale-0 transition-all duration-700 relative z-10"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.opacity = '0';
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-brand-black/10 to-transparent opacity-90" />
-              <div className="absolute inset-0 bg-brand-blue/5 mix-blend-overlay" />
+              <div className="absolute inset-0 flex items-center justify-center text-brand-platinum/20 font-display font-medium text-4xl uppercase px-12 text-center leading-none tracking-tighter">
+                 Anderson Agüero
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent z-20" />
             </div>
           </div>
           

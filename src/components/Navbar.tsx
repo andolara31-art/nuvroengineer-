@@ -15,10 +15,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Servicios', href: '#servicios' },
+    { name: 'Express', href: '#express' },
+    { name: 'Paquetes', href: '#paquetes' },
+    { name: 'Custom', href: '#custom' },
     { name: 'Proyectos', href: '#proyectos' },
-    { name: 'Proceso', href: '#proceso' },
-    { name: 'Inversión', href: '#inversion' },
     { name: 'Contacto', href: '#contacto' },
   ];
 

@@ -3,18 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { motion } from 'motion/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import ValueProposition from './components/ValueProposition';
+import NuvroExpress from './components/NuvroExpress';
+import BusinessSelector from './components/BusinessSelector';
+import Comparison from './components/Comparison';
+import ExpressPackages from './components/ExpressPackages';
+import DemoWall from './components/DemoWall';
+import NuvroCustom from './components/NuvroCustom';
 import Projects from './components/Projects';
-import Testimonials from './components/Testimonials';
 import Process from './components/Process';
-import Pricing from './components/Pricing';
-import PaymentMethods from './components/PaymentMethods';
 import Founder from './components/Founder';
 import Contact from './components/Contact';
+import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
+import WhatsAppFloating from './components/WhatsAppFloating';
 
 export default function App() {
   return (
@@ -24,17 +28,20 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Services />
-        <ValueProposition />
+        <NuvroExpress />
+        <BusinessSelector />
+        <Comparison />
+        <ExpressPackages />
+        <DemoWall />
+        <NuvroCustom />
         <Projects />
-        <Testimonials />
         <Process />
-        <Pricing />
-        <PaymentMethods />
-        <Founder />
         <Contact />
+        <FinalCTA />
       </main>
       <Footer />
+      <WhatsAppFloating />
     </div>
   );
 }
+
