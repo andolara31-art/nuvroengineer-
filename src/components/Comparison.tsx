@@ -1,94 +1,103 @@
-import { Check, X, ShieldAlert, ShieldCheck } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Comparison() {
   return (
-    <section className="py-24 bg-brand-black relative border-t border-white/5 overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-500/5 blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col items-center text-center mb-20">
-          <span className="text-[10px] font-mono tracking-[0.3em] text-brand-platinum/30 uppercase mb-6">
-            EL CAMBIO DE NIVEL
-          </span>
-          <h2 className="text-4xl md:text-6xl font-display font-medium text-brand-white mb-6 uppercase tracking-tighter leading-none">
-            De mandar fotos <br className="hidden md:block" /> a <span className="text-brand-accent italic">vender de verdad.</span>
+    <section className="py-24 bg-brand-black relative border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-display font-medium text-brand-white mb-6 uppercase tracking-tight">
+            De "te mando las fotos" <br className="hidden md:block" /> a "entrás, ves y pedís".
           </h2>
+          <p className="text-brand-platinum/60 max-w-2xl mx-auto font-light">
+            No pierdas ventas por procesos lentos o diseños improvisados.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-white/10 rounded-[40px] overflow-hidden border border-white/10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-0 border border-white/10 rounded-3xl overflow-hidden">
           {/* ANTES */}
-          <div className="p-10 md:p-20 bg-brand-black/40 backdrop-blur-xl relative group">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="w-10 h-10 rounded-2xl bg-red-500/10 flex items-center justify-center text-red-500">
-                <ShieldAlert size={24} />
+          <div className="p-8 md:p-12 bg-white/[0.02] relative border-b md:border-b-0 md:border-r border-white/10">
+            <div className="flex items-center gap-2 mb-8">
+              <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center text-red-500">
+                <X size={20} />
               </div>
-              <span className="text-2xl font-display font-black text-red-500 uppercase tracking-tight italic">Status Quo</span>
+              <span className="text-xl font-display font-bold text-red-500 uppercase tracking-widest">ANTES</span>
             </div>
             
-            <ul className="space-y-8">
+            <ul className="space-y-6">
               {[
-                'Mandar un PDF gigante que nadie abre',
-                'Un link de Instagram que no lleva a nada',
-                'Menú en una foto borrosa y poco apetecible',
-                'Perder 20 minutos explicando precios por chat',
-                'Tu negocio se ve "pequeño" o improvisado',
-                'Proceso de compra lento y frustrante'
+                'Fotos sueltas de baja calidad',
+                'PDF pesado que nadie descarga',
+                'Menú borroso en una foto de cámara',
+                'Link vacío en Instagram (solo texto)',
+                'Promociones que se pierden en historias',
+                'WhatsApp desordenado con mil preguntas'
               ].map((item, i) => (
                 <motion.li
                   key={i}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-start gap-4 text-brand-platinum/30 decoration-red-500/30 group-hover:text-brand-platinum/50 transition-colors"
+                  className="flex items-center gap-4 text-brand-platinum/40 line-through decoration-red-500/30"
                 >
-                  <X className="text-red-500/40 shrink-0 mt-1" size={18} />
-                  <span className="font-light text-lg leading-tight italic line-through decoration-1">{item}</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-red-500/30 shrink-0" />
+                  <span className="font-light">{item}</span>
                 </motion.li>
               ))}
             </ul>
+
+            <div className="mt-12 p-6 rounded-2xl border border-white/5 bg-brand-black/40 grayscale opacity-40">
+               <div className="h-4 w-32 bg-white/10 rounded mb-4" />
+               <div className="h-24 w-full bg-white/5 rounded" />
+            </div>
           </div>
 
           {/* DESPUÉS */}
-          <div className="p-10 md:p-20 bg-brand-white relative group">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="w-10 h-10 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent">
-                <ShieldCheck size={24} />
-              </div>
-              <span className="text-2xl font-display font-black text-brand-black uppercase tracking-tight italic">Impacto Nuvro</span>
+          <div className="p-8 md:p-12 bg-brand-accent/5 relative">
+            <div className="absolute top-0 right-0 p-8">
+               <div className="w-12 h-12 rounded-full bg-brand-accent animate-pulse blur-2xl opacity-20" />
             </div>
 
-            <ul className="space-y-8">
+            <div className="flex items-center gap-2 mb-8 uppercase tracking-widest">
+              <div className="w-8 h-8 rounded-full bg-brand-accent flex items-center justify-center text-brand-white">
+                <Check size={20} />
+              </div>
+              <span className="text-xl font-display font-bold text-brand-accent">DESPUÉS</span>
+            </div>
+
+            <ul className="space-y-6">
               {[
-                'Link único diseñado para vender rápido',
-                'QR de alta resolución que refleja calidad',
-                'Experiencia fluida, visual y mobile-first',
-                'WhatsApp automatizado listo para el pedido',
-                'Tu marca se percibe como de otra liga',
-                'Cero fricción: el cliente ve, elige y paga'
+                'Link único, rápido y compartible',
+                'QR claro y estético de alta resolución',
+                'Llamados a la acción directos al grano',
+                'WhatsApp conectado y automatizado',
+                'Diseño visual profesional y moderno',
+                'Producto fácil de entender y pedir'
               ].map((item, i) => (
                 <motion.li
                   key={i}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-start gap-4 text-brand-black"
+                  className="flex items-center gap-4 text-brand-white"
                 >
-                  <Check className="text-brand-accent shrink-0 mt-1" size={20} />
-                  <span className="font-bold text-lg leading-tight">{item}</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-brand-accent shrink-0 shadow-[0_0_8px_rgba(0,102,255,1)]" />
+                  <span className="font-light">{item}</span>
                 </motion.li>
               ))}
             </ul>
 
-            <div className="mt-16 p-8 rounded-3xl bg-brand-black text-brand-white shadow-2xl rotate-1 group-hover:rotate-0 transition-transform duration-500">
-               <div className="flex items-center justify-between mb-4">
-                 <div className="h-2 w-12 bg-brand-accent rounded-full" />
-                 <div className="text-[10px] font-mono text-brand-accent uppercase tracking-widest">Resultado Real</div>
+            <div className="mt-12 p-6 rounded-2xl border border-brand-accent/30 bg-brand-accent/10 shadow-2xl shadow-brand-accent/10">
+               <div className="h-4 w-40 bg-brand-accent/40 rounded mb-4" />
+               <div className="flex gap-2">
+                 <div className="h-12 w-12 bg-brand-accent/20 rounded-lg" />
+                 <div className="flex-1 space-y-2">
+                   <div className="h-4 w-full bg-white/10 rounded" />
+                   <div className="h-4 w-24 bg-white/10 rounded" />
+                 </div>
                </div>
-               <p className="text-xl font-display font-medium tracking-tight">"Pasamos de explicar por chat a solo recibir pedidos."</p>
             </div>
           </div>
         </div>

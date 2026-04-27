@@ -1,60 +1,50 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 
 export default function Founder() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "center center"]
+  });
+
+  const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <section className="py-24 md:py-32 bg-brand-black/40 relative border-t border-white/5">
+    <section ref={containerRef} className="py-24 md:py-32 bg-brand-black relative border-t border-brand-accent/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 mb-10 lg:mb-0">
-            <div className="aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-white/10 bg-brand-dark/50 relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/20 to-transparent animate-pulse" />
-              <img 
-                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/hf_20260326_192810_29431f91-08f5-4a98-952e-964a99307e80%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi9oZl8yMDI2MDMyNl8xOTI4MTBfMjk0MzFmOTEtMDhmNS00YTk4LTk1MmUtOTY0YTk5MzA3ZTgwICgxKS5wbmciLCJpYXQiOjE3NzU5ODYxODIsImV4cCI6MTgwNzUyMjE4Mn0.nmCRljTgHh-PAtusyBD_IlaKjMEn3TiEUc6Ul7y7S7I" 
-                alt="Anderson Agüero Lara - Fundador de NUVRO ENGINEER" 
-                className="w-full h-full object-cover object-top grayscale-[30%] contrast-[1.1] group-hover:grayscale-0 transition-all duration-700 relative z-10"
-                referrerPolicy="no-referrer"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.opacity = '0';
-                }}
-              />
-              <div className="absolute inset-0 flex items-center justify-center text-brand-platinum/20 font-display font-medium text-4xl uppercase px-12 text-center leading-none tracking-tighter">
-                 Anderson Agüero
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent z-20" />
-            </div>
-          </div>
-          
-          <div className="lg:col-span-7 lg:pl-12">
-            <h2 className="text-sm font-mono tracking-widest text-brand-platinum/50 uppercase mb-4">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-xs font-mono tracking-widest text-brand-platinum/50 uppercase mb-4 block">
               07. Detrás de la firma
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif italic text-brand-white leading-tight mb-8">
+              No somos una agencia "full-service". Somos ingenieros de producto.
             </h2>
-            <h3 className="text-3xl md:text-4xl font-display font-medium text-brand-white leading-tight mb-8">
-              Anderson Agüero Lara
-            </h3>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-lg md:text-xl text-brand-platinum/80 leading-relaxed font-light mb-6"
-            >
-              Soy ingeniero de software y diseñador enfocado en resultados. Fundé Nuvro Engineer al ver cómo negocios excelentes perdían clientes por culpa de webs genéricas y procesos manuales.
-            </motion.p>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-lg md:text-xl text-brand-platinum/80 leading-relaxed font-light mb-10"
-            >
-              Mi objetivo es traducir tu experiencia y calidad en un sistema digital que comunique autoridad, genere confianza y cierre más ventas de forma automática.
-            </motion.p>
-            
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium text-brand-platinum/80">
-              <span className="w-2 h-2 rounded-full bg-brand-accent" />
-              Basado en Costa Rica
+            <p className="text-lg text-brand-platinum/60 font-light leading-relaxed mb-6">
+              Las agencias tradicionales sobre-prometen y delegan el trabajo a juniors. Nosotros tomamos un número limitado de negocios cada año y construimos herramientas robustas, enfocadas en rentabilidad y rendimiento.
+            </p>
+            <p className="text-lg text-brand-platinum/60 font-light leading-relaxed">
+              Trabajás directamente con quien escribe el código de tu negocio.
+            </p>
+          </div>
+          <div className="flex flex-col items-center lg:items-end justify-center">
+            {/* Signature SVG path drawing effect */}
+            <div className="w-full max-w-sm mb-6">
+              <svg viewBox="0 0 400 150" fill="none" className="w-full stroke-[#F5F5F5] stroke-[2] drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+                <motion.path 
+                  d="M40 90 C 70 50, 60 10, 80 40 S 90 120, 110 80 C 130 50, 140 70, 150 90 S 140 130, 170 100 C 200 60, 220 50, 240 80 S 230 140, 260 100 C 290 60, 310 70, 330 90" 
+                  style={{ pathLength }}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="text-right">
+              <div className="text-[11px] font-mono tracking-widest uppercase text-brand-platinum/40">
+                Founder · Engineer · Costa Rica
+              </div>
             </div>
           </div>
         </div>
