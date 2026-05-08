@@ -119,12 +119,71 @@
     -webkit-backdrop-filter: blur(12px);
   }
 
-  .service-card {
-    border-left: 3px solid var(--service-color);
+  .precision-card,
+  .service-card,
+  .case-card,
+  .custom-row {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .precision-card::before,
+  .service-card::before,
+  .case-card::before,
+  .custom-row::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(255,255,255,0.032) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: 0;
+    transition: opacity 220ms ease;
+    z-index: -1;
+  }
+
+  .precision-card::after,
+  .service-card::after,
+  .case-card::after,
+  .custom-row::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 34px;
+    height: 34px;
+    pointer-events: none;
+    border-top: 1px solid rgba(255,255,255,0.32);
+    border-right: 1px solid rgba(255,255,255,0.32);
+    opacity: 0.7;
+    transition: border-color 220ms ease, opacity 220ms ease, transform 220ms ease;
+  }
+
+  .service-card::after {
+    border-color: color-mix(in srgb, var(--service-color) 72%, white 18%);
+  }
+
+  .precision-card:hover::before,
+  .service-card:hover::before,
+  .case-card:hover::before,
+  .custom-row:hover::before {
+    opacity: 1;
+  }
+
+  .precision-card:hover::after,
+  .service-card:hover::after,
+  .case-card:hover::after,
+  .custom-row:hover::after {
+    opacity: 1;
+    transform: translate(-2px, 2px);
   }
 
   .service-card:hover {
-    box-shadow: 0 0 28px color-mix(in srgb, var(--service-color) 22%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--service-color) 34%, transparent),
+      0 24px 70px rgba(0, 0, 0, 0.38);
   }
 
   .animate-scan {

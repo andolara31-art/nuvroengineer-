@@ -81,7 +81,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="relative min-h-[240px] overflow-hidden border border-white/10 bg-[#111111] p-6"
+            className="precision-card relative min-h-[240px] overflow-hidden border border-white/10 bg-[#111111] p-6"
           >
             <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0_40%,rgba(43,108,176,0.16)_40.2%,transparent_58%)]" />
             <div className="relative z-10 flex h-full flex-col justify-between gap-8">
@@ -116,7 +116,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className={`group overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] shadow-xl shadow-black/5 transition duration-300 hover:scale-[1.02] hover:border-[#2B6CB0]/40 ${
+              className={`case-card group overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] shadow-xl shadow-black/5 transition duration-300 hover:scale-[1.015] hover:border-[#2B6CB0]/40 ${
                 project.featured ? 'lg:col-span-6 xl:grid xl:grid-cols-[1.1fr_0.9fr]' : 'lg:col-span-3'
               }`}
             >
@@ -139,27 +139,36 @@ export default function Projects() {
               </div>
 
               <div className="flex h-full flex-col p-7 md:p-8">
-                <div className="mb-8 flex items-start justify-between gap-6">
-                  <h3 className="font-display text-4xl font-black uppercase leading-none text-white md:text-5xl">
-                    {project.title}
-                  </h3>
-                  <span className="font-display text-5xl font-black text-white/18">
+                <div className="mb-7 flex items-center justify-between gap-6 border-b border-white/10 pb-5">
+                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/38">
+                    case file
+                  </span>
+                  <span className="font-display text-5xl font-black leading-none text-white/18">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                 </div>
 
-                <div className="grid gap-4">
-                  <div>
-                    <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-[#9CA3AF]">Problema Abordado</span>
-                    <p className="text-sm leading-snug text-white">{project.problem}</p>
+                <div className="mb-8">
+                  <h3 className="font-display text-[clamp(2.6rem,4.8vw,5.5rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
+                    {project.title}
+                  </h3>
+                  <span className="mt-4 inline-flex border border-white/10 bg-white/[0.03] px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/58">
+                    {project.type}
+                  </span>
+                </div>
+
+                <div className="grid border-y border-white/10">
+                  <div className="grid gap-3 border-b border-white/10 py-4 md:grid-cols-[140px_1fr]">
+                    <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#9CA3AF]">Problema</span>
+                    <p className="text-sm font-medium leading-snug text-white">{project.problem}</p>
                   </div>
-                  <div>
-                    <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-white/65">Sistema Construido</span>
+                  <div className="grid gap-3 border-b border-white/10 py-4 md:grid-cols-[140px_1fr]">
+                    <span className="text-[10px] font-black uppercase tracking-[0.22em] text-white/65">Sistema</span>
                     <p className="text-sm font-medium leading-snug text-white">{project.system}</p>
                   </div>
-                  <div>
-                    <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-[#9CA3AF]">Enfoque</span>
-                    <p className="text-sm leading-snug text-white">{project.approach}</p>
+                  <div className="grid gap-3 py-4 md:grid-cols-[140px_1fr]">
+                    <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#9CA3AF]">Enfoque</span>
+                    <p className="text-sm font-medium leading-snug text-white">{project.approach}</p>
                   </div>
                 </div>
 

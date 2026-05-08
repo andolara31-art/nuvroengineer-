@@ -99,7 +99,7 @@ export default function NuvroCustom() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: idx * 0.07 }}
-              className="group grid overflow-hidden border-b border-[rgba(255,255,255,0.06)] border-l-[3px] border-l-transparent bg-[#111111] backdrop-blur-sm transition-[background-color,border-color] duration-200 ease-in hover:border-l-[#2B6CB0] hover:bg-[#0F0F0F] md:grid-cols-[220px_1fr_220px]"
+              className="custom-row group grid overflow-hidden border border-white/[0.06] bg-[#111111] backdrop-blur-sm transition-[background-color,border-color,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-[#2B6CB0]/45 hover:bg-[#0F0F0F] md:grid-cols-[220px_1fr_220px]"
             >
               <div className="relative h-48 overflow-hidden bg-[#0A0A0A] md:h-full">
                 <img
@@ -115,15 +115,23 @@ export default function NuvroCustom() {
                   {service.icon}
                 </div>
                 <div>
+                  <div className="mb-5 flex flex-wrap items-center gap-3">
+                    <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/35">
+                      system layer
+                    </span>
+                    <span className="h-px w-12 bg-[#2B6CB0]/70" />
+                  </div>
                   <div className="mb-4 flex flex-wrap items-center gap-3">
-                    <h3 className="font-display text-4xl font-black uppercase leading-none tracking-wide">
+                    <h3 className="font-display text-[clamp(2.5rem,4.5vw,5rem)] font-black uppercase leading-[0.82] tracking-wide">
                       {service.title}
                     </h3>
                     <span className="border border-white/10 bg-white/[0.03] px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/58">
                       {service.tag}
                     </span>
                   </div>
-                  <p className="max-w-3xl text-lg leading-relaxed text-white/58">{service.desc}</p>
+                  <p className="max-w-3xl border-t border-white/10 pt-5 text-lg leading-relaxed text-white/58">
+                    {service.desc}
+                  </p>
                 </div>
               </div>
 

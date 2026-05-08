@@ -102,16 +102,28 @@ export default function NuvroExpress() {
               Microproductos con pinta de marca grande.
             </motion.h2>
           </div>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="max-w-2xl self-end text-xl font-medium leading-relaxed text-[#9CA3AF]"
+            className="self-end"
           >
-            Piezas digitales rápidas para negocios que necesitan verse mejor y vender sin esperar
-            meses: menú, link bio, catálogo, invitación, QR comercial y landings promocionales.
-          </motion.p>
+            <p className="max-w-2xl text-xl font-medium leading-relaxed text-[#9CA3AF]">
+              Piezas digitales rápidas para negocios que necesitan verse mejor y vender sin esperar
+              meses: menú, link bio, catálogo, invitación, QR comercial y landings promocionales.
+            </p>
+            <div className="mt-8 grid grid-cols-3 border border-white/10 bg-[#0A0A0A]/40 text-center">
+              {['fricción', 'presencia', 'acción'].map((item, index) => (
+                <div key={item} className="border-r border-white/10 px-3 py-4 last:border-r-0">
+                  <span className="block font-display text-2xl font-black text-white/80">0{index + 1}</span>
+                  <span className="mt-1 block text-[10px] font-black uppercase tracking-[0.22em] text-white/42">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         <div className="grid auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -123,7 +135,7 @@ export default function NuvroExpress() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: (idx % 4) * 0.07 }}
-              className={`service-card group flex min-h-[500px] flex-col overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] transition duration-300 hover:-translate-y-1 hover:border-[var(--service-color)] hover:bg-[#1A1A1A] ${
+              className={`service-card group flex min-h-[500px] flex-col overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] transition duration-300 hover:-translate-y-1 hover:border-[var(--service-color)] hover:bg-[#0F0F0F] ${
                 idx === 0 ? 'md:col-span-2 lg:col-span-2 lg:row-span-2 lg:min-h-[760px]' : ''
               }`}
             >
@@ -134,27 +146,47 @@ export default function NuvroExpress() {
                   className="h-full w-full object-cover opacity-88 transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(7,17,31,0.06),_rgba(7,17,31,0.78))]" />
-                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center border border-white/25 bg-[#0A0A0A]/35 text-[var(--service-color)] backdrop-blur-md">
+                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center border border-white/25 bg-[#0A0A0A]/55 text-white backdrop-blur-md">
                   {prod.icon}
                 </div>
-                <div className="absolute bottom-4 right-4 font-display text-5xl font-black text-[var(--service-color)]">
+                <div className="absolute bottom-4 right-4 font-display text-5xl font-black text-white/24">
                   {String(idx + 1).padStart(2, '0')}
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-3xl font-black uppercase leading-none text-white">
+              <div className="flex flex-1 flex-col p-6 md:p-7">
+                <div className="mb-5 flex items-center justify-between gap-4 border-b border-white/10 pb-4">
+                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/40">
+                    módulo {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <span className="h-px w-16 bg-[var(--service-color)] opacity-70" />
+                </div>
+
+                <h3 className="font-display text-[clamp(2.25rem,3.2vw,4.4rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
                   {prod.title}
                 </h3>
-                <p className="mt-4 border-t border-white/10 pt-4 text-sm font-black uppercase tracking-[0.12em] text-white/[0.45]">
-                  {prod.pain}
-                </p>
-                <p className="mt-4 flex-1 text-base leading-relaxed text-[#9CA3AF]">{prod.desc}</p>
+                <div className="mt-7 grid gap-5">
+                  <div>
+                    <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.22em] text-white/38">
+                      punto de fricción
+                    </span>
+                    <p className="text-sm font-black uppercase leading-snug tracking-[0.12em] text-white/[0.52]">
+                      {prod.pain}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.22em] text-white/38">
+                      sistema entregable
+                    </span>
+                    <p className="text-base leading-relaxed text-[#9CA3AF]">{prod.desc}</p>
+                  </div>
+                </div>
+                <div className="flex-1" />
                 <a
                   href={`https://wa.me/50671757171?text=${encodeURIComponent(`Hola NUVRO, quiero info sobre: ${prod.title}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex items-center justify-between gap-4 border border-white/10 px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-white transition duration-200 hover:border-[var(--service-color)] hover:bg-[var(--service-color)] hover:text-[#0A0A0A] active:scale-[0.98]"
+                  className="mt-8 inline-flex items-center justify-between gap-4 border border-white/10 px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-white transition duration-200 hover:border-[var(--service-color)] hover:bg-[#FFFFFF] hover:text-[#0A0A0A] active:scale-[0.98]"
                 >
                   {prod.cta}
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />

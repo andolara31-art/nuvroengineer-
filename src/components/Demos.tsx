@@ -97,10 +97,10 @@ export default function Demos() {
             <button
               key={d.id}
               onClick={() => setActiveTab(d.id)}
-              className={`px-5 py-2.5 rounded-full text-sm font-bold uppercase transition-all duration-300 ${
+              className={`border px-5 py-2.5 text-sm font-bold uppercase tracking-[0.08em] transition-all duration-300 ${
                 activeTab === d.id 
-                ? 'bg-[#FFFFFF] text-[#0A0A0A] shadow-lg shadow-black/20 scale-105'
-                : 'bg-transparent text-[#9CA3AF] border border-[rgba(255,255,255,0.15)] hover:text-white'
+                ? 'border-white bg-[#FFFFFF] text-[#0A0A0A] shadow-lg shadow-black/20'
+                : 'border-[rgba(255,255,255,0.15)] bg-transparent text-[#9CA3AF] hover:border-white/40 hover:text-white'
               }`}
             >
               {d.label}
@@ -108,7 +108,7 @@ export default function Demos() {
           ))}
         </div>
 
-        <div className="bg-[#111111] border border-[rgba(255,255,255,0.1)] rounded-[32px] overflow-hidden p-6 shadow-xl shadow-black/5 relative max-w-5xl mx-auto">
+        <div className="precision-card relative mx-auto max-w-5xl overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#111111] p-6 shadow-xl shadow-black/5">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeDemo.id}
@@ -116,9 +116,9 @@ export default function Demos() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="flex flex-col md:flex-row gap-8 items-center"
+              className="grid gap-8 md:grid-cols-[1.05fr_0.95fr] md:items-stretch"
             >
-              <div className="w-full md:w-1/2 aspect-[4/3] rounded-[24px] overflow-hidden relative">
+              <div className="relative aspect-[4/3] w-full overflow-hidden border border-white/10">
                 <img 
                   src={activeDemo.image}
                   alt={activeDemo.title}
@@ -126,23 +126,26 @@ export default function Demos() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute top-4 left-4 bg-[#111111]/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wider">
+                <div className="absolute left-4 top-4 border border-white/15 bg-[#111111]/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
                   PREVIEW: {activeDemo.label}
                 </div>
               </div>
               
-              <div className="w-full md:w-1/2 flex flex-col items-start p-4">
-                <h3 className="text-3xl font-display font-bold text-white mb-4">
+              <div className="flex flex-col items-start border-y border-white/10 p-4 md:p-8">
+                <span className="mb-5 text-[10px] font-black uppercase tracking-[0.24em] text-white/38">
+                  visual prototype
+                </span>
+                <h3 className="mb-5 font-display text-[clamp(2.6rem,4.8vw,5rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
                   {activeDemo.title}
                 </h3>
-                <p className="text-[#9CA3AF] font-sans leading-relaxed text-lg mb-8">
+                <p className="mb-8 border-t border-white/10 pt-5 font-sans text-lg leading-relaxed text-[#9CA3AF]">
                   "{activeDemo.desc}"
                 </p>
                 <a 
                   href={`https://wa.me/50671757171?text=Hola NUVRO, quiero ver un demo de ${activeDemo.label}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#111111] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#2B6CB0] hover:text-white transition-colors group shadow-md"
+                  className="mt-auto inline-flex items-center gap-3 border border-white/10 bg-[#111111] px-6 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-md transition-colors hover:bg-[#2B6CB0] hover:text-white group"
                 >
                   Pedir Demo <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>

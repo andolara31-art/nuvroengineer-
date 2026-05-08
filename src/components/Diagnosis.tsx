@@ -62,7 +62,7 @@ export default function Diagnosis() {
           </motion.p>
         </div>
 
-        <div className="border-y border-white/10 bg-[#111111] backdrop-blur-sm">
+        <div className="precision-card border-y border-white/10 bg-[#111111] backdrop-blur-sm">
           <div className="grid grid-cols-[0.9fr_1.1fr] border-b border-white/10 text-[10px] font-black uppercase tracking-[0.24em] text-[#9CA3AF]">
             <div className="px-4 py-4 md:px-6">Fuga actual</div>
             <div className="border-l border-white/10 px-4 py-4 text-[#2B6CB0] md:px-6">
@@ -79,13 +79,18 @@ export default function Diagnosis() {
               transition={{ delay: index * 0.06 }}
               className="grid min-h-28 grid-cols-[0.9fr_1.1fr] border-b border-white/10 last:border-b-0"
             >
-              <div className="flex items-start gap-4 bg-[#111111] px-4 py-6 md:px-6">
+              <div className="grid gap-4 bg-[#111111] px-4 py-6 md:grid-cols-[46px_1fr] md:px-6">
+                <span className="font-display text-3xl font-black leading-none text-white/12">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div className="flex items-start gap-4">
                 <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center border border-[#6B7280]/25 text-[#6B7280]">
                   <X size={16} />
                 </span>
                 <p className="text-base font-semibold leading-snug text-[#9CA3AF] md:text-lg">{item.before}</p>
+                </div>
               </div>
-              <div className="flex items-start gap-4 border-l-2 border-l-[#2B6CB0] bg-[#2B6CB0]/10 px-4 py-6 md:px-6">
+              <div className="flex items-start gap-4 border-l border-l-[#2B6CB0]/55 bg-[#2B6CB0]/10 px-4 py-6 md:px-6">
                 <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center text-[#2B6CB0]">
                   <Check size={16} strokeWidth={3} />
                 </span>
