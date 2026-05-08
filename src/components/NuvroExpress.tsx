@@ -1,151 +1,159 @@
 import { motion } from 'motion/react';
-import { QrCode, Link as LinkIcon, Mail, ShoppingCart, Layout, MessageCircle, ScanLine, ArrowRight } from 'lucide-react';
+import {
+  ArrowRight,
+  Layout,
+  Link as LinkIcon,
+  Mail,
+  MessageCircle,
+  QrCode,
+  ScanLine,
+  ShoppingCart,
+} from 'lucide-react';
 
 const products = [
   {
-    title: "Menú Digital QR",
-    pain: "Tu menú no debería ser una foto borrosa.",
-    desc: "Un menú visual, claro y compartible para que el cliente vea, elija y pida más fácil.",
-    cta: "Quiero menú QR",
-    icon: <QrCode size={24} />,
-    color: 'bg-orange-50 text-orange-600 border-orange-200',
-    iconColor: 'bg-orange-500 text-white',
+    title: 'Menú Digital QR',
+    pain: 'Tu menú no debería ser una foto borrosa.',
+    desc: 'Un menú visual, claro y compartible para que el cliente vea, elija y pida más fácil.',
+    cta: 'Quiero menú QR',
+    icon: <QrCode size={22} />,
     image: '/assets/nuvro/menu-qr.png',
   },
   {
-    title: "Link Bio Vivo",
-    pain: "Un link lleno de botones no siempre guía.",
-    desc: "Un mini sitio mobile-first que lleva al cliente a WhatsApp, ubicación, servicios o reserva.",
-    cta: "Quiero link bio",
-    icon: <LinkIcon size={24} />,
-    color: 'bg-blue-50 text-blue-600 border-blue-200',
-    iconColor: 'bg-blue-600 text-white',
+    title: 'Link Bio Vivo',
+    pain: 'Un link lleno de botones no siempre guía.',
+    desc: 'Un mini sitio mobile-first que lleva al cliente a WhatsApp, ubicación, servicios o reserva.',
+    cta: 'Quiero link bio',
+    icon: <LinkIcon size={22} />,
     image: '/assets/nuvro/link-bio.png',
   },
   {
-    title: "Invitación Digital",
-    pain: "Una invitación plana se olvida rápido.",
-    desc: "Invitaciones con ubicación, RSVP, calendario y experiencia visual memorable.",
-    cta: "Quiero invitación",
-    icon: <Mail size={24} />,
-    color: 'bg-pink-50 text-pink-600 border-pink-200',
-    iconColor: 'bg-pink-500 text-white',
+    title: 'Invitación Digital',
+    pain: 'Una invitación plana se olvida rápido.',
+    desc: 'Invitaciones con ubicación, RSVP, calendario y experiencia visual memorable.',
+    cta: 'Quiero invitación',
+    icon: <Mail size={22} />,
     image: '/assets/nuvro/digital-invitation.png',
   },
   {
-    title: "Catálogo Express",
-    pain: "No mandés 30 fotos sueltas por WhatsApp.",
-    desc: "Una vitrina digital con productos, precios, categorías y botón de consulta.",
-    cta: "Quiero catálogo",
-    icon: <ShoppingCart size={24} />,
-    color: 'bg-emerald-50 text-emerald-600 border-emerald-200',
-    iconColor: 'bg-emerald-500 text-white',
+    title: 'Catálogo Express',
+    pain: 'No mandés 30 fotos sueltas por WhatsApp.',
+    desc: 'Una vitrina digital con productos, precios, categorías y botón de consulta.',
+    cta: 'Quiero catálogo',
+    icon: <ShoppingCart size={22} />,
     image: '/assets/nuvro/catalogo-express.png',
   },
   {
-    title: "Landing de Promoción",
-    pain: "Una promo en historia desaparece.",
-    desc: "Página rápida para vender una oferta, evento, producto o servicio con CTA claro.",
-    cta: "Quiero landing",
-    icon: <Layout size={24} />,
-    color: 'bg-rose-50 text-rose-600 border-rose-200',
-    iconColor: 'bg-rose-500 text-white',
+    title: 'Landing de Promoción',
+    pain: 'Una promo en historia desaparece.',
+    desc: 'Página rápida para vender una oferta, evento, producto o servicio con CTA claro.',
+    cta: 'Quiero landing',
+    icon: <Layout size={22} />,
     image: '/assets/nuvro/landing-pages.png',
   },
   {
-    title: "QR Comercial",
-    pain: "Un QR mal diseñado no comunica valor.",
-    desc: "QR para mesas, empaques, mostradores o tarjetas con experiencia digital detrás.",
-    cta: "Quiero QR",
-    icon: <ScanLine size={24} />,
-    color: 'bg-amber-50 text-amber-600 border-amber-200',
-    iconColor: 'bg-amber-500 text-white',
+    title: 'QR Comercial',
+    pain: 'Un QR mal diseñado no comunica valor.',
+    desc: 'QR para mesas, empaques, mostradores o tarjetas con experiencia digital detrás.',
+    cta: 'Quiero QR',
+    icon: <ScanLine size={22} />,
     image: '/assets/nuvro/qr-comercial.png',
   },
   {
-    title: "Kit WhatsApp Business",
-    pain: "Responder rápido no sirve si todo está desordenado.",
-    desc: "Mensajes, respuestas rápidas, etiquetas y flujo inicial para atender mejor.",
-    cta: "Ordenar WhatsApp",
-    icon: <MessageCircle size={24} />,
-    color: 'bg-teal-50 text-teal-600 border-teal-200',
-    iconColor: 'bg-teal-500 text-white',
+    title: 'Kit WhatsApp Business',
+    pain: 'Responder rápido no sirve si todo está desordenado.',
+    desc: 'Mensajes, respuestas rápidas, etiquetas y flujo inicial para atender mejor.',
+    cta: 'Ordenar WhatsApp',
+    icon: <MessageCircle size={22} />,
     image: '/assets/nuvro/whatsapp-business.png',
-  }
+  },
 ];
 
 export default function NuvroExpress() {
   return (
-    <section id="express" className="py-24 md:py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-        
-        {/* Header Section */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="px-4 py-2 bg-[#0066FF]/10 text-[#0066FF] rounded-full text-sm font-bold tracking-widest uppercase mb-6"
-          >
-            Nuvro Express
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-display font-bold text-[#111827] mb-6 leading-tight tracking-tight"
-          >
-            Soluciones rápidas para verte mejor y vender más fácil.
-          </motion.h2>
+    <section id="express" className="relative overflow-hidden bg-[#fbfcff] py-24 text-[#07111f] md:py-32">
+      <div className="absolute inset-0 blueprint-light opacity-55" />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mb-16 grid gap-8 border-y border-[#07111f]/12 py-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-6 inline-flex items-center gap-3 bg-[#0066FF] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white diagonal-cut"
+            >
+              Nuvro Express
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.08 }}
+              className="max-w-2xl font-display text-[clamp(3rem,6vw,6.4rem)] font-black uppercase leading-[0.84]"
+            >
+              Microproductos con pinta de marca grande.
+            </motion.h2>
+          </div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-[#6B7280] font-sans"
+            transition={{ delay: 0.16 }}
+            className="max-w-2xl self-end text-xl font-medium leading-relaxed text-[#3e4b5d]"
           >
-            Microproductos digitales diseñados para negocios que necesitan una mejora visual y comercial sin esperar meses.
+            Piezas digitales rápidas para negocios que necesitan verse mejor y vender sin esperar
+            meses: menú, link bio, catálogo, invitación, QR comercial y landings promocionales.
           </motion.p>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {products.map((prod, idx) => (
-            <motion.div
+            <motion.article
               key={prod.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: (idx % 3) * 0.1 }}
-              className={`rounded-[32px] overflow-hidden group flex flex-col h-full border ${prod.color.split(' ')[2]} ${prod.color.split(' ')[0]} transition-all hover:shadow-xl hover:-translate-y-1`}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ delay: (idx % 4) * 0.07 }}
+              className={`group flex min-h-[500px] flex-col overflow-hidden border border-[#07111f]/12 bg-white transition duration-300 hover:-translate-y-1 hover:border-[#0066FF]/55 ${
+                idx === 0 || idx === 6 ? 'lg:col-span-2' : ''
+              }`}
             >
-              <div className="relative h-48 w-full overflow-hidden bg-gray-100">
-                <img 
-                  src={prod.image} 
-                  alt={prod.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              <div className="relative h-56 overflow-hidden bg-[#07111f]">
+                <img
+                  src={prod.image}
+                  alt={prod.title}
+                  className="h-full w-full object-cover opacity-88 transition duration-700 group-hover:scale-105"
                 />
-                <div className={`absolute top-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${prod.iconColor}`}>
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(7,17,31,0.06),_rgba(7,17,31,0.78))]" />
+                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center border border-white/25 bg-black/35 text-white backdrop-blur-md">
                   {prod.icon}
                 </div>
+                <div className="absolute bottom-4 right-4 font-display text-5xl font-black text-white/28">
+                  {String(idx + 1).padStart(2, '0')}
+                </div>
               </div>
-              
-              <div className="p-8 flex-1 flex flex-col bg-white">
-                <h3 className="text-2xl font-display font-bold text-[#111827] mb-3">{prod.title}</h3>
-                <p className="text-sm font-bold text-[#0066FF] mb-3">"{prod.pain}"</p>
-                <p className="text-[#6B7280] font-sans leading-relaxed mb-8 flex-1 text-[15px]">
-                  {prod.desc}
+
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-3xl font-black uppercase leading-none text-[#07111f]">
+                  {prod.title}
+                </h3>
+                <p className="mt-4 border-t border-[#07111f]/10 pt-4 text-sm font-black uppercase tracking-[0.12em] text-[#0066FF]">
+                  {prod.pain}
                 </p>
-                <a href={`https://wa.me/50671757171?text=${encodeURIComponent(`Hola NUVRO, quiero info sobre: ${prod.title}`)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full p-4 rounded-xl font-bold bg-[#111827] text-white hover:bg-[#0066FF] transition-colors group/btn shadow-md">
+                <p className="mt-4 flex-1 text-base leading-relaxed text-[#596678]">{prod.desc}</p>
+                <a
+                  href={`https://wa.me/50671757171?text=${encodeURIComponent(`Hola NUVRO, quiero info sobre: ${prod.title}`)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-8 inline-flex items-center justify-between gap-4 border border-[#07111f] px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-[#07111f] transition duration-200 hover:bg-[#07111f] hover:text-white active:scale-[0.98]"
+                >
                   {prod.cta}
-                  <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
-        
       </div>
     </section>
   );
