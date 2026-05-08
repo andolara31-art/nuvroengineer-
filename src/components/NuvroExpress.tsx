@@ -1,143 +1,151 @@
 import { motion } from 'motion/react';
-import { QrCode, MessageSquare, Link as LinkIcon, FileText, ShoppingBag, Send, CreditCard, Layout } from 'lucide-react';
+import { QrCode, Link as LinkIcon, Mail, ShoppingCart, Layout, MessageCircle, ScanLine, ArrowRight } from 'lucide-react';
 
 const products = [
   {
-    icon: <Send className="text-pink-400" />,
-    title: 'Invitaciones digitales animadas',
-    price: 'Desde: $10',
-    description: 'Para baby shower, cumpleaños, bautizos, bodas, revelaciones y eventos. Link compartible, música, ubicación y confirmación.',
-    cta: 'Crear invitación',
-    badge: 'Rápido',
-    accent: 'bg-pink-400'
+    title: "Menú Digital QR",
+    pain: "Tu menú no debería ser una foto borrosa.",
+    desc: "Un menú visual, claro y compartible para que el cliente vea, elija y pida más fácil.",
+    cta: "Quiero menú QR",
+    icon: <QrCode size={24} />,
+    color: 'bg-orange-50 text-orange-600 border-orange-200',
+    iconColor: 'bg-orange-500 text-white',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800',
   },
   {
-    icon: <QrCode className="text-orange-400" />,
-    title: 'Menú digital QR',
-    price: 'Desde: $25',
-    description: 'Para sodas, restaurantes, cafeterías y food trucks. Menú visual, categorías, fotos, precios, pedido por WhatsApp y QR impreso.',
-    cta: 'Quiero mi menú',
-    badge: 'QR',
-    accent: 'bg-orange-400'
+    title: "Link Bio Vivo",
+    pain: "Un link lleno de botones no siempre guía.",
+    desc: "Un mini sitio mobile-first que lleva al cliente a WhatsApp, ubicación, servicios o reserva.",
+    cta: "Quiero link bio",
+    icon: <LinkIcon size={24} />,
+    color: 'bg-blue-50 text-blue-600 border-blue-200',
+    iconColor: 'bg-blue-600 text-white',
+    image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800',
   },
   {
-    icon: <LinkIcon className="text-brand-blue" />,
-    title: 'Link Bio vivo',
-    price: 'Desde: $25',
-    description: 'Una mini landing para Instagram con servicios, precios, ubicación, agenda, catálogo y WhatsApp directo.',
-    cta: 'Crear Link Bio',
-    badge: 'Link',
-    accent: 'bg-brand-blue'
+    title: "Invitación Digital",
+    pain: "Una invitación plana se olvida rápido.",
+    desc: "Invitaciones con ubicación, RSVP, calendario y experiencia visual memorable.",
+    cta: "Quiero invitación",
+    icon: <Mail size={24} />,
+    color: 'bg-pink-50 text-pink-600 border-pink-200',
+    iconColor: 'bg-pink-500 text-white',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800',
   },
   {
-    icon: <ShoppingBag className="text-emerald-400" />,
-    title: 'Catálogo express',
-    price: 'Desde: $35',
-    description: 'Dejá de mandar 20 fotos por WhatsApp. Mostrá productos con categorías, precios y botón de pedido directo.',
-    cta: 'Armar catálogo',
-    badge: 'WhatsApp',
-    accent: 'bg-emerald-400'
+    title: "Catálogo Express",
+    pain: "No mandés 30 fotos sueltas por WhatsApp.",
+    desc: "Una vitrina digital con productos, precios, categorías y botón de consulta.",
+    cta: "Quiero catálogo",
+    icon: <ShoppingCart size={24} />,
+    color: 'bg-emerald-50 text-emerald-600 border-emerald-200',
+    iconColor: 'bg-emerald-500 text-white',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800',
   },
   {
-    icon: <Layout className="text-purple-400" />,
-    title: 'Página de promoción',
-    price: 'Desde: $49',
-    description: 'Una mini landing para ofertas, lanzamientos, combos o campañas puntuales. Diseño de alto impacto.',
-    cta: 'Lanzar promo',
-    badge: '24-72h',
-    accent: 'bg-purple-400'
+    title: "Landing de Promoción",
+    pain: "Una promo en historia desaparece.",
+    desc: "Página rápida para vender una oferta, evento, producto o servicio con CTA claro.",
+    cta: "Quiero landing",
+    icon: <Layout size={24} />,
+    color: 'bg-rose-50 text-rose-600 border-rose-200',
+    iconColor: 'bg-rose-500 text-white',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
   },
   {
-    icon: <MessageSquare className="text-brand-accent" />,
-    title: 'Kit WhatsApp Business',
-    price: 'Desde: $25',
-    description: 'Mensajes, respuestas rápidas, etiquetas, QR, catálogo básico, textos para estados y guion de cierre.',
-    cta: 'Ordenar WhatsApp',
-    badge: 'Rápido',
-    accent: 'bg-brand-accent'
+    title: "QR Comercial",
+    pain: "Un QR mal diseñado no comunica valor.",
+    desc: "QR para mesas, empaques, mostradores o tarjetas con experiencia digital detrás.",
+    cta: "Quiero QR",
+    icon: <ScanLine size={24} />,
+    color: 'bg-amber-50 text-amber-600 border-amber-200',
+    iconColor: 'bg-amber-500 text-white',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=800',
   },
   {
-    icon: <CreditCard className="text-indigo-400" />,
-    title: 'Tarjeta digital profesional',
-    price: 'Desde: $20',
-    description: 'Contacto, servicios, redes, ubicación, QR y botón para guardar contacto en una presentación profesional.',
-    cta: 'Crear tarjeta',
-    badge: 'QR',
-    accent: 'bg-indigo-400'
-  },
-  {
-    icon: <QrCode className="text-yellow-400" />,
-    title: 'QR comercial premium',
-    price: 'Desde: $10',
-    description: 'Un QR que no lleva a algo feo. Abre menú, WhatsApp, catálogo, ubicación, promoción o tarjeta digital.',
-    cta: 'Crear QR',
-    badge: 'QR',
-    accent: 'bg-yellow-400'
+    title: "Kit WhatsApp Business",
+    pain: "Responder rápido no sirve si todo está desordenado.",
+    desc: "Mensajes, respuestas rápidas, etiquetas y flujo inicial para atender mejor.",
+    cta: "Ordenar WhatsApp",
+    icon: <MessageCircle size={24} />,
+    color: 'bg-teal-50 text-teal-600 border-teal-200',
+    iconColor: 'bg-teal-500 text-white',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800',
   }
 ];
 
 export default function NuvroExpress() {
-  const whatsappUrl = (msg: string) => `https://wa.me/506XXXXXXXX?text=${encodeURIComponent(msg)}`;
-
   return (
-    <section id="express" className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="mb-16">
-          <span className="text-xs font-mono tracking-widest text-brand-accent uppercase mb-4 block">
-            01. NUVRO EXPRESS
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-medium text-brand-white leading-tight mb-6">
-            Productos digitales rápidos para <br className="hidden md:block" /> negocios que necesitan vender ya.
-          </h2>
-          <p className="text-lg text-brand-platinum/60 max-w-2xl font-light">
-            Links, QR y mini páginas diseñadas para que tu negocio se vea mejor, se comparta fácil y reciba más mensajes por WhatsApp.
-          </p>
+    <section id="express" className="py-24 md:py-32 bg-white relative">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
+        
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="px-4 py-2 bg-[#0066FF]/10 text-[#0066FF] rounded-full text-sm font-bold tracking-widest uppercase mb-6"
+          >
+            Nuvro Express
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-display font-bold text-[#111827] mb-6 leading-tight tracking-tight"
+          >
+            Soluciones rápidas para verte mejor y vender más fácil.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-[#6B7280] font-sans"
+          >
+            Microproductos digitales diseñados para negocios que necesitan una mejora visual y comercial sin esperar meses.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product, i) => (
+        {/* Products Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {products.map((prod, idx) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
+              key={prod.title}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="glass-card group p-6 rounded-2xl flex flex-col h-full hover:border-brand-accent/50 transition-all duration-300"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: (idx % 3) * 0.1 }}
+              className={`rounded-[32px] overflow-hidden group flex flex-col h-full border ${prod.color.split(' ')[2]} ${prod.color.split(' ')[0]} transition-all hover:shadow-xl hover:-translate-y-1`}
             >
-              <div className="flex justify-between items-start mb-6">
-                <div className="p-3 bg-white/5 rounded-xl group-hover:bg-brand-accent/10 transition-colors">
-                  {product.icon}
+              <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+                <img 
+                  src={prod.image} 
+                  alt={prod.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                />
+                <div className={`absolute top-4 left-4 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg ${prod.iconColor}`}>
+                  {prod.icon}
                 </div>
-                <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${product.accent} text-brand-black`}>
-                  {product.badge}
-                </span>
               </div>
               
-              <h3 className="text-xl font-display font-medium text-brand-white mb-2">
-                {product.title}
-              </h3>
-              
-              <div className="text-brand-accent font-bold text-sm mb-4">
-                {product.price}
-              </div>
-              
-              <p className="text-sm text-brand-platinum/60 mb-8 leading-relaxed font-light">
-                {product.description}
-              </p>
-              
-              <div className="mt-auto">
-                <a
-                  href={whatsappUrl(`Hola NUVRO, quiero ${product.cta.toLowerCase().includes('crear') ? 'crear una' : 'mi/un'} ${product.title.toLowerCase()} para mi negocio.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center py-3 rounded-xl bg-white/5 group-hover:bg-brand-accent text-brand-white font-medium text-sm transition-all duration-300"
-                >
-                  {product.cta}
+              <div className="p-8 flex-1 flex flex-col bg-white">
+                <h3 className="text-2xl font-display font-bold text-[#111827] mb-3">{prod.title}</h3>
+                <p className="text-sm font-bold text-[#0066FF] mb-3">"{prod.pain}"</p>
+                <p className="text-[#6B7280] font-sans leading-relaxed mb-8 flex-1 text-[15px]">
+                  {prod.desc}
+                </p>
+                <a href={`https://wa.me/50671757171?text=${encodeURIComponent(`Hola NUVRO, quiero info sobre: ${prod.title}`)}`} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full p-4 rounded-xl font-bold bg-[#111827] text-white hover:bg-[#0066FF] transition-colors group/btn shadow-md">
+                  {prod.cta}
+                  <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
                 </a>
               </div>
             </motion.div>
           ))}
         </div>
+        
       </div>
     </section>
   );

@@ -1,110 +1,123 @@
 import { motion } from 'motion/react';
-import { Layout, Smartphone, Database, Zap, Bot, Code } from 'lucide-react';
+import { Database, Zap, Laptop, ArrowRight, Settings, Cpu } from 'lucide-react';
 
-const services = [
+const customServices = [
   {
-    icon: <Layout className="text-brand-accent" />,
-    title: 'Landing Pages Pro',
-    description: 'Páginas diseñadas exclusivamente para convertir visitantes en clientes. Estructura de ventas agresiva.',
-    price: 'Desde $350'
+    icon: <Laptop size={20} />,
+    title: "Webs Premium",
+    desc: "Plataformas web construidas a medida. Diseño exclusivo, alto rendimiento y arquitecturas escalables."
   },
   {
-    icon: <Code className="text-indigo-400" />,
-    title: 'Webs Corporativas',
-    description: 'Sitios completos con secciones ilimitadas, blog, integración de servicios y diseño editorial premium.',
-    price: 'Desde $600'
+    icon: <Database size={20} />,
+    title: "CRM / Dashboards",
+    desc: "Visualización de datos en tiempo real, tableros de control y gestión centralizada de negocio."
   },
   {
-    icon: <Smartphone className="text-emerald-400" />,
-    title: 'Mini SaaS / MVP',
-    description: 'Desarrollamos la primera versión funcional de tu idea tecnológica en tiempo récord.',
-    price: 'Desde $1200'
+    icon: <Zap size={20} />,
+    title: "Automatización",
+    desc: "Integración de flujos de trabajo. Conectamos software para que opere de manera fluida y sin error humano."
   },
   {
-    icon: <Database className="text-orange-400" />,
-    title: 'Sistemas Internos',
-    description: 'Gestión de inventarios, CRMs a medida y herramientas que automatizan lo aburrido de tu oficina.',
-    price: 'Desde $800'
+    icon: <Settings size={20} />,
+    title: "Sistemas Internos",
+    desc: "Herramientas operativas privadas. Software hecho exactamente como tu equipo trabaja."
   },
   {
-    icon: <Bot className="text-brand-blue" />,
-    title: 'Agentes IA',
-    description: 'Chatbots inteligentes que responden por vos, agendan citas y filtran prospectos 24/7.',
-    price: 'Desde $500'
-  },
-  {
-    icon: <Zap className="text-brand-accent" />,
-    title: 'Automatizaciones',
-    description: 'Conectamos tus herramientas (Slack, Gmail, WhatsApp, Docs) para que trabajen solas.',
-    price: 'Cotización a medida'
+    icon: <Cpu size={20} />,
+    title: "IA Aplicada",
+    desc: "Modelos de inteligencia artificial integrados en tu negocio para análisis, soporte u optimización."
   }
 ];
 
 export default function NuvroCustom() {
-  const whatsappUrl = (msg: string) => `https://wa.me/506XXXXXXXX?text=${encodeURIComponent(msg)}`;
-
   return (
-    <section id="custom" className="py-24 md:py-32 bg-brand-dark/20 relative overflow-hidden">
-      {/* Glow effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-accent/5 blur-[120px] rounded-full pointer-events-none" />
-
+    <section id="custom" className="py-24 md:py-32 bg-[#050505] relative border-t border-white/5 overflow-hidden">
+      <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-[#0066FF]/5 blur-[150px] -z-10 rounded-full pointer-events-none" />
+      
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-20">
-          <span className="text-xs font-mono tracking-widest text-brand-accent uppercase mb-4 block">
-            NUVRO CUSTOM
-          </span>
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-brand-white mb-6">
-            Cuando necesitás algo más grande.
-          </h2>
-          <p className="text-brand-platinum/60 max-w-2xl mx-auto font-light">
-             Si tu negocio ya necesita una estructura más seria y robusta, NUVRO desarrolla experiencias digitales a medida de clase mundial.
-          </p>
+        
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 mb-6"
+          >
+            <div className="w-2 h-2 rounded-full bg-white/40" />
+            <span className="text-sm font-medium tracking-widest text-white/40 uppercase">Nuvro Custom</span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-5xl font-display font-bold text-white mb-6 leading-tight tracking-tight"
+          >
+            Cuando necesitás algo más grande, lo construimos a medida.
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-white/60 font-sans leading-relaxed mb-10"
+          >
+            Webs premium, CRM, dashboards, automatización, IA aplicada y sistemas internos diseñados según tu operación.
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <a 
+              href="https://wa.me/50671757171?text=Hola NUVRO, necesito un sistema custom"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all"
+            >
+              Hablar de un proyecto custom <ArrowRight size={18} />
+            </a>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, i) => (
+        {/* Technical Grid Layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {customServices.map((service, idx) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="glass-card hover:bg-white/[0.08] transition-all duration-300 p-8 rounded-3xl group"
+              transition={{ delay: idx * 0.1 }}
+              className={`bg-[#0A0A0A] border border-white/5 p-8 rounded-[32px] group hover:border-[#0066FF]/30 transition-all duration-300 relative ${idx === 4 ? 'lg:col-span-2' : ''}`}
             >
-              <div className="mb-6 p-4 bg-white/5 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-500">
-                {service.icon}
-              </div>
-              <h3 className="text-2xl font-display font-bold text-brand-white mb-4">
-                {service.title}
-              </h3>
-              <p className="text-brand-platinum/60 leading-relaxed font-light mb-8 text-sm">
-                {service.description}
-              </p>
-              <div className="flex items-center justify-between mt-auto">
-                 <span className="text-brand-accent font-mono text-xs font-bold uppercase tracking-wider">{service.price}</span>
-                 <a 
-                   href={whatsappUrl(`Hola NUVRO, quiero cotizar un proyecto custom: ${service.title}.`)}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="text-brand-white opacity-40 hover:opacity-100 transition-opacity"
-                 >
-                   <Zap size={20} />
-                 </a>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent rounded-[32px]" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white/40 group-hover:text-[#0066FF] transition-colors">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white tracking-wide">{service.title}</h3>
+                </div>
+                
+                <p className="text-white/50 font-sans leading-relaxed text-base">
+                  {service.desc}
+                </p>
+                
+                <div className="mt-8 pt-6 border-t border-white/5 w-full flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-widest text-[#0066FF] uppercase">Custom Solution</span>
+                  <ArrowRight size={16} className="text-[#0066FF] opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0" />
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-20 text-center">
-           <a
-              href={whatsappUrl("Hola NUVRO, quiero cotizar un proyecto grande a medida.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glow-button inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-brand-accent text-brand-white font-bold hover:scale-105 transition-all text-lg"
-           >
-              Cotizar proyecto grande
-           </a>
-        </div>
       </div>
     </section>
   );

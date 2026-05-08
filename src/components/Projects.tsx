@@ -1,157 +1,125 @@
 import { motion } from 'motion/react';
-import { ExternalLink, Github } from 'lucide-react';
-import { SplitText } from './ui/SplitText';
+import { ExternalLink, ArrowRight, FolderKanban } from 'lucide-react';
 
 const projects = [
   {
-    id: 1,
-    title: 'Cafeoteca Costa Rica',
-    type: 'DISEÑO WEB',
-    context: 'La única cafetería de Costa Rica en el top 100 mundial necesitaba una experiencia digital que reflejara la alta calidad de su producto de especialidad y la cálida hospitalidad de su espacio.',
-    solution: 'Desarrollamos una web editorial inmersiva con animaciones al scroll y un mapa interactivo para explorar las regiones cafetaleras del país.',
-    result: 'Una posición dominante en búsquedas internacionales y unaumento drástico en reservas directas a través del sitio.',
-    metric: '+45%',
-    metricLabel: 'RETENCIÓN DE USUARIO',
-    liveUrl: 'https://cafeoteca-website.vercel.app',
-    githubUrl: '#',
-    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/WhatsApp%20Image%202026-03-19%20at%2010.01.37%20PM.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvV2hhdHNBcHAgSW1hZ2UgMjAyNi0wMy0xOSBhdCAxMC4wMS4zNyBQTS5qcGVnIiwiaWF0IjoxNzczOTc5MzI2LCJleHAiOjE4MDU1MTUzMjZ9.61fpe52dUa76bgp7VCLG8i2wu04HrKNEZQe8Iv6XmuY',
+    title: "LeadPilot V3",
+    type: "CRM Custom",
+    problem: "Demora en respuesta a leads y pérdida de trazabilidad.",
+    system: "Plataforma de alta densidad para gestión de leads en tiempo real.",
+    approach: "Dashboard de ventas, Automatización de WhatsApp y Analítica.",
+    image: "https://images.unsplash.com/photo-1551288049-bbda38a8f1ad?q=80&w=1200",
   },
   {
-    id: 2,
-    title: 'LEADPILOT CRM',
-    type: 'MINI SAAS B2B',
-    context: 'Equipos comerciales perdiendo oportunidades por falta de seguimiento estructurado. Dependencia de hojas de cálculo lentas y propensas a errores.',
-    solution: 'Construimos un CRM ligero a medida enfocado exclusivamente en la simplicidad de uso y la velocidad de registro de nuevos leads.',
-    result: 'Equipos de ventas adoptando la herramienta en su primer día y una reducción masiva del tiempo administrativo.',
-    metric: '-12hrs',
-    metricLabel: 'CARGA ADMINISTRATIVA / SEMANA',
-    liveUrl: 'https://leadpilot-pi.vercel.app/',
-    githubUrl: '#',
-    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/hf_20260315_144821_292329d5-191d-46bd-a75f-d73a0598a277%20(1).png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvaGZfMjAyNjAzMTVfMTQ0ODIxXzI5MjMyOWQ1LTE5MWQtNDZiZC1hNzVmLWQ3M2EwNTk4YTI3NyAoMSkucG5nIiwiaWF0IjoxNzczNTg3MzQ1LCJleHAiOjE4MDUxMjMzNDV9.cT5J5jtOkiiYAfT7IVEFM1ujDVy88l4Us3h8VbubiQE',
+    title: "Clario Advisory",
+    type: "Web Premium",
+    problem: "Falta de credibilidad digital en sector financiero high-ticket.",
+    system: "Identidad digital de alto nivel y funnel de prospección.",
+    approach: "Estrategia de contenido, landing page de conversión y UI corporativa.",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200",
   },
   {
-    id: 3,
-    title: 'CLARIO ADVISORY',
-    type: 'WEB CORPORATIVA',
-    context: 'Una firma financiera boutique requería transmitir inmediatamente autoridad y confianza institucional sin perder el toque humano.',
-    solution: 'Diseño ultra-limpio con tipografía serif imponente, paleta restringida y estructuración de contenido orientada a establecer credibilidad técnica.',
-    result: 'Tráfico orgánico más cualificado y prospectos con menor fricción en la etapa inicial del embudo de ventas.',
-    metric: '+25%',
-    metricLabel: 'LEADS CUALIFICADOS',
-    liveUrl: 'https://clario-advisory.vercel.app/',
-    githubUrl: '#',
-    imageUrl: 'https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/ima/WhatsApp%20Image%202026-03-15%20at%209.33.12%20AM.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWEvV2hhdHNBcHAgSW1hZ2UgMjAyNi0wMy0xNSBhdCA5LjMzLjEyIEFNLmpwZWciLCJpYXQiOjE3NzM1ODg5MTQsImV4cCI6MTgwNTEyNDkxNH0.6caFs2Vdl8f3BbvRMij1dh5Ne3Mm4452xYFOsYxzidE',
+    title: "NUVRO FIT",
+    type: "Sistema Interno",
+    problem: "Coaches enviando rutinas por PDFs desactualizados.",
+    system: "Panel de control web para seguimiento biométrico y rutinas dinámicas.",
+    approach: "Portal de cliente web-app, backend de entrenamiento y estadísticas.",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200",
+  },
+  {
+    title: "Cafeoteca Costa Rica",
+    type: "Menú QR & Gestión",
+    problem: "Menú en imágenes de Instagram y toma manual de pedidos lenta.",
+    system: "Ecosistema de menú interactivo y sistema POS ligero.",
+    approach: "Menú digital rápido, sistema de órdenes a cocina y diseño de marca.",
+    image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1200",
   }
 ];
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 md:py-32 bg-brand-black relative border-t border-brand-accent/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 md:mb-32 gap-8">
-          <div>
-            <span className="text-xs font-mono tracking-widest text-brand-platinum/50 uppercase mb-4 block">
-              03. Casos de Estudio
-            </span>
-            <SplitText 
-              text="Ingeniería que genera tracción."
-              className="text-4xl md:text-5xl font-serif italic text-brand-white leading-tight mb-4"
-            />
-          </div>
-          <a href="#contacto" className="text-brand-accent hover:text-white transition-colors font-medium flex items-center gap-2">
-            Iniciar un proyecto similar <ExternalLink size={16} />
-          </a>
+    <section id="proyectos" className="py-24 md:py-32 bg-[#F5F7FA] relative border-t border-black/5">
+      <div className="absolute top-[30%] right-[10%] w-[600px] h-[600px] bg-[#0066FF]/5 blur-[200px] -z-10 rounded-full pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 mb-6"
+          >
+            <FolderKanban size={16} className="text-[#0066FF]" />
+            <span className="text-sm font-medium tracking-widest text-[#0066FF] uppercase">Casos Reales</span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-5xl font-display font-bold text-[#111827] mb-6 leading-tight tracking-tight max-w-3xl"
+          >
+            Proyectos que muestran lo que podemos construir.
+          </motion.h2>
         </div>
 
-        <div className="space-y-40">
-          {projects.map((project, index) => (
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          {projects.map((project, idx) => (
             <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col gap-12"
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white border border-black/5 rounded-[32px] overflow-hidden shadow-xl shadow-black/5 group"
             >
-              <div className="flex flex-col gap-6">
-                <span className="text-[11px] font-mono tracking-widest text-brand-platinum/60 uppercase border border-white/10 px-3 py-1 bg-white/5 inline-table w-max self-start">
-                  {project.type}
-                </span>
-                
-                <h3 className="text-5xl md:text-[80px] font-serif italic text-brand-white leading-[0.95] tracking-tight">
-                  {project.title}
-                </h3>
-                
-                <div className="mt-4 mb-4">
-                  <div className="text-4xl md:text-5xl font-display font-medium text-brand-accent">
-                    {project.metric}
-                  </div>
-                  <div className="text-[10px] font-mono tracking-widest uppercase text-brand-platinum/40 mt-2">
-                    {project.metricLabel}
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-8 mt-6">
-                  <div>
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-brand-platinum/40 mb-3 block">Contexto</h4>
-                    <p className="font-light text-brand-platinum/80 text-sm leading-relaxed">{project.context}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-brand-platinum/40 mb-3 block">Solución</h4>
-                    <p className="font-light text-brand-platinum/80 text-sm leading-relaxed">{project.solution}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-brand-platinum/40 mb-3 block">Resultado</h4>
-                    <p className="font-light text-brand-platinum/80 text-sm leading-relaxed">{project.result}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4 mt-6">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="glow-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[4px] bg-brand-accent text-brand-white font-medium hover:bg-brand-accent/90 transition-colors text-sm"
-                  >
-                    Ver proyecto <ExternalLink size={16} />
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[4px] border border-brand-accent/30 text-brand-white font-medium hover:bg-brand-accent/10 transition-colors text-sm"
-                  >
-                    Ver código <Github size={16} />
-                  </a>
-                </div>
+              <div className="relative aspect-[4/3] w-full bg-gray-100 overflow-hidden">
+                 <img 
+                   src={project.image} 
+                   alt={project.title}
+                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   referrerPolicy="no-referrer"
+                 />
+                 <div className="absolute top-4 right-4 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full text-xs font-bold text-[#111827] uppercase tracking-widest shadow-md">
+                    {project.type}
+                 </div>
               </div>
-
-              {/* Project Image Full Width */}
-              <div className="w-full aspect-[16/9] bg-[#050505] border border-white/10 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 z-10 flex gap-2 mix-blend-difference">
-                  <div className="w-2 h-2 bg-brand-white/40 rounded-full" />
-                  <div className="w-2 h-2 bg-brand-white/40 rounded-full" />
-                  <div className="w-2 h-2 bg-brand-white/40 rounded-full" />
-                </div>
-                {project.imageUrl ? (
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-[1.5s] ease-out opacity-80 group-hover:opacity-100"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-brand-platinum/20 font-mono text-sm">
-                    [ Imagen del Proyecto: {project.title} ]
+              
+              <div className="p-8">
+                <h3 className="text-2xl font-display font-bold text-[#111827] mb-6">{project.title}</h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <span className="block text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-1">Problema Abordado</span>
+                    <p className="text-sm text-[#111827] leading-snug">{project.problem}</p>
                   </div>
-                )}
-                {/* Blueprint lines over image just for style */}
-                <div className="absolute top-1/2 left-0 w-full h-[1px] bg-brand-accent/20 mix-blend-screen pointer-events-none" />
-                <div className="absolute top-0 left-1/2 w-[1px] h-full bg-brand-accent/20 mix-blend-screen pointer-events-none" />
+                  <div>
+                    <span className="block text-xs font-bold text-[#0066FF] uppercase tracking-wider mb-1">Sistema Construido</span>
+                    <p className="text-sm font-medium text-[#111827] leading-snug">{project.system}</p>
+                  </div>
+                  <div>
+                    <span className="block text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-1">Enfoque</span>
+                    <p className="text-sm text-[#111827] leading-snug">{project.approach}</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-16 pt-12 border-t border-black/5 flex flex-col items-center text-center gap-6"
+        >
+           <a href="https://wa.me/50671757171?text=Hola NUVRO, quiero ver más casos de estudio" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#111827] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#0066FF] transition-all shadow-md group">
+              Ver todos los proyectos <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+           </a>
+        </motion.div>
+
       </div>
     </section>
   );

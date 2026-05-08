@@ -1,36 +1,39 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#000000] relative overflow-hidden flex flex-col items-center justify-center border-t border-brand-accent/10 pt-32 pb-8">
-      {/* Upper tag / Phrase */}
-      <div className="relative z-10 text-center mb-8 px-6">
-        <p className="text-xl md:text-3xl font-serif italic text-brand-white/80 font-light max-w-2xl mx-auto">
-          Construido en Costa Rica para negocios que no se conforman.
-        </p>
-      </div>
-
-      {/* Giant NUVRO Text */}
-      <div className="w-full flex justify-center items-center pointer-events-none select-none relative z-0 -mt-8 md:-mt-16">
-        <h2 className="text-[120px] sm:text-[180px] md:text-[240px] lg:text-[320px] leading-[0.8] font-serif font-bold text-[#111111] tracking-tighter">
-          NUVRO
-        </h2>
-      </div>
-
-      {/* Bottom Info Row */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 mt-16 pb-4">
-        <div className="flex items-center gap-8">
-          <a href="#" className="text-brand-platinum/40 hover:text-brand-white transition-colors text-sm font-mono tracking-widest uppercase">
-            Legal
-          </a>
-          <a href="#" className="text-brand-platinum/40 hover:text-brand-white transition-colors text-sm font-mono tracking-widest uppercase">
-            Instagram
-          </a>
-          <a href="mailto:hello@nuvro.engineer" className="text-brand-platinum/40 hover:text-brand-white transition-colors text-sm font-mono tracking-widest uppercase">
-            Mail
-          </a>
+    <footer className="bg-black py-24 border-t border-white/5 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="text-2xl font-display font-bold tracking-tight text-white uppercase">
+              NUVRO
+            </span>
+            <span className="text-2xl font-display font-light tracking-tight text-white/40 uppercase">
+              ENGINEER
+            </span>
+          </div>
+          <p className="text-white/60 font-light text-lg">Webs premium, sistemas y microservicios digitales.</p>
         </div>
-        
-        <div className="text-[10px] font-mono tracking-widest text-brand-platinum/30 uppercase">
-          Last deploy: 27.04.2026 · v1.0.4
+
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 font-mono text-xs uppercase tracking-widest text-white/40">
+          <a href="#problema" className="hover:text-[#0066FF] transition-colors">Problema</a>
+          <a href="#express" className="hover:text-[#0066FF] transition-colors">Express</a>
+          <a href="#landings" className="hover:text-[#0066FF] transition-colors">Landings</a>
+          <a href="#custom" className="hover:text-[#0066FF] transition-colors">Custom</a>
+          <a href="#proyectos" className="hover:text-[#0066FF] transition-colors">Proyectos</a>
+        </div>
+
+        <div className="flex flex-col items-center gap-12 border-t border-white/5 pt-16">
+          <div className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] font-mono tracking-widest text-white/60">
+            NUVROENGINEER.COM
+          </div>
+          
+          <div className="text-[10px] font-mono tracking-widest text-white/20 uppercase text-center space-y-4">
+            <p>© {new Date().getFullYear()} NUVRO ENGINEER. TODOS LOS DERECHOS RESERVADOS.</p>
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+              <span>COSTA RICA</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
