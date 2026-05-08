@@ -64,12 +64,32 @@
     text-stroke: 1px rgba(0, 102, 255, 0.46);
   }
 
+  .electric-frame {
+    border: 1px solid rgba(0, 102, 255, 0.72);
+    box-shadow:
+      0 0 0 12px rgba(0, 102, 255, 0.08),
+      0 0 54px rgba(0, 102, 255, 0.32);
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  }
+
+  .media-slice {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: #02050a;
+    box-shadow: 16px 18px 0 rgba(0, 102, 255, 0.34);
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  }
+
   .animate-blueprint {
     animation: blueprint-drift 18s linear infinite;
   }
 
   .animate-scan {
     animation: scan-pass 5.6s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+  }
+
+  .marquee-track {
+    animation: nuvro-marquee 24s linear infinite;
   }
 
   .scan-lines {
@@ -103,6 +123,15 @@
   78%, 100% {
     transform: translateY(120%);
     opacity: 0;
+  }
+}
+
+@keyframes nuvro-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
