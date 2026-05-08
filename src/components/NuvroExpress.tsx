@@ -139,7 +139,7 @@ export default function NuvroExpress() {
                 idx === 0 ? 'md:col-span-2 lg:col-span-2 lg:row-span-2 lg:min-h-[760px]' : ''
               }`}
             >
-              <div className={`relative overflow-hidden bg-[#111111] ${idx === 0 ? 'h-72 lg:h-[420px]' : 'h-56'}`}>
+              <div className={`signal-band relative overflow-hidden bg-[#111111] ${idx === 0 ? 'h-72 lg:h-[420px]' : 'h-56'}`}>
                 <img
                   src={prod.image}
                   alt={prod.title}
@@ -149,8 +149,16 @@ export default function NuvroExpress() {
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center border border-white/25 bg-[#0A0A0A]/55 text-white backdrop-blur-md">
                   {prod.icon}
                 </div>
+                <div className="absolute right-4 top-4 hidden border border-white/12 bg-[#050505]/72 px-3 py-2 text-[9px] font-black uppercase tracking-[0.22em] text-white/58 backdrop-blur-md sm:block">
+                  NX-{String(idx + 1).padStart(2, '0')}
+                </div>
                 <div className="absolute bottom-4 right-4 font-display text-5xl font-black text-white/24">
                   {String(idx + 1).padStart(2, '0')}
+                </div>
+                <div className="tech-readout absolute bottom-4 left-4 right-20 backdrop-blur-md">
+                  <span>ui</span>
+                  <span>flow</span>
+                  <span>cta</span>
                 </div>
               </div>
 
@@ -162,7 +170,7 @@ export default function NuvroExpress() {
                   <span className="h-px w-16 bg-[var(--service-color)] opacity-70" />
                 </div>
 
-                <h3 className="font-display text-[clamp(2.25rem,3.2vw,4.4rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
+                <h3 className="max-w-[11ch] font-display text-[clamp(2.25rem,3.2vw,4.4rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
                   {prod.title}
                 </h3>
                 <div className="mt-7 grid gap-5">
@@ -180,6 +188,18 @@ export default function NuvroExpress() {
                     </span>
                     <p className="text-base leading-relaxed text-[#9CA3AF]">{prod.desc}</p>
                   </div>
+                </div>
+                <div className="mt-7 grid grid-cols-[1fr_auto] items-center border-y border-white/10 py-3">
+                  <span className="text-[10px] font-black uppercase tracking-[0.22em] text-white/35">
+                    deployment ready
+                  </span>
+                  <span className="h-2 w-2 bg-[#2B6CB0] shadow-[0_0_18px_rgba(43,108,176,0.95)]" />
+                </div>
+                <div className="matrix-strip mt-4">
+                  <span>brief</span>
+                  <span>visual</span>
+                  <span>flow</span>
+                  <span>sell</span>
                 </div>
                 <div className="flex-1" />
                 <a

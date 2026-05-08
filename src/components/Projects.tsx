@@ -136,11 +136,17 @@ export default function Projects() {
                     {project.type}
                   </span>
                 </div>
+                <div className="matrix-strip absolute bottom-4 left-4 right-4 backdrop-blur-md">
+                  <span>case</span>
+                  <span>build</span>
+                  <span>ship</span>
+                  <span>live</span>
+                </div>
               </div>
 
               <div className="flex h-full flex-col p-7 md:p-8">
                 <div className="mb-7 flex items-center justify-between gap-6 border-b border-white/10 pb-5">
-                  <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/38">
+                  <span className="module-chip">
                     case file
                   </span>
                   <span className="font-display text-5xl font-black leading-none text-white/18">
@@ -170,6 +176,17 @@ export default function Projects() {
                     <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#9CA3AF]">Enfoque</span>
                     <p className="text-sm font-medium leading-snug text-white">{project.approach}</p>
                   </div>
+                </div>
+
+                <div className="software-panel mt-6 grid grid-cols-3">
+                  {['estrategia', 'interfaz', 'sistema'].map((item) => (
+                    <span
+                      key={item}
+                      className="border-r border-white/10 px-3 py-3 text-center text-[9px] font-black uppercase tracking-[0.18em] text-white/48 last:border-r-0"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
 
                 {project.url && (

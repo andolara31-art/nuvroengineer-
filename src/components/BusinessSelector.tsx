@@ -118,7 +118,7 @@ export default function BusinessSelector() {
                 </div>
 
                 <div className="mb-8">
-                  <span className="text-emerald-400 font-mono text-xs uppercase tracking-widest mb-2 block">La solución NUVRO</span>
+                  <span className="text-brand-accent font-mono text-xs uppercase tracking-widest mb-2 block">La solución NUVRO</span>
                   <p className="text-xl text-brand-platinum/90 leading-relaxed font-medium">
                     {current.solution}
                   </p>

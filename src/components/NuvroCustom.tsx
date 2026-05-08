@@ -108,6 +108,16 @@ export default function NuvroCustom() {
                   className="h-full w-full object-cover opacity-72 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(2,5,10,0.08),_rgba(2,5,10,0.86))]" />
+                <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 border border-white/10 bg-[#050505]/70 text-center backdrop-blur-md">
+                  {['arch', 'ops', 'scale'].map((item) => (
+                    <span
+                      key={item}
+                      className="border-r border-white/10 px-2 py-2 text-[9px] font-black uppercase tracking-[0.18em] text-white/48 last:border-r-0"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               <div className="grid gap-6 p-6 md:grid-cols-[72px_1fr] md:p-8">
@@ -132,17 +142,28 @@ export default function NuvroCustom() {
                   <p className="max-w-3xl border-t border-white/10 pt-5 text-lg leading-relaxed text-white/58">
                     {service.desc}
                   </p>
+                  <div className="matrix-strip mt-6 max-w-xl">
+                    <span>design</span>
+                    <span>logic</span>
+                    <span>data</span>
+                    <span>control</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-end justify-between border-t border-white/10 p-6 md:border-l md:border-t-0 md:p-8">
-                <span className="font-display text-5xl font-black text-white/18">
-                  {String(idx + 1).padStart(2, '0')}
-                </span>
-                <ArrowRight
-                  size={22}
-                  className="text-white/50 opacity-70 transition group-hover:translate-x-1 group-hover:text-[#2B6CB0] group-hover:opacity-100"
-                />
+              <div className="data-rail flex flex-col justify-between border-t border-white/10 p-6 md:border-l md:border-t-0 md:p-8">
+                <span>private</span>
+                <span>precise</span>
+                <span>built</span>
+                <div className="mt-8 flex items-end justify-between">
+                  <span className="font-display text-5xl font-black text-white/18">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <ArrowRight
+                    size={22}
+                    className="text-white/50 opacity-70 transition group-hover:translate-x-1 group-hover:text-[#2B6CB0] group-hover:opacity-100"
+                  />
+                </div>
               </div>
             </motion.article>
           ))}

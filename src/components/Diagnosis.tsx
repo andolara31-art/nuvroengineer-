@@ -60,6 +60,16 @@ export default function Diagnosis() {
             Si el cliente ve desorden, duda. NUVRO convierte piezas sueltas en una ruta visual
             clara: descubre, entiende, decide y escribe.
           </motion.p>
+          <div className="software-panel mt-10 grid grid-cols-3">
+            {['orden', 'valor', 'accion'].map((item) => (
+              <span
+                key={item}
+                className="border-r border-white/10 px-3 py-4 text-center text-[9px] font-black uppercase tracking-[0.18em] text-white/48 last:border-r-0"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="precision-card border-y border-white/10 bg-[#111111] backdrop-blur-sm">

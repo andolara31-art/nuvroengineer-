@@ -57,7 +57,7 @@ export default function Landings() {
         </div>
 
         {/* Visual Split Screen */}
-        <div className="mx-auto grid max-w-5xl items-stretch gap-5 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-stretch gap-5 md:grid-cols-[0.92fr_1.08fr]">
           
           {/* Before: Instagram Story */}
           <motion.div
@@ -66,6 +66,12 @@ export default function Landings() {
             viewport={{ once: true }}
             className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-white/10 bg-[#111111] p-8 text-center md:p-12"
           >
+            <div className="matrix-strip mb-8 w-full">
+              <span>post</span>
+              <span>wait</span>
+              <span>expire</span>
+              <span>lost</span>
+            </div>
             <div className="flex items-center gap-3 mb-8 w-full justify-center">
               <Instagram size={20} className="text-[#6B7280]" />
               <span className="text-[#6B7280] font-bold uppercase tracking-widest text-sm">Antes</span>
@@ -96,6 +102,12 @@ export default function Landings() {
             className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-[rgba(43,108,176,0.4)] bg-[#111111] p-8 text-center shadow-2xl md:p-12"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-[#2B6CB0]/5 to-transparent pointer-events-none" />
+            <div className="matrix-strip relative z-10 mb-8 w-full">
+              <span>offer</span>
+              <span>proof</span>
+              <span>cta</span>
+              <span>sell</span>
+            </div>
             
             <div className="flex items-center gap-3 mb-8 w-full justify-center relative z-10">
               <Globe size={20} className="text-[#2B6CB0]" />

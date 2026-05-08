@@ -108,7 +108,7 @@ export default function Demos() {
           ))}
         </div>
 
-        <div className="precision-card relative mx-auto max-w-5xl overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#111111] p-6 shadow-xl shadow-black/5">
+        <div className="precision-card relative mx-auto max-w-6xl overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#111111] p-4 shadow-xl shadow-black/5 md:p-6">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeDemo.id}
@@ -116,8 +116,14 @@ export default function Demos() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="grid gap-8 md:grid-cols-[1.05fr_0.95fr] md:items-stretch"
+              className="grid gap-4 md:grid-cols-[86px_1.08fr_0.92fr] md:items-stretch"
             >
+              <div className="data-rail hidden md:flex md:flex-col md:justify-between">
+                <span>demo</span>
+                <span>mobile</span>
+                <span>flow</span>
+                <span>cta</span>
+              </div>
               <div className="relative aspect-[4/3] w-full overflow-hidden border border-white/10">
                 <img 
                   src={activeDemo.image}
@@ -129,10 +135,16 @@ export default function Demos() {
                 <div className="absolute left-4 top-4 border border-white/15 bg-[#111111]/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
                   PREVIEW: {activeDemo.label}
                 </div>
+                <div className="matrix-strip absolute bottom-4 left-4 right-4 backdrop-blur-md">
+                  <span>look</span>
+                  <span>feel</span>
+                  <span>path</span>
+                  <span>send</span>
+                </div>
               </div>
               
               <div className="flex flex-col items-start border-y border-white/10 p-4 md:p-8">
-                <span className="mb-5 text-[10px] font-black uppercase tracking-[0.24em] text-white/38">
+                <span className="module-chip mb-5">
                   visual prototype
                 </span>
                 <h3 className="mb-5 font-display text-[clamp(2.6rem,4.8vw,5rem)] font-black uppercase leading-[0.82] tracking-wide text-white">

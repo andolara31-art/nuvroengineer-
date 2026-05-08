@@ -4,12 +4,12 @@ import { Clock, Rocket, Zap, MessageCircle } from 'lucide-react';
 const packages = [
   {
     name: 'EXPRESS',
-    icon: <Zap className="text-yellow-400" />,
+    icon: <Zap className="text-[#2B6CB0]" />,
     price: '$10–$50',
     for: 'QR, invitación, tarjeta digital, Link Bio básico, menú corto o promo simple.',
     delivery: '24–72h según contenido.',
     cta: 'Pedir Express',
-    color: 'border-yellow-400/20'
+    color: 'border-[#2B6CB0]/20'
   },
   {
     name: 'PRO',
@@ -23,12 +23,12 @@ const packages = [
   },
   {
     name: 'LAUNCH',
-    icon: <Clock className="text-emerald-400" />,
+    icon: <Clock className="text-white/70" />,
     price: '$150–$250+',
     for: 'Página de promo + kit visual + copy + CTA + QR + campaña de lanzamiento.',
     delivery: '5–7 días.',
     cta: 'Armar lanzamiento',
-    color: 'border-emerald-400/20'
+    color: 'border-white/15'
   }
 ];
 

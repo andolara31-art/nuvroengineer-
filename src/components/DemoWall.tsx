@@ -6,7 +6,7 @@ const demos = [
     title: 'Menú para soda',
     type: 'Menú QR',
     price: 'Desde $25',
-    color: 'bg-orange-500',
+    color: 'bg-[#2B6CB0]',
     content: (
       <div className="p-4 space-y-4">
         <div className="flex justify-between items-center">
@@ -14,7 +14,7 @@ const demos = [
           <div className="h-4 w-4 bg-[#0A0A0A]/20 rounded-full" />
         </div>
         <div className="aspect-[4/3] rounded-lg bg-[#0A0A0A]/10 overflow-hidden relative">
-          <div className="absolute inset-x-2 bottom-2 h-6 bg-orange-600 rounded flex items-center justify-center text-[8px] font-bold text-white uppercase tracking-tighter">Pedido Express</div>
+          <div className="absolute inset-x-2 bottom-2 h-6 bg-[#111111] rounded flex items-center justify-center text-[8px] font-bold text-white uppercase tracking-tighter">Pedido Express</div>
         </div>
         <div className="space-y-2">
           <div className="h-2 w-full bg-[#0A0A0A]/10 rounded" />
@@ -27,7 +27,7 @@ const demos = [
     title: 'Link Bio Estilista',
     type: 'Link Bio',
     price: 'Desde $25',
-    color: 'bg-pink-400',
+    color: 'bg-[#111111]',
     content: (
       <div className="p-4 flex flex-col items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-[#0A0A0A]/10 mt-4" />
@@ -44,7 +44,7 @@ const demos = [
     title: 'Baby Shower',
     type: 'Invitación',
     price: 'Desde $10',
-    color: 'bg-indigo-300',
+    color: 'bg-[#FFFFFF]',
     content: (
       <div className="p-4 flex flex-col items-center text-center">
         <div className="aspect-[1/1] w-full bg-[#111111]/40 rounded-xl mb-4 relative overflow-hidden">
@@ -52,7 +52,7 @@ const demos = [
         </div>
         <div className="h-3 w-32 bg-[#0A0A0A]/10 rounded mb-2" />
         <div className="h-2 w-24 bg-[#0A0A0A]/10 rounded mb-6" />
-        <div className="h-8 w-full bg-indigo-500 rounded flex items-center justify-center text-[8px] font-bold text-white uppercase">Confirmar Asistencia</div>
+        <div className="h-8 w-full bg-[#2B6CB0] rounded flex items-center justify-center text-[8px] font-bold text-white uppercase">Confirmar Asistencia</div>
       </div>
     )
   },
@@ -68,7 +68,7 @@ const demos = [
            {[1, 2, 3, 4].map(i => (
              <div key={i} className="aspect-square bg-[#0A0A0A]/5 rounded relative flex flex-col p-1">
                 <div className="mt-auto h-2 w-full bg-[#0A0A0A]/10 rounded" />
-                <div className="mt-1 h-3 w-1/2 bg-indigo-500 rounded-sm" />
+                <div className="mt-1 h-3 w-1/2 bg-[#2B6CB0] rounded-sm" />
              </div>
            ))}
         </div>
@@ -79,12 +79,12 @@ const demos = [
     title: 'Promo Dental',
     type: 'Página Promo',
     price: 'Desde $49',
-    color: 'bg-sky-400',
+    color: 'bg-[#2B6CB0]',
     content: (
       <div className="p-4 flex flex-col justify-center h-full text-white">
         <div className="text-[12px] font-black uppercase italic leading-none mb-2">GRAN PROMO</div>
         <div className="text-[24px] font-black leading-none mb-4 tracking-tighter">Limpieza 2x1</div>
-        <div className="h-10 w-full bg-[#111111] text-sky-500 rounded flex items-center justify-center text-[10px] font-bold uppercase tracking-widest">Aprovechar YA</div>
+        <div className="h-10 w-full bg-[#111111] text-white rounded flex items-center justify-center text-[10px] font-bold uppercase tracking-widest">Aprovechar YA</div>
       </div>
     )
   },
@@ -92,10 +92,10 @@ const demos = [
     title: 'QR Restaurante',
     type: 'QR Premium',
     price: 'Desde $10',
-    color: 'bg-emerald-500',
+    color: 'bg-[#2B6CB0]',
     content: (
       <div className="flex flex-col items-center justify-center h-full p-4">
-        <div className="aspect-square w-24 bg-[#111111] rounded-xl p-3 border-4 border-emerald-600">
+        <div className="aspect-square w-24 bg-[#111111] rounded-xl p-3 border-4 border-[#2B6CB0]">
            <div className="w-full h-full border-2 border-white/10 grid grid-cols-4 grid-rows-4">
               {[...Array(16)].map((_, i) => (
                 <div key={i} className={`m-[1px] ${Math.random() > 0.5 ? 'bg-[#0A0A0A]' : 'bg-transparent'}`} />
