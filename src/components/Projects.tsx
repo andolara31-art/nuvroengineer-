@@ -38,7 +38,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 md:py-32 bg-[#0A0A0A] relative border-t border-white/10">
+    <section id="proyectos" className="py-[clamp(80px,10vw,140px)] bg-[#0A0A0A] relative border-t border-white/10">
       <div className="absolute top-[30%] right-[10%] w-[600px] h-[600px] bg-[#0066FF]/5 blur-[200px] -z-10 rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">

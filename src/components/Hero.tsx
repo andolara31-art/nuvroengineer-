@@ -176,7 +176,7 @@ export default function Hero() {
               transition={{ duration: 0.9, delay: 0.22, ease: [0.23, 1, 0.32, 1] }}
               className="relative z-10"
             >
-              <div className="nuvro-machine relative h-[520px] md:h-[620px]">
+              <div className="nuvro-machine relative h-[520px] opacity-[0.82] scale-75 md:h-[620px] origin-center">
                 <div className="hero-glass-panel absolute left-0 top-6 z-20 w-[44%] p-4 md:top-12">
                   <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-white/46">Antes</p>
                   <p className="font-display text-4xl font-black uppercase leading-none text-white/82 md:text-5xl">

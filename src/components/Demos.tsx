@@ -59,7 +59,7 @@ export default function Demos() {
   const activeDemo = demos.find(d => d.id === activeTab) || demos[0];
 
   return (
-    <section id="demos" className="py-24 md:py-32 bg-[#0A0A0A] relative border-t border-white/10">
+    <section id="demos" className="py-[clamp(80px,10vw,140px)] bg-[#0A0A0A] relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">

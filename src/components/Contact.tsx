@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Zap, Laptop, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
   const whatsappUrl = `https://wa.me/50671757171?text=${encodeURIComponent("Hola NUVRO, quiero una solución rápida.")}`;
@@ -10,73 +10,6 @@ export default function Contact() {
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-display font-bold text-white tracking-tight mb-4"
-          >
-            ¿Querés algo rápido o algo a medida?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-white/50 font-sans max-w-2xl mx-auto"
-          >
-            Elegí la ruta que mejor se adapte a la velocidad y complejidad de lo que buscás.
-          </motion.p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-24 max-w-5xl mx-auto">
-          {/* Bloque 1: NUVRO EXPRESS */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-[#0A0A0A] border border-white/5 p-8 md:p-12 rounded-[40px] flex flex-col items-start relative group hover:border-[#0066FF]/30 transition-all duration-300"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-[#0066FF]/10 flex items-center justify-center text-[#0066FF] mb-8">
-              <Zap size={32} />
-            </div>
-            <h3 className="text-3xl font-display font-bold text-white mb-2">NUVRO EXPRESS</h3>
-            <p className="text-white/50 font-sans mb-8">Necesito una solución rápida para vender mejor.</p>
-            <div className="mt-auto pt-8 w-full border-t border-white/5">
-              <a 
-                href="#express" 
-                className="w-full py-4 rounded-xl flex items-center justify-center gap-2 bg-[#111111]/5 text-white font-bold uppercase tracking-wider text-sm hover:bg-[#111111] hover:text-white transition-colors"
-               >
-                Ver microservicios <ArrowRight size={18} />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Bloque 2: NUVRO CUSTOM */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-[#111111] border border-[#0066FF]/20 p-8 md:p-12 rounded-[40px] flex flex-col items-start relative group shadow-2xl"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-[#0066FF] flex items-center justify-center text-white mb-8">
-               <Laptop size={32} />
-            </div>
-            <h3 className="text-3xl font-display font-bold text-white mb-2">NUVRO CUSTOM</h3>
-            <p className="text-white/60 font-sans mb-8">Necesito una web, sistema o automatización a medida.</p>
-            <div className="mt-auto pt-8 w-full border-t border-white/10">
-              <a 
-                href="#formulario" 
-                className="w-full py-4 rounded-xl flex items-center justify-center gap-2 bg-[#0066FF] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#0047B8] transition-colors shadow-lg shadow-[#0066FF]/20"
-               >
-                Hablar de mi proyecto <ArrowRight size={18} />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Contact Form */}
         <div id="formulario" className="max-w-3xl mx-auto scroll-mt-32">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

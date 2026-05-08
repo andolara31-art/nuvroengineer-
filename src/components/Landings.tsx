@@ -3,7 +3,7 @@ import { ArrowRight, Instagram, Globe } from 'lucide-react';
 
 export default function Landings() {
   return (
-    <section id="landings" className="py-24 md:py-32 bg-[#0A0A0A] relative border-t border-white/5 overflow-hidden">
+    <section id="landings" className="py-[clamp(80px,10vw,140px)] bg-[#0A0A0A] relative border-t border-white/5 overflow-hidden">
       <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-[#0066FF]/5 blur-[150px] -z-10 rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">

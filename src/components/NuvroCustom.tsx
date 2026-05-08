@@ -41,7 +41,7 @@ const customServices = [
 
 export default function NuvroCustom() {
   return (
-    <section id="custom" className="relative overflow-hidden bg-[#0A0A0A] py-24 text-white md:py-32">
+    <section id="custom" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(80px,10vw,140px)] text-white">
       <div className="absolute inset-0 hero-bg opacity-45" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_#0A0A0A_0%,_rgba(10,10,10,0.72)_46%,_#0A0A0A_100%)]" />
 
@@ -99,7 +99,7 @@ export default function NuvroCustom() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: idx * 0.07 }}
-              className="group grid overflow-hidden border-b border-[rgba(255,255,255,0.06)] border-l-[3px] border-l-transparent bg-[#111111] backdrop-blur-sm transition duration-300 hover:border-l-[#0066FF] hover:bg-[#1A1A1A] md:grid-cols-[220px_1fr_220px]"
+              className="group grid overflow-hidden border-b border-[rgba(255,255,255,0.06)] border-l-[3px] border-l-transparent bg-[#111111] backdrop-blur-sm transition-[background-color,border-color] duration-200 ease-in hover:border-l-[#0066FF] hover:bg-[#0F0F0F] md:grid-cols-[220px_1fr_220px]"
             >
               <div className="relative h-48 overflow-hidden bg-[#0A0A0A] md:h-full">
                 <img

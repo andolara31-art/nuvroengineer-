@@ -79,7 +79,7 @@ const products = [
 
 export default function NuvroExpress() {
   return (
-    <section id="express" className="relative overflow-hidden bg-[#111111] py-24 text-white md:py-32">
+    <section id="express" className="relative overflow-hidden bg-[#111111] py-[clamp(80px,10vw,140px)] text-white">
       <div className="absolute inset-0 hero-bg opacity-55" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 grid gap-8 border-y border-white/10 py-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -137,7 +137,7 @@ export default function NuvroExpress() {
                 <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center border border-white/25 bg-[#0A0A0A]/35 text-[var(--service-color)] backdrop-blur-md">
                   {prod.icon}
                 </div>
-                <div className="absolute bottom-4 right-4 font-display text-5xl font-black text-white/28">
+                <div className="absolute bottom-4 right-4 font-display text-5xl font-black text-[var(--service-color)]">
                   {String(idx + 1).padStart(2, '0')}
                 </div>
               </div>
@@ -146,7 +146,7 @@ export default function NuvroExpress() {
                 <h3 className="font-display text-3xl font-black uppercase leading-none text-white">
                   {prod.title}
                 </h3>
-                <p className="mt-4 border-t border-white/10 pt-4 text-sm font-black uppercase tracking-[0.12em] text-[var(--service-color)]">
+                <p className="mt-4 border-t border-white/10 pt-4 text-sm font-black uppercase tracking-[0.12em] text-white/[0.45]">
                   {prod.pain}
                 </p>
                 <p className="mt-4 flex-1 text-base leading-relaxed text-[#9CA3AF]">{prod.desc}</p>
