@@ -17,7 +17,7 @@ export default function WhyNuvro() {
   ];
 
   return (
-    <section className="py-32 bg-black flex flex-col justify-center overflow-hidden border-t border-white/5">
+    <section className="py-32 bg-[#0A0A0A] flex flex-col justify-center overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
         <div className="text-center mb-24 max-w-4xl mx-auto">
           <span className="text-xs font-mono tracking-[0.3em] text-[#0066FF] uppercase mb-10 block">
@@ -42,7 +42,7 @@ export default function WhyNuvro() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="group"
             >
-              <div className="h-px w-full bg-white/10 mb-12" />
+              <div className="h-px w-full bg-[#111111]/10 mb-12" />
               <h3 className="text-2xl font-medium text-white mb-6 group-hover:text-[#0066FF] transition-colors">
                 {step.title}
               </h3>

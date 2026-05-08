@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { ArrowRight, FolderKanban } from 'lucide-react';
-import type { CSSProperties } from 'react';
 
 const projects = [
   {
@@ -10,7 +9,6 @@ const projects = [
     system: "Plataforma de alta densidad para gestión de leads en tiempo real.",
     approach: "Dashboard de ventas, Automatización de WhatsApp y Analítica.",
     image: "/assets/nuvro/dashboards-crm.png",
-    accent: "var(--color-service-7)",
   },
   {
     title: "Clario Advisory",
@@ -19,7 +17,6 @@ const projects = [
     system: "Identidad digital de alto nivel y funnel de prospección.",
     approach: "Estrategia de contenido, landing page de conversión y UI corporativa.",
     image: "/assets/nuvro/webs-premium.png",
-    accent: "#0066FF",
   },
   {
     title: "NUVRO FIT",
@@ -28,7 +25,6 @@ const projects = [
     system: "Panel de control web para seguimiento biométrico y rutinas dinámicas.",
     approach: "Portal de cliente web-app, backend de entrenamiento y estadísticas.",
     image: "/assets/nuvro/automation-flows.png",
-    accent: "var(--color-service-5)",
   },
   {
     title: "Cafeoteca Costa Rica",
@@ -37,13 +33,12 @@ const projects = [
     system: "Ecosistema de menú interactivo y sistema POS ligero.",
     approach: "Menú digital rápido, sistema de órdenes a cocina y diseño de marca.",
     image: "/assets/nuvro/menu-qr.png",
-    accent: "var(--color-service-1)",
   }
 ];
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 md:py-32 bg-[#F5F7FA] relative border-t border-black/5">
+    <section id="proyectos" className="py-24 md:py-32 bg-[#0A0A0A] relative border-t border-white/10">
       <div className="absolute top-[30%] right-[10%] w-[600px] h-[600px] bg-[#0066FF]/5 blur-[200px] -z-10 rounded-full pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -64,7 +59,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-display font-bold text-[#111827] mb-6 leading-tight tracking-tight max-w-3xl"
+            className="text-3xl md:text-5xl font-display font-bold text-white mb-6 leading-tight tracking-tight max-w-3xl"
           >
             Proyectos que muestran lo que podemos construir.
           </motion.h2>
@@ -74,45 +69,44 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              style={{ '--project-accent': project.accent } as CSSProperties}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white border border-black/5 rounded-[32px] overflow-hidden shadow-xl shadow-black/5 group transition duration-300 hover:scale-[1.02]"
+              className="bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[32px] overflow-hidden shadow-xl shadow-black/5 group transition duration-300 hover:scale-[1.02] hover:border-[#0066FF]/40"
             >
-              <div className="relative aspect-[4/3] w-full bg-gray-100 overflow-hidden">
+              <div className="relative aspect-[4/3] w-full bg-[#111111] overflow-hidden">
                  <img 
                    src={project.image} 
                    alt={project.title}
                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                    referrerPolicy="no-referrer"
                  />
-                 <div className="absolute top-4 right-4 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full text-xs font-bold text-[#111827] uppercase tracking-widest shadow-md">
+                 <div className="absolute top-4 right-4 bg-[#0066FF] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-white shadow-md">
                     {project.type}
                  </div>
-                 <div className="absolute inset-0 flex items-center justify-center bg-black/52 opacity-0 backdrop-blur-[3px] transition duration-300 group-hover:opacity-100">
-                    <span className="bg-[var(--project-accent)] px-5 py-3 text-xs font-black uppercase tracking-[0.24em] text-white shadow-xl">
+                 <div className="absolute inset-0 flex items-center justify-center bg-[#0A0A0A]/52 opacity-0 backdrop-blur-[3px] transition duration-300 group-hover:opacity-100">
+                    <span className="bg-[#0066FF] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.1em] text-white shadow-xl">
                       {project.type}
                     </span>
                  </div>
               </div>
               
               <div className="p-8">
-                <h3 className="text-2xl font-display font-bold text-[#111827] mb-6">{project.title}</h3>
+                <h3 className="text-2xl font-display font-bold text-white mb-6">{project.title}</h3>
                 
                 <div className="space-y-4">
                   <div>
-                    <span className="block text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-1">Problema Abordado</span>
-                    <p className="text-sm text-[#111827] leading-snug">{project.problem}</p>
+                    <span className="block text-xs font-bold text-[#9CA3AF] uppercase tracking-wider mb-1">Problema Abordado</span>
+                    <p className="text-sm text-white leading-snug">{project.problem}</p>
                   </div>
                   <div>
                     <span className="block text-xs font-bold text-[#0066FF] uppercase tracking-wider mb-1">Sistema Construido</span>
-                    <p className="text-sm font-medium text-[#111827] leading-snug">{project.system}</p>
+                    <p className="text-sm font-medium text-white leading-snug">{project.system}</p>
                   </div>
                   <div>
-                    <span className="block text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-1">Enfoque</span>
-                    <p className="text-sm text-[#111827] leading-snug">{project.approach}</p>
+                    <span className="block text-xs font-bold text-[#9CA3AF] uppercase tracking-wider mb-1">Enfoque</span>
+                    <p className="text-sm text-white leading-snug">{project.approach}</p>
                   </div>
                 </div>
               </div>
@@ -124,9 +118,9 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-16 pt-12 border-t border-black/5 flex flex-col items-center text-center gap-6"
+          className="mt-16 pt-12 border-t border-white/10 flex flex-col items-center text-center gap-6"
         >
-           <a href="https://wa.me/50671757171?text=Hola NUVRO, quiero ver más casos de estudio" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#111827] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#0066FF] transition-all shadow-md group">
+           <a href="https://wa.me/50671757171?text=Hola NUVRO, quiero ver más casos de estudio" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#111111] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#0066FF] transition-all shadow-md group">
               Ver todos los proyectos <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
            </a>
         </motion.div>

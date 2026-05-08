@@ -43,7 +43,7 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section className="py-24 bg-black border-t border-white/5" id="inversion">
+    <section className="py-24 bg-[#0A0A0A] border-t border-white/5" id="inversion">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-24">
           <span className="text-xs font-mono tracking-[0.3em] text-[#0066FF] uppercase mb-10 block">
@@ -100,8 +100,8 @@ export default function Pricing() {
                 href="#contacto"
                 className={`w-full py-4 rounded-xl flex items-center justify-center gap-2 font-medium transition-all ${
                   tier.popular 
-                    ? 'bg-[#0066FF] text-white hover:bg-[#0052cc]' 
-                    : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                    ? 'bg-[#0066FF] text-white hover:bg-[#0066FF]'
+                    : 'bg-[#111111]/5 text-white hover:bg-[#111111]/10 border border-white/10'
                 }`}
               >
                 Solicitar presupuesto <ArrowRight size={16} />

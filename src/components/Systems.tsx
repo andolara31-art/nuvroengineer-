@@ -44,7 +44,7 @@ export default function Systems() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-px bg-white/[0.03] p-px border border-white/5">
+        <div className="grid md:grid-cols-2 gap-px bg-[#111111]/[0.03] p-px border border-white/5">
           {modules.map((mod, index) => (
             <motion.div
               key={index}
@@ -52,7 +52,7 @@ export default function Systems() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-[#050505] p-10 relative group overflow-hidden"
+              className="bg-[#0A0A0A] p-10 relative group overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#0066FF]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#0066FF] opacity-[0.02] blur-[40px] group-hover:opacity-[0.06] transition-opacity duration-500" />

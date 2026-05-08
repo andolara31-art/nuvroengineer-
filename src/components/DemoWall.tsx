@@ -10,15 +10,15 @@ const demos = [
     content: (
       <div className="p-4 space-y-4">
         <div className="flex justify-between items-center">
-          <div className="h-4 w-20 bg-black/20 rounded" />
-          <div className="h-4 w-4 bg-black/20 rounded-full" />
+          <div className="h-4 w-20 bg-[#0A0A0A]/20 rounded" />
+          <div className="h-4 w-4 bg-[#0A0A0A]/20 rounded-full" />
         </div>
-        <div className="aspect-[4/3] rounded-lg bg-black/10 overflow-hidden relative">
+        <div className="aspect-[4/3] rounded-lg bg-[#0A0A0A]/10 overflow-hidden relative">
           <div className="absolute inset-x-2 bottom-2 h-6 bg-orange-600 rounded flex items-center justify-center text-[8px] font-bold text-white uppercase tracking-tighter">Pedido Express</div>
         </div>
         <div className="space-y-2">
-          <div className="h-2 w-full bg-black/10 rounded" />
-          <div className="h-2 w-2/3 bg-black/10 rounded" />
+          <div className="h-2 w-full bg-[#0A0A0A]/10 rounded" />
+          <div className="h-2 w-2/3 bg-[#0A0A0A]/10 rounded" />
         </div>
       </div>
     )
@@ -30,11 +30,11 @@ const demos = [
     color: 'bg-pink-400',
     content: (
       <div className="p-4 flex flex-col items-center gap-4">
-        <div className="w-12 h-12 rounded-full bg-black/10 mt-4" />
-        <div className="h-2 w-24 bg-black/10 rounded" />
+        <div className="w-12 h-12 rounded-full bg-[#0A0A0A]/10 mt-4" />
+        <div className="h-2 w-24 bg-[#0A0A0A]/10 rounded" />
         <div className="w-full space-y-2 flex flex-col items-center">
            {[1, 2, 3].map(i => (
-             <div key={i} className="h-8 w-full border border-black/10 rounded-full flex items-center justify-center text-[8px] text-black/40 font-bold uppercase tracking-wider">Servicio {i}</div>
+             <div key={i} className="h-8 w-full border border-white/10 rounded-full flex items-center justify-center text-[8px] text-[#9CA3AF] font-bold uppercase tracking-wider">Servicio {i}</div>
            ))}
         </div>
       </div>
@@ -47,11 +47,11 @@ const demos = [
     color: 'bg-indigo-300',
     content: (
       <div className="p-4 flex flex-col items-center text-center">
-        <div className="aspect-[1/1] w-full bg-white/40 rounded-xl mb-4 relative overflow-hidden">
+        <div className="aspect-[1/1] w-full bg-[#111111]/40 rounded-xl mb-4 relative overflow-hidden">
            <div className="absolute inset-0 flex items-center justify-center text-[40px] opacity-20">🍼</div>
         </div>
-        <div className="h-3 w-32 bg-black/10 rounded mb-2" />
-        <div className="h-2 w-24 bg-black/10 rounded mb-6" />
+        <div className="h-3 w-32 bg-[#0A0A0A]/10 rounded mb-2" />
+        <div className="h-2 w-24 bg-[#0A0A0A]/10 rounded mb-6" />
         <div className="h-8 w-full bg-indigo-500 rounded flex items-center justify-center text-[8px] font-bold text-white uppercase">Confirmar Asistencia</div>
       </div>
     )
@@ -62,12 +62,12 @@ const demos = [
     price: 'Desde $35',
     color: 'bg-zinc-100',
     content: (
-      <div className="p-4 bg-white/40 h-full">
-        <div className="h-4 w-24 bg-black/20 rounded mb-4" />
+      <div className="p-4 bg-[#111111]/40 h-full">
+        <div className="h-4 w-24 bg-[#0A0A0A]/20 rounded mb-4" />
         <div className="grid grid-cols-2 gap-2">
            {[1, 2, 3, 4].map(i => (
-             <div key={i} className="aspect-square bg-black/5 rounded relative flex flex-col p-1">
-                <div className="mt-auto h-2 w-full bg-black/10 rounded" />
+             <div key={i} className="aspect-square bg-[#0A0A0A]/5 rounded relative flex flex-col p-1">
+                <div className="mt-auto h-2 w-full bg-[#0A0A0A]/10 rounded" />
                 <div className="mt-1 h-3 w-1/2 bg-indigo-500 rounded-sm" />
              </div>
            ))}
@@ -84,7 +84,7 @@ const demos = [
       <div className="p-4 flex flex-col justify-center h-full text-white">
         <div className="text-[12px] font-black uppercase italic leading-none mb-2">GRAN PROMO</div>
         <div className="text-[24px] font-black leading-none mb-4 tracking-tighter">Limpieza 2x1</div>
-        <div className="h-10 w-full bg-white text-sky-500 rounded flex items-center justify-center text-[10px] font-bold uppercase tracking-widest">Aprovechar YA</div>
+        <div className="h-10 w-full bg-[#111111] text-sky-500 rounded flex items-center justify-center text-[10px] font-bold uppercase tracking-widest">Aprovechar YA</div>
       </div>
     )
   },
@@ -95,14 +95,14 @@ const demos = [
     color: 'bg-emerald-500',
     content: (
       <div className="flex flex-col items-center justify-center h-full p-4">
-        <div className="aspect-square w-24 bg-white rounded-xl p-3 border-4 border-emerald-600">
-           <div className="w-full h-full border-2 border-black/10 grid grid-cols-4 grid-rows-4">
+        <div className="aspect-square w-24 bg-[#111111] rounded-xl p-3 border-4 border-emerald-600">
+           <div className="w-full h-full border-2 border-white/10 grid grid-cols-4 grid-rows-4">
               {[...Array(16)].map((_, i) => (
-                <div key={i} className={`m-[1px] ${Math.random() > 0.5 ? 'bg-black' : 'bg-transparent'}`} />
+                <div key={i} className={`m-[1px] ${Math.random() > 0.5 ? 'bg-[#0A0A0A]' : 'bg-transparent'}`} />
               ))}
            </div>
         </div>
-        <div className="mt-4 h-2 w-16 bg-white/40 rounded" />
+        <div className="mt-4 h-2 w-16 bg-[#111111]/40 rounded" />
       </div>
     )
   }

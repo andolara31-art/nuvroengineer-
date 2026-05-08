@@ -30,7 +30,7 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="py-24 bg-black border-t border-white/5 overflow-hidden" id="metodo">
+    <section className="py-24 bg-[#0A0A0A] border-t border-white/5 overflow-hidden" id="metodo">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-24">
           <span className="text-xs font-mono tracking-[0.3em] text-[#0066FF] uppercase mb-6 block">

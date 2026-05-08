@@ -41,9 +41,9 @@ const customServices = [
 
 export default function NuvroCustom() {
   return (
-    <section id="custom" className="relative overflow-hidden bg-[#02050a] py-24 text-white md:py-32">
-      <div className="absolute inset-0 nuvro-blueprint opacity-45" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,_#02050a_0%,_rgba(2,5,10,0.72)_46%,_#02050a_100%)]" />
+    <section id="custom" className="relative overflow-hidden bg-[#0A0A0A] py-24 text-white md:py-32">
+      <div className="absolute inset-0 hero-bg opacity-45" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,_#0A0A0A_0%,_rgba(10,10,10,0.72)_46%,_#0A0A0A_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -52,7 +52,7 @@ export default function NuvroCustom() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6 inline-flex items-center gap-3 border border-white/18 bg-white/6 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white/72"
+              className="mb-6 inline-flex items-center gap-3 border border-white/18 bg-[#111111]/6 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white/72"
             >
               <span className="h-2 w-2 bg-[#0066FF]" />
               Nuvro Custom
@@ -84,7 +84,7 @@ export default function NuvroCustom() {
               href="https://wa.me/50671757171?text=Hola NUVRO, necesito un sistema custom"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-3 bg-[#0066FF] px-7 py-4 text-sm font-black uppercase tracking-[0.16em] text-white transition duration-200 hover:bg-white hover:text-[#02050a] active:scale-[0.98]"
+              className="mt-8 inline-flex items-center gap-3 bg-[#0066FF] px-7 py-4 text-sm font-black uppercase tracking-[0.16em] text-white transition duration-200 hover:bg-[#111111] hover:text-white active:scale-[0.98]"
             >
               Hablar de un proyecto custom <ArrowRight size={18} />
             </a>
@@ -99,9 +99,9 @@ export default function NuvroCustom() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: idx * 0.07 }}
-              className="group grid overflow-hidden border border-white/12 bg-white/[0.035] backdrop-blur-sm transition duration-300 hover:border-[#0066FF]/55 md:grid-cols-[220px_1fr_220px]"
+              className="group grid overflow-hidden border-b border-[rgba(255,255,255,0.06)] border-l-[3px] border-l-transparent bg-[#111111] backdrop-blur-sm transition duration-300 hover:border-l-[#0066FF] hover:bg-[#1A1A1A] md:grid-cols-[220px_1fr_220px]"
             >
-              <div className="relative h-48 overflow-hidden bg-black md:h-full">
+              <div className="relative h-48 overflow-hidden bg-[#0A0A0A] md:h-full">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -111,7 +111,7 @@ export default function NuvroCustom() {
               </div>
 
               <div className="grid gap-6 p-6 md:grid-cols-[72px_1fr] md:p-8">
-                <div className="flex h-14 w-14 items-center justify-center border border-white/15 text-[#8bb8ff] transition group-hover:border-[#0066FF] group-hover:bg-[#0066FF] group-hover:text-white">
+                <div className="flex h-14 w-14 items-center justify-center border border-white/15 text-[#0066FF] transition group-hover:border-[#0066FF] group-hover:bg-[#0066FF] group-hover:text-white">
                   {service.icon}
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function NuvroCustom() {
                     <h3 className="font-display text-4xl font-black uppercase leading-none tracking-wide">
                       {service.title}
                     </h3>
-                    <span className="bg-white/8 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/48">
+                    <span className="border border-[rgba(0,102,255,0.3)] bg-[#0066FF]/15 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#0066FF]">
                       {service.tag}
                     </span>
                   </div>
@@ -128,7 +128,7 @@ export default function NuvroCustom() {
               </div>
 
               <div className="flex items-end justify-between border-t border-white/10 p-6 md:border-l md:border-t-0 md:p-8">
-                <span className="font-display text-5xl font-black text-white/18">
+                <span className="font-display text-5xl font-black text-[#0066FF]">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
                 <ArrowRight

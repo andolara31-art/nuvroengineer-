@@ -59,7 +59,7 @@ export default function Demos() {
   const activeDemo = demos.find(d => d.id === activeTab) || demos[0];
 
   return (
-    <section id="demos" className="py-24 md:py-32 bg-[#F9FAFB] relative border-t border-black/5">
+    <section id="demos" className="py-24 md:py-32 bg-[#0A0A0A] relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -77,7 +77,7 @@ export default function Demos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-display font-bold text-[#111827] leading-tight tracking-tight mb-6"
+            className="text-3xl md:text-5xl font-display font-bold text-white leading-tight tracking-tight mb-6"
           >
             Antes de comprar, mirá cómo podría verse.
           </motion.h2>
@@ -86,7 +86,7 @@ export default function Demos() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-[#6B7280] font-sans leading-relaxed"
+            className="text-lg text-[#9CA3AF] font-sans leading-relaxed"
           >
             Creamos demos visuales para que veás el estilo de tu menú, invitación, catálogo, link bio, QR o landing antes de avanzar.
           </motion.p>
@@ -99,8 +99,8 @@ export default function Demos() {
               onClick={() => setActiveTab(d.id)}
               className={`px-5 py-2.5 rounded-full text-sm font-bold uppercase transition-all duration-300 ${
                 activeTab === d.id 
-                ? 'bg-[#0066FF] text-white shadow-lg shadow-[#0066FF]/20 scale-105' 
-                : 'bg-white text-[#6B7280] border border-black/5 hover:bg-black/5 hover:text-[#111827]'
+                ? 'bg-[#0066FF] text-white shadow-lg shadow-[#0066FF]/20 scale-105'
+                : 'bg-transparent text-[#9CA3AF] border border-[rgba(255,255,255,0.15)] hover:text-white'
               }`}
             >
               {d.label}
@@ -108,7 +108,7 @@ export default function Demos() {
           ))}
         </div>
 
-        <div className="bg-white border border-black/5 rounded-[32px] overflow-hidden p-6 shadow-xl shadow-black/5 relative max-w-5xl mx-auto">
+        <div className="bg-[#111111] border border-[rgba(255,255,255,0.1)] rounded-[32px] overflow-hidden p-6 shadow-xl shadow-black/5 relative max-w-5xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeDemo.id}
@@ -126,23 +126,23 @@ export default function Demos() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wider">
+                <div className="absolute top-4 left-4 bg-[#111111]/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wider">
                   PREVIEW: {activeDemo.label}
                 </div>
               </div>
               
               <div className="w-full md:w-1/2 flex flex-col items-start p-4">
-                <h3 className="text-3xl font-display font-bold text-[#111827] mb-4">
+                <h3 className="text-3xl font-display font-bold text-white mb-4">
                   {activeDemo.title}
                 </h3>
-                <p className="text-[#6B7280] font-sans leading-relaxed text-lg mb-8">
+                <p className="text-[#9CA3AF] font-sans leading-relaxed text-lg mb-8">
                   "{activeDemo.desc}"
                 </p>
                 <a 
                   href={`https://wa.me/50671757171?text=Hola NUVRO, quiero ver un demo de ${activeDemo.label}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#111827] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#0066FF] transition-colors group shadow-md"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#111111] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#0066FF] transition-colors group shadow-md"
                 >
                   Pedir Demo <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>

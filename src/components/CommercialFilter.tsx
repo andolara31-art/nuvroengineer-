@@ -39,7 +39,7 @@ export default function CommercialFilter() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:border-white/20 transition-all text-sm group"
+              className="flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-[#111111]/5 text-white/80 hover:bg-[#111111]/10 hover:border-white/20 transition-all text-sm group"
             >
               <div className="text-white/40 group-hover:text-[#0066FF] transition-colors">
                 {target.icon}

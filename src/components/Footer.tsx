@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-black py-24 border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-[#0A0A0A] py-24 border-t border-white/5 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center gap-12 border-t border-white/5 pt-16">
-          <div className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] font-mono tracking-widest text-white/60">
+          <div className="px-6 py-2 rounded-full border border-white/10 bg-[#111111]/5 text-[10px] font-mono tracking-widest text-white/60">
             NUVROENGINEER.COM
           </div>
           

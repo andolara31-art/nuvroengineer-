@@ -52,7 +52,7 @@ const marqueeItems = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#02050a] text-white">
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#0A0A0A] text-white">
       <div className="absolute inset-0">
         <img
           src="/assets/nuvro/hero-command-center.png"
@@ -60,8 +60,8 @@ export default function Hero() {
           className="hero-bg-media h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[#0A0A0A]/85" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(10,10,10,0.92)_0%,_rgba(10,10,10,0.42)_48%,_#02050a_100%)]" />
-        <div className="absolute inset-0 nuvro-blueprint animate-blueprint opacity-60" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(10,10,10,0.92)_0%,_rgba(10,10,10,0.42)_48%,_#0A0A0A_100%)]" />
+        <div className="absolute inset-0 hero-bg opacity-60" />
         <div className="absolute inset-0 scan-lines opacity-20" />
       </div>
 
@@ -78,7 +78,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
-            className="flex flex-col justify-between gap-4 border-y border-white/12 bg-black/24 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white/62 backdrop-blur-sm sm:flex-row"
+            className="flex flex-col justify-between gap-4 border-y border-white/12 bg-[#0A0A0A]/24 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white/62 backdrop-blur-sm sm:flex-row"
           >
             <span>NUVRO ENGINEER / presencia digital de alto impacto</span>
             <span>webs, qr, sistemas, automatización e IA</span>
@@ -90,11 +90,11 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.62, delay: 0.02, ease: [0.23, 1, 0.32, 1] }}
-                className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-white/76 backdrop-blur-xl"
+                className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/15 bg-[#111111]/8 px-4 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-white/76 backdrop-blur-xl"
               >
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2DFF73] opacity-75" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#2DFF73]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#16A34A] opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#16A34A]" />
                 </span>
                 NUVRO ENGINEER
               </motion.div>
@@ -103,7 +103,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.72, delay: 0.05, ease: [0.23, 1, 0.32, 1] }}
-                className="mb-5 inline-flex bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#02050a] diagonal-cut"
+                className="mb-5 inline-flex bg-[#111111] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white diagonal-cut"
               >
                 Tu competencia se ve igual. Ese es el problema.
               </motion.div>
@@ -156,14 +156,14 @@ export default function Hero() {
               >
                 <a
                   href="#contacto"
-                  className="group inline-flex items-center justify-center gap-3 bg-white px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-[#02050a] transition duration-200 hover:bg-[#0066FF] hover:text-white active:scale-[0.98]"
+                  className="group inline-flex items-center justify-center gap-3 bg-[#111111] px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-white transition duration-200 hover:bg-[#0066FF] hover:text-white active:scale-[0.98]"
                 >
                   Transformar mi marca
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#express"
-                  className="inline-flex items-center justify-center border border-white/24 bg-black/34 px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition duration-200 hover:border-[#0066FF] hover:text-[#8bb8ff] active:scale-[0.98]"
+                  className="inline-flex items-center justify-center border border-white/24 bg-[#0A0A0A]/34 px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition duration-200 hover:border-[#0066FF] hover:text-[#0066FF] active:scale-[0.98]"
                 >
                   Ver la máquina
                 </a>
@@ -186,7 +186,7 @@ export default function Hero() {
                     {beforeSignals.map((item) => (
                       <span
                         key={item}
-                        className="block border border-white/10 bg-white/[0.035] px-3 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/42"
+                        className="block border border-white/10 bg-[#111111]/[0.035] px-3 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/42"
                       >
                         {item}
                       </span>
@@ -198,7 +198,7 @@ export default function Hero() {
                   <p className="text-[10px] font-black uppercase tracking-[0.28em] text-white/70">NUVRO engine</p>
                   <p className="mt-3 font-display text-5xl font-black uppercase leading-[0.82] md:text-6xl">
                     mirada
-                    <span className="block text-[#8bb8ff]">activada</span>
+                    <span className="block text-[#0066FF]">activada</span>
                   </p>
                 </div>
 
@@ -218,7 +218,7 @@ export default function Hero() {
                   </motion.div>
                 ))}
 
-                <div className="absolute bottom-8 right-0 z-20 w-[45%] border border-[#0066FF]/50 bg-white px-4 py-4 text-[#02050a] shadow-[12px_12px_0_rgba(0,102,255,0.82)] md:bottom-12">
+                <div className="absolute bottom-8 right-0 z-20 w-[45%] border border-[#0066FF]/50 bg-[#111111] px-4 py-4 text-white shadow-[12px_12px_0_rgba(0,102,255,0.82)] md:bottom-12">
                   <p className="mb-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#0066FF]">Después</p>
                   <p className="font-display text-4xl font-black uppercase leading-none md:text-5xl">
                     marca que se ve cara
@@ -232,7 +232,7 @@ export default function Hero() {
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.45, delay: 0.68 + index * 0.05 }}
-                      className="flex items-center gap-2 border border-white/12 bg-[#02050a]/76 px-3 py-3 text-[10px] font-black uppercase tracking-[0.12em] text-white/72 backdrop-blur-md"
+                      className="flex items-center gap-2 border border-white/12 bg-[#0A0A0A]/76 px-3 py-3 text-[10px] font-black uppercase tracking-[0.12em] text-white/72 backdrop-blur-md"
                     >
                       <span className="text-[#0066FF]">{item.icon}</span>
                       {item.label}
@@ -253,7 +253,7 @@ export default function Hero() {
               {[...marqueeItems, ...marqueeItems].map((item, index) => (
                 <span key={`${item}-${index}`} className="flex items-center gap-7">
                   {item}
-                  <span className="h-3 w-3 bg-white" />
+                  <span className="h-3 w-3 bg-[#111111]" />
                 </span>
               ))}
             </div>

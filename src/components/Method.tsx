@@ -41,7 +41,7 @@ const steps = [
 
 export default function Method() {
   return (
-    <section id="metodo" className="py-24 md:py-32 bg-[#050505] relative border-t border-white/5">
+    <section id="metodo" className="py-24 md:py-32 bg-[#0A0A0A] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-3xl mb-16 md:mb-24">
           <h2 className="text-[10px] font-mono tracking-widest text-[#0066FF] uppercase mb-4">
@@ -56,7 +56,7 @@ export default function Method() {
         </div>
 
         {/* Desktop Grid and Mobile Stack */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 p-px border border-white/10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#111111]/5 p-px border border-white/10">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -70,7 +70,7 @@ export default function Method() {
                <div className="absolute top-0 left-0 w-full h-[2px] bg-[#0066FF] opacity-0 group-hover:opacity-100 transition-opacity" />
                
                <div className="flex items-center justify-between mb-8">
-                  <div className="text-[10px] font-mono tracking-widest text-white/40 uppercase bg-white/5 px-3 py-1 border border-white/10">
+                  <div className="text-[10px] font-mono tracking-widest text-white/40 uppercase bg-[#111111]/5 px-3 py-1 border border-white/10">
                      {step.phase}
                   </div>
                   <div className="font-display text-2xl md:text-3xl font-medium text-white/10 group-hover:text-[#0066FF]/20 transition-colors">

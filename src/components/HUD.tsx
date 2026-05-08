@@ -24,7 +24,7 @@ export default function HUD() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 left-6 z-[50] hidden lg:flex flex-col font-mono text-[11px] text-[#F5F5F5]/40 leading-relaxed pointer-events-none">
+    <div className="fixed bottom-6 left-6 z-[50] hidden lg:flex flex-col font-mono text-[11px] text-[#9CA3AF]/40 leading-relaxed pointer-events-none">
        <span>NUVRO.ENGINEER</span>
        <span>LAT 10.0563°N · LON 84.4506°W</span>
        <span>SYSTEM ONLINE · {time}</span>

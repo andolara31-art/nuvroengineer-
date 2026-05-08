@@ -16,12 +16,12 @@ export default function Comparison() {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-0 border border-white/10 rounded-3xl overflow-hidden">
           {/* ANTES */}
-          <div className="p-8 md:p-12 bg-white/[0.02] relative border-b md:border-b-0 md:border-r border-white/10">
+          <div className="p-8 md:p-12 bg-[#111111]/[0.02] relative border-b md:border-b-0 md:border-r border-white/10">
             <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center text-red-500">
+              <div className="w-8 h-8 rounded-full bg-[#DC2626]/20 flex items-center justify-center text-[#DC2626]">
                 <X size={20} />
               </div>
-              <span className="text-xl font-display font-bold text-red-500 uppercase tracking-widest">ANTES</span>
+              <span className="text-xl font-display font-bold text-[#DC2626] uppercase tracking-widest">ANTES</span>
             </div>
             
             <ul className="space-y-6">
@@ -39,17 +39,17 @@ export default function Comparison() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-4 text-brand-platinum/40 line-through decoration-red-500/30"
+                  className="flex items-center gap-4 text-brand-platinum/40 line-through decoration-[#DC2626]/30"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-500/30 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#DC2626]/30 shrink-0" />
                   <span className="font-light">{item}</span>
                 </motion.li>
               ))}
             </ul>
 
             <div className="mt-12 p-6 rounded-2xl border border-white/5 bg-brand-black/40 grayscale opacity-40">
-               <div className="h-4 w-32 bg-white/10 rounded mb-4" />
-               <div className="h-24 w-full bg-white/5 rounded" />
+               <div className="h-4 w-32 bg-[#111111]/10 rounded mb-4" />
+               <div className="h-24 w-full bg-[#111111]/5 rounded" />
             </div>
           </div>
 
@@ -94,8 +94,8 @@ export default function Comparison() {
                <div className="flex gap-2">
                  <div className="h-12 w-12 bg-brand-accent/20 rounded-lg" />
                  <div className="flex-1 space-y-2">
-                   <div className="h-4 w-full bg-white/10 rounded" />
-                   <div className="h-4 w-24 bg-white/10 rounded" />
+                   <div className="h-4 w-full bg-[#111111]/10 rounded" />
+                   <div className="h-4 w-24 bg-[#111111]/10 rounded" />
                  </div>
                </div>
             </div>

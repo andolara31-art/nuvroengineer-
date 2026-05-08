@@ -30,7 +30,7 @@ export default function PaymentProcess() {
   ];
 
   return (
-    <section className="py-24 bg-black border-t border-white/5 overflow-hidden">
+    <section className="py-24 bg-[#0A0A0A] border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
@@ -63,7 +63,7 @@ export default function PaymentProcess() {
           <div className="grid gap-4">
             {methods.map((method, idx) => (
               <div key={idx} className="bg-[#0A0A0A] border border-white/5 rounded-2xl p-6 flex items-center gap-6 group hover:border-white/10 transition-colors">
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0 group-hover:bg-[#0066FF]/10 group-hover:border-[#0066FF]/20 transition-all">
+                <div className="w-12 h-12 bg-[#111111]/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0 group-hover:bg-[#0066FF]/10 group-hover:border-[#0066FF]/20 transition-all">
                   <div className="text-white group-hover:text-[#0066FF] transition-colors">
                     {method.icon}
                   </div>

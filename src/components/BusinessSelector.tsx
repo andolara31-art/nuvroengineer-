@@ -91,7 +91,7 @@ export default function BusinessSelector() {
               className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
                 activeTab === cat.id
                   ? 'bg-brand-accent border-brand-accent text-brand-white'
-                  : 'bg-white/5 border-white/10 text-brand-platinum/60 hover:bg-white/10'
+                  : 'bg-[#111111]/5 border-white/10 text-brand-platinum/60 hover:bg-[#111111]/10'
               }`}
             >
               {cat.icon}
@@ -128,7 +128,7 @@ export default function BusinessSelector() {
                   <span className="text-brand-platinum/40 font-mono text-xs uppercase tracking-widest mb-4 block">Recomendados para vos</span>
                   <div className="flex flex-wrap gap-2">
                     {current.recommended.map((item, i) => (
-                      <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs text-brand-platinum/70">
+                      <span key={i} className="px-3 py-1 bg-[#111111]/5 border border-white/10 rounded-lg text-xs text-brand-platinum/70">
                         {item}
                       </span>
                     ))}

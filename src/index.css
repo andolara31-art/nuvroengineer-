@@ -10,22 +10,16 @@
 }
 
 :root {
-  --color-service-1: #2D6A4F;
-  --color-service-2: #7B2D8B;
-  --color-service-3: #8B1A1A;
-  --color-service-4: #C4622D;
-  --color-service-5: #5C3D8F;
-  --color-service-6: #1A6B7C;
-  --color-service-7: #1A7A3C;
+  --color-service-1: #00C896;
+  --color-service-2: #7C3AED;
+  --color-service-3: #DC2626;
+  --color-service-4: #EA580C;
+  --color-service-5: #2563EB;
+  --color-service-6: #0891B2;
+  --color-service-7: #16A34A;
 }
 
 @layer utilities {
-  .pattern-grid {
-    background-size: 30px 30px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  }
-  
   .grain-overlay {
     @apply fixed inset-0 pointer-events-none z-50 opacity-[0.03];
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
@@ -35,29 +29,8 @@
     text-wrap: balance;
   }
 
-  .hero-grid {
-    background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 72px 72px;
-    mask-image: linear-gradient(to bottom, black 0%, transparent 88%);
-  }
-
-  .nuvro-blueprint {
-    background-image:
-      linear-gradient(115deg, transparent 0 38%, rgba(0, 102, 255, 0.2) 38.15% 38.55%, transparent 38.7% 100%),
-      linear-gradient(65deg, transparent 0 58%, rgba(255, 255, 255, 0.12) 58.15% 58.35%, transparent 58.5% 100%),
-      linear-gradient(to right, rgba(0, 102, 255, 0.12) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 88px 88px, 88px 88px;
-  }
-
-  .blueprint-light {
-    background-image:
-      linear-gradient(120deg, transparent 0 44%, rgba(0, 102, 255, 0.12) 44.1% 44.35%, transparent 44.45% 100%),
-      linear-gradient(to right, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(10, 22, 46, 0.06) 1px, transparent 1px);
-    background-size: 100% 100%, 64px 64px, 64px 64px;
+  .hero-bg {
+    background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(0,102,255,0.07) 0%, transparent 68%);
   }
 
   .diagonal-cut {
@@ -85,7 +58,7 @@
   .media-slice {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.22);
-    background: #02050a;
+    background: #0A0A0A;
     box-shadow: 16px 18px 0 rgba(0, 102, 255, 0.34);
     clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   }
@@ -127,30 +100,11 @@
   }
 
   .service-card {
-    box-shadow: inset 3px 0 0 var(--service-color);
+    border-left: 3px solid var(--service-color);
   }
 
-  .section-divider {
-    position: relative;
-    height: clamp(42px, 6vw, 78px);
-    margin-top: -1px;
-    margin-bottom: -1px;
-    overflow: hidden;
-    background: var(--divider-from);
-  }
-
-  .section-divider svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .section-divider.is-flipped svg {
-    transform: scaleX(-1);
-  }
-
-  .animate-blueprint {
-    animation: blueprint-drift 18s linear infinite;
+  .service-card:hover {
+    box-shadow: 0 0 28px color-mix(in srgb, var(--service-color) 22%, transparent);
   }
 
   .animate-scan {
@@ -169,15 +123,6 @@
       transparent 1px,
       transparent 5px
     );
-  }
-}
-
-@keyframes blueprint-drift {
-  from {
-    background-position: 0 0, 0 0, 0 0, 0 0;
-  }
-  to {
-    background-position: 0 0, 0 0, 88px 88px, 88px 88px;
   }
 }
 

@@ -3,7 +3,7 @@ import { MousePointer2, Globe } from 'lucide-react';
 
 export default function WhatWeDo() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden" id="servicios">
+    <section className="py-24 bg-[#0A0A0A] relative overflow-hidden" id="servicios">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16">
           <span className="text-xs font-mono tracking-[0.3em] text-[#0066FF] uppercase mb-6 block">
@@ -42,7 +42,7 @@ export default function WhatWeDo() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="bg-[#0A0A0A] border border-white/5 rounded-2xl p-8 md:p-12 hover:border-white/10 transition-colors group"
           >
-            <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-white/10 group-hover:bg-[#0066FF]/10 group-hover:border-[#0066FF]/20 transition-all">
+            <div className="w-12 h-12 bg-[#111111]/5 rounded-xl flex items-center justify-center mb-8 border border-white/10 group-hover:bg-[#0066FF]/10 group-hover:border-[#0066FF]/20 transition-all">
               <MousePointer2 className="text-white group-hover:text-[#0066FF] transition-colors" size={24} />
             </div>
             <h3 className="text-2xl font-medium text-white mb-4">Landing Pages</h3>
@@ -58,7 +58,7 @@ export default function WhatWeDo() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-[#0A0A0A] border border-white/5 rounded-2xl p-8 md:p-12 hover:border-white/10 transition-colors group"
           >
-            <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-white/10 group-hover:bg-[#0066FF]/10 group-hover:border-[#0066FF]/20 transition-all">
+            <div className="w-12 h-12 bg-[#111111]/5 rounded-xl flex items-center justify-center mb-8 border border-white/10 group-hover:bg-[#0066FF]/10 group-hover:border-[#0066FF]/20 transition-all">
               <Globe className="text-white group-hover:text-[#0066FF] transition-colors" size={24} />
             </div>
             <h3 className="text-2xl font-medium text-white mb-4">Webs para Negocios</h3>

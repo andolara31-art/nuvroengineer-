@@ -89,7 +89,7 @@ export default function ExpressPackages() {
                 className={`flex items-center justify-center gap-3 w-full py-4 rounded-2xl font-bold transition-all duration-300 ${
                   pkg.popular 
                     ? 'bg-brand-accent text-brand-white hover:bg-brand-accent/90 shadow-[0_10px_20px_rgba(0,102,255,0.2)]'
-                    : 'bg-white/5 text-brand-white hover:bg-white/10'
+                    : 'bg-[#111111]/5 text-brand-white hover:bg-[#111111]/10'
                 }`}
               >
                 {pkg.cta}

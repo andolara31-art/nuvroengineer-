@@ -79,10 +79,10 @@ const products = [
 
 export default function NuvroExpress() {
   return (
-    <section id="express" className="relative overflow-hidden bg-[#fbfcff] py-24 text-[#07111f] md:py-32">
-      <div className="absolute inset-0 blueprint-light opacity-55" />
+    <section id="express" className="relative overflow-hidden bg-[#111111] py-24 text-white md:py-32">
+      <div className="absolute inset-0 hero-bg opacity-55" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div className="mb-16 grid gap-8 border-y border-[#07111f]/12 py-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mb-16 grid gap-8 border-y border-white/10 py-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ export default function NuvroExpress() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="max-w-2xl self-end text-xl font-medium leading-relaxed text-[#3e4b5d]"
+            className="max-w-2xl self-end text-xl font-medium leading-relaxed text-[#9CA3AF]"
           >
             Piezas digitales rápidas para negocios que necesitan verse mejor y vender sin esperar
             meses: menú, link bio, catálogo, invitación, QR comercial y landings promocionales.
@@ -123,18 +123,18 @@ export default function NuvroExpress() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: (idx % 4) * 0.07 }}
-              className={`service-card group flex min-h-[500px] flex-col overflow-hidden border border-[#07111f]/12 bg-white transition duration-300 hover:-translate-y-1 hover:border-[var(--service-color)] ${
+              className={`service-card group flex min-h-[500px] flex-col overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] transition duration-300 hover:-translate-y-1 hover:border-[var(--service-color)] hover:bg-[#1A1A1A] ${
                 idx === 0 ? 'md:col-span-2 lg:col-span-2 lg:row-span-2 lg:min-h-[760px]' : ''
               }`}
             >
-              <div className={`relative overflow-hidden bg-[#07111f] ${idx === 0 ? 'h-72 lg:h-[420px]' : 'h-56'}`}>
+              <div className={`relative overflow-hidden bg-[#111111] ${idx === 0 ? 'h-72 lg:h-[420px]' : 'h-56'}`}>
                 <img
                   src={prod.image}
                   alt={prod.title}
                   className="h-full w-full object-cover opacity-88 transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(7,17,31,0.06),_rgba(7,17,31,0.78))]" />
-                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center border border-white/25 bg-black/35 text-[var(--service-color)] backdrop-blur-md">
+                <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center border border-white/25 bg-[#0A0A0A]/35 text-[var(--service-color)] backdrop-blur-md">
                   {prod.icon}
                 </div>
                 <div className="absolute bottom-4 right-4 font-display text-5xl font-black text-white/28">
@@ -143,18 +143,18 @@ export default function NuvroExpress() {
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-3xl font-black uppercase leading-none text-[#07111f]">
+                <h3 className="font-display text-3xl font-black uppercase leading-none text-white">
                   {prod.title}
                 </h3>
-                <p className="mt-4 border-t border-[#07111f]/10 pt-4 text-sm font-black uppercase tracking-[0.12em] text-[var(--service-color)]">
+                <p className="mt-4 border-t border-white/10 pt-4 text-sm font-black uppercase tracking-[0.12em] text-[var(--service-color)]">
                   {prod.pain}
                 </p>
-                <p className="mt-4 flex-1 text-base leading-relaxed text-[#596678]">{prod.desc}</p>
+                <p className="mt-4 flex-1 text-base leading-relaxed text-[#9CA3AF]">{prod.desc}</p>
                 <a
                   href={`https://wa.me/50671757171?text=${encodeURIComponent(`Hola NUVRO, quiero info sobre: ${prod.title}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex items-center justify-between gap-4 border border-[#07111f] px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-[#07111f] transition duration-200 hover:border-[var(--service-color)] hover:bg-[var(--service-color)] hover:text-white active:scale-[0.98]"
+                  className="mt-8 inline-flex items-center justify-between gap-4 border border-white/10 px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-white transition duration-200 hover:border-[var(--service-color)] hover:bg-[var(--service-color)] hover:text-white active:scale-[0.98]"
                 >
                   {prod.cta}
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />

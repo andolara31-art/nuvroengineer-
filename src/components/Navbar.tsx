@@ -27,10 +27,10 @@ export default function Navbar() {
       }`}
     >
       <div className={`max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between transition-all duration-300 ${
-        scrolled ? 'bg-black/75 backdrop-blur-2xl border border-white/10 py-3 shadow-2xl shadow-black/40' : ''
+        scrolled ? 'bg-[#0A0A0A]/75 backdrop-blur-2xl border border-white/10 py-3 shadow-2xl shadow-black/40' : ''
       }`}>
         <a href="/" className="flex items-center gap-4 group">
-          <div className="w-11 h-11 bg-white text-black flex items-center justify-center font-display text-xl uppercase leading-none border-b-4 border-[#0066FF] group-hover:bg-[#0066FF] group-hover:text-white transition-colors">
+          <div className="w-11 h-11 bg-[#111111] text-white flex items-center justify-center font-display text-xl uppercase leading-none border-b-4 border-[#0066FF] group-hover:bg-[#0066FF] group-hover:text-white transition-colors">
             N
           </div>
           <div className="flex flex-col leading-none">
@@ -52,7 +52,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contacto"
-            className="px-6 py-3 bg-white text-black text-xs font-extrabold uppercase tracking-[0.2em] hover:bg-[#0066FF] hover:text-white transition-all shadow-xl"
+            className="px-6 py-3 bg-[#111111] text-white text-xs font-extrabold uppercase tracking-[0.2em] hover:bg-[#0066FF] hover:text-white transition-all shadow-xl"
           >
             Iniciar Proyecto
           </a>
@@ -61,7 +61,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center text-white"
+          className="lg:hidden w-12 h-12 bg-[#111111]/5 border border-white/10 flex items-center justify-center text-white"
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
