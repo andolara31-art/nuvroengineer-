@@ -47,7 +47,7 @@ export default function Diagnosis() {
             transition={{ delay: 0.08 }}
             className="max-w-xl font-display text-[clamp(3.4rem,7vw,7rem)] font-black uppercase leading-[0.82] tracking-wide"
           >
-            Lo barato se nota antes de leer.
+            <span className="font-light italic">Lo</span> barato se nota antes de leer.
           </motion.h2>
 
           <motion.p

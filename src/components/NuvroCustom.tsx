@@ -65,7 +65,7 @@ export default function NuvroCustom() {
               transition={{ delay: 0.08 }}
               className="max-w-4xl font-display text-[clamp(3.3rem,7vw,7rem)] font-black uppercase leading-[0.84] tracking-wide"
             >
-              Cuando el negocio necesita una maquina propia.
+              <span className="font-light italic">Cuando</span> el negocio necesita una maquina propia.
             </motion.h2>
           </div>
 

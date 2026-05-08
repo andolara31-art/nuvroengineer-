@@ -57,10 +57,10 @@ export default function Hero() {
         <img
           src="/assets/nuvro/hero-command-center.png"
           alt="Centro de control digital creado por NUVRO ENGINEER"
-          className="h-full w-full object-cover opacity-50"
+          className="hero-bg-media h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(104deg,_rgba(2,5,10,0.98)_0%,_rgba(2,5,10,0.9)_36%,_rgba(0,102,255,0.27)_36.2%,_rgba(0,102,255,0.08)_58%,_rgba(2,5,10,0.68)_77%,_rgba(2,5,10,0.96)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(2,5,10,0.96)_0%,_rgba(2,5,10,0.1)_48%,_#02050a_100%)]" />
+        <div className="absolute inset-0 bg-[#0A0A0A]/85" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(10,10,10,0.92)_0%,_rgba(10,10,10,0.42)_48%,_#02050a_100%)]" />
         <div className="absolute inset-0 nuvro-blueprint animate-blueprint opacity-60" />
         <div className="absolute inset-0 scan-lines opacity-20" />
       </div>
@@ -87,6 +87,19 @@ export default function Hero() {
           <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(460px,0.84fr)]">
             <div className="relative z-20">
               <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.62, delay: 0.02, ease: [0.23, 1, 0.32, 1] }}
+                className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/8 px-4 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-white/76 backdrop-blur-xl"
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2DFF73] opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#2DFF73]" />
+                </span>
+                NUVRO ENGINEER
+              </motion.div>
+
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.72, delay: 0.05, ease: [0.23, 1, 0.32, 1] }}
@@ -101,7 +114,9 @@ export default function Hero() {
                 transition={{ duration: 0.86, delay: 0.12, ease: [0.23, 1, 0.32, 1] }}
                 className="font-display text-[clamp(3.55rem,16vw,12.8rem)] font-black uppercase leading-[0.73] tracking-[0.01em]"
               >
-                <span className="block text-white">De invisible</span>
+                <span className="block text-white">
+                  <span className="font-light italic">De</span> invisible
+                </span>
                 <span className="block text-[#0066FF]">a imposible</span>
                 <span className="block text-white">de ignorar.</span>
               </motion.h1>
@@ -162,7 +177,7 @@ export default function Hero() {
               className="relative z-10"
             >
               <div className="nuvro-machine relative h-[520px] md:h-[620px]">
-                <div className="absolute left-0 top-6 z-20 w-[44%] border border-white/15 bg-[#02050a]/78 p-4 backdrop-blur-md md:top-12">
+                <div className="hero-glass-panel absolute left-0 top-6 z-20 w-[44%] p-4 md:top-12">
                   <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-white/46">Antes</p>
                   <p className="font-display text-4xl font-black uppercase leading-none text-white/82 md:text-5xl">
                     negocio invisible
@@ -179,11 +194,11 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <div className="machine-core absolute left-[34%] top-[28%] z-30 w-[42%] border border-[#0066FF]/72 bg-[#0066FF] px-5 py-5 text-white shadow-[12px_12px_0_rgba(255,255,255,0.88)]">
+                <div className="hero-glass-panel machine-core absolute left-[34%] top-[28%] z-30 w-[42%] px-5 py-5 text-white">
                   <p className="text-[10px] font-black uppercase tracking-[0.28em] text-white/70">NUVRO engine</p>
                   <p className="mt-3 font-display text-5xl font-black uppercase leading-[0.82] md:text-6xl">
                     mirada
-                    <span className="block text-[#02050a]">activada</span>
+                    <span className="block text-[#8bb8ff]">activada</span>
                   </p>
                 </div>
 

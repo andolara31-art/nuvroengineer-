@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { ExternalLink, ArrowRight, FolderKanban } from 'lucide-react';
+import { ArrowRight, FolderKanban } from 'lucide-react';
+import type { CSSProperties } from 'react';
 
 const projects = [
   {
@@ -9,6 +10,7 @@ const projects = [
     system: "Plataforma de alta densidad para gestión de leads en tiempo real.",
     approach: "Dashboard de ventas, Automatización de WhatsApp y Analítica.",
     image: "/assets/nuvro/dashboards-crm.png",
+    accent: "var(--color-service-7)",
   },
   {
     title: "Clario Advisory",
@@ -17,6 +19,7 @@ const projects = [
     system: "Identidad digital de alto nivel y funnel de prospección.",
     approach: "Estrategia de contenido, landing page de conversión y UI corporativa.",
     image: "/assets/nuvro/webs-premium.png",
+    accent: "#0066FF",
   },
   {
     title: "NUVRO FIT",
@@ -25,6 +28,7 @@ const projects = [
     system: "Panel de control web para seguimiento biométrico y rutinas dinámicas.",
     approach: "Portal de cliente web-app, backend de entrenamiento y estadísticas.",
     image: "/assets/nuvro/automation-flows.png",
+    accent: "var(--color-service-5)",
   },
   {
     title: "Cafeoteca Costa Rica",
@@ -33,6 +37,7 @@ const projects = [
     system: "Ecosistema de menú interactivo y sistema POS ligero.",
     approach: "Menú digital rápido, sistema de órdenes a cocina y diseño de marca.",
     image: "/assets/nuvro/menu-qr.png",
+    accent: "var(--color-service-1)",
   }
 ];
 
@@ -69,11 +74,12 @@ export default function Projects() {
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
+              style={{ '--project-accent': project.accent } as CSSProperties}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white border border-black/5 rounded-[32px] overflow-hidden shadow-xl shadow-black/5 group"
+              className="bg-white border border-black/5 rounded-[32px] overflow-hidden shadow-xl shadow-black/5 group transition duration-300 hover:scale-[1.02]"
             >
               <div className="relative aspect-[4/3] w-full bg-gray-100 overflow-hidden">
                  <img 
@@ -84,6 +90,11 @@ export default function Projects() {
                  />
                  <div className="absolute top-4 right-4 px-4 py-2 bg-white/90 backdrop-blur-md rounded-full text-xs font-bold text-[#111827] uppercase tracking-widest shadow-md">
                     {project.type}
+                 </div>
+                 <div className="absolute inset-0 flex items-center justify-center bg-black/52 opacity-0 backdrop-blur-[3px] transition duration-300 group-hover:opacity-100">
+                    <span className="bg-[var(--project-accent)] px-5 py-3 text-xs font-black uppercase tracking-[0.24em] text-white shadow-xl">
+                      {project.type}
+                    </span>
                  </div>
               </div>
               

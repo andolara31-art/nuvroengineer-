@@ -9,6 +9,16 @@
   --color-brand-deep: #0047B8;
 }
 
+:root {
+  --color-service-1: #2D6A4F;
+  --color-service-2: #7B2D8B;
+  --color-service-3: #8B1A1A;
+  --color-service-4: #C4622D;
+  --color-service-5: #5C3D8F;
+  --color-service-6: #1A6B7C;
+  --color-service-7: #1A7A3C;
+}
+
 @layer utilities {
   .pattern-grid {
     background-size: 30px 30px;
@@ -104,6 +114,39 @@
 
   .machine-core {
     clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  }
+
+  .hero-glass-panel {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(10, 10, 10, 0.34);
+    box-shadow:
+      0 18px 60px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .service-card {
+    box-shadow: inset 3px 0 0 var(--service-color);
+  }
+
+  .section-divider {
+    position: relative;
+    height: clamp(42px, 6vw, 78px);
+    margin-top: -1px;
+    margin-bottom: -1px;
+    overflow: hidden;
+    background: var(--divider-from);
+  }
+
+  .section-divider svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .section-divider.is-flipped svg {
+    transform: scaleX(-1);
   }
 
   .animate-blueprint {
