@@ -18,10 +18,10 @@ export default function Comparison() {
           {/* ANTES */}
           <div className="p-8 md:p-12 bg-[#111111]/[0.02] relative border-b md:border-b-0 md:border-r border-white/10">
             <div className="flex items-center gap-2 mb-8">
-              <div className="w-8 h-8 rounded-full bg-[#DC2626]/20 flex items-center justify-center text-[#DC2626]">
+              <div className="w-8 h-8 rounded-full bg-[#6B7280]/20 flex items-center justify-center text-[#6B7280]">
                 <X size={20} />
               </div>
-              <span className="text-xl font-display font-bold text-[#DC2626] uppercase tracking-widest">ANTES</span>
+              <span className="text-xl font-display font-bold text-[#6B7280] uppercase tracking-widest">ANTES</span>
             </div>
             
             <ul className="space-y-6">
@@ -39,9 +39,9 @@ export default function Comparison() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-4 text-brand-platinum/40 line-through decoration-[#DC2626]/30"
+                  className="flex items-center gap-4 text-brand-platinum/40 line-through decoration-[#6B7280]/30"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#DC2626]/30 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#6B7280]/30 shrink-0" />
                   <span className="font-light">{item}</span>
                 </motion.li>
               ))}

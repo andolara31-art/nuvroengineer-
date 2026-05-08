@@ -30,12 +30,12 @@ export default function Navbar() {
         scrolled ? 'bg-[#0A0A0A]/75 backdrop-blur-2xl border border-white/10 py-3 shadow-2xl shadow-black/40' : ''
       }`}>
         <a href="/" className="flex items-center gap-4 group">
-          <div className="w-11 h-11 bg-[#111111] text-white flex items-center justify-center font-display text-xl uppercase leading-none border-b-4 border-[#D7FF45] group-hover:bg-[#D7FF45] group-hover:text-[#0A0A0A] transition-colors">
+          <div className="w-11 h-11 bg-[#111111] text-white flex items-center justify-center font-display text-xl uppercase leading-none border-b-4 border-[#2B6CB0] group-hover:bg-[#2B6CB0] group-hover:text-white transition-colors">
             N
           </div>
           <div className="flex flex-col leading-none">
             <span className="text-base md:text-lg font-display text-white uppercase">NUVRO</span>
-            <span className="text-[11px] md:text-xs text-[#D7FF45] uppercase tracking-[0.36em] font-extrabold">Engineer</span>
+            <span className="text-[11px] md:text-xs text-white/48 uppercase tracking-[0.36em] font-extrabold">Engineer</span>
           </div>
         </a>
 
@@ -45,14 +45,14 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium uppercase tracking-wide text-white/50 hover:text-[#D7FF45] transition-colors"
+              className="text-sm font-medium uppercase tracking-wide text-white/50 hover:text-[#2B6CB0] transition-colors"
             >
               {link.name}
             </a>
           ))}
           <a
             href="#contacto"
-            className="px-6 py-3 bg-[#111111] text-white text-xs font-extrabold uppercase tracking-[0.2em] hover:bg-[#D7FF45] hover:text-[#0A0A0A] transition-all shadow-xl"
+            className="px-6 py-3 bg-[#111111] text-white text-xs font-extrabold uppercase tracking-[0.2em] hover:bg-[#2B6CB0] hover:text-white transition-all shadow-xl"
           >
             Iniciar Proyecto
           </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
               <a
                 href="#contacto"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-4 w-full py-4 bg-[#D7FF45] text-[#0A0A0A] text-sm font-bold uppercase tracking-wider text-center"
+                className="mt-4 w-full py-4 bg-[#FFFFFF] text-[#0A0A0A] text-sm font-bold uppercase tracking-wider text-center"
               >
                 Iniciar Proyecto
               </a>

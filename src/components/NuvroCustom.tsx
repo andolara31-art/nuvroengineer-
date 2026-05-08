@@ -54,7 +54,7 @@ export default function NuvroCustom() {
               viewport={{ once: true }}
               className="mb-6 inline-flex items-center gap-3 border border-white/18 bg-[#111111]/6 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white/72"
             >
-              <span className="h-2 w-2 bg-[#D7FF45]" />
+              <span className="h-2 w-2 bg-[#2B6CB0]" />
               Nuvro Custom
             </motion.div>
 
@@ -84,7 +84,7 @@ export default function NuvroCustom() {
               href="https://wa.me/50671757171?text=Hola NUVRO, necesito un sistema custom"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-3 bg-[#D7FF45] px-7 py-4 text-sm font-black uppercase tracking-[0.16em] text-[#0A0A0A] transition duration-200 hover:bg-[#E4E3E0] active:scale-[0.98]"
+              className="mt-8 inline-flex items-center gap-3 bg-[#FFFFFF] px-7 py-4 text-sm font-black uppercase tracking-[0.16em] text-[#0A0A0A] transition duration-200 hover:bg-[#2B6CB0] hover:text-white active:scale-[0.98]"
             >
               Hablar de un proyecto custom <ArrowRight size={18} />
             </a>
@@ -99,7 +99,7 @@ export default function NuvroCustom() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: idx * 0.07 }}
-              className="group grid overflow-hidden border-b border-[rgba(255,255,255,0.06)] border-l-[3px] border-l-transparent bg-[#111111] backdrop-blur-sm transition-[background-color,border-color] duration-200 ease-in hover:border-l-[#D7FF45] hover:bg-[#0F0F0F] md:grid-cols-[220px_1fr_220px]"
+              className="group grid overflow-hidden border-b border-[rgba(255,255,255,0.06)] border-l-[3px] border-l-transparent bg-[#111111] backdrop-blur-sm transition-[background-color,border-color] duration-200 ease-in hover:border-l-[#2B6CB0] hover:bg-[#0F0F0F] md:grid-cols-[220px_1fr_220px]"
             >
               <div className="relative h-48 overflow-hidden bg-[#0A0A0A] md:h-full">
                 <img
@@ -111,7 +111,7 @@ export default function NuvroCustom() {
               </div>
 
               <div className="grid gap-6 p-6 md:grid-cols-[72px_1fr] md:p-8">
-                <div className="flex h-14 w-14 items-center justify-center border border-white/15 text-[#D7FF45] transition group-hover:border-[#D7FF45] group-hover:bg-[#D7FF45] group-hover:text-[#0A0A0A]">
+                <div className="flex h-14 w-14 items-center justify-center border border-white/15 text-white/62 transition group-hover:border-[#2B6CB0] group-hover:bg-[#2B6CB0] group-hover:text-white">
                   {service.icon}
                 </div>
                 <div>
@@ -119,7 +119,7 @@ export default function NuvroCustom() {
                     <h3 className="font-display text-4xl font-black uppercase leading-none tracking-wide">
                       {service.title}
                     </h3>
-                    <span className="border border-[rgba(215,255,69,0.3)] bg-[#D7FF45]/15 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#D7FF45]">
+                    <span className="border border-white/10 bg-white/[0.03] px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/58">
                       {service.tag}
                     </span>
                   </div>
@@ -128,12 +128,12 @@ export default function NuvroCustom() {
               </div>
 
               <div className="flex items-end justify-between border-t border-white/10 p-6 md:border-l md:border-t-0 md:p-8">
-                <span className="font-display text-5xl font-black text-[#D7FF45]">
+                <span className="font-display text-5xl font-black text-white/18">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
                 <ArrowRight
                   size={22}
-                  className="text-[#D7FF45] opacity-70 transition group-hover:translate-x-1 group-hover:opacity-100"
+                  className="text-white/50 opacity-70 transition group-hover:translate-x-1 group-hover:text-[#2B6CB0] group-hover:opacity-100"
                 />
               </div>
             </motion.article>

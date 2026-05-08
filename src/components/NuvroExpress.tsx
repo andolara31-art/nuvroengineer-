@@ -88,7 +88,7 @@ export default function NuvroExpress() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6 inline-flex items-center gap-3 bg-[#D7FF45] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#0A0A0A] diagonal-cut"
+              className="mb-6 inline-flex items-center gap-3 bg-[#FFFFFF] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#0A0A0A] diagonal-cut"
             >
               Nuvro Express
             </motion.div>

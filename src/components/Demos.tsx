@@ -69,8 +69,8 @@ export default function Demos() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 mb-6"
           >
-            <Eye size={16} className="text-[#D7FF45]" />
-            <span className="text-sm font-medium tracking-widest text-[#D7FF45] uppercase">Demos Visuales</span>
+            <Eye size={16} className="text-[#2B6CB0]" />
+            <span className="text-sm font-medium tracking-widest text-[#2B6CB0] uppercase">Demos Visuales</span>
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ export default function Demos() {
               onClick={() => setActiveTab(d.id)}
               className={`px-5 py-2.5 rounded-full text-sm font-bold uppercase transition-all duration-300 ${
                 activeTab === d.id 
-                ? 'bg-[#D7FF45] text-[#0A0A0A] shadow-lg shadow-[#D7FF45]/20 scale-105'
+                ? 'bg-[#FFFFFF] text-[#0A0A0A] shadow-lg shadow-black/20 scale-105'
                 : 'bg-transparent text-[#9CA3AF] border border-[rgba(255,255,255,0.15)] hover:text-white'
               }`}
             >
@@ -142,7 +142,7 @@ export default function Demos() {
                   href={`https://wa.me/50671757171?text=Hola NUVRO, quiero ver un demo de ${activeDemo.label}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#111111] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#D7FF45] hover:text-[#0A0A0A] transition-colors group shadow-md"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-[#111111] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#2B6CB0] hover:text-white transition-colors group shadow-md"
                 >
                   Pedir Demo <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>

@@ -50,7 +50,7 @@ export default function Projects() {
   return (
     <section id="proyectos" className="relative overflow-hidden border-t border-white/10 bg-[#0A0A0A] py-[clamp(80px,10vw,140px)]">
       <div className="absolute inset-0 hero-bg opacity-80" />
-      <div className="pointer-events-none absolute left-1/2 top-28 h-[360px] w-[min(84vw,980px)] -translate-x-1/2 border border-[#D7FF45]/15 opacity-60 [clip-path:polygon(6%_0,100%_0,94%_100%,0_100%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-28 h-[360px] w-[min(84vw,980px)] -translate-x-1/2 border border-[#2B6CB0]/15 opacity-60 [clip-path:polygon(6%_0,100%_0,94%_100%,0_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-16 grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
@@ -61,8 +61,8 @@ export default function Projects() {
               viewport={{ once: true }}
               className="mb-6 inline-flex items-center gap-2"
             >
-              <FolderKanban size={16} className="text-[#D7FF45]" />
-              <span className="text-sm font-medium uppercase tracking-widest text-[#D7FF45]">Casos Reales</span>
+              <FolderKanban size={16} className="text-white/60" />
+              <span className="text-sm font-medium uppercase tracking-widest text-white/60">Casos Reales</span>
             </motion.div>
 
             <motion.h2
@@ -83,25 +83,25 @@ export default function Projects() {
             transition={{ delay: 0.16 }}
             className="relative min-h-[240px] overflow-hidden border border-white/10 bg-[#111111] p-6"
           >
-            <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0_40%,rgba(215,255,69,0.16)_40.2%,transparent_58%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0_40%,rgba(43,108,176,0.16)_40.2%,transparent_58%)]" />
             <div className="relative z-10 flex h-full flex-col justify-between gap-8">
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.24em] text-[#9CA3AF]">
-                  <Orbit size={15} className="text-[#D7FF45]" />
+                  <Orbit size={15} className="text-white/58" />
                   Ecosistema conectado
                 </span>
-                <Sparkles size={18} className="text-[#D7FF45]" />
+                <Sparkles size={18} className="text-white/58" />
               </div>
 
               <div className="grid items-center gap-4 sm:grid-cols-[1fr_auto_1fr]">
                 <div className="border border-white/10 bg-[#0A0A0A] p-4">
                   <p className="font-display text-3xl font-black uppercase leading-none text-white">NUVRO</p>
-                  <p className="mt-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#D7FF45]">engineer</p>
+                  <p className="mt-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/50">engineer</p>
                 </div>
-                <div className="hidden h-px w-20 bg-[#D7FF45] sm:block" />
-                <div className="border border-[#D7FF45]/35 bg-[#D7FF45]/10 p-4">
+                <div className="hidden h-px w-20 bg-[#2B6CB0] sm:block" />
+                <div className="border border-[#2B6CB0]/35 bg-[#2B6CB0]/10 p-4">
                   <p className="font-display text-3xl font-black uppercase leading-none text-white">Baby Invites</p>
-                  <p className="mt-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#D7FF45]">boutique</p>
+                  <p className="mt-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/50">boutique</p>
                 </div>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className={`group overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] shadow-xl shadow-black/5 transition duration-300 hover:scale-[1.02] hover:border-[#D7FF45]/40 ${
+              className={`group overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] shadow-xl shadow-black/5 transition duration-300 hover:scale-[1.02] hover:border-[#2B6CB0]/40 ${
                 project.featured ? 'lg:col-span-6 xl:grid xl:grid-cols-[1.1fr_0.9fr]' : 'lg:col-span-3'
               }`}
             >
@@ -128,11 +128,11 @@ export default function Projects() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.08),rgba(10,10,10,0.78))]" />
-                <div className="absolute right-4 top-4 bg-[#D7FF45] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[#0A0A0A] shadow-md">
+                <div className="absolute right-4 top-4 bg-[#FFFFFF] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[#0A0A0A] shadow-md">
                   {project.type}
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center bg-[#0A0A0A]/52 opacity-0 backdrop-blur-[3px] transition duration-300 group-hover:opacity-100">
-                  <span className="bg-[#D7FF45] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.1em] text-[#0A0A0A] shadow-xl">
+                  <span className="bg-[#FFFFFF] px-5 py-3 text-[10px] font-bold uppercase tracking-[0.1em] text-[#0A0A0A] shadow-xl">
                     {project.type}
                   </span>
                 </div>
@@ -143,7 +143,7 @@ export default function Projects() {
                   <h3 className="font-display text-4xl font-black uppercase leading-none text-white md:text-5xl">
                     {project.title}
                   </h3>
-                  <span className="font-display text-5xl font-black text-[#D7FF45]/55">
+                  <span className="font-display text-5xl font-black text-white/18">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                 </div>
@@ -154,7 +154,7 @@ export default function Projects() {
                     <p className="text-sm leading-snug text-white">{project.problem}</p>
                   </div>
                   <div>
-                    <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-[#D7FF45]">Sistema Construido</span>
+                    <span className="mb-1 block text-xs font-bold uppercase tracking-wider text-white/65">Sistema Construido</span>
                     <p className="text-sm font-medium leading-snug text-white">{project.system}</p>
                   </div>
                   <div>
@@ -168,7 +168,7 @@ export default function Projects() {
                     href={project.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-8 inline-flex w-fit items-center gap-3 border border-[#D7FF45]/45 px-5 py-3 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#D7FF45] hover:text-[#0A0A0A]"
+                    className="mt-8 inline-flex w-fit items-center gap-3 border border-[#2B6CB0]/45 px-5 py-3 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#2B6CB0] hover:text-white"
                   >
                     Visitar proyecto <ExternalLink size={15} />
                   </a>
@@ -188,7 +188,7 @@ export default function Projects() {
             href="https://wa.me/50671757171?text=Hola NUVRO, quiero ver más casos de estudio"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 bg-[#111111] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#D7FF45] hover:text-[#0A0A0A]"
+            className="group inline-flex items-center gap-3 bg-[#111111] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all hover:bg-[#2B6CB0] hover:text-white"
           >
             Ver todos los proyectos <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
           </a>
