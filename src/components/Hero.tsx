@@ -10,8 +10,6 @@ import {
   ScanLine,
 } from 'lucide-react';
 
-const beforeSignals = ['foto borrosa', 'link perdido', 'cero recordación'];
-
 const serviceSignals = [
   { label: 'Web premium', icon: <Globe2 size={16} /> },
   { label: 'Menú QR', icon: <QrCode size={16} /> },
@@ -20,24 +18,6 @@ const serviceSignals = [
   { label: 'Dashboard', icon: <ChartNoAxesCombined size={16} /> },
   { label: 'Automatización', icon: <Braces size={16} /> },
   { label: 'IA aplicada', icon: <Bot size={16} /> },
-];
-
-const machineShots = [
-  {
-    src: '/assets/nuvro/webs-premium.png',
-    label: 'Presencia premium',
-    className: 'left-[26%] top-[4%] h-[34%] w-[58%] rotate-[-2deg]',
-  },
-  {
-    src: '/assets/nuvro/menu-qr.png',
-    label: 'Menú QR que se ve caro',
-    className: 'left-[3%] top-[33%] h-[37%] w-[38%] rotate-[3deg]',
-  },
-  {
-    src: '/assets/nuvro/dashboards-crm.png',
-    label: 'Operación visible',
-    className: 'bottom-[3%] left-[34%] h-[37%] w-[55%] rotate-[2deg]',
-  },
 ];
 
 const marqueeItems = [
@@ -55,12 +35,13 @@ export default function Hero() {
     <section className="relative min-h-[100svh] overflow-hidden bg-[#0A0A0A] text-white">
       <div className="absolute inset-0">
         <img
-          src="/assets/nuvro/hero-command-center.png"
-          alt="Centro de control digital creado por NUVRO ENGINEER"
-          className="hero-bg-media h-full w-full object-cover"
+          src="/assets/nuvro/hero-impossible-presence.png"
+          alt="Escena editorial de una presencia de marca imposible de ignorar"
+          className="hero-bg-media h-full w-full object-cover object-[62%_center]"
         />
-        <div className="absolute inset-0 bg-[#0A0A0A]/85" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(10,10,10,0.92)_0%,_rgba(10,10,10,0.42)_48%,_#0A0A0A_100%)]" />
+        <div className="absolute inset-0 bg-[#0A0A0A]/28" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,_#0A0A0A_0%,_rgba(10,10,10,0.92)_38%,_rgba(10,10,10,0.56)_68%,_rgba(10,10,10,0.24)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(10,10,10,0.88)_0%,_rgba(10,10,10,0.18)_48%,_#0A0A0A_100%)]" />
         <div className="absolute inset-0 hero-bg opacity-60" />
         <div className="absolute inset-0 atelier-field opacity-70" />
         <div className="absolute inset-0 scan-lines opacity-20" />
@@ -175,58 +156,40 @@ export default function Hero() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.22, ease: [0.23, 1, 0.32, 1] }}
-              className="relative z-10"
+              className="relative z-10 hidden lg:block"
+              aria-hidden="true"
             >
-              <div className="nuvro-machine relative h-[520px] opacity-[0.82] scale-75 md:h-[620px] origin-center">
-                <div className="hero-glass-panel absolute left-0 top-6 z-20 w-[44%] p-4 md:top-12">
-                  <p className="mb-3 text-[10px] font-black uppercase tracking-[0.28em] text-white/46">Antes</p>
-                  <p className="font-display text-4xl font-black uppercase leading-none text-white/82 md:text-5xl">
-                    negocio invisible
-                  </p>
-                  <div className="mt-5 space-y-2">
-                    {beforeSignals.map((item) => (
-                      <span
-                        key={item}
-                        className="block border border-white/10 bg-[#111111]/[0.035] px-3 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/42"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+              <div className="relative h-[560px] opacity-[0.94] xl:h-[660px]">
+                <div className="absolute right-0 top-4 h-[82%] w-[94%] overflow-hidden border border-white/14 bg-[#111111]/20 shadow-[24px_28px_0_rgba(215,255,69,0.18)] [clip-path:polygon(10%_0,100%_0,91%_100%,0_100%)]">
+                  <img
+                    src="/assets/nuvro/hero-impossible-presence.png"
+                    alt=""
+                    className="h-full w-full scale-110 object-cover object-[78%_center] opacity-95"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(10,10,10,0.08),_rgba(10,10,10,0.28)_48%,_rgba(10,10,10,0.02))]" />
+                  <div className="absolute inset-0 scan-lines opacity-12" />
                 </div>
 
-                <div className="hero-glass-panel machine-core absolute left-[34%] top-[28%] z-30 w-[42%] px-5 py-5 text-white">
-                  <p className="text-[10px] font-black uppercase tracking-[0.28em] text-white/70">NUVRO engine</p>
-                  <p className="mt-3 font-display text-5xl font-black uppercase leading-[0.82] md:text-6xl">
-                    mirada
-                    <span className="block text-[#D7FF45]">activada</span>
+                <div className="absolute left-[5%] top-[13%] h-28 w-28 border-l border-t border-[#D7FF45]/70" />
+                <div className="absolute bottom-[18%] right-[6%] h-36 w-36 border-b border-r border-white/24" />
+                <div className="absolute left-[3%] top-[30%] h-px w-[86%] rotate-[-9deg] bg-[linear-gradient(90deg,transparent,rgba(228,227,224,0.42),rgba(215,255,69,0.74),transparent)]" />
+
+                <div className="hero-glass-panel machine-core absolute left-[2%] top-[20%] z-30 w-[40%] px-5 py-5 text-white">
+                  <p className="text-[10px] font-black uppercase tracking-[0.28em] text-white/54">mirada activada</p>
+                  <p className="mt-3 font-display text-5xl font-black uppercase leading-[0.82]">
+                    marca
+                    <span className="block text-[#D7FF45]">visible</span>
                   </p>
                 </div>
 
-                {machineShots.map((shot, index) => (
-                  <motion.div
-                    key={shot.src}
-                    initial={{ opacity: 0, y: 26, rotate: index === 1 ? 7 : -5 }}
-                    animate={{ opacity: 1, y: 0, rotate: 0 }}
-                    transition={{ duration: 0.72, delay: 0.45 + index * 0.08, ease: [0.23, 1, 0.32, 1] }}
-                    className={`media-slice absolute z-10 ${shot.className}`}
-                  >
-                    <img src={shot.src} alt={shot.label} className="h-full w-full object-cover" />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(2,5,10,0.02),_rgba(2,5,10,0.58))]" />
-                    <span className="absolute bottom-3 left-4 text-[10px] font-black uppercase tracking-[0.22em] text-white/72">
-                      {shot.label}
-                    </span>
-                  </motion.div>
-                ))}
-
-                <div className="absolute bottom-8 right-0 z-20 w-[45%] border border-[#D7FF45]/45 bg-[#111111] px-4 py-4 text-white shadow-[12px_12px_0_rgba(215,255,69,0.36)] md:bottom-12">
+                <div className="absolute bottom-12 right-0 z-20 w-[45%] border border-[#D7FF45]/45 bg-[#111111]/88 px-4 py-4 text-white shadow-[12px_12px_0_rgba(215,255,69,0.28)] backdrop-blur-md">
                   <p className="mb-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#D7FF45]">Después</p>
                   <p className="font-display text-4xl font-black uppercase leading-none md:text-5xl">
                     marca que se ve cara
                   </p>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 z-30 grid grid-cols-2 gap-2 md:grid-cols-4">
+                <div className="absolute bottom-0 left-0 right-0 z-30 grid grid-cols-4 gap-2">
                   {serviceSignals.slice(0, 4).map((item, index) => (
                     <motion.div
                       key={item.label}
