@@ -4,7 +4,7 @@ import { ArrowRight, Instagram, Globe } from 'lucide-react';
 export default function Landings() {
   return (
     <section id="landings" className="py-[clamp(80px,10vw,140px)] bg-[#0A0A0A] relative border-t border-white/5 overflow-hidden">
-      <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-[#0066FF]/5 blur-[150px] -z-10 rounded-full pointer-events-none" />
+      <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-[#D7FF45]/5 blur-[150px] -z-10 rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
@@ -15,8 +15,8 @@ export default function Landings() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 mb-6"
           >
-            <div className="w-2 h-2 rounded-full bg-[#0066FF]" />
-            <span className="text-sm font-medium tracking-widest text-[#0066FF] uppercase">Landing Pages</span>
+            <div className="w-2 h-2 rounded-full bg-[#D7FF45]" />
+            <span className="text-sm font-medium tracking-widest text-[#D7FF45] uppercase">Landing Pages</span>
           </motion.div>
           
           <motion.h2
@@ -49,7 +49,7 @@ export default function Landings() {
               href="https://wa.me/50671757171?text=Hola NUVRO, quiero una landing"
               target="_blank"
               rel="noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0066FF] text-white font-bold uppercase tracking-wider text-sm hover:bg-[#0066FF] transition-all shadow-xl shadow-[#0066FF]/20"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#D7FF45] text-[#0A0A0A] font-bold uppercase tracking-wider text-sm hover:bg-[#E4E3E0] transition-all shadow-xl shadow-[#D7FF45]/20"
             >
               Quiero una landing <ArrowRight size={18} />
             </a>
@@ -93,13 +93,13 @@ export default function Landings() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-[#0D1B3E] border border-[rgba(0,102,255,0.4)] rounded-[40px] p-8 md:p-12 flex flex-col items-center justify-start text-center relative overflow-hidden shadow-2xl"
+            className="bg-[#111111] border border-[rgba(215,255,69,0.4)] rounded-[40px] p-8 md:p-12 flex flex-col items-center justify-start text-center relative overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0066FF]/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#D7FF45]/5 to-transparent pointer-events-none" />
             
             <div className="flex items-center gap-3 mb-8 w-full justify-center relative z-10">
-              <Globe size={20} className="text-[#0066FF]" />
-              <span className="text-[#0066FF] font-bold uppercase tracking-widest text-sm">Estructura NUVRO</span>
+              <Globe size={20} className="text-[#D7FF45]" />
+              <span className="text-[#D7FF45] font-bold uppercase tracking-widest text-sm">Estructura NUVRO</span>
             </div>
             
             <div className="w-[220px] h-[400px] bg-[#0A0A0A] rounded-[32px] border-2 border-[#111111] relative overflow-hidden flex flex-col shadow-2xl z-10">
@@ -111,11 +111,11 @@ export default function Landings() {
               <div className="flex-1 overflow-hidden relative">
                 {/* Hero */}
                 <div className="p-6 text-center border-b border-white/5 pb-8 relative">
-                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#0066FF]/20 blur-[20px] rounded-full" />
-                   <div className="h-3 w-16 bg-[#0066FF] rounded-full mx-auto mb-4" />
+                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#D7FF45]/20 blur-[20px] rounded-full" />
+                   <div className="h-3 w-16 bg-[#D7FF45] rounded-full mx-auto mb-4" />
                    <div className="h-4 w-full bg-[#111111]/80 rounded-full mb-2" />
                    <div className="h-4 w-3/4 bg-[#111111]/80 rounded-full mx-auto mb-6" />
-                   <div className="px-5 py-2.5 bg-[#0066FF] rounded-full w-full mx-auto shadow-lg shadow-[#0066FF]/30">
+                   <div className="px-5 py-2.5 bg-[#D7FF45] rounded-full w-full mx-auto shadow-lg shadow-[#D7FF45]/30">
                      <div className="h-2 w-16 bg-[#111111] rounded-full mx-auto" />
                    </div>
                 </div>

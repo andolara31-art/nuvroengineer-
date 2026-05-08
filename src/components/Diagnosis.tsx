@@ -36,7 +36,7 @@ export default function Diagnosis() {
             viewport={{ once: true, margin: '-100px' }}
             className="mb-8 inline-flex items-center gap-3 bg-[#111111] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white diagonal-cut"
           >
-            <span className="h-2 w-2 bg-[#0066FF]" />
+            <span className="h-2 w-2 bg-[#D7FF45]" />
             Auditoría digital
           </motion.div>
 
@@ -65,7 +65,7 @@ export default function Diagnosis() {
         <div className="border-y border-white/10 bg-[#111111] backdrop-blur-sm">
           <div className="grid grid-cols-[0.9fr_1.1fr] border-b border-white/10 text-[10px] font-black uppercase tracking-[0.24em] text-[#9CA3AF]">
             <div className="px-4 py-4 md:px-6">Fuga actual</div>
-            <div className="border-l border-white/10 px-4 py-4 text-[#0066FF] md:px-6">
+            <div className="border-l border-white/10 px-4 py-4 text-[#D7FF45] md:px-6">
               Estructura NUVRO
             </div>
           </div>
@@ -85,8 +85,8 @@ export default function Diagnosis() {
                 </span>
                 <p className="text-base font-semibold leading-snug text-[#9CA3AF] md:text-lg">{item.before}</p>
               </div>
-              <div className="flex items-start gap-4 border-l-2 border-l-[#0066FF] bg-[#0066FF]/10 px-4 py-6 md:px-6">
-                <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center text-[#0066FF]">
+              <div className="flex items-start gap-4 border-l-2 border-l-[#D7FF45] bg-[#D7FF45]/10 px-4 py-6 md:px-6">
+                <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center text-[#D7FF45]">
                   <Check size={16} strokeWidth={3} />
                 </span>
                 <p className="text-base font-extrabold leading-snug text-white md:text-lg">{item.after}</p>

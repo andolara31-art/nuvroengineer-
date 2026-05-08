@@ -5,11 +5,17 @@
   --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Barlow Condensed", "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   
-  --color-brand-blue: #0066FF;
-  --color-brand-deep: #0047B8;
+  --color-brand-blue: #D7FF45;
+  --color-brand-deep: #B8E633;
 }
 
 :root {
+  --nuvro-ink: #0A0A0A;
+  --nuvro-panel: #111111;
+  --nuvro-paper: #E4E3E0;
+  --nuvro-muted: #9CA3AF;
+  --nuvro-signal: #D7FF45;
+  --nuvro-electric: #D7FF45;
   --color-service-1: #00C896;
   --color-service-2: #7C3AED;
   --color-service-3: #DC2626;
@@ -30,7 +36,21 @@
   }
 
   .hero-bg {
-    background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(0,102,255,0.07) 0%, transparent 68%);
+    background:
+      radial-gradient(ellipse 90% 60% at 50% 0%, rgba(215,255,69,0.055) 0%, transparent 68%),
+      linear-gradient(115deg, transparent 0 46%, rgba(228,227,224,0.035) 46.1% 46.3%, transparent 46.4% 100%);
+  }
+
+  .atelier-field {
+    background-image:
+      linear-gradient(to right, rgba(228, 227, 224, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(228, 227, 224, 0.032) 1px, transparent 1px);
+    background-size: 96px 96px;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 88%);
+  }
+
+  .editorial-rule {
+    border-color: rgba(228, 227, 224, 0.16);
   }
 
   .diagonal-cut {
@@ -43,15 +63,15 @@
 
   .text-stroke-blue {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(0, 102, 255, 0.46);
-    text-stroke: 1px rgba(0, 102, 255, 0.46);
+    -webkit-text-stroke: 1px rgba(215, 255, 69, 0.46);
+    text-stroke: 1px rgba(215, 255, 69, 0.46);
   }
 
   .electric-frame {
-    border: 1px solid rgba(0, 102, 255, 0.72);
+    border: 1px solid rgba(215, 255, 69, 0.72);
     box-shadow:
-      0 0 0 12px rgba(0, 102, 255, 0.08),
-      0 0 54px rgba(0, 102, 255, 0.32);
+      0 0 0 12px rgba(215, 255, 69, 0.08),
+      0 0 54px rgba(215, 255, 69, 0.32);
     clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   }
 
@@ -59,7 +79,7 @@
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.22);
     background: #0A0A0A;
-    box-shadow: 16px 18px 0 rgba(0, 102, 255, 0.34);
+    box-shadow: 16px 18px 0 rgba(215, 255, 69, 0.22);
     clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   }
 
@@ -67,11 +87,11 @@
     content: "";
     position: absolute;
     inset: 7% 8% 10% 6%;
-    border: 1px solid rgba(0, 102, 255, 0.5);
+    border: 1px solid rgba(228, 227, 224, 0.26);
     clip-path: polygon(9% 0, 100% 0, 91% 100%, 0 100%);
     box-shadow:
-      0 0 0 14px rgba(0, 102, 255, 0.055),
-      0 0 48px rgba(0, 102, 255, 0.2);
+      0 0 0 14px rgba(215, 255, 69, 0.035),
+      0 0 48px rgba(215, 255, 69, 0.11);
   }
 
   .nuvro-machine::after {
@@ -81,7 +101,7 @@
     right: 12%;
     top: 50%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.26), rgba(0, 102, 255, 0.8), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.26), rgba(215, 255, 69, 0.74), transparent);
     transform: rotate(-9deg);
   }
 
@@ -151,7 +171,7 @@
 
 @media (max-width: 767px) {
   .media-slice {
-    box-shadow: 9px 10px 0 rgba(0, 102, 255, 0.34);
+    box-shadow: 9px 10px 0 rgba(215, 255, 69, 0.34);
   }
 }
 

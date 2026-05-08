@@ -88,7 +88,7 @@ export default function NuvroExpress() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6 inline-flex items-center gap-3 bg-[#0066FF] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white diagonal-cut"
+              className="mb-6 inline-flex items-center gap-3 bg-[#D7FF45] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#0A0A0A] diagonal-cut"
             >
               Nuvro Express
             </motion.div>
@@ -154,7 +154,7 @@ export default function NuvroExpress() {
                   href={`https://wa.me/50671757171?text=${encodeURIComponent(`Hola NUVRO, quiero info sobre: ${prod.title}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex items-center justify-between gap-4 border border-white/10 px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-white transition duration-200 hover:border-[var(--service-color)] hover:bg-[var(--service-color)] hover:text-white active:scale-[0.98]"
+                  className="mt-8 inline-flex items-center justify-between gap-4 border border-white/10 px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-white transition duration-200 hover:border-[var(--service-color)] hover:bg-[var(--service-color)] hover:text-[#0A0A0A] active:scale-[0.98]"
                 >
                   {prod.cta}
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />

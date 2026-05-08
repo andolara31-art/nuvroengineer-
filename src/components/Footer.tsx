@@ -15,11 +15,11 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 font-mono text-xs uppercase tracking-widest text-white/40">
-          <a href="#problema" className="hover:text-[#0066FF] transition-colors">Problema</a>
-          <a href="#express" className="hover:text-[#0066FF] transition-colors">Express</a>
-          <a href="#landings" className="hover:text-[#0066FF] transition-colors">Landings</a>
-          <a href="#custom" className="hover:text-[#0066FF] transition-colors">Custom</a>
-          <a href="#proyectos" className="hover:text-[#0066FF] transition-colors">Proyectos</a>
+          <a href="#problema" className="hover:text-[#D7FF45] transition-colors">Problema</a>
+          <a href="#express" className="hover:text-[#D7FF45] transition-colors">Express</a>
+          <a href="#landings" className="hover:text-[#D7FF45] transition-colors">Landings</a>
+          <a href="#custom" className="hover:text-[#D7FF45] transition-colors">Custom</a>
+          <a href="#proyectos" className="hover:text-[#D7FF45] transition-colors">Proyectos</a>
         </div>
 
         <div className="flex flex-col items-center gap-12 border-t border-white/5 pt-16">
@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="text-[10px] font-mono tracking-widest text-white/20 uppercase text-center space-y-4">
             <p>© {new Date().getFullYear()} NUVRO ENGINEER. TODOS LOS DERECHOS RESERVADOS.</p>
             <div className="flex items-center justify-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#0066FF]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#D7FF45]" />
               <span>COSTA RICA</span>
             </div>
           </div>

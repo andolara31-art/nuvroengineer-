@@ -62,13 +62,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#0A0A0A]/85" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(10,10,10,0.92)_0%,_rgba(10,10,10,0.42)_48%,_#0A0A0A_100%)]" />
         <div className="absolute inset-0 hero-bg opacity-60" />
+        <div className="absolute inset-0 atelier-field opacity-70" />
         <div className="absolute inset-0 scan-lines opacity-20" />
       </div>
 
       <div className="pointer-events-none absolute -left-[10vw] top-[14%] hidden rotate-[-8deg] font-display text-[18vw] font-black uppercase leading-none tracking-[0.02em] text-white/[0.04] lg:block">
         Invisible
       </div>
-      <div className="pointer-events-none absolute -right-[8vw] bottom-[9%] hidden rotate-[7deg] font-display text-[14vw] font-black uppercase leading-none tracking-[0.02em] text-[#0066FF]/[0.12] lg:block">
+      <div className="pointer-events-none absolute -right-[8vw] bottom-[9%] hidden rotate-[7deg] font-display text-[14vw] font-black uppercase leading-none tracking-[0.02em] text-[#D7FF45]/[0.09] lg:block">
         Ignorar
       </div>
 
@@ -78,7 +79,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
-            className="flex flex-col justify-between gap-4 border-y border-white/12 bg-[#0A0A0A]/24 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white/62 backdrop-blur-sm sm:flex-row"
+            className="editorial-rule flex flex-col justify-between gap-4 border-y bg-[#0A0A0A]/24 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-white/62 backdrop-blur-sm sm:flex-row"
           >
             <span>NUVRO ENGINEER / presencia digital de alto impacto</span>
             <span>webs, qr, sistemas, automatización e IA</span>
@@ -93,8 +94,8 @@ export default function Hero() {
                 className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/15 bg-[#111111]/8 px-4 py-2 text-[10px] font-black uppercase tracking-[0.24em] text-white/76 backdrop-blur-xl"
               >
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#16A34A] opacity-75" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#16A34A]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#D7FF45] opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#D7FF45]" />
                 </span>
                 NUVRO ENGINEER
               </motion.div>
@@ -117,7 +118,7 @@ export default function Hero() {
                 <span className="block text-white">
                   <span className="font-light italic">De</span> invisible
                 </span>
-                <span className="block text-[#0066FF]">a imposible</span>
+                <span className="block text-[#D7FF45]">a imposible</span>
                 <span className="block text-white">de ignorar.</span>
               </motion.h1>
 
@@ -125,7 +126,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.72, delay: 0.28, ease: [0.23, 1, 0.32, 1] }}
-                className="mt-6 max-w-4xl bg-[#0066FF] px-5 py-4 text-white shadow-[14px_14px_0_rgba(255,255,255,0.95)] md:px-7 md:py-5"
+                className="mt-6 max-w-4xl bg-[#E4E3E0] px-5 py-4 text-[#0A0A0A] shadow-[14px_14px_0_rgba(215,255,69,0.82)] md:px-7 md:py-5"
               >
                 <p className="font-display text-[clamp(2rem,4.35vw,4.8rem)] font-black uppercase leading-[0.84] tracking-wide">
                   Tu negocio no necesita otra página. Necesita presencia.
@@ -142,7 +143,7 @@ export default function Hero() {
                   Construimos una primera impresión que obliga a mirar: diseño premium, activos comerciales
                   y sistemas conectados para que tu marca parezca tan buena como lo que vendés.
                 </p>
-                <div className="border-t border-[#0066FF] pt-4 text-sm leading-relaxed text-white/62 lg:mt-2">
+                <div className="border-t border-[#D7FF45]/45 pt-4 text-sm leading-relaxed text-white/62 lg:mt-2">
                   Webs premium, menús QR, landings, catálogos, dashboards, WhatsApp Business,
                   automatización e IA aplicada con dirección visual real.
                 </div>
@@ -156,14 +157,14 @@ export default function Hero() {
               >
                 <a
                   href="#contacto"
-                  className="group inline-flex items-center justify-center gap-3 bg-[#111111] px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-white transition duration-200 hover:bg-[#0066FF] hover:text-white active:scale-[0.98]"
+                  className="group inline-flex items-center justify-center gap-3 bg-[#E4E3E0] px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-[#0A0A0A] transition duration-200 hover:bg-[#D7FF45] active:scale-[0.98]"
                 >
                   Transformar mi marca
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#express"
-                  className="inline-flex items-center justify-center border border-white/24 bg-[#0A0A0A]/34 px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition duration-200 hover:border-[#0066FF] hover:text-[#0066FF] active:scale-[0.98]"
+                  className="inline-flex items-center justify-center border border-white/24 bg-[#0A0A0A]/34 px-8 py-5 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition duration-200 hover:border-[#D7FF45] hover:text-[#D7FF45] active:scale-[0.98]"
                 >
                   Ver la máquina
                 </a>
@@ -198,7 +199,7 @@ export default function Hero() {
                   <p className="text-[10px] font-black uppercase tracking-[0.28em] text-white/70">NUVRO engine</p>
                   <p className="mt-3 font-display text-5xl font-black uppercase leading-[0.82] md:text-6xl">
                     mirada
-                    <span className="block text-[#0066FF]">activada</span>
+                    <span className="block text-[#D7FF45]">activada</span>
                   </p>
                 </div>
 
@@ -218,8 +219,8 @@ export default function Hero() {
                   </motion.div>
                 ))}
 
-                <div className="absolute bottom-8 right-0 z-20 w-[45%] border border-[#0066FF]/50 bg-[#111111] px-4 py-4 text-white shadow-[12px_12px_0_rgba(0,102,255,0.82)] md:bottom-12">
-                  <p className="mb-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#0066FF]">Después</p>
+                <div className="absolute bottom-8 right-0 z-20 w-[45%] border border-[#D7FF45]/45 bg-[#111111] px-4 py-4 text-white shadow-[12px_12px_0_rgba(215,255,69,0.36)] md:bottom-12">
+                  <p className="mb-2 text-[10px] font-black uppercase tracking-[0.28em] text-[#D7FF45]">Después</p>
                   <p className="font-display text-4xl font-black uppercase leading-none md:text-5xl">
                     marca que se ve cara
                   </p>
@@ -234,7 +235,7 @@ export default function Hero() {
                       transition={{ duration: 0.45, delay: 0.68 + index * 0.05 }}
                       className="flex items-center gap-2 border border-white/12 bg-[#0A0A0A]/76 px-3 py-3 text-[10px] font-black uppercase tracking-[0.12em] text-white/72 backdrop-blur-md"
                     >
-                      <span className="text-[#0066FF]">{item.icon}</span>
+                      <span className="text-[#D7FF45]">{item.icon}</span>
                       {item.label}
                     </motion.div>
                   ))}
@@ -247,7 +248,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.58, ease: [0.23, 1, 0.32, 1] }}
-            className="overflow-hidden border-y border-white/12 bg-[#0066FF] py-3 text-white"
+            className="overflow-hidden border-y border-white/12 bg-[#E4E3E0] py-3 text-[#0A0A0A]"
           >
             <div className="marquee-track flex w-max items-center gap-7 whitespace-nowrap font-display text-3xl font-black uppercase leading-none tracking-wide">
               {[...marqueeItems, ...marqueeItems].map((item, index) => (
