@@ -3,12 +3,12 @@ import { ArrowRight, Instagram, Globe } from 'lucide-react';
 
 export default function Landings() {
   return (
-    <section id="landings" className="py-[clamp(80px,10vw,140px)] bg-[#0A0A0A] relative border-t border-white/5 overflow-hidden">
+    <section id="landings" className="py-[clamp(64px,8vw,108px)] bg-[#0A0A0A] relative border-t border-white/5 overflow-hidden">
       <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-[#2B6CB0]/5 blur-[150px] -z-10 rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,26 +64,26 @@ export default function Landings() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-white/10 bg-[#111111] p-8 text-center md:p-12"
+            className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-white/10 bg-[#111111] p-6 text-center md:p-8"
           >
-            <div className="matrix-strip mb-8 w-full">
+            <div className="matrix-strip mb-6 w-full">
               <span>post</span>
               <span>wait</span>
               <span>expire</span>
               <span>lost</span>
             </div>
-            <div className="flex items-center gap-3 mb-8 w-full justify-center">
+            <div className="flex items-center gap-3 mb-6 w-full justify-center">
               <Instagram size={20} className="text-[#6B7280]" />
               <span className="text-[#6B7280] font-bold uppercase tracking-widest text-sm">Antes</span>
             </div>
             
-            <div className="relative flex h-[360px] w-[200px] flex-col overflow-hidden border border-white/10 bg-[#111111]">
+            <div className="relative flex h-[280px] w-[168px] flex-col overflow-hidden border border-white/10 bg-[#111111]">
               <div className="p-4 flex items-center gap-3 border-b border-white/5">
                 <div className="w-8 h-8 bg-[#111111]" />
                 <div className="h-2 w-16 bg-[#111111]" />
               </div>
-              <div className="flex-1 p-6 flex flex-col items-center justify-center text-center">
-                <span className="text-white/20 font-bold text-2xl mb-4">OFERTA LIMITADA</span>
+              <div className="flex-1 p-5 flex flex-col items-center justify-center text-center">
+                <span className="text-white/20 font-bold text-xl mb-4">OFERTA LIMITADA</span>
                 <div className="h-2 w-24 bg-[#111111]/10 mb-2" />
                 <div className="h-2 w-16 bg-[#111111]/10 mb-6" />
                 <div className="px-6 py-2 bg-[#111111] text-[10px] text-white/40">LINK EN BIO</div>
@@ -91,7 +91,7 @@ export default function Landings() {
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] text-[#6B7280] font-bold tracking-widest">EXPIRA EN 24H</div>
             </div>
             
-            <p className="mt-8 text-white/40 font-sans">Publicación perdida. Flyer sin CTA claro. Mensaje disperso.</p>
+            <p className="mt-6 text-sm text-white/40 font-sans">Publicación perdida. Flyer sin CTA claro. Mensaje disperso.</p>
           </motion.div>
 
           {/* After: Landing Page */}
@@ -99,22 +99,22 @@ export default function Landings() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-[rgba(43,108,176,0.4)] bg-[#111111] p-8 text-center shadow-2xl md:p-12"
+            className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-[rgba(43,108,176,0.4)] bg-[#111111] p-6 text-center shadow-2xl md:p-8"
           >
             <div className="absolute inset-0 bg-gradient-to-b from-[#2B6CB0]/5 to-transparent pointer-events-none" />
-            <div className="matrix-strip relative z-10 mb-8 w-full">
+            <div className="matrix-strip relative z-10 mb-6 w-full">
               <span>offer</span>
               <span>proof</span>
               <span>cta</span>
               <span>sell</span>
             </div>
             
-            <div className="flex items-center gap-3 mb-8 w-full justify-center relative z-10">
+            <div className="flex items-center gap-3 mb-6 w-full justify-center relative z-10">
               <Globe size={20} className="text-[#2B6CB0]" />
               <span className="text-[#2B6CB0] font-bold uppercase tracking-widest text-sm">Estructura NUVRO</span>
             </div>
             
-            <div className="relative z-10 flex h-[400px] w-[220px] flex-col overflow-hidden border-2 border-[#111111] bg-[#0A0A0A] shadow-2xl">
+            <div className="relative z-10 flex h-[320px] w-[188px] flex-col overflow-hidden border-2 border-[#111111] bg-[#0A0A0A] shadow-2xl">
               {/* Fake web header */}
               <div className="h-10 w-full bg-[#111111] flex items-center px-4 border-b border-white/5">
                 <div className="h-2 w-12 bg-[#111111]/20" />
@@ -122,7 +122,7 @@ export default function Landings() {
               
               <div className="flex-1 overflow-hidden relative">
                 {/* Hero */}
-                <div className="p-6 text-center border-b border-white/5 pb-8 relative">
+                <div className="p-5 text-center border-b border-white/5 pb-6 relative">
                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 blur-[20px] rounded-full" />
                    <div className="h-3 w-16 bg-[#FFFFFF] mx-auto mb-4" />
                    <div className="h-4 w-full bg-[#111111]/80 mb-2" />
@@ -149,7 +149,7 @@ export default function Landings() {
               </div>
             </div>
             
-            <p className="mt-8 text-white font-medium font-sans relative z-10">Beneficios, prueba visual y CTA de WhatsApp siempre disponible.</p>
+            <p className="mt-6 text-sm text-white font-medium font-sans relative z-10">Beneficios, prueba visual y CTA de WhatsApp siempre disponible.</p>
           </motion.div>
 
         </div>

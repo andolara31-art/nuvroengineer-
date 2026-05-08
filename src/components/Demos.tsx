@@ -59,10 +59,10 @@ export default function Demos() {
   const activeDemo = demos.find(d => d.id === activeTab) || demos[0];
 
   return (
-    <section id="demos" className="py-[clamp(80px,10vw,140px)] bg-[#0A0A0A] relative border-t border-white/10">
+    <section id="demos" className="py-[clamp(64px,8vw,108px)] bg-[#0A0A0A] relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export default function Demos() {
           </motion.p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-12 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-2 mb-10 max-w-4xl mx-auto">
           {demos.map((d) => (
             <button
               key={d.id}
@@ -108,7 +108,7 @@ export default function Demos() {
           ))}
         </div>
 
-        <div className="precision-card relative mx-auto max-w-6xl overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#111111] p-4 shadow-xl shadow-black/5 md:p-6">
+        <div className="precision-card relative mx-auto max-w-5xl overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[#111111] p-4 shadow-xl shadow-black/5 md:p-5">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeDemo.id}
@@ -116,7 +116,7 @@ export default function Demos() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="grid gap-4 md:grid-cols-[86px_1.08fr_0.92fr] md:items-stretch"
+              className="grid gap-4 md:grid-cols-[72px_1.04fr_0.96fr] md:items-stretch"
             >
               <div className="data-rail hidden md:flex md:flex-col md:justify-between">
                 <span>demo</span>
@@ -124,7 +124,7 @@ export default function Demos() {
                 <span>flow</span>
                 <span>cta</span>
               </div>
-              <div className="relative aspect-[4/3] w-full overflow-hidden border border-white/10">
+              <div className="relative aspect-[16/10] w-full overflow-hidden border border-white/10">
                 <img 
                   src={activeDemo.image}
                   alt={activeDemo.title}
@@ -143,14 +143,14 @@ export default function Demos() {
                 </div>
               </div>
               
-              <div className="flex flex-col items-start border-y border-white/10 p-4 md:p-8">
+              <div className="flex flex-col items-start border-y border-white/10 p-4 md:p-6">
                 <span className="module-chip mb-5">
                   visual prototype
                 </span>
-                <h3 className="mb-5 font-display text-[clamp(2.6rem,4.8vw,5rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
+                <h3 className="mb-4 font-display text-[clamp(2.05rem,3.4vw,3.8rem)] font-black uppercase leading-[0.84] tracking-wide text-white">
                   {activeDemo.title}
                 </h3>
-                <p className="mb-8 border-t border-white/10 pt-5 font-sans text-lg leading-relaxed text-[#9CA3AF]">
+                <p className="mb-6 border-t border-white/10 pt-4 font-sans text-base leading-relaxed text-[#9CA3AF]">
                   "{activeDemo.desc}"
                 </p>
                 <a 

@@ -26,7 +26,7 @@ const comparisons = [
 
 export default function Diagnosis() {
   return (
-    <section id="problema" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(80px,10vw,140px)] text-white">
+    <section id="problema" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(64px,8vw,108px)] text-white">
       <div className="absolute inset-0 hero-bg opacity-80" />
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 md:px-12 lg:grid-cols-[0.82fr_1.18fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">

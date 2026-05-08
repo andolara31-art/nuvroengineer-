@@ -41,12 +41,12 @@ const customServices = [
 
 export default function NuvroCustom() {
   return (
-    <section id="custom" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(80px,10vw,140px)] text-white">
+    <section id="custom" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(64px,8vw,108px)] text-white">
       <div className="absolute inset-0 hero-bg opacity-45" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_#0A0A0A_0%,_rgba(10,10,10,0.72)_46%,_#0A0A0A_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div className="mb-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="mb-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export default function NuvroCustom() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.08 }}
-              className="max-w-4xl font-display text-[clamp(3.3rem,7vw,7rem)] font-black uppercase leading-[0.84] tracking-wide"
+              className="max-w-4xl font-display text-[clamp(3rem,6vw,6.2rem)] font-black uppercase leading-[0.84] tracking-wide"
             >
               <span className="font-light italic">Cuando</span> el negocio necesita una maquina propia.
             </motion.h2>
@@ -99,9 +99,9 @@ export default function NuvroCustom() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: idx * 0.07 }}
-              className="custom-row group grid overflow-hidden border border-white/[0.06] bg-[#111111] backdrop-blur-sm transition-[background-color,border-color,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-[#2B6CB0]/45 hover:bg-[#0F0F0F] md:grid-cols-[220px_1fr_220px]"
+              className="custom-row group grid overflow-hidden border border-white/[0.06] bg-[#111111] backdrop-blur-sm transition-[background-color,border-color,transform] duration-200 ease-out hover:-translate-y-0.5 hover:border-[#2B6CB0]/45 hover:bg-[#0F0F0F] md:grid-cols-[170px_1fr_170px]"
             >
-              <div className="relative h-48 overflow-hidden bg-[#0A0A0A] md:h-full">
+              <div className="relative h-36 overflow-hidden bg-[#0A0A0A] md:h-full">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -120,29 +120,29 @@ export default function NuvroCustom() {
                 </div>
               </div>
 
-              <div className="grid gap-6 p-6 md:grid-cols-[72px_1fr] md:p-8">
-                <div className="flex h-14 w-14 items-center justify-center border border-white/15 text-white/62 transition group-hover:border-[#2B6CB0] group-hover:bg-[#2B6CB0] group-hover:text-white">
+              <div className="grid gap-5 p-5 md:grid-cols-[56px_1fr] md:p-6">
+                <div className="flex h-12 w-12 items-center justify-center border border-white/15 text-white/62 transition group-hover:border-[#2B6CB0] group-hover:bg-[#2B6CB0] group-hover:text-white">
                   {service.icon}
                 </div>
                 <div>
-                  <div className="mb-5 flex flex-wrap items-center gap-3">
+                  <div className="mb-4 flex flex-wrap items-center gap-3">
                     <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/35">
                       system layer
                     </span>
                     <span className="h-px w-12 bg-[#2B6CB0]/70" />
                   </div>
                   <div className="mb-4 flex flex-wrap items-center gap-3">
-                    <h3 className="font-display text-[clamp(2.5rem,4.5vw,5rem)] font-black uppercase leading-[0.82] tracking-wide">
+                    <h3 className="font-display text-[clamp(2.05rem,3.35vw,3.9rem)] font-black uppercase leading-[0.84] tracking-wide">
                       {service.title}
                     </h3>
                     <span className="border border-white/10 bg-white/[0.03] px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/58">
                       {service.tag}
                     </span>
                   </div>
-                  <p className="max-w-3xl border-t border-white/10 pt-5 text-lg leading-relaxed text-white/58">
+                  <p className="max-w-3xl border-t border-white/10 pt-4 text-base leading-relaxed text-white/58">
                     {service.desc}
                   </p>
-                  <div className="matrix-strip mt-6 max-w-xl">
+                  <div className="matrix-strip mt-4 max-w-xl">
                     <span>design</span>
                     <span>logic</span>
                     <span>data</span>
@@ -151,7 +151,7 @@ export default function NuvroCustom() {
                 </div>
               </div>
 
-              <div className="data-rail flex flex-col justify-between border-t border-white/10 p-6 md:border-l md:border-t-0 md:p-8">
+              <div className="data-rail flex flex-col justify-between border-t border-white/10 p-5 md:border-l md:border-t-0 md:p-6">
                 <span>private</span>
                 <span>precise</span>
                 <span>built</span>

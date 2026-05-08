@@ -79,10 +79,10 @@ const products = [
 
 export default function NuvroExpress() {
   return (
-    <section id="express" className="relative overflow-hidden bg-[#111111] py-[clamp(80px,10vw,140px)] text-white">
+    <section id="express" className="relative overflow-hidden bg-[#111111] py-[clamp(64px,8vw,108px)] text-white">
       <div className="absolute inset-0 hero-bg opacity-55" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div className="mb-16 grid gap-8 border-y border-white/10 py-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mb-12 grid gap-8 border-y border-white/10 py-7 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -135,11 +135,11 @@ export default function NuvroExpress() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: (idx % 4) * 0.07 }}
-              className={`service-card group flex min-h-[500px] flex-col overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] transition duration-300 hover:-translate-y-1 hover:border-[var(--service-color)] hover:bg-[#0F0F0F] ${
-                idx === 0 ? 'md:col-span-2 lg:col-span-2 lg:row-span-2 lg:min-h-[760px]' : ''
+              className={`service-card group flex min-h-[420px] flex-col overflow-hidden border border-[rgba(255,255,255,0.08)] bg-[#111111] transition duration-300 hover:-translate-y-1 hover:border-[var(--service-color)] hover:bg-[#0F0F0F] ${
+                idx === 0 ? 'md:col-span-2 lg:col-span-2 lg:row-span-2 lg:min-h-[590px]' : ''
               }`}
             >
-              <div className={`signal-band relative overflow-hidden bg-[#111111] ${idx === 0 ? 'h-72 lg:h-[420px]' : 'h-56'}`}>
+              <div className={`signal-band relative overflow-hidden bg-[#111111] ${idx === 0 ? 'h-60 lg:h-[300px]' : 'h-44'}`}>
                 <img
                   src={prod.image}
                   alt={prod.title}
@@ -162,18 +162,18 @@ export default function NuvroExpress() {
                 </div>
               </div>
 
-              <div className="flex flex-1 flex-col p-6 md:p-7">
-                <div className="mb-5 flex items-center justify-between gap-4 border-b border-white/10 pb-4">
+              <div className="flex flex-1 flex-col p-5 md:p-6">
+                <div className="mb-4 flex items-center justify-between gap-4 border-b border-white/10 pb-3">
                   <span className="text-[10px] font-black uppercase tracking-[0.24em] text-white/40">
                     módulo {String(idx + 1).padStart(2, '0')}
                   </span>
                   <span className="h-px w-16 bg-[var(--service-color)] opacity-70" />
                 </div>
 
-                <h3 className="max-w-[11ch] font-display text-[clamp(2.25rem,3.2vw,4.4rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
+                <h3 className="max-w-[12ch] font-display text-[clamp(1.95rem,2.6vw,3.55rem)] font-black uppercase leading-[0.84] tracking-wide text-white">
                   {prod.title}
                 </h3>
-                <div className="mt-7 grid gap-5">
+                <div className="mt-5 grid gap-4">
                   <div>
                     <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.22em] text-white/38">
                       punto de fricción
@@ -186,16 +186,16 @@ export default function NuvroExpress() {
                     <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.22em] text-white/38">
                       sistema entregable
                     </span>
-                    <p className="text-base leading-relaxed text-[#9CA3AF]">{prod.desc}</p>
+                    <p className="text-sm leading-relaxed text-[#9CA3AF]">{prod.desc}</p>
                   </div>
                 </div>
-                <div className="mt-7 grid grid-cols-[1fr_auto] items-center border-y border-white/10 py-3">
+                <div className="mt-5 grid grid-cols-[1fr_auto] items-center border-y border-white/10 py-2.5">
                   <span className="text-[10px] font-black uppercase tracking-[0.22em] text-white/35">
                     deployment ready
                   </span>
                   <span className="h-2 w-2 bg-[#2B6CB0] shadow-[0_0_18px_rgba(43,108,176,0.95)]" />
                 </div>
-                <div className="matrix-strip mt-4">
+                <div className="matrix-strip mt-3">
                   <span>brief</span>
                   <span>visual</span>
                   <span>flow</span>
@@ -206,7 +206,7 @@ export default function NuvroExpress() {
                   href={`https://wa.me/50671757171?text=${encodeURIComponent(`Hola NUVRO, quiero info sobre: ${prod.title}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex items-center justify-between gap-4 border border-white/10 px-4 py-4 text-sm font-black uppercase tracking-[0.13em] text-white transition duration-200 hover:border-[var(--service-color)] hover:bg-[#FFFFFF] hover:text-[#0A0A0A] active:scale-[0.98]"
+                  className="mt-6 inline-flex items-center justify-between gap-4 border border-white/10 px-4 py-3.5 text-xs font-black uppercase tracking-[0.13em] text-white transition duration-200 hover:border-[var(--service-color)] hover:bg-[#FFFFFF] hover:text-[#0A0A0A] active:scale-[0.98]"
                 >
                   {prod.cta}
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />

@@ -48,12 +48,12 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="relative overflow-hidden border-t border-white/10 bg-[#0A0A0A] py-[clamp(80px,10vw,140px)]">
+    <section id="proyectos" className="relative overflow-hidden border-t border-white/10 bg-[#0A0A0A] py-[clamp(64px,8vw,108px)]">
       <div className="absolute inset-0 hero-bg opacity-80" />
       <div className="pointer-events-none absolute left-1/2 top-28 h-[360px] w-[min(84vw,980px)] -translate-x-1/2 border border-[#2B6CB0]/15 opacity-60 [clip-path:polygon(6%_0,100%_0,94%_100%,0_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-        <div className="mb-16 grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="mb-12 grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
-            className="precision-card relative min-h-[240px] overflow-hidden border border-white/10 bg-[#111111] p-6"
+            className="precision-card relative min-h-[190px] overflow-hidden border border-white/10 bg-[#111111] p-5"
           >
             <div className="absolute inset-0 bg-[linear-gradient(115deg,transparent_0_40%,rgba(43,108,176,0.16)_40.2%,transparent_58%)]" />
             <div className="relative z-10 flex h-full flex-col justify-between gap-8">
@@ -120,7 +120,7 @@ export default function Projects() {
                 project.featured ? 'lg:col-span-6 xl:grid xl:grid-cols-[1.1fr_0.9fr]' : 'lg:col-span-3'
               }`}
             >
-              <div className={`relative w-full overflow-hidden bg-[#111111] ${project.featured ? 'aspect-[16/9] xl:aspect-auto xl:min-h-[430px]' : 'aspect-[4/3]'}`}>
+              <div className={`relative w-full overflow-hidden bg-[#111111] ${project.featured ? 'aspect-[16/8] xl:aspect-auto xl:min-h-[330px]' : 'aspect-[16/10]'}`}>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -144,8 +144,8 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="flex h-full flex-col p-7 md:p-8">
-                <div className="mb-7 flex items-center justify-between gap-6 border-b border-white/10 pb-5">
+              <div className="flex h-full flex-col p-5 md:p-6">
+                <div className="mb-5 flex items-center justify-between gap-6 border-b border-white/10 pb-4">
                   <span className="module-chip">
                     case file
                   </span>
@@ -154,11 +154,11 @@ export default function Projects() {
                   </span>
                 </div>
 
-                <div className="mb-8">
-                  <h3 className="font-display text-[clamp(2.6rem,4.8vw,5.5rem)] font-black uppercase leading-[0.82] tracking-wide text-white">
+                <div className="mb-6">
+                  <h3 className="font-display text-[clamp(2.05rem,3.6vw,4.25rem)] font-black uppercase leading-[0.84] tracking-wide text-white">
                     {project.title}
                   </h3>
-                  <span className="mt-4 inline-flex border border-white/10 bg-white/[0.03] px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/58">
+                  <span className="mt-3 inline-flex border border-white/10 bg-white/[0.03] px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/58">
                     {project.type}
                   </span>
                 </div>
@@ -166,19 +166,19 @@ export default function Projects() {
                 <div className="grid border-y border-white/10">
                   <div className="grid gap-3 border-b border-white/10 py-4 md:grid-cols-[140px_1fr]">
                     <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#9CA3AF]">Problema</span>
-                    <p className="text-sm font-medium leading-snug text-white">{project.problem}</p>
+                    <p className="text-sm font-medium leading-snug text-white/86">{project.problem}</p>
                   </div>
                   <div className="grid gap-3 border-b border-white/10 py-4 md:grid-cols-[140px_1fr]">
                     <span className="text-[10px] font-black uppercase tracking-[0.22em] text-white/65">Sistema</span>
-                    <p className="text-sm font-medium leading-snug text-white">{project.system}</p>
+                    <p className="text-sm font-medium leading-snug text-white/86">{project.system}</p>
                   </div>
                   <div className="grid gap-3 py-4 md:grid-cols-[140px_1fr]">
                     <span className="text-[10px] font-black uppercase tracking-[0.22em] text-[#9CA3AF]">Enfoque</span>
-                    <p className="text-sm font-medium leading-snug text-white">{project.approach}</p>
+                    <p className="text-sm font-medium leading-snug text-white/86">{project.approach}</p>
                   </div>
                 </div>
 
-                <div className="software-panel mt-6 grid grid-cols-3">
+                <div className="software-panel mt-4 grid grid-cols-3">
                   {['estrategia', 'interfaz', 'sistema'].map((item) => (
                     <span
                       key={item}
@@ -194,7 +194,7 @@ export default function Projects() {
                     href={project.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-8 inline-flex w-fit items-center gap-3 border border-[#2B6CB0]/45 px-5 py-3 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#2B6CB0] hover:text-white"
+                    className="mt-6 inline-flex w-fit items-center gap-3 border border-[#2B6CB0]/45 px-5 py-3 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:bg-[#2B6CB0] hover:text-white"
                   >
                     Visitar proyecto <ExternalLink size={15} />
                   </a>
@@ -208,7 +208,7 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-16 flex flex-col items-center gap-6 border-t border-white/10 pt-12 text-center"
+          className="mt-12 flex flex-col items-center gap-6 border-t border-white/10 pt-10 text-center"
         >
           <a
             href="https://wa.me/50671757171?text=Hola NUVRO, quiero ver más casos de estudio"
