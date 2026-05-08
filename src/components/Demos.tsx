@@ -6,49 +6,49 @@ const demos = [
   {
     id: 'menu',
     label: 'Menú QR',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200',
+    image: '/assets/nuvro/menu-qr.png',
     title: 'Menú Digital',
     desc: 'Celular con menú elegante, fotos de platillos y navegación clara.'
   },
   {
     id: 'invitacion',
     label: 'Invitación',
-    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200',
+    image: '/assets/nuvro/digital-invitation.png',
     title: 'Invitación Premium',
     desc: 'Invitación en celular con detalles dorados, RSVP y cuenta regresiva.'
   },
   {
     id: 'linkbio',
     label: 'Link Bio',
-    image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=1200',
+    image: '/assets/nuvro/link-bio.png',
     title: 'Link en Bio',
     desc: 'Interfaz móvil estructurada con enlaces clave y CTA central.'
   },
   {
     id: 'catalogo',
     label: 'Catálogo',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200',
+    image: '/assets/nuvro/catalogo-express.png',
     title: 'Catálogo Móvil',
     desc: 'Productos organizados en grid con precios y botón de comprar.'
   },
   {
     id: 'landing',
     label: 'Promo Landing',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200',
+    image: '/assets/nuvro/landing-pages.png',
     title: 'Landing Promocional',
     desc: 'Diseño enfocado en alta conversión con pruebas sociales claras.'
   },
   {
     id: 'qr',
     label: 'QR Comercial',
-    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200',
+    image: '/assets/nuvro/qr-comercial.png',
     title: 'Display QR',
     desc: 'Código QR personalizado impreso con bordes limpios en un mostrador.'
   },
   {
     id: 'whatsapp',
     label: 'WhatsApp Kit',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200',
+    image: '/assets/nuvro/whatsapp-business.png',
     title: 'Flujo WhatsApp',
     desc: 'WhatsApp Business organizado con etiquetas visuales y mensajes clave.'
   }

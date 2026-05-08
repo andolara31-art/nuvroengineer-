@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 const mockups = [
-  { id: '1', title: 'Link Bio', img: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=400', color: 'bg-[#FF6B00]' },
-  { id: '2', title: 'Menú QR', img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=400', color: 'bg-[#A855F7]' },
-  { id: '3', title: 'Invitación', img: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=400', color: 'bg-[#0066FF]' },
+  { id: '1', title: 'Link Bio', img: '/assets/nuvro/link-bio.png', color: 'bg-[#0066FF]' },
+  { id: '2', title: 'Menú QR', img: '/assets/nuvro/menu-qr.png', color: 'bg-white' },
+  { id: '3', title: 'Invitación', img: '/assets/nuvro/digital-invitation.png', color: 'bg-[#0066FF]' },
 ];
 
 export default function Hero() {

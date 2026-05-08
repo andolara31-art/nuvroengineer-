@@ -26,10 +26,9 @@ export default function WhatWeDo() {
             className="w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/5"
           >
             <img 
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
+              src="/assets/nuvro/hero-command-center.png" 
               alt="System Mockup" 
               className="w-full h-full object-cover opacity-80"
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           </motion.div>

@@ -8,7 +8,7 @@ const projects = [
     problem: "Demora en respuesta a leads y pérdida de trazabilidad.",
     system: "Plataforma de alta densidad para gestión de leads en tiempo real.",
     approach: "Dashboard de ventas, Automatización de WhatsApp y Analítica.",
-    image: "https://images.unsplash.com/photo-1551288049-bbda38a8f1ad?q=80&w=1200",
+    image: "/assets/nuvro/dashboards-crm.png",
   },
   {
     title: "Clario Advisory",
@@ -16,7 +16,7 @@ const projects = [
     problem: "Falta de credibilidad digital en sector financiero high-ticket.",
     system: "Identidad digital de alto nivel y funnel de prospección.",
     approach: "Estrategia de contenido, landing page de conversión y UI corporativa.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200",
+    image: "/assets/nuvro/webs-premium.png",
   },
   {
     title: "NUVRO FIT",
@@ -24,7 +24,7 @@ const projects = [
     problem: "Coaches enviando rutinas por PDFs desactualizados.",
     system: "Panel de control web para seguimiento biométrico y rutinas dinámicas.",
     approach: "Portal de cliente web-app, backend de entrenamiento y estadísticas.",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200",
+    image: "/assets/nuvro/automation-flows.png",
   },
   {
     title: "Cafeoteca Costa Rica",
@@ -32,7 +32,7 @@ const projects = [
     problem: "Menú en imágenes de Instagram y toma manual de pedidos lenta.",
     system: "Ecosistema de menú interactivo y sistema POS ligero.",
     approach: "Menú digital rápido, sistema de órdenes a cocina y diseño de marca.",
-    image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1200",
+    image: "/assets/nuvro/menu-qr.png",
   }
 ];
 

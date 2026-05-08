@@ -5,27 +5,32 @@ const customServices = [
   {
     icon: <Laptop size={20} />,
     title: "Webs Premium",
-    desc: "Plataformas web construidas a medida. Diseño exclusivo, alto rendimiento y arquitecturas escalables."
+    desc: "Plataformas web construidas a medida. Diseño exclusivo, alto rendimiento y arquitecturas escalables.",
+    image: "/assets/nuvro/webs-premium.png"
   },
   {
     icon: <Database size={20} />,
     title: "CRM / Dashboards",
-    desc: "Visualización de datos en tiempo real, tableros de control y gestión centralizada de negocio."
+    desc: "Visualización de datos en tiempo real, tableros de control y gestión centralizada de negocio.",
+    image: "/assets/nuvro/dashboards-crm.png"
   },
   {
     icon: <Zap size={20} />,
     title: "Automatización",
-    desc: "Integración de flujos de trabajo. Conectamos software para que opere de manera fluida y sin error humano."
+    desc: "Integración de flujos de trabajo. Conectamos software para que opere de manera fluida y sin error humano.",
+    image: "/assets/nuvro/automation-flows.png"
   },
   {
     icon: <Settings size={20} />,
     title: "Sistemas Internos",
-    desc: "Herramientas operativas privadas. Software hecho exactamente como tu equipo trabaja."
+    desc: "Herramientas operativas privadas. Software hecho exactamente como tu equipo trabaja.",
+    image: "/assets/nuvro/hero-command-center.png"
   },
   {
     icon: <Cpu size={20} />,
     title: "IA Aplicada",
-    desc: "Modelos de inteligencia artificial integrados en tu negocio para análisis, soporte u optimización."
+    desc: "Modelos de inteligencia artificial integrados en tu negocio para análisis, soporte u optimización.",
+    image: "/assets/nuvro/ai-applied.png"
   }
 ];
 
@@ -93,11 +98,20 @@ export default function NuvroCustom() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className={`bg-[#0A0A0A] border border-white/5 p-8 rounded-[32px] group hover:border-[#0066FF]/30 transition-all duration-300 relative ${idx === 4 ? 'lg:col-span-2' : ''}`}
+              className={`bg-[#0A0A0A] border border-white/5 rounded-[32px] group hover:border-[#0066FF]/30 transition-all duration-300 relative overflow-hidden ${idx === 4 ? 'lg:col-span-2' : ''}`}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent rounded-[32px]" />
               
-              <div className="relative z-10 flex flex-col h-full">
+              <div className="relative aspect-[16/10] overflow-hidden bg-black">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/25 to-transparent" />
+              </div>
+
+              <div className="relative z-10 flex flex-col h-full p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white/40 group-hover:text-[#0066FF] transition-colors">
                     {service.icon}

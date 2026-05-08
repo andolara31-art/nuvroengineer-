@@ -10,7 +10,7 @@ const products = [
     icon: <QrCode size={24} />,
     color: 'bg-orange-50 text-orange-600 border-orange-200',
     iconColor: 'bg-orange-500 text-white',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800',
+    image: '/assets/nuvro/menu-qr.png',
   },
   {
     title: "Link Bio Vivo",
@@ -20,7 +20,7 @@ const products = [
     icon: <LinkIcon size={24} />,
     color: 'bg-blue-50 text-blue-600 border-blue-200',
     iconColor: 'bg-blue-600 text-white',
-    image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800',
+    image: '/assets/nuvro/link-bio.png',
   },
   {
     title: "Invitación Digital",
@@ -30,7 +30,7 @@ const products = [
     icon: <Mail size={24} />,
     color: 'bg-pink-50 text-pink-600 border-pink-200',
     iconColor: 'bg-pink-500 text-white',
-    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800',
+    image: '/assets/nuvro/digital-invitation.png',
   },
   {
     title: "Catálogo Express",
@@ -40,7 +40,7 @@ const products = [
     icon: <ShoppingCart size={24} />,
     color: 'bg-emerald-50 text-emerald-600 border-emerald-200',
     iconColor: 'bg-emerald-500 text-white',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800',
+    image: '/assets/nuvro/catalogo-express.png',
   },
   {
     title: "Landing de Promoción",
@@ -50,7 +50,7 @@ const products = [
     icon: <Layout size={24} />,
     color: 'bg-rose-50 text-rose-600 border-rose-200',
     iconColor: 'bg-rose-500 text-white',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+    image: '/assets/nuvro/landing-pages.png',
   },
   {
     title: "QR Comercial",
@@ -60,7 +60,7 @@ const products = [
     icon: <ScanLine size={24} />,
     color: 'bg-amber-50 text-amber-600 border-amber-200',
     iconColor: 'bg-amber-500 text-white',
-    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=800',
+    image: '/assets/nuvro/qr-comercial.png',
   },
   {
     title: "Kit WhatsApp Business",
@@ -70,7 +70,7 @@ const products = [
     icon: <MessageCircle size={24} />,
     color: 'bg-teal-50 text-teal-600 border-teal-200',
     iconColor: 'bg-teal-500 text-white',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800',
+    image: '/assets/nuvro/whatsapp-business.png',
   }
 ];
 
