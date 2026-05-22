@@ -1,157 +1,143 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Instagram, Globe } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Landings() {
   return (
-    <section id="landings" className="py-[clamp(64px,8vw,108px)] bg-[#0A0A0A] relative border-t border-white/5 overflow-hidden">
-      <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-[#2B6CB0]/5 blur-[150px] -z-10 rounded-full pointer-events-none" />
+    <section id="landings" className="relative overflow-hidden border-t border-white/[0.06] bg-[#050505] py-[clamp(80px,10vw,130px)] text-white">
+      <div className="absolute top-0 right-[10%] h-[500px] w-[500px] rounded-full bg-[#2B6CB0]/[0.04] blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
-        <div className="text-center max-w-4xl mx-auto mb-14">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+        {/* Header */}
+        <div className="mb-16 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 mb-6"
+            className="section-label mb-6 justify-center"
           >
-            <div className="w-2 h-2 rounded-full bg-[#2B6CB0]" />
-            <span className="text-sm font-medium tracking-widest text-[#2B6CB0] uppercase">Landing Pages</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#2B6CB0]" />
+            Landing Pages
           </motion.div>
-          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-display font-bold text-white mb-6 leading-tight tracking-tight"
+            className="mx-auto max-w-3xl font-display text-[clamp(2.6rem,6vw,6rem)] font-black uppercase leading-[0.86] tracking-wide text-white"
           >
-            Una promoción en redes dura horas. <br className="hidden md:block"/>Una landing puede vender todos los días.
+            Una promo en redes dura horas.{' '}
+            <span className="text-white/28 font-light italic">Una landing puede vender todos los días.</span>
           </motion.h2>
-          
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-white/60 font-sans leading-relaxed max-w-2xl mx-auto mb-10"
+            transition={{ delay: 0.18 }}
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/45 md:text-lg"
           >
-            Creamos landing pages para explicar una oferta, eliminar dudas y llevar al cliente a escribir, reservar o comprar.
+            Creamos landing pages para explicar una oferta, eliminar dudas y llevar al cliente
+            a escribir, reservar o comprar.
           </motion.p>
-          
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.26 }}
+            className="mt-8"
           >
-            <a 
+            <a
               href="https://wa.me/50671757171?text=Hola NUVRO, quiero una landing"
               target="_blank"
               rel="noreferrer"
-            className="inline-flex items-center gap-3 border border-white px-8 py-4 bg-[#FFFFFF] text-[#0A0A0A] font-bold uppercase tracking-wider text-sm hover:bg-[#2B6CB0] hover:text-white transition-all shadow-xl shadow-[#2B6CB0]/20"
+              className="btn-primary inline-flex"
             >
-              Quiero una landing <ArrowRight size={18} />
+              Quiero una landing
+              <ArrowRight size={16} />
             </a>
           </motion.div>
         </div>
 
-        {/* Visual Split Screen */}
-        <div className="mx-auto grid max-w-6xl items-stretch gap-5 md:grid-cols-[0.92fr_1.08fr]">
-          
-          {/* Before: Instagram Story */}
+        {/* Before / After */}
+        <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
+          {/* Before */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-white/10 bg-[#111111] p-6 text-center md:p-8"
+            className="nuvro-card flex flex-col items-center p-8 text-center"
           >
-            <div className="matrix-strip mb-6 w-full">
-              <span>post</span>
-              <span>wait</span>
-              <span>expire</span>
-              <span>lost</span>
-            </div>
-            <div className="flex items-center gap-3 mb-6 w-full justify-center">
-              <Instagram size={20} className="text-[#6B7280]" />
-              <span className="text-[#6B7280] font-bold uppercase tracking-widest text-sm">Antes</span>
-            </div>
-            
-            <div className="relative flex h-[280px] w-[168px] flex-col overflow-hidden border border-white/10 bg-[#111111]">
-              <div className="p-4 flex items-center gap-3 border-b border-white/5">
-                <div className="w-8 h-8 bg-[#111111]" />
-                <div className="h-2 w-16 bg-[#111111]" />
+            <span className="section-label mb-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
+              Antes — Instagram
+            </span>
+
+            {/* Story mockup */}
+            <div className="relative mx-auto flex h-[260px] w-[150px] flex-col overflow-hidden border border-white/[0.08] bg-[#0A0A0A]">
+              <div className="flex h-10 items-center gap-2 border-b border-white/[0.06] px-3">
+                <div className="h-5 w-5 rounded-full bg-white/10" />
+                <div className="h-1.5 w-12 rounded bg-white/10" />
               </div>
-              <div className="flex-1 p-5 flex flex-col items-center justify-center text-center">
-                <span className="text-white/20 font-bold text-xl mb-4">OFERTA LIMITADA</span>
-                <div className="h-2 w-24 bg-[#111111]/10 mb-2" />
-                <div className="h-2 w-16 bg-[#111111]/10 mb-6" />
-                <div className="px-6 py-2 bg-[#111111] text-[10px] text-white/40">LINK EN BIO</div>
+              <div className="flex flex-1 flex-col items-center justify-center gap-3 p-4">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-white/20">OFERTA LIMITADA</div>
+                <div className="h-1.5 w-20 rounded bg-white/[0.06]" />
+                <div className="h-1.5 w-14 rounded bg-white/[0.06]" />
+                <div className="mt-3 w-full bg-white/[0.06] px-4 py-2 text-[9px] font-bold uppercase tracking-widest text-white/20">
+                  LINK EN BIO
+                </div>
               </div>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] text-[#6B7280] font-bold tracking-widest">EXPIRA EN 24H</div>
+              <div className="border-t border-white/[0.05] py-2 text-center text-[9px] font-bold uppercase tracking-wider text-white/20">
+                EXPIRA EN 24H
+              </div>
             </div>
-            
-            <p className="mt-6 text-sm text-white/40 font-sans">Publicación perdida. Flyer sin CTA claro. Mensaje disperso.</p>
+
+            <p className="mt-6 text-sm text-white/35">
+              Publicación perdida. Sin CTA claro. Mensaje disperso.
+            </p>
           </motion.div>
 
-          {/* After: Landing Page */}
+          {/* After */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="precision-card relative flex flex-col items-center justify-start overflow-hidden border border-[rgba(43,108,176,0.4)] bg-[#111111] p-6 text-center shadow-2xl md:p-8"
+            className="nuvro-card relative flex flex-col items-center border-[#2B6CB0]/25 bg-[#2B6CB0]/[0.04] p-8 text-center"
+            style={{ borderColor: 'rgba(43,108,176,0.25)' }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-[#2B6CB0]/5 to-transparent pointer-events-none" />
-            <div className="matrix-strip relative z-10 mb-6 w-full">
-              <span>offer</span>
-              <span>proof</span>
-              <span>cta</span>
-              <span>sell</span>
-            </div>
-            
-            <div className="flex items-center gap-3 mb-6 w-full justify-center relative z-10">
-              <Globe size={20} className="text-[#2B6CB0]" />
-              <span className="text-[#2B6CB0] font-bold uppercase tracking-widest text-sm">Estructura NUVRO</span>
-            </div>
-            
-            <div className="relative z-10 flex h-[320px] w-[188px] flex-col overflow-hidden border-2 border-[#111111] bg-[#0A0A0A] shadow-2xl">
-              {/* Fake web header */}
-              <div className="h-10 w-full bg-[#111111] flex items-center px-4 border-b border-white/5">
-                <div className="h-2 w-12 bg-[#111111]/20" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#2B6CB0]/[0.05] to-transparent pointer-events-none" />
+            <span className="section-label relative z-10 mb-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#2B6CB0]" />
+              Estructura NUVRO
+            </span>
+
+            {/* Landing mockup */}
+            <div className="relative z-10 mx-auto flex h-[260px] w-[160px] flex-col overflow-hidden border border-[#2B6CB0]/25 bg-[#0A0A0A] shadow-xl shadow-[#2B6CB0]/10">
+              <div className="h-8 w-full border-b border-white/[0.05] bg-[#111111] px-3 flex items-center">
+                <div className="h-1.5 w-10 rounded bg-white/[0.08]" />
               </div>
-              
-              <div className="flex-1 overflow-hidden relative">
-                {/* Hero */}
-                <div className="p-5 text-center border-b border-white/5 pb-6 relative">
-                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 blur-[20px] rounded-full" />
-                   <div className="h-3 w-16 bg-[#FFFFFF] mx-auto mb-4" />
-                   <div className="h-4 w-full bg-[#111111]/80 mb-2" />
-                   <div className="h-4 w-3/4 bg-[#111111]/80 mx-auto mb-6" />
-                   <div className="px-5 py-2.5 bg-[#FFFFFF] w-full mx-auto shadow-lg shadow-black/30">
-                     <div className="h-2 w-16 bg-[#111111] mx-auto" />
-                   </div>
+              <div className="flex-1 overflow-hidden">
+                <div className="border-b border-white/[0.05] p-4 text-center">
+                  <div className="mx-auto mb-3 h-2 w-14 rounded bg-white" />
+                  <div className="mb-1.5 h-2 w-full rounded bg-white/[0.08]" />
+                  <div className="mb-4 mx-auto h-2 w-3/4 rounded bg-white/[0.08]" />
+                  <div className="w-full bg-white py-2 text-center">
+                    <div className="mx-auto h-1.5 w-12 rounded bg-[#0A0A0A]" />
+                  </div>
                 </div>
-                {/* Benefits */}
-                <div className="p-4 space-y-3">
-                   <div className="flex items-center gap-2">
-                     <div className="w-3 h-3 bg-white/10 border border-white/30" />
-                     <div className="h-1.5 w-20 bg-[#111111]/60" />
-                   </div>
-                   <div className="flex items-center gap-2">
-                     <div className="w-3 h-3 bg-white/10 border border-white/30" />
-                     <div className="h-1.5 w-16 bg-[#111111]/60" />
-                   </div>
-                   <div className="flex items-center gap-2">
-                     <div className="w-3 h-3 bg-white/10 border border-white/30" />
-                     <div className="h-1.5 w-24 bg-[#111111]/60" />
-                   </div>
+                <div className="space-y-2.5 p-4">
+                  {[18, 14, 20].map((w, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className="h-2.5 w-2.5 shrink-0 rounded-sm border border-white/20 bg-white/[0.06]" />
+                      <div className={`h-1.5 rounded bg-white/[0.06]`} style={{ width: `${w * 4}px` }} />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-            
-            <p className="mt-6 text-sm text-white font-medium font-sans relative z-10">Beneficios, prueba visual y CTA de WhatsApp siempre disponible.</p>
-          </motion.div>
 
+            <p className="relative z-10 mt-6 text-sm font-medium text-white/70">
+              Beneficios, prueba visual y CTA siempre disponible.
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>

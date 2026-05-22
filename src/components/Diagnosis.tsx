@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Check, X } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 
 const comparisons = [
   {
@@ -11,7 +11,7 @@ const comparisons = [
     after: 'Link BIO guiado hacia reservas y valor',
   },
   {
-    before: 'Promociones perdidas en Historias de 24h',
+    before: 'Promociones perdidas en historias de 24h',
     after: 'Landing pages promocionales que venden solas',
   },
   {
@@ -19,92 +19,86 @@ const comparisons = [
     after: 'Catálogo digital con carrito a WhatsApp',
   },
   {
-    before: 'Atención manual caótica en DM',
+    before: 'Atención manual caótica en mensajes directos',
     after: 'Atención centralizada y estructurada',
   },
 ];
 
 export default function Diagnosis() {
   return (
-    <section id="problema" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(64px,8vw,108px)] text-white">
-      <div className="absolute inset-0 hero-bg opacity-80" />
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 md:px-12 lg:grid-cols-[0.82fr_1.18fr]">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            className="mb-8 inline-flex items-center gap-3 bg-[#111111] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white diagonal-cut"
-          >
-            <span className="h-2 w-2 bg-[#2B6CB0]" />
-            Auditoría digital
-          </motion.div>
+    <section id="problema" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(80px,10vw,130px)] text-white">
+      <div className="absolute inset-0 hero-bg" />
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ delay: 0.08 }}
-            className="max-w-xl font-display text-[clamp(3.4rem,7vw,7rem)] font-black uppercase leading-[0.82] tracking-wide"
-          >
-            <span className="font-light italic">Lo</span> barato se nota antes de leer.
-          </motion.h2>
-
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+        {/* Header */}
+        <div className="mb-16 grid gap-12 lg:grid-cols-2 lg:items-end">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              className="section-label mb-6"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-[#2B6CB0]" />
+              Diagnóstico
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ delay: 0.08 }}
+              className="section-heading"
+            >
+              Lo barato<br />
+              <span className="text-white/28 font-light italic">se nota</span><br />
+              antes de leer.
+            </motion.h2>
+          </div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: '-80px' }}
             transition={{ delay: 0.16 }}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-[#9CA3AF]"
+            className="max-w-lg text-lg leading-relaxed text-white/50 lg:self-end"
           >
             Si el cliente ve desorden, duda. NUVRO convierte piezas sueltas en una ruta visual
             clara: descubre, entiende, decide y escribe.
           </motion.p>
-          <div className="software-panel mt-10 grid grid-cols-3">
-            {['orden', 'valor', 'accion'].map((item) => (
-              <span
-                key={item}
-                className="border-r border-white/10 px-3 py-4 text-center text-[9px] font-black uppercase tracking-[0.18em] text-white/48 last:border-r-0"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
         </div>
 
-        <div className="precision-card border-y border-white/10 bg-[#111111] backdrop-blur-sm">
-          <div className="grid grid-cols-[0.9fr_1.1fr] border-b border-white/10 text-[10px] font-black uppercase tracking-[0.24em] text-[#9CA3AF]">
-            <div className="px-4 py-4 md:px-6">Fuga actual</div>
-            <div className="border-l border-white/10 px-4 py-4 text-[#2B6CB0] md:px-6">
+        {/* Comparison table */}
+        <div className="overflow-hidden border border-white/[0.07]">
+          {/* Column headers */}
+          <div className="grid grid-cols-2 border-b border-white/[0.07] bg-[#0D0D0D]">
+            <div className="px-6 py-4 text-[11px] font-bold uppercase tracking-[0.28em] text-white/35">
+              Situación actual
+            </div>
+            <div className="border-l border-white/[0.07] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.28em] text-[#2B6CB0]">
               Estructura NUVRO
             </div>
           </div>
 
+          {/* Rows */}
           {comparisons.map((item, index) => (
             <motion.div
               key={item.before}
-              initial={{ opacity: 0, y: 18 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-70px' }}
-              transition={{ delay: index * 0.06 }}
-              className="grid min-h-28 grid-cols-[0.9fr_1.1fr] border-b border-white/10 last:border-b-0"
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ delay: index * 0.07 }}
+              className="grid grid-cols-2 border-b border-white/[0.06] last:border-b-0"
             >
-              <div className="grid gap-4 bg-[#111111] px-4 py-6 md:grid-cols-[46px_1fr] md:px-6">
-                <span className="font-display text-3xl font-black leading-none text-white/12">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div className="flex items-start gap-4">
-                <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center border border-[#6B7280]/25 text-[#6B7280]">
-                  <X size={16} />
-                </span>
-                <p className="text-base font-semibold leading-snug text-[#9CA3AF] md:text-lg">{item.before}</p>
+              <div className="flex items-start gap-4 px-6 py-6 bg-[#0A0A0A]">
+                <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-white/25">
+                  <X size={14} />
                 </div>
+                <p className="text-sm leading-relaxed text-white/40 md:text-base">{item.before}</p>
               </div>
-              <div className="flex items-start gap-4 border-l border-l-[#2B6CB0]/55 bg-[#2B6CB0]/10 px-4 py-6 md:px-6">
-                <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center text-[#2B6CB0]">
-                  <Check size={16} strokeWidth={3} />
-                </span>
-                <p className="text-base font-extrabold leading-snug text-white md:text-lg">{item.after}</p>
+              <div className="flex items-start gap-4 border-l border-white/[0.07] bg-[#2B6CB0]/[0.06] px-6 py-6">
+                <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-[#2B6CB0]">
+                  <Check size={14} strokeWidth={2.5} />
+                </div>
+                <p className="text-sm font-medium leading-relaxed text-white/85 md:text-base">{item.after}</p>
               </div>
             </motion.div>
           ))}

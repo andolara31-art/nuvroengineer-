@@ -1,37 +1,50 @@
 export default function Footer() {
+  const links = [
+    { name: 'Servicios', href: '#express' },
+    { name: 'Landings', href: '#landings' },
+    { name: 'Custom', href: '#custom' },
+    { name: 'Proyectos', href: '#proyectos' },
+    { name: 'Contacto', href: '#contacto' },
+  ];
+
   return (
-    <footer className="bg-[#0A0A0A] py-24 border-t border-white/5 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-2xl font-display font-bold tracking-tight text-white uppercase">
-              NUVRO
-            </span>
-            <span className="text-2xl font-display font-light tracking-tight text-white/40 uppercase">
-              ENGINEER
-            </span>
+    <footer className="border-t border-white/[0.06] bg-[#0A0A0A] py-16 text-white">
+      <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+        <div className="flex flex-col items-center gap-10">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center bg-[#2B6CB0] font-display text-lg font-black uppercase text-white">
+              N
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="text-sm font-display font-black text-white uppercase tracking-[0.12em]">NUVRO</span>
+              <span className="text-[10px] text-white/30 uppercase tracking-[0.4em] font-bold">Engineer</span>
+            </div>
           </div>
-          <p className="text-white/60 font-light text-lg">Webs premium, sistemas y microservicios digitales.</p>
-        </div>
 
-        <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 font-mono text-xs uppercase tracking-widest text-white/40">
-          <a href="#problema" className="hover:text-[#2B6CB0] transition-colors">Problema</a>
-          <a href="#express" className="hover:text-[#2B6CB0] transition-colors">Express</a>
-          <a href="#landings" className="hover:text-[#2B6CB0] transition-colors">Landings</a>
-          <a href="#custom" className="hover:text-[#2B6CB0] transition-colors">Custom</a>
-          <a href="#proyectos" className="hover:text-[#2B6CB0] transition-colors">Proyectos</a>
-        </div>
+          {/* Nav */}
+          <nav className="flex flex-wrap justify-center gap-6 md:gap-10">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-xs font-bold uppercase tracking-[0.2em] text-white/30 transition-colors hover:text-white"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
 
-        <div className="flex flex-col items-center gap-12 border-t border-white/5 pt-16">
-          <div className="px-6 py-2 rounded-full border border-white/10 bg-[#111111]/5 text-[10px] font-mono tracking-widest text-white/60">
-            NUVROENGINEER.COM
-          </div>
-          
-          <div className="text-[10px] font-mono tracking-widest text-white/20 uppercase text-center space-y-4">
-            <p>© {new Date().getFullYear()} NUVRO ENGINEER. TODOS LOS DERECHOS RESERVADOS.</p>
-            <div className="flex items-center justify-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#2B6CB0]" />
-              <span>COSTA RICA</span>
+          {/* Bottom */}
+          <div className="flex w-full flex-col items-center gap-3 border-t border-white/[0.05] pt-8 text-center">
+            <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/20">
+              NUVROENGINEER.COM
+            </p>
+            <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/15">
+              <span className="h-1 w-1 rounded-full bg-[#2B6CB0]" />
+              <span>Costa Rica</span>
+              <span>·</span>
+              <span>© {new Date().getFullYear()} NUVRO ENGINEER</span>
             </div>
           </div>
         </div>
