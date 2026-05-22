@@ -1,108 +1,94 @@
 import { motion } from 'motion/react';
-import { X, Check } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 
-const comparisons = [
-  {
-    before: 'Menú en foto borrosa por WhatsApp',
-    after: 'Menú QR interactivo en mesa y celular',
-  },
-  {
-    before: 'Link BIO lleno de botones que no guían',
-    after: 'Link BIO guiado hacia reservas y valor',
-  },
-  {
-    before: 'Promociones perdidas en historias de 24h',
-    after: 'Landing pages promocionales que venden solas',
-  },
-  {
-    before: 'Catálogo desordenado con fotos sueltas',
-    after: 'Catálogo digital con carrito a WhatsApp',
-  },
-  {
-    before: 'Atención manual caótica en mensajes directos',
-    after: 'Atención centralizada y estructurada',
-  },
+const rows = [
+  { before: 'Menú en foto borrosa por WhatsApp',           after: 'Menú QR interactivo en mesa y celular'        },
+  { before: 'Link BIO lleno de botones que no guían',      after: 'Link BIO guiado hacia reservas y valor'       },
+  { before: 'Promociones perdidas en historias de 24h',    after: 'Landing pages promocionales que venden solas' },
+  { before: 'Catálogo desordenado con fotos sueltas',      after: 'Catálogo digital con carrito a WhatsApp'      },
+  { before: 'Atención manual caótica en mensajes directos', after: 'Atención centralizada y estructurada'         },
 ];
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function Diagnosis() {
   return (
-    <section id="problema" className="relative overflow-hidden bg-[#0A0A0A] py-[clamp(80px,10vw,130px)] text-white">
-      <div className="absolute inset-0 hero-bg" />
+    <section id="problema" className="bg-nuvro py-[clamp(80px,10vw,140px)]">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
         {/* Header */}
-        <div className="mb-16 grid gap-12 lg:grid-cols-2 lg:items-end">
+        <div className="mb-16 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              className="section-label mb-6"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, ease }}
+              className="label-sm mb-5 flex items-center gap-2.5"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#2B6CB0]" />
+              <span className="h-[5px] w-[5px] rounded-full bg-brand" />
               Diagnóstico
-            </motion.div>
+            </motion.p>
+
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ delay: 0.08 }}
-              className="section-heading"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.75, delay: 0.06, ease }}
+              className="display-section text-1 uppercase"
             >
-              Lo barato<br />
-              <span className="text-white/28 font-light italic">se nota</span><br />
+              Lo barato
+              <br />
+              <span style={{ fontWeight: 300, color: 'var(--text-3)' }}>se nota</span>
+              <br />
               antes de leer.
             </motion.h2>
           </div>
+
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ delay: 0.16 }}
-            className="max-w-lg text-lg leading-relaxed text-white/50 lg:self-end"
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6, delay: 0.16, ease }}
+            className="body-lg lg:self-end lg:max-w-[46ch]"
           >
-            Si el cliente ve desorden, duda. NUVRO convierte piezas sueltas en una ruta visual
-            clara: descubre, entiende, decide y escribe.
+            Si el cliente ve desorden, duda. NUVRO convierte piezas sueltas en una ruta
+            visual clara: descubre, entiende, decide y escribe.
           </motion.p>
         </div>
 
         {/* Comparison table */}
-        <div className="overflow-hidden border border-white/[0.07]">
-          {/* Column headers */}
-          <div className="grid grid-cols-2 border-b border-white/[0.07] bg-[#0D0D0D]">
-            <div className="px-6 py-4 text-[11px] font-bold uppercase tracking-[0.28em] text-white/35">
-              Situación actual
-            </div>
-            <div className="border-l border-white/[0.07] px-6 py-4 text-[11px] font-bold uppercase tracking-[0.28em] text-[#2B6CB0]">
-              Estructura NUVRO
-            </div>
+        <div className="overflow-hidden border border-[var(--border-sub)]">
+          {/* Head */}
+          <div className="grid grid-cols-2 bg-[var(--surface-2)]">
+            <div className="px-6 py-4 label-sm">Situación actual</div>
+            <div className="border-l border-[var(--border-sub)] px-6 py-4 label-sm text-brand">Estructura NUVRO</div>
           </div>
 
           {/* Rows */}
-          {comparisons.map((item, index) => (
+          {rows.map((row, i) => (
             <motion.div
-              key={item.before}
-              initial={{ opacity: 0, y: 14 }}
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: index * 0.07 }}
-              className="grid grid-cols-2 border-b border-white/[0.06] last:border-b-0"
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.45, delay: i * 0.06, ease }}
+              className="grid grid-cols-2 border-t border-[var(--border-sub)]"
             >
-              <div className="flex items-start gap-4 px-6 py-6 bg-[#0A0A0A]">
-                <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-white/25">
-                  <X size={14} />
-                </div>
-                <p className="text-sm leading-relaxed text-white/40 md:text-base">{item.before}</p>
+              {/* Before */}
+              <div className="flex items-start gap-4 bg-[var(--surface)] px-6 py-6">
+                <span className="mt-0.5 text-3 shrink-0"><X size={14} /></span>
+                <p className="text-[0.9375rem] leading-snug text-3">{row.before}</p>
               </div>
-              <div className="flex items-start gap-4 border-l border-white/[0.07] bg-[#2B6CB0]/[0.06] px-6 py-6">
-                <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-[#2B6CB0]">
-                  <Check size={14} strokeWidth={2.5} />
-                </div>
-                <p className="text-sm font-medium leading-relaxed text-white/85 md:text-base">{item.after}</p>
+              {/* After */}
+              <div className="flex items-start gap-4 border-l border-[var(--border-sub)] bg-[oklch(56%_0.18_235/0.05)] px-6 py-6">
+                <span className="mt-0.5 shrink-0 text-brand"><Check size={14} strokeWidth={2.5} /></span>
+                <p className="text-[0.9375rem] font-medium leading-snug text-1">{row.after}</p>
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

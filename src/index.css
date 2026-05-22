@@ -1,85 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;400;700;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Barlow Condensed", "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-  --color-brand-blue: #2B6CB0;
-  --color-brand-deep: #1E4E82;
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-sans: "Jost", sans-serif;
 }
 
+/* ─── Design Tokens ─── */
 :root {
-  --nuvro-ink: #0A0A0A;
-  --nuvro-panel: #111111;
-  --nuvro-paper: #FFFFFF;
-  --nuvro-muted: #9CA3AF;
-  --nuvro-signal: #2B6CB0;
+  /* Surfaces (OKLCH — blue-tinted neutrals toward brand hue 235) */
+  --bg:          oklch(9.5%  0.008 235);
+  --surface:     oklch(13.5% 0.010 235);
+  --surface-2:   oklch(17.5% 0.012 235);
+  --border:      oklch(24%   0.012 235);
+  --border-sub:  oklch(19%   0.010 235);
+
+  /* Text */
+  --text-1: oklch(93%  0.005 235);
+  --text-2: oklch(58%  0.012 235);
+  --text-3: oklch(38%  0.010 235);
+
+  /* Brand */
+  --brand:     oklch(56%  0.180 235);
+  --brand-dim: oklch(26%  0.060 235);
+
+  /* Motion */
+  --ease-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-@layer utilities {
-  .text-balance { text-wrap: balance; }
-
-  .grain-overlay {
-    @apply fixed inset-0 pointer-events-none z-50 opacity-[0.025];
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  }
-
-  .hero-bg {
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(43,108,176,0.06) 0%, transparent 70%);
-  }
-
-  .atelier-field {
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
-  }
-
-  .marquee-track {
-    animation: nuvro-marquee 32s linear infinite;
-  }
-
-  .nuvro-card {
-    background: #111111;
-    border: 1px solid rgba(255,255,255,0.07);
-    transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease;
-  }
-
-  .nuvro-card:hover {
-    border-color: rgba(255,255,255,0.14);
-    box-shadow: 0 24px 64px rgba(0,0,0,0.35);
-    transform: translateY(-2px);
-  }
-
-  .section-label {
-    @apply inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/50;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-3 bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#0A0A0A] transition-all duration-200 hover:bg-[#2B6CB0] hover:text-white active:scale-[0.98];
-  }
-
-  .btn-outline {
-    @apply inline-flex items-center justify-center gap-3 border border-white/20 px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white/75 transition-all duration-200 hover:border-white/40 hover:text-white active:scale-[0.98];
-  }
-
-  .section-heading {
-    @apply font-display font-black uppercase leading-[0.84] tracking-wide text-white;
-    font-size: clamp(3rem, 7vw, 7.5rem);
-  }
-}
-
-@keyframes nuvro-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
+/* ─── Base ─── */
 html {
   scroll-behavior: smooth;
-  @apply bg-[#0A0A0A] text-white;
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
-body {
-  @apply overflow-x-hidden;
+body { overflow-x: hidden; }
+
+/* ─── Utility Classes ─── */
+@layer utilities {
+
+  /* Surfaces */
+  .bg-nuvro        { background: var(--bg); }
+  .bg-surface      { background: var(--surface); }
+  .bg-surface-2    { background: var(--surface-2); }
+
+  /* Text */
+  .text-1 { color: var(--text-1); }
+  .text-2 { color: var(--text-2); }
+  .text-3 { color: var(--text-3); }
+
+  /* Brand */
+  .text-brand  { color: var(--brand); }
+  .bg-brand    { background: var(--brand); }
+  .border-brand { border-color: var(--brand); }
+
+  /* Borders */
+  .border-nuvro { border-color: var(--border); }
+  .border-sub   { border-color: var(--border-sub); }
+
+  /* Typography — display scale */
+  .display-hero {
+    font-family: var(--font-display);
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    font-size: clamp(5rem, 14vw, 16rem);
+  }
+
+  .display-section {
+    font-family: var(--font-display);
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    font-size: clamp(3.5rem, 7vw, 8.5rem);
+  }
+
+  .display-card {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 0.92;
+    font-size: clamp(1.75rem, 2.8vw, 3rem);
+  }
+
+  .label-sm {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+
+  .body-lg {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.72;
+    color: var(--text-2);
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border-sub);
+    transition: border-color 250ms var(--ease-quart),
+                box-shadow 250ms var(--ease-quart),
+                transform 250ms var(--ease-quart);
+  }
+
+  .card:hover {
+    border-color: var(--border);
+    box-shadow: 0 20px 60px oklch(0% 0 0 / 0.45);
+    transform: translateY(-3px);
+  }
+
+  /* Buttons */
+  .btn {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    transition: background 220ms var(--ease-quart),
+                color 220ms var(--ease-quart),
+                transform 100ms ease;
+    cursor: pointer;
+  }
+
+  .btn:active { transform: scale(0.97); }
+
+  .btn-white {
+    background: var(--text-1);
+    color: var(--bg);
+  }
+
+  .btn-white:hover { background: var(--brand); color: var(--text-1); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-2);
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover { border-color: var(--border); color: var(--text-1); background: var(--surface); }
+
+  /* Marquee */
+  .marquee-wrap { animation: marquee 30s linear infinite; }
+
+  /* Atelier grid for hero */
+  .hero-grid {
+    background-image:
+      linear-gradient(to right,  oklch(100% 0 0 / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(100% 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  }
+
+  /* Section divider */
+  .rule { border-color: var(--border-sub); }
+
+  /* Noise texture */
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.022;
+    pointer-events: none;
+  }
+
+  /* Image overlay gradient */
+  .img-fade-b  { mask-image: linear-gradient(to bottom, black 55%, transparent 100%); }
+  .img-veil    { background: linear-gradient(to top, oklch(9.5% 0.008 235 / 0.92) 0%, transparent 60%); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

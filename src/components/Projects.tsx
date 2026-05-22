@@ -13,7 +13,7 @@ const projects = [
   {
     title: 'LeadPilot V3',
     type: 'CRM Custom',
-    desc: 'Plataforma de alta densidad para gestión de leads en tiempo real con automatización de WhatsApp.',
+    desc: 'Gestión de leads en tiempo real con automatización de WhatsApp y analítica integrada.',
     image: '/assets/nuvro/dashboards-crm.png',
   },
   {
@@ -25,118 +25,133 @@ const projects = [
   {
     title: 'NUVRO FIT',
     type: 'Sistema Interno',
-    desc: 'Panel de control web para seguimiento biométrico y rutinas dinámicas de entrenamiento.',
+    desc: 'Panel web para seguimiento biométrico y rutinas dinámicas de entrenamiento.',
     image: '/assets/nuvro/automation-flows.png',
   },
   {
-    title: 'Cafeoteca Costa Rica',
+    title: 'Cafeoteca CR',
     type: 'Menú QR & Gestión',
-    desc: 'Ecosistema de menú interactivo y sistema POS ligero para pedidos a cocina.',
+    desc: 'Menú interactivo y sistema POS ligero para pedidos a cocina en tiempo real.',
     image: '/assets/nuvro/menu-qr.png',
   },
 ];
 
-export default function Projects() {
-  return (
-    <section id="proyectos" className="relative overflow-hidden border-t border-white/[0.06] bg-[#050505] py-[clamp(80px,10vw,130px)] text-white">
-      <div className="absolute inset-0 hero-bg opacity-50" />
+const ease = [0.16, 1, 0.3, 1] as const;
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+export default function Projects() {
+  const [featured, ...rest] = projects;
+
+  return (
+    <section id="proyectos" className="bg-[var(--surface)] py-[clamp(80px,10vw,140px)]">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+
         {/* Header */}
         <div className="mb-16 grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="section-label mb-6"
+              transition={{ duration: 0.5, ease }}
+              className="label-sm mb-5 flex items-center gap-2.5"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#2B6CB0]" />
+              <span className="h-[5px] w-[5px] rounded-full bg-brand" />
               Casos Reales
-            </motion.div>
+            </motion.p>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="section-heading"
+              transition={{ duration: 0.75, delay: 0.06, ease }}
+              className="display-section text-1 uppercase"
             >
-              Proyectos que<br />
-              <span className="text-white/28 font-light italic">muestran</span><br />
-              lo que construimos.
+              Proyectos{' '}
+              <span style={{ fontWeight: 300, color: 'var(--text-3)' }}>que</span>
+              <br />
+              muestran{' '}
+              <span style={{ fontWeight: 300, color: 'var(--text-3)' }}>lo que</span>
+              <br />
+              construimos.
             </motion.h2>
           </div>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.18 }}
-            className="self-end text-lg leading-relaxed text-white/45"
+            transition={{ duration: 0.6, delay: 0.16, ease }}
+            className="body-lg lg:self-end max-w-[44ch]"
           >
             Cada proyecto es un sistema completo: diseño, lógica y experiencia de usuario
             construidos para que el negocio opere mejor desde el primer día.
           </motion.p>
         </div>
 
-        {/* Grid */}
-        <div className="grid gap-4 lg:grid-cols-6">
-          {projects.map((project, idx) => (
+        {/* Featured */}
+        <motion.article
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease }}
+          className="card group mb-4 grid overflow-hidden lg:grid-cols-[1.2fr_0.8fr]"
+        >
+          {/* Image */}
+          <div className="relative aspect-[16/9] overflow-hidden lg:aspect-auto lg:min-h-[380px]">
+            <img
+              src={featured.image}
+              alt={featured.title}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 img-veil" />
+            <span className="absolute right-4 top-4 bg-[var(--text-1)] px-3 py-1.5 label-sm text-[var(--bg)]">
+              {featured.type}
+            </span>
+          </div>
+
+          {/* Info */}
+          <div className="flex flex-col justify-between p-7 md:p-9">
+            <div>
+              <p className="label-sm mb-4 text-brand">Proyecto destacado</p>
+              <h3 className="display-card text-1 uppercase mb-4">{featured.title}</h3>
+              <p className="body-lg border-t border-[var(--border-sub)] pt-4">{featured.desc}</p>
+            </div>
+            {featured.url && (
+              <a
+                href={featured.url}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 label-sm text-brand hover:text-1 transition-colors"
+              >
+                Visitar proyecto <ExternalLink size={12} />
+              </a>
+            )}
+          </div>
+        </motion.article>
+
+        {/* Rest — 2-column grid */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          {rest.map((p, i) => (
             <motion.article
-              key={project.title}
-              initial={{ opacity: 0, y: 24 }}
+              key={p.title}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.07 }}
-              className={`nuvro-card group overflow-hidden ${
-                project.featured
-                  ? 'lg:col-span-6 lg:grid lg:grid-cols-[1.15fr_0.85fr]'
-                  : 'lg:col-span-3'
-              }`}
+              transition={{ duration: 0.5, delay: i * 0.07, ease }}
+              className="card group overflow-hidden"
             >
-              {/* Image */}
-              <div
-                className={`relative overflow-hidden ${
-                  project.featured
-                    ? 'aspect-[16/9] lg:aspect-auto lg:min-h-[340px]'
-                    : 'aspect-[16/10]'
-                }`}
-              >
+              <div className="relative aspect-[16/9] overflow-hidden">
                 <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src={p.image}
+                  alt={p.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <span className="absolute right-4 top-4 bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#0A0A0A]">
-                  {project.type}
+                <div className="absolute inset-0 img-veil" />
+                <span className="absolute right-4 top-4 bg-[var(--text-1)] px-3 py-1.5 label-sm text-[var(--bg)]">
+                  {p.type}
                 </span>
               </div>
-
-              {/* Content */}
-              <div className="flex flex-col justify-between p-6 md:p-7">
-                <div>
-                  <h3 className="font-display text-[clamp(2rem,3.5vw,4rem)] font-black uppercase leading-[0.88] tracking-wide text-white">
-                    {project.title}
-                  </h3>
-                  <p className="mt-3 border-t border-white/[0.07] pt-4 text-sm leading-relaxed text-white/50 md:text-base">
-                    {project.desc}
-                  </p>
-                </div>
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2B6CB0] transition-colors hover:text-white"
-                  >
-                    Visitar proyecto
-                    <ExternalLink size={13} />
-                  </a>
-                ) : (
-                  <span className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-white/25">
-                    En producción
-                  </span>
-                )}
+              <div className="p-6">
+                <h3 className="display-card text-1 uppercase mb-3">{p.title}</h3>
+                <p className="text-sm leading-relaxed text-3">{p.desc}</p>
               </div>
             </motion.article>
           ))}
@@ -147,18 +162,19 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-12 flex justify-center border-t border-white/[0.06] pt-12"
+          className="mt-12 flex justify-center border-t border-[var(--border-sub)] pt-12"
         >
           <a
-            href="https://wa.me/50671757171?text=Hola NUVRO, quiero ver más casos de estudio"
+            href="https://wa.me/50671757171?text=Hola NUVRO, quiero ver más proyectos"
             target="_blank"
             rel="noreferrer"
-            className="btn-outline group"
+            className="btn btn-ghost group"
           >
             Ver más proyectos
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
           </a>
         </motion.div>
+
       </div>
     </section>
   );

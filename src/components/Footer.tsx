@@ -1,53 +1,57 @@
-export default function Footer() {
-  const links = [
-    { name: 'Servicios', href: '#express' },
-    { name: 'Landings', href: '#landings' },
-    { name: 'Custom', href: '#custom' },
-    { name: 'Proyectos', href: '#proyectos' },
-    { name: 'Contacto', href: '#contacto' },
-  ];
+const links = [
+  { label: 'Servicios',  href: '#express'   },
+  { label: 'Landings',   href: '#landings'  },
+  { label: 'Custom',     href: '#custom'    },
+  { label: 'Proyectos',  href: '#proyectos' },
+  { label: 'Contacto',   href: '#contacto'  },
+];
 
+export default function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-[#0A0A0A] py-16 text-white">
-      <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
-        <div className="flex flex-col items-center gap-10">
+    <footer className="border-t border-[var(--border-sub)] bg-nuvro py-14">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10">
+
+        {/* Top row */}
+        <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center bg-[#2B6CB0] font-display text-lg font-black uppercase text-white">
+          <a href="/" className="flex items-center gap-3">
+            <div
+              className="grid h-8 w-8 place-items-center bg-brand text-[var(--bg)]"
+              style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.1rem' }}
+            >
               N
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-sm font-display font-black text-white uppercase tracking-[0.12em]">NUVRO</span>
-              <span className="text-[10px] text-white/30 uppercase tracking-[0.4em] font-bold">Engineer</span>
-            </div>
-          </div>
+            <span
+              className="label-sm text-2"
+              style={{ fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.28em', fontSize: '0.75rem' }}
+            >
+              NUVRO ENGINEER
+            </span>
+          </a>
 
           {/* Nav */}
-          <nav className="flex flex-wrap justify-center gap-6 md:gap-10">
-            {links.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-xs font-bold uppercase tracking-[0.2em] text-white/30 transition-colors hover:text-white"
+          <nav className="flex flex-wrap gap-6">
+            {links.map(l => (
+              <a key={l.label} href={l.href}
+                className="label-sm hover:text-2 transition-colors"
               >
-                {link.name}
+                {l.label}
               </a>
             ))}
           </nav>
+        </div>
 
-          {/* Bottom */}
-          <div className="flex w-full flex-col items-center gap-3 border-t border-white/[0.05] pt-8 text-center">
-            <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-white/20">
-              NUVROENGINEER.COM
-            </p>
-            <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/15">
-              <span className="h-1 w-1 rounded-full bg-[#2B6CB0]" />
-              <span>Costa Rica</span>
-              <span>·</span>
-              <span>© {new Date().getFullYear()} NUVRO ENGINEER</span>
-            </div>
+        {/* Bottom row */}
+        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-[var(--border-sub)] pt-8 sm:flex-row sm:items-center">
+          <span className="label-sm">
+            © {new Date().getFullYear()} NUVRO ENGINEER — TODOS LOS DERECHOS RESERVADOS
+          </span>
+          <div className="flex items-center gap-2 label-sm">
+            <span className="h-[5px] w-[5px] rounded-full bg-brand" />
+            COSTA RICA
           </div>
         </div>
+
       </div>
     </footer>
   );

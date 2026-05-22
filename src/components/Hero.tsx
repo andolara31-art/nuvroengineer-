@@ -1,93 +1,103 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
-const marqueeItems = [
-  'DISEÑO PREMIUM',
-  'WEBS QUE VENDEN',
-  'MENÚ QR',
-  'LINK BIO',
-  'WHATSAPP BUSINESS',
-  'CRM Y DASHBOARDS',
-  'IA APLICADA',
-  'LANDING PAGES',
+const ticker = [
+  'DISEÑO PREMIUM', 'MENÚ QR', 'LANDING PAGES',
+  'LINK BIO', 'WHATSAPP BUSINESS', 'CRM', 'IA APLICADA', 'CATÁLOGO DIGITAL',
 ];
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#0A0A0A] text-white">
-      {/* Background */}
+    <section className="relative min-h-[100svh] overflow-hidden bg-nuvro">
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src="/assets/nuvro/hero-engineering-that-sells.png"
           alt=""
-          className="h-full w-full object-cover object-[56%_center]"
+          className="h-full w-full object-cover object-[58%_center] opacity-40"
+          fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/92" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/10" />
+        {/* Gradient veils */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)] via-[oklch(9.5%_0.008_235/0.7)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-[oklch(9.5%_0.008_235/0.4)]" />
       </div>
 
-      {/* Subtle grid */}
-      <div className="absolute inset-0 atelier-field opacity-40" />
+      {/* Atelier grid */}
+      <div className="absolute inset-0 hero-grid" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col px-6 pt-24 md:px-10 lg:px-12">
+      {/* Noise */}
+      <div className="noise absolute inset-0" />
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col px-6 pt-24 md:px-10">
         <div className="flex flex-1 flex-col justify-end pb-0">
-          {/* Label */}
+
+          {/* Eyebrow */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-            className="mb-7 section-label"
+            transition={{ duration: 0.6, ease }}
+            className="mb-6 flex items-center gap-3"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#2B6CB0]" />
-            Nuvro Engineer — Engineering that sells
+            <span className="h-[5px] w-[5px] rounded-full bg-brand" />
+            <span className="label-sm" style={{ color: 'var(--brand)' }}>
+              Engineering that sells
+            </span>
           </motion.div>
 
-          {/* Main heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
-            className="font-display font-black uppercase leading-[0.82] tracking-wide text-white"
-            style={{ fontSize: 'clamp(4.5rem, 13vw, 14rem)' }}
-          >
-            Engineering<br />
-            <span className="text-white/25">that</span> Sells.
-          </motion.h1>
+          {/* Main headline — BIG */}
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.08, ease }}
+              className="display-hero text-1 uppercase"
+            >
+              Engineering
+              <br />
+              <span style={{ color: 'var(--text-3)', fontWeight: 300 }}>that&nbsp;</span>
+              Sells.
+            </motion.h1>
+          </div>
 
-          {/* Description + CTAs */}
+          {/* Sub + CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35, ease: [0.23, 1, 0.32, 1] }}
-            className="mt-8 flex flex-col gap-8 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between"
+            transition={{ duration: 0.7, delay: 0.32, ease }}
+            className="mt-10 flex flex-col gap-8 border-t border-[var(--border-sub)] pt-8 md:flex-row md:items-center md:justify-between"
           >
-            <p className="max-w-md text-base leading-relaxed text-white/55 md:text-lg">
-              Diseño premium, activos comerciales y sistemas conectados para negocios
-              que quieren verse y operar a otro nivel.
+            <p className="body-lg max-w-[42ch]">
+              Diseño premium, activos comerciales y sistemas conectados
+              para negocios que quieren verse y operar a otro nivel.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a href="#contacto" className="btn-primary">
-                Transformar mi marca
-                <ArrowRight size={16} />
+
+            <div className="flex flex-shrink-0 flex-col gap-3 sm:flex-row">
+              <a href="#contacto" className="btn btn-white">
+                Transformar mi marca <ArrowRight size={15} />
               </a>
-              <a href="#express" className="btn-outline">
+              <a href="#express" className="btn btn-ghost">
                 Ver servicios
               </a>
             </div>
           </motion.div>
 
-          {/* Marquee */}
+          {/* Ticker */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-10 overflow-hidden border-t border-white/8 bg-white py-3"
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="mt-12 overflow-hidden border-t border-[var(--border-sub)] bg-[var(--text-1)] py-3.5"
           >
-            <div className="marquee-track flex w-max items-center gap-8 whitespace-nowrap font-display text-2xl font-black uppercase leading-none tracking-wide text-[#0A0A0A]">
-              {[...marqueeItems, ...marqueeItems].map((item, i) => (
-                <span key={`${item}-${i}`} className="flex items-center gap-8">
-                  {item}
-                  <span className="h-2 w-2 bg-[#2B6CB0] rounded-full" />
+            <div className="marquee-wrap flex w-max gap-8 whitespace-nowrap"
+              style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1.35rem', letterSpacing: '0.04em', color: 'var(--bg)' }}
+            >
+              {[...ticker, ...ticker].map((t, i) => (
+                <span key={i} className="flex items-center gap-8">
+                  {t}
+                  <span className="inline-block h-2 w-2 rounded-full bg-brand" />
                 </span>
               ))}
             </div>

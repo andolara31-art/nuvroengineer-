@@ -1,49 +1,56 @@
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 
+const ease = [0.16, 1, 0.3, 1] as const;
+
 export default function Contact() {
-  const whatsappUrl = `https://wa.me/50671757171?text=${encodeURIComponent('Hola NUVRO, quiero una solución rápida.')}`;
+  const wa = `https://wa.me/50671757171?text=${encodeURIComponent('Hola NUVRO, quiero una solución.')}`;
 
   return (
-    <section id="contacto" className="relative overflow-hidden border-t border-white/[0.06] bg-[#0A0A0A] py-[clamp(80px,10vw,130px)] text-white">
-      <div className="absolute top-0 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-[#2B6CB0]/[0.04] blur-[200px] pointer-events-none" />
+    <section id="contacto" className="relative overflow-hidden bg-nuvro py-[clamp(80px,10vw,140px)]">
+      {/* Subtle glow */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full"
+        style={{ background: 'oklch(56% 0.18 235 / 0.04)', filter: 'blur(180px)' }}
+      />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
+
           {/* Left — copy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6, ease }}
           >
-            <div className="section-label mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#2B6CB0]" />
+            <p className="label-sm mb-5 flex items-center gap-2.5">
+              <span className="h-[5px] w-[5px] rounded-full bg-brand" />
               Empezar
-            </div>
-            <h2 className="section-heading mb-6">
-              Hablemos<br />
-              de tu<br />
-              <span className="text-white/28 font-light italic">proyecto.</span>
+            </p>
+            <h2 className="display-section text-1 uppercase mb-8">
+              Hablemos{' '}
+              <span style={{ fontWeight: 300, color: 'var(--text-3)' }}>de tu</span>
+              <br />
+              proyecto.
             </h2>
-            <p className="max-w-md text-lg leading-relaxed text-white/45">
+            <p className="body-lg max-w-[38ch] mb-10">
               El equipo de NUVRO se pone en contacto dentro de las próximas horas.
-              Sin vueltas — directo al punto.
+              Directo al punto, sin vueltas.
             </p>
 
-            <div className="mt-10 space-y-4 border-t border-white/[0.07] pt-10">
+            <dl className="space-y-5 border-t border-[var(--border-sub)] pt-10">
               {[
-                { label: 'WhatsApp', value: '+506 7175 7171' },
-                { label: 'Ubicación', value: 'Costa Rica' },
-                { label: 'Horario', value: 'Lun–Vie, 8am–6pm' },
-              ].map((item) => (
-                <div key={item.label} className="flex items-center gap-6">
-                  <span className="w-24 text-[10px] font-bold uppercase tracking-[0.28em] text-white/30">
-                    {item.label}
-                  </span>
-                  <span className="text-sm font-medium text-white/65">{item.value}</span>
+                { dt: 'WhatsApp', dd: '+506 7175 7171' },
+                { dt: 'Ubicación', dd: 'Costa Rica' },
+                { dt: 'Horario',   dd: 'Lun–Vie, 8am–6pm' },
+              ].map(({ dt, dd }) => (
+                <div key={dt} className="flex items-baseline gap-6">
+                  <dt className="w-24 label-sm shrink-0">{dt}</dt>
+                  <dd className="text-sm font-medium text-2">{dd}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </motion.div>
 
           {/* Right — form */}
@@ -51,79 +58,66 @@ export default function Contact() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.12 }}
+            transition={{ duration: 0.65, delay: 0.12, ease }}
+            className="bg-[var(--surface)] border border-[var(--border-sub)] p-7 md:p-9"
           >
-            <div className="border border-white/[0.07] bg-[#111111] p-7 md:p-9">
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <label className="block text-[10px] font-bold uppercase tracking-[0.28em] text-white/35">
-                      Nombre
-                    </label>
+            <form className="space-y-5" onSubmit={e => e.preventDefault()}>
+              <div className="grid gap-5 sm:grid-cols-2">
+                {[
+                  { label: 'Nombre',  type: 'text', placeholder: 'Ej. Carlos Mendoza' },
+                  { label: 'Negocio', type: 'text', placeholder: 'Ej. Cafeoteca'      },
+                ].map(f => (
+                  <div key={f.label} className="flex flex-col gap-2">
+                    <label className="label-sm">{f.label}</label>
                     <input
-                      type="text"
-                      placeholder="Ej. Carlos Mendoza"
+                      type={f.type}
+                      placeholder={f.placeholder}
                       required
-                      className="w-full border border-white/[0.1] bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-[#2B6CB0] focus:outline-none transition-colors"
+                      className="border border-[var(--border-sub)] bg-[var(--surface-2)] px-4 py-3 text-sm text-1 placeholder:text-3 focus:border-brand focus:outline-none transition-colors"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label className="block text-[10px] font-bold uppercase tracking-[0.28em] text-white/35">
-                      Negocio
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Ej. Cafeoteca"
-                      required
-                      className="w-full border border-white/[0.1] bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-[#2B6CB0] focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
+                ))}
+              </div>
 
-                <div className="space-y-2">
-                  <label className="block text-[10px] font-bold uppercase tracking-[0.28em] text-white/35">
-                    WhatsApp
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="+506 8888 8888"
-                    required
-                    className="w-full border border-white/[0.1] bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-[#2B6CB0] focus:outline-none transition-colors"
-                  />
-                </div>
+              <div className="flex flex-col gap-2">
+                <label className="label-sm">WhatsApp</label>
+                <input
+                  type="tel"
+                  placeholder="+506 8888 8888"
+                  required
+                  className="border border-[var(--border-sub)] bg-[var(--surface-2)] px-4 py-3 text-sm text-1 placeholder:text-3 focus:border-brand focus:outline-none transition-colors"
+                />
+              </div>
 
-                <div className="space-y-2">
-                  <label className="block text-[10px] font-bold uppercase tracking-[0.28em] text-white/35">
-                    ¿Qué necesitás?
-                  </label>
-                  <textarea
-                    rows={4}
-                    placeholder="Contanos sobre tu proyecto..."
-                    required
-                    className="w-full resize-none border border-white/[0.1] bg-[#0A0A0A] px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-[#2B6CB0] focus:outline-none transition-colors"
-                  />
-                </div>
+              <div className="flex flex-col gap-2">
+                <label className="label-sm">¿Qué necesitás?</label>
+                <textarea
+                  rows={4}
+                  placeholder="Contanos sobre tu proyecto..."
+                  required
+                  className="resize-none border border-[var(--border-sub)] bg-[var(--surface-2)] px-4 py-3 text-sm text-1 placeholder:text-3 focus:border-brand focus:outline-none transition-colors"
+                />
+              </div>
 
-                <div className="flex flex-col gap-3 pt-2 sm:flex-row">
-                  <button
-                    type="submit"
-                    className="flex flex-1 items-center justify-center gap-3 bg-white py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#0A0A0A] transition-all hover:bg-[#2B6CB0] hover:text-white"
-                  >
-                    Enviar proyecto
-                    <ArrowUpRight size={16} />
-                  </button>
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex flex-1 items-center justify-center gap-3 border border-white/[0.15] py-4 text-sm font-bold uppercase tracking-[0.14em] text-white/60 transition-all hover:border-white/30 hover:text-white"
-                  >
-                    Escribir por WhatsApp
-                  </a>
-                </div>
-              </form>
-            </div>
+              <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+                <button
+                  type="submit"
+                  className="btn btn-white flex-1 justify-center"
+                >
+                  Enviar proyecto <ArrowUpRight size={15} />
+                </button>
+                <a
+                  href={wa}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-ghost flex-1 justify-center"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </form>
           </motion.div>
+
         </div>
       </div>
     </section>
