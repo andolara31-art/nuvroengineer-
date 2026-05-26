@@ -94,7 +94,7 @@ export default function Landings() {
             </div>
 
             <p className="mt-7 text-sm leading-relaxed text-3 max-w-[30ch]">
-              Publicación efímera. Sin CTA claro. El mensaje se pierde en 24 horas.
+              Publicación efímera. Sin un botón que guíe al cliente. El mensaje desaparece en 24 horas.
             </p>
           </motion.div>
 
@@ -146,7 +146,7 @@ export default function Landings() {
             </div>
 
             <p className="relative mt-7 text-sm font-medium leading-relaxed text-1 max-w-[30ch]">
-              Beneficios, prueba social y CTA visible. Disponible siempre.
+              Beneficios claros, opiniones de clientes y botón de contacto siempre visible.
             </p>
           </motion.div>
 

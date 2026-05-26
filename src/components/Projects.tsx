@@ -5,7 +5,7 @@ const projects = [
   {
     title: 'Baby Invites Boutique',
     type: 'Invitación Digital',
-    desc: 'Experiencia boutique para invitaciones digitales. Diseño emocional, mobile-first y ruta directa para compartir.',
+    desc: 'Experiencia boutique para invitaciones digitales. Diseño elegante pensado para celular y fácil de compartir desde WhatsApp.',
     image: '/assets/nuvro/digital-invitation.png',
     url: 'https://baby-invites-boutique.vercel.app/',
     featured: true,
@@ -13,25 +13,25 @@ const projects = [
   {
     title: 'LeadPilot V3',
     type: 'CRM Custom',
-    desc: 'Gestión de leads en tiempo real con automatización de WhatsApp y analítica integrada.',
+    desc: 'Sistema para manejar clientes potenciales: seguimiento automático, mensajes de WhatsApp y reportes de ventas en un solo lugar.',
     image: '/assets/nuvro/dashboards-crm.png',
   },
   {
     title: 'Clario Advisory',
     type: 'Web Premium',
-    desc: 'Identidad digital de alto nivel y funnel de prospección para sector financiero high-ticket.',
+    desc: 'Presencia digital premium y página de contacto para clientes de alto valor en el sector financiero.',
     image: '/assets/nuvro/webs-premium.png',
   },
   {
     title: 'NUVRO FIT',
     type: 'Sistema Interno',
-    desc: 'Panel web para seguimiento biométrico y rutinas dinámicas de entrenamiento.',
+    desc: 'Aplicación web para coaches: cada cliente ve sus rutinas, progreso y medidas desde el celular, sin PDFs ni hojas de Excel.',
     image: '/assets/nuvro/automation-flows.png',
   },
   {
     title: 'Cafeoteca CR',
     type: 'Menú QR & Gestión',
-    desc: 'Menú interactivo y sistema POS ligero para pedidos a cocina en tiempo real.',
+    desc: 'Menú digital con código QR en cada mesa y sistema para que los pedidos lleguen directo a cocina sin papel ni confusión.',
     image: '/assets/nuvro/menu-qr.png',
   },
 ];
@@ -56,7 +56,7 @@ export default function Projects() {
               className="label-sm mb-5 flex items-center gap-2.5"
             >
               <span className="h-[5px] w-[5px] rounded-full bg-brand" />
-              Casos Reales
+              Trabajos Reales
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
@@ -110,7 +110,7 @@ export default function Projects() {
           {/* Info */}
           <div className="flex flex-col justify-between p-7 md:p-9">
             <div>
-              <p className="label-sm mb-4 text-brand">Proyecto destacado</p>
+              <p className="label-sm mb-4 text-brand">Trabajo destacado</p>
               <h3 className="display-card text-1 uppercase mb-4">{featured.title}</h3>
               <p className="body-lg border-t border-[var(--border-sub)] pt-4">{featured.desc}</p>
             </div>

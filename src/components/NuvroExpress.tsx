@@ -12,7 +12,7 @@ const products = [
   },
   {
     title: 'Link Bio Vivo',
-    desc: 'Mini sitio mobile-first que lleva al cliente directo a WhatsApp, reservas o servicios.',
+    desc: 'Un mini sitio pensado para celular que lleva al cliente directo a WhatsApp, reservas o servicios.',
     cta: 'Quiero link bio',
     icon: LinkIcon,
     image: '/assets/nuvro/link-bio.png',
@@ -33,7 +33,7 @@ const products = [
   },
   {
     title: 'Landing Promocional',
-    desc: 'Página rápida para vender una oferta, evento o servicio con CTA claro.',
+    desc: 'Página rápida para vender una oferta, evento o servicio con un botón que lleva directo a la acción.',
     cta: 'Quiero landing',
     icon: Layout,
     image: '/assets/nuvro/landing-pages.png',

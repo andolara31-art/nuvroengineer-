@@ -5,9 +5,9 @@ import { ArrowRight } from 'lucide-react';
 const demos = [
   { id: 'menu',      label: 'Menú QR',       image: '/assets/nuvro/menu-qr.png',           title: 'Menú Digital',        desc: 'Menú con categorías, fotos de platillos y navegación optimizada para celular.' },
   { id: 'inv',       label: 'Invitación',    image: '/assets/nuvro/digital-invitation.png', title: 'Invitación Premium',  desc: 'Con RSVP, cuenta regresiva y experiencia visual memorable.' },
-  { id: 'bio',       label: 'Link Bio',      image: '/assets/nuvro/link-bio.png',           title: 'Link en Bio',         desc: 'Mini sitio con enlaces clave y CTA central hacia la acción de compra.' },
+  { id: 'bio',       label: 'Perfil Digital', image: '/assets/nuvro/link-bio.png',           title: 'Perfil Digital',      desc: 'Mini sitio con tus servicios, ubicación y un botón directo para que el cliente te escriba.' },
   { id: 'cat',       label: 'Catálogo',      image: '/assets/nuvro/catalogo-express.png',   title: 'Catálogo Móvil',      desc: 'Productos organizados con precios y botón directo a WhatsApp.' },
-  { id: 'land',      label: 'Promo Landing', image: '/assets/nuvro/landing-pages.png',      title: 'Landing Promo',       desc: 'Alta conversión con prueba social y CTA visible en toda la página.' },
+  { id: 'land',      label: 'Página Promo',  image: '/assets/nuvro/landing-pages.png',      title: 'Página Promocional',  desc: 'Diseñada para vender: con beneficios claros, opiniones de clientes y botón de contacto en todo momento.' },
   { id: 'qr',        label: 'QR Comercial',  image: '/assets/nuvro/qr-comercial.png',       title: 'Display QR',          desc: 'QR personalizado con diseño de marca para mesas, empaques o mostradores.' },
   { id: 'wa',        label: 'WhatsApp Kit',  image: '/assets/nuvro/whatsapp-business.png',  title: 'Flujo WhatsApp',      desc: 'WhatsApp Business configurado con etiquetas y respuestas rápidas.' },
 ];

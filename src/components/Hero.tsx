@@ -2,8 +2,8 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 const ticker = [
-  'DISEÑO PREMIUM', 'MENÚ QR', 'LANDING PAGES',
-  'LINK BIO', 'WHATSAPP BUSINESS', 'CRM', 'IA APLICADA', 'CATÁLOGO DIGITAL',
+  'DISEÑO PREMIUM', 'MENÚ QR', 'PÁGINAS QUE VENDEN',
+  'PERFIL DIGITAL', 'WHATSAPP BUSINESS', 'PANEL DE CLIENTES', 'INTELIGENCIA ARTIFICIAL', 'CATÁLOGO DIGITAL',
 ];
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -43,7 +43,7 @@ export default function Hero() {
           >
             <span className="h-[5px] w-[5px] rounded-full bg-brand" />
             <span className="label-sm" style={{ color: 'var(--brand)' }}>
-              Engineering that sells
+              Tecnología que vende
             </span>
           </motion.div>
 
@@ -55,10 +55,10 @@ export default function Hero() {
               transition={{ duration: 0.9, delay: 0.08, ease }}
               className="display-hero text-1 uppercase"
             >
-              Engineering
+              Diseño
               <br />
-              <span style={{ color: 'var(--text-3)', fontWeight: 300 }}>that&nbsp;</span>
-              Sells.
+              <span style={{ color: 'var(--text-3)', fontWeight: 300 }}>que&nbsp;</span>
+              Vende.
             </motion.h1>
           </div>
 
@@ -70,8 +70,8 @@ export default function Hero() {
             className="mt-10 flex flex-col gap-8 border-t border-[var(--border-sub)] pt-8 md:flex-row md:items-center md:justify-between"
           >
             <p className="body-lg max-w-[42ch]">
-              Diseño premium, activos comerciales y sistemas conectados
-              para negocios que quieren verse y operar a otro nivel.
+              Tu negocio merece verse bien, tener herramientas que vendan
+              y todo funcionando junto sin depender de nadie más.
             </p>
 
             <div className="flex flex-shrink-0 flex-col gap-3 sm:flex-row">

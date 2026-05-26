@@ -5,36 +5,36 @@ const services = [
   {
     Icon: Laptop,
     title: 'Webs Premium',
-    desc: 'Plataformas web a medida. Diseño exclusivo, alto rendimiento y arquitecturas escalables.',
-    tag: 'Brand & Conversion',
+    desc: 'Sitios web hechos a la medida de tu negocio. Diseño exclusivo, rápido y que se ve premium desde el primer clic.',
+    tag: 'Marca y Ventas',
     image: '/assets/nuvro/webs-premium.png',
   },
   {
     Icon: Database,
     title: 'CRM & Dashboards',
-    desc: 'Visualización de datos en tiempo real, tableros de control y gestión centralizada.',
-    tag: 'Data Cockpit',
+    desc: 'Un panel donde ves todo tu negocio: clientes, ventas, seguimiento y métricas — en tiempo real desde cualquier dispositivo.',
+    tag: 'Panel de Control',
     image: '/assets/nuvro/dashboards-crm.png',
   },
   {
     Icon: Zap,
     title: 'Automatización',
-    desc: 'Integración de flujos de trabajo. Conectamos software para operar con menos fricción.',
-    tag: 'Workflow Engine',
+    desc: 'Conectamos tus herramientas digitales para que funcionen solas: cotizaciones, recordatorios, respuestas y más — sin que tengas que hacer todo a mano.',
+    tag: 'Flujos Automáticos',
     image: '/assets/nuvro/automation-flows.png',
   },
   {
     Icon: Settings,
     title: 'Sistemas Internos',
-    desc: 'Herramientas operativas privadas. Software hecho exactamente como tu equipo trabaja.',
-    tag: 'Private Tools',
+    desc: 'Aplicaciones internas hechas a la medida de tu equipo: para registrar, gestionar y operar tu negocio sin depender de hojas de Excel ni WhatsApp.',
+    tag: 'Herramientas Internas',
     image: '/assets/nuvro/hero-command-center.png',
   },
   {
     Icon: Cpu,
     title: 'IA Aplicada',
-    desc: 'Modelos de inteligencia artificial integrados para análisis, soporte, ventas u optimización.',
-    tag: 'Applied AI',
+    desc: 'Inteligencia artificial que trabaja por vos: atiende clientes, responde preguntas frecuentes, analiza datos y te ayuda a vender más, de forma automática.',
+    tag: 'Inteligencia Artificial',
     image: '/assets/nuvro/ai-applied.png',
   },
 ];
@@ -84,8 +84,8 @@ export default function NuvroCustom() {
             className="self-end"
           >
             <p className="body-lg max-w-[44ch] mb-8">
-              Webs premium, CRM, dashboards, automatización, IA aplicada y sistemas internos
-              diseñados alrededor de tu operación real.
+              Sitios web, paneles de control, automatización, inteligencia artificial
+              y herramientas internas hechas exactamente para tu negocio.
             </p>
             <a
               href="https://wa.me/50671757171?text=Hola NUVRO, necesito un sistema custom"
