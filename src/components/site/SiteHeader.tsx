@@ -22,12 +22,14 @@ export default function SiteHeader() {
             <div>
               <a href="#soluciones">Soluciones</a>
               <a href="#proceso">Cómo trabajamos</a>
+              <a href="#aprende">Aprendé IA</a>
               <a href="#preguntas">Preguntas</a>
             </div>
           </details>
           <nav className="navlinks" aria-label="Navegación principal">
             <a href="#soluciones">Soluciones</a>
             <a href="#proceso">Cómo trabajamos</a>
+            <a href="#aprende">Aprendé IA</a>
             <a href="#preguntas">Preguntas</a>
             <a className="button black" href="#contacto">
               Hablemos <span aria-hidden="true">↗</span>

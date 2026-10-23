@@ -28,7 +28,8 @@ La portada no necesita una API de IA ni variables privadas.
 
 - `src/components/site/`: contenido, navegación y contacto de la nueva web.
 - `src/home.css`: identidad visual y adaptación a móvil.
-- `public/assets/brand/`: fotografía local en 720 y 1400 píxeles y atribución.
+- `public/assets/brand/`: imagen editorial mejorada con IA, versiones WebP responsivas y atribución de la fuente original.
+- `src/components/site/LearningSection.tsx`: ejemplos educativos de IA y automatización; instrucciones copiables y guías desplegables. No presenta cursos, precios ni integraciones activas ficticias.
 - `src/components/ProposalPage.tsx`: ruta de propuestas existente.
 
 El contacto principal conserva el WhatsApp +506 7175 7171 de la portada

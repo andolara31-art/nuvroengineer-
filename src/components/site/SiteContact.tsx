@@ -33,7 +33,7 @@ export default function SiteContact() {
         <div>
           <p className="eyebrow">
             <span aria-hidden="true" />
-            06 / Hablemos de tu negocio
+            07 / Hablemos de tu negocio
           </p>
           <h2 id="contact-title">
             ¿Qué parte de tu negocio podría funcionar mejor?

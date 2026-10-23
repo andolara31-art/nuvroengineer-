@@ -24,6 +24,7 @@ export default function SiteFooter() {
                 <b>EXPLORÁ</b>
                 <a href="#soluciones">Soluciones</a>
                 <a href="#proceso">Cómo trabajamos</a>
+                <a href="#aprende">Aprendé IA</a>
                 <a href="#preguntas">Preguntas</a>
               </div>
               <div>

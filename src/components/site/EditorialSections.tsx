@@ -1,3 +1,5 @@
+import LearningSection from "./LearningSection";
+
 export default function EditorialSections() {
   return (
     <>
@@ -17,7 +19,8 @@ export default function EditorialSections() {
             <p className="hero-description">
               Páginas web, presencia digital y procesos más simples para
               presentar lo que ofrecés, facilitar el contacto y ordenar el
-              seguimiento.
+              seguimiento. También, aprendé a aplicar IA y automatizaciones en
+              tu negocio.
             </p>
             <div className="hero-actions">
               <a className="button" href="#contacto">
@@ -33,12 +36,12 @@ export default function EditorialSections() {
           </div>
           <figure className="hero-photo">
             <img
-              src="/assets/brand/cafe-counter-1400.webp"
-              srcSet="/assets/brand/cafe-counter-720.webp 720w, /assets/brand/cafe-counter-1400.webp 1400w"
+              src="/assets/brand/nuvro-cafe-v2-1086.webp"
+              srcSet="/assets/brand/nuvro-cafe-v2-720.webp 720w, /assets/brand/nuvro-cafe-v2-1086.webp 1086w"
               sizes="(max-width: 700px) 100vw, 50vw"
-              alt="Mostrador de una cafetería con vitrina de repostería, equipo de café y estantes"
-              width="1400"
-              height="1500"
+              alt="Imagen editorial editada con IA: cafetería con mostrador de madera, repostería y una computadora portátil"
+              width="1086"
+              height="1448"
               fetchPriority="high"
             />
             <figcaption>
@@ -56,7 +59,7 @@ export default function EditorialSections() {
                 target="_blank"
                 rel="noopener"
               >
-                Foto de referencia / Unsplash ↗
+                Referencia editada con IA ↗
               </a>
             </figcaption>
           </figure>
@@ -397,13 +400,14 @@ export default function EditorialSections() {
           </div>
         </div>
       </section>
+      <LearningSection />
       <section
         className="section shell faq"
         id="preguntas"
         aria-labelledby="faq-title"
       >
         <div>
-          <p className="eyebrow">05 / Antes de empezar</p>
+          <p className="eyebrow">06 / Antes de empezar</p>
           <h2 id="faq-title">
             Preguntas claras.
             <br />

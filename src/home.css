@@ -238,7 +238,7 @@ summary:focus-visible {
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
-  filter: grayscale(1) brightness(0.83);
+  filter: grayscale(1) brightness(0.96);
   position: absolute;
   inset: 0;
 }
