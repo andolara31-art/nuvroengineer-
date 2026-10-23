@@ -1,0 +1,16 @@
+.contactform .contact-form-note {
+  color: #aaa;
+  font-size: 10px;
+  line-height: 1.8;
+  margin: 2px 0;
+}
+
+.contact-ready {
+  border-top: 1px solid #333;
+  margin-top: 10px;
+  padding-top: 14px;
+}
+
+.contact-ready p {
+  color: #c7c7c7;
+}

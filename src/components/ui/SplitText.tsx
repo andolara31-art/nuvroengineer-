@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, type Variants } from 'motion/react';
 
 interface SplitTextProps {
   text: string;
@@ -16,7 +16,7 @@ export function SplitText({ text, className = "" }: SplitTextProps) {
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,

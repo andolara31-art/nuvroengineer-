@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# NUVRO ENGINEER
 
-# Run and deploy your AI Studio app
+Web comercial de NUVRO ENGINEER: tecnología simple para negocios reales.
+Portada monocromática, acento azul #0066FF, Archivo Black e Inter.
 
-This contains everything you need to run your app locally.
+## Desarrollo
 
-View your app in AI Studio: https://ai.studio/apps/4410ac87-b314-4f8a-918c-0bede47e8b15
+Usar Node.js 22 LTS.
 
-## Run Locally
+```sh
+npm ci
+npm run dev
+```
 
-**Prerequisites:**  Node.js
+## Verificación y compilación
 
+```sh
+npm run lint
+npm run build
+npm run preview
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Vite genera el sitio en `dist/`. Se conserva la configuración de Vercel
+y la ruta independiente `/propuesta` con sus parámetros existentes.
+La portada no necesita una API de IA ni variables privadas.
+
+## Edición
+
+- `src/components/site/`: contenido, navegación y contacto de la nueva web.
+- `src/home.css`: identidad visual y adaptación a móvil.
+- `public/assets/brand/`: fotografía local en 720 y 1400 píxeles y atribución.
+- `src/components/ProposalPage.tsx`: ruta de propuestas existente.
+
+El contacto principal conserva el WhatsApp +506 7175 7171 de la portada
+anterior. El formulario prepara el texto y muestra un enlace para revisarlo
+y enviarlo desde WhatsApp; no simula un envío a un servidor.
+
+Las imágenes editoriales se identifican como referencias, no como clientes.
+Los componentes de la portada anterior permanecen en el historial y como
+fuentes heredadas, pero ya no se renderizan en la página principal.
