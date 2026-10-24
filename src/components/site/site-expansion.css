@@ -1,0 +1,161 @@
+.service-directory {
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+.service-directory h2 {
+  font-size: clamp(30px, 3.2vw, 48px);
+  letter-spacing: -0.055em;
+  max-width: 700px;
+  line-height: 1.12;
+  margin: 0 0 35px;
+}
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.directory-grid > a {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  padding: 25px;
+  min-width: 0;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.directory-grid > a:hover {
+  border-color: var(--blue);
+  background: white;
+}
+.directory-grid h3 {
+  margin: 0 0 12px;
+  font-size: 23px;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+.directory-grid p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #555;
+  margin: 0 0 20px;
+}
+.directory-grid strong {
+  margin-top: auto;
+  font-size: 11px;
+  color: #004ccc;
+  padding-top: 10px;
+}
+.directory-guide {
+  margin: 28px 0 0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.directory-guide a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.site-info {
+  padding-top: 50px;
+  padding-bottom: 90px;
+  max-width: 1050px;
+  min-height: 65vh;
+}
+.site-info nav {
+  font-size: 12px;
+  margin-bottom: 45px;
+}
+.site-info nav a {
+  text-decoration: underline;
+}
+.site-info h1 {
+  font-family: "Archivo Black", Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+  margin: 20px 0 35px;
+}
+.site-info h2 {
+  margin-top: 40px;
+  font-size: 26px;
+  letter-spacing: -0.04em;
+}
+.site-info p {
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 760px;
+  color: #444;
+}
+.site-info p a {
+  text-decoration: underline;
+}
+.analytics-consent {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  z-index: 50;
+  padding: 22px;
+  background: white;
+  color: #111;
+  box-shadow: 0 6px 45px #0003;
+  border: 1px solid #ccc;
+  width: min(450px, calc(100vw - 36px));
+}
+.analytics-consent p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+.analytics-consent a {
+  text-decoration: underline;
+}
+.analytics-consent > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.analytics-consent button {
+  border: 1px solid #111;
+  background: white;
+  color: #111;
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.analytics-consent button:last-child {
+  background: #111;
+  color: white;
+}
+.footer-service-link {
+  max-width: 250px;
+}
+@media (max-width: 1050px) {
+  .directory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .service-directory {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+  .directory-grid {
+    grid-template-columns: 1fr;
+  }
+  .directory-grid > a {
+    padding: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

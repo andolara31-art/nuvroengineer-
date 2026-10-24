@@ -5,6 +5,36 @@
   margin: 2px 0;
 }
 
+.contactform select {
+  width: 100%;
+  min-width: 0;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 12px;
+  border-radius: 0;
+  color-scheme: dark;
+}
+
+.contactform input:focus-visible,
+.contactform select:focus-visible,
+.contactform textarea:focus-visible,
+.contact-ready a:focus-visible {
+  outline: 2px solid #82afff;
+  outline-offset: 4px;
+}
+
+.contact-direct {
+  margin-top: 25px;
+}
+
+.contact-number {
+  display: table;
+  margin-top: 20px;
+}
+
 .contact-ready {
   border-top: 1px solid #333;
   margin-top: 10px;

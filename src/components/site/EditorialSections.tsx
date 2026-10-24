@@ -1,4 +1,6 @@
 import LearningSection from "./LearningSection";
+import ServiceDirectory from "./ServiceDirectory";
+import DemoSection from "./DemoSection";
 
 export default function EditorialSections() {
   return (
@@ -17,14 +19,14 @@ export default function EditorialSections() {
               <span>Que se note.</span>
             </h1>
             <p className="hero-description">
-              Páginas web, presencia digital y procesos más simples para
-              presentar lo que ofrecés, facilitar el contacto y ordenar el
-              seguimiento. También, aprendé a aplicar IA y automatizaciones en
-              tu negocio.
+              Diseño web y automatización para negocios en Costa Rica.
+              Soluciones para presentar lo que ofrecés, facilitar el contacto y
+              ordenar el seguimiento. También, aprendé a aplicar IA y
+              automatizaciones en tu negocio.
             </p>
             <div className="hero-actions">
               <a className="button" href="#contacto">
-                Hablemos de tu negocio <span aria-hidden="true">↗</span>
+                Cotizar mi proyecto <span aria-hidden="true">↗</span>
               </a>
               <a className="underlink" href="#soluciones">
                 Conocé las soluciones <span aria-hidden="true">↓</span>
@@ -75,6 +77,7 @@ export default function EditorialSections() {
           </div>
         </div>
       </div>
+      <ServiceDirectory />
       <section className="shell pain" aria-labelledby="pain-title">
         <div>
           <p className="eyebrow">01 / El punto de partida</p>
@@ -159,8 +162,8 @@ export default function EditorialSections() {
                   alrededor de tu oferta. Un lugar claro para explicar, mostrar
                   y dirigir al cliente al siguiente paso.
                 </p>
-                <a className="underlink" href="#contacto">
-                  Quiero presentar mejor mi negocio{" "}
+                <a className="underlink" href="/diseno-web-costa-rica">
+                  Conocé el servicio de diseño web{" "}
                   <span aria-hidden="true">↗</span>
                 </a>
               </div>
@@ -398,6 +401,7 @@ export default function EditorialSections() {
           </div>
         </div>
       </section>
+      <DemoSection />
       <LearningSection />
       <section
         className="section shell faq"

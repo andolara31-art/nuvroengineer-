@@ -1,0 +1,360 @@
+.nuvro-demos {
+  background: #f4f4ef;
+  border-block: 1px solid var(--line);
+}
+.nuvro-demos h2 span {
+  color: #62625e;
+}
+.nuvro-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.nuvro-demo-card {
+  min-width: 0;
+  padding: 26px 22px;
+  border: 1px solid #cecec7;
+  background: var(--paper);
+}
+.nuvro-demo-label {
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #62625e;
+  margin: 0 0 22px;
+}
+.nuvro-demo-card h3 {
+  font-size: clamp(21px, 1.9vw, 27px);
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+.nuvro-demo-intro {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #62625e;
+  min-height: 90px;
+  margin: 0 0 20px;
+}
+.nuvro-demo-surface {
+  border: 1px solid #d5d5cc;
+  background: #fff;
+  padding: 18px;
+}
+.nuvro-demo-shop-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e5dc;
+  padding-bottom: 15px;
+  margin-bottom: 17px;
+}
+.nuvro-demo-shop-name > span {
+  color: var(--blue);
+  font-size: 22px;
+}
+.nuvro-demo-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.nuvro-demo-categories button {
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid #d5d5cc;
+  background: #fff;
+  font: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+.nuvro-demo-categories button[aria-pressed="true"] {
+  background: var(--black);
+  color: #fff;
+  border-color: var(--black);
+}
+.nuvro-demo-menu {
+  padding: 0;
+  margin: 12px 0 20px;
+  list-style: none;
+}
+.nuvro-demo-menu > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e5dc;
+}
+.nuvro-demo-menu strong,
+.nuvro-demo-menu li > div > span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.nuvro-demo-menu strong {
+  font-weight: 500;
+}
+.nuvro-demo-menu li > div > span {
+  color: #62625e;
+}
+.nuvro-demo-menu button {
+  flex: 0 0 36px;
+  min-height: 36px;
+  background: #f1f1eb;
+  border: 1px solid #d5d5cc;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nuvro-demo-cart {
+  background: #f5f5f0;
+  padding: 14px;
+}
+.nuvro-demo-cart h4 {
+  font-size: 11px;
+  margin: 0 0 12px;
+}
+.nuvro-demo-cart > p {
+  font-size: 10px;
+  color: #62625e;
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+.nuvro-demo-cart ul {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.nuvro-demo-cart li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+  line-height: 1.8;
+  padding-block: 3px;
+}
+.nuvro-demo-cart li > span:last-child {
+  white-space: nowrap;
+}
+.nuvro-demo-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid #d5d5cc;
+  padding-top: 10px;
+  font-size: 11px;
+}
+.nuvro-demo-text-button {
+  padding: 9px 0;
+  min-height: 36px;
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font: inherit;
+  font-size: 10px;
+  cursor: pointer;
+  color: #343434;
+}
+.nuvro-demo-text-button:disabled {
+  color: #85857f;
+  cursor: default;
+}
+.nuvro-demo-status {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #444;
+  background: #f3f5ff;
+  border-left: 2px solid var(--blue);
+  padding: 10px;
+  margin: 14px 0 0;
+  overflow-wrap: anywhere;
+}
+.nuvro-demo-note {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #62625e;
+  margin: 18px 0;
+}
+.nuvro-demo-card > .underlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+}
+.nuvro-demo-site-eyebrow {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: #62625e;
+  margin: 22px 0 12px;
+}
+.nuvro-demo-website h4 {
+  font-size: 23px;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+.nuvro-demo-site-description,
+.nuvro-demo-service-detail {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #62625e;
+}
+.nuvro-demo-service-options {
+  padding: 0;
+  margin: 20px 0 12px;
+  border: 0;
+  display: grid;
+  gap: 7px;
+}
+.nuvro-demo-service-options legend {
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.nuvro-demo-service-options label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  padding: 8px;
+  border: 1px solid #deded6;
+  font-size: 11px;
+  cursor: pointer;
+}
+.nuvro-demo-service-options input {
+  accent-color: var(--blue);
+}
+.nuvro-demo-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--black);
+  background: var(--black);
+  color: #fff;
+  font: inherit;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: left;
+  cursor: pointer;
+}
+.nuvro-demo-action:disabled {
+  background: #e9e9e2;
+  color: #555;
+  border-color: #cecec7;
+  cursor: default;
+}
+.nuvro-demo-flow {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+}
+.nuvro-demo-flow li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding-block: 13px;
+  border-bottom: 1px solid #e5e5dc;
+}
+.nuvro-demo-step-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 29px;
+  min-height: 29px;
+  border: 1px solid #d5d5cc;
+  font-size: 10px;
+}
+.nuvro-demo-flow strong,
+.nuvro-demo-flow li > div > span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.nuvro-demo-flow strong {
+  font-weight: 500;
+}
+.nuvro-demo-flow li > div > span {
+  color: #62625e;
+  font-size: 9px;
+}
+.nuvro-demo-step-done .nuvro-demo-step-number {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+.nuvro-demo-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-top: 1px solid #cecec7;
+  padding-top: 28px;
+  margin-top: 30px;
+}
+.nuvro-demo-bottom p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #62625e;
+  margin: 0;
+}
+.nuvro-demo-bottom strong {
+  color: var(--black);
+  font-weight: 500;
+}
+.nuvro-demos button:focus-visible,
+.nuvro-demos input:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+@media (max-width: 1050px) {
+  .nuvro-demo-grid {
+    grid-template-columns: 1fr;
+  }
+  .nuvro-demo-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
+    align-items: start;
+  }
+  .nuvro-demo-label,
+  .nuvro-demo-card h3,
+  .nuvro-demo-intro,
+  .nuvro-demo-note,
+  .nuvro-demo-card > .underlink {
+    grid-column: 1;
+  }
+  .nuvro-demo-intro {
+    min-height: 0;
+  }
+  .nuvro-demo-surface {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+  }
+}
+@media (max-width: 700px) {
+  .nuvro-demo-card {
+    display: block;
+    padding: 24px 20px;
+  }
+  .nuvro-demo-card h3 {
+    font-size: 25px;
+  }
+  .nuvro-demo-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nuvro-demo-bottom .button {
+    max-width: 100%;
+  }
+  .nuvro-demo-surface {
+    padding: 16px;
+  }
+}

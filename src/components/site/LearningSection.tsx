@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { whatsappUrl } from "../../lib/site";
+import { trackEvent } from "../../lib/analytics";
 import "./learning.css";
 
 const examplePrompt = `Ayudame a preparar una respuesta breve y amable para un cliente.
@@ -14,6 +16,7 @@ export default function LearningSection() {
     try {
       await navigator.clipboard.writeText(examplePrompt);
       setCopyStatus("Ejemplo copiado. Completá los campos antes de usarlo.");
+      trackEvent("learning_prompt_copy", { location: "learning" });
     } catch {
       setCopyStatus(
         "No se pudo copiar automáticamente. Podés seleccionar y copiar el texto del ejemplo.",
@@ -175,6 +178,11 @@ export default function LearningSection() {
           </article>
         </div>
 
+        <p className="directory-guide">
+          <a href="/guias/ia-y-automatizacion-para-pymes">
+            Leé la guía completa para empezar con IA y automatización →
+          </a>
+        </p>
         <div className="learn-bottom">
           <p>
             Aprender es el primer paso.
@@ -183,7 +191,9 @@ export default function LearningSection() {
           </p>
           <a
             className="button"
-            href="https://wa.me/50671757171?text=Hola%20NUVRO%2C%20quiero%20aprender%20a%20aplicar%20IA%20y%20automatizaciones%20en%20mi%20negocio."
+            href={whatsappUrl(
+              "Hola NUVRO, quiero aprender a aplicar IA y automatizaciones en mi negocio.",
+            )}
             target="_blank"
             rel="noopener noreferrer"
           >
