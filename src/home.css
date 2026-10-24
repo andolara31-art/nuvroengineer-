@@ -238,7 +238,7 @@ summary:focus-visible {
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
-  filter: grayscale(1) brightness(0.96);
+  filter: saturate(0.82) contrast(1.06) brightness(0.84);
   position: absolute;
   inset: 0;
 }
@@ -269,10 +269,11 @@ summary:focus-visible {
   line-height: 1.2;
   font-weight: 500;
 }
-.hero-photo figcaption a {
+.hero-photo-credit {
   font-size: 8px;
-  color: #ccc;
-  text-decoration: underline;
+  color: #d5d5d5;
+  line-height: 1.55;
+  text-align: right;
 }
 .business-strip {
   background: #fff;

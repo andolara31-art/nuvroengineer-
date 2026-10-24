@@ -36,12 +36,12 @@ export default function EditorialSections() {
           </div>
           <figure className="hero-photo">
             <img
-              src="/assets/brand/nuvro-cafe-v2-1086.webp"
-              srcSet="/assets/brand/nuvro-cafe-v2-720.webp 720w, /assets/brand/nuvro-cafe-v2-1086.webp 1086w"
+              src="/assets/brand/nuvro-negocio-cr-tecnologia-v1-1080.webp"
+              srcSet="/assets/brand/nuvro-negocio-cr-tecnologia-v1-720.webp 720w, /assets/brand/nuvro-negocio-cr-tecnologia-v1-1080.webp 1080w"
               sizes="(max-width: 700px) 100vw, 50vw"
-              alt="Imagen editorial editada con IA: cafetería con mostrador de madera, repostería y una computadora portátil"
-              width="1086"
-              height="1448"
+              alt="Imagen editorial generada con IA, inspirada en un negocio local de Costa Rica con herramientas digitales para atender clientes"
+              width="1080"
+              height="1440"
               fetchPriority="high"
             />
             <figcaption>
@@ -49,18 +49,16 @@ export default function EditorialSections() {
                 DETRÁS DE CADA NEGOCIO, HAY TRABAJO REAL.
                 <br />
                 <b>
-                  Tu presencia digital
+                  Negocios ticos.
                   <br />
-                  debería estar a la altura.
+                  Tecnología útil.
                 </b>
               </div>
-              <a
-                href="https://unsplash.com/photos/brown-wooden-kitchen-cabinet-with-green-plants-WxfXOQEpyFg"
-                target="_blank"
-                rel="noopener"
-              >
-                Referencia editada con IA ↗
-              </a>
+              <span className="hero-photo-credit">
+                Imagen editorial generada con IA.
+                <br />
+                Inspirada en negocios de Costa Rica.
+              </span>
             </figcaption>
           </figure>
         </div>
