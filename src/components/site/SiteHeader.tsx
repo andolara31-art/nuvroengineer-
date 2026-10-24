@@ -17,7 +17,7 @@ const solutions = [
     name: "Diseño web",
     href: "/diseno-web-costa-rica",
     description: "Tu negocio en una web clara y profesional.",
-    terms: "pagina paginas sitio tienda comercio digital",
+    terms: "pagina paginas sitio presencia digital negocio landing catalogo",
   },
   {
     name: "Automatizaciones",
@@ -32,6 +32,27 @@ const solutions = [
     terms: "restaurante restaurantes cafeteria soda carta comida",
   },
   {
+    name: "Reseñas Google · QR/NFC",
+    href: "/resenas-google-qr-nfc",
+    description: "Un acceso directo para que tus clientes dejen su reseña.",
+    terms:
+      "resena resenas google qr nfc base soporte placa tarjeta opiniones reputacion",
+  },
+  {
+    name: "Tiendas online / Shopify",
+    href: "/tiendas-online-shopify",
+    description: "Productos, carrito y una forma clara de comprar.",
+    terms:
+      "tienda tiendas ecommerce e-commerce shopify comercio electronico vender productos catalogo carrito pagos",
+  },
+  {
+    name: "Videos y piezas publicitarias",
+    href: "/videos-publicidad-negocios",
+    description: "Contenido sencillo para mostrar lo que ofrecés.",
+    terms:
+      "video videos publicidad anuncios promocion contenido redes sociales reels piezas negocios",
+  },
+  {
     name: "IA para negocios",
     href: "/ia-para-negocios",
     description: "Aplicá inteligencia artificial a tu negocio.",
@@ -40,6 +61,13 @@ const solutions = [
 ];
 const searchablePages = [
   ...solutions,
+  {
+    name: "Paquetes para tu negocio",
+    href: "/#paquetes",
+    description: "Combinaciones de servicios según lo que necesitás resolver.",
+    terms:
+      "paquete paquetes presencia lanzamiento ventas crecimiento negocio soluciones",
+  },
   {
     name: "Guía de IA y automatización para pymes",
     href: "/guias/ia-y-automatizacion-para-pymes",
@@ -130,7 +158,7 @@ function ServiceSearch({ compact = false }: { compact?: boolean }) {
             </ul>
           ) : (
             <p className="corp-search-empty">
-              Probá con “web”, “QR”, “IA” o “automatización”. También podés{" "}
+              Probá con “web”, “reseñas”, “Shopify” o “videos”. También podés{" "}
               <a href="/#contacto">contarnos qué necesitás</a>.
             </p>
           )}
@@ -227,7 +255,7 @@ export default function SiteHeader() {
                     ))}
                   </div>
                 </details>
-                <a href="/#sectores">Para tu negocio</a>
+                <a href="/#paquetes">Paquetes</a>
                 <a href="/#demostraciones">Demostraciones</a>
                 <a href="/#aprende">Aprendé IA</a>
                 <a href="/sobre-nuvro">Nosotros</a>
@@ -264,7 +292,7 @@ export default function SiteHeader() {
                   ))}
                 </div>
               </details>
-              <a href="/#sectores">Para tu negocio</a>
+              <a href="/#paquetes">Paquetes</a>
               <a href="/#demostraciones">Demostraciones</a>
               <a href="/#aprende">Aprendé IA</a>
               <a href="/sobre-nuvro">Nosotros</a>

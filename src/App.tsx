@@ -6,6 +6,7 @@ import SiteFooter from "./components/site/SiteFooter";
 import ServicePage from "./components/site/ServicePage";
 import BusinessGuide from "./components/site/BusinessGuide";
 import SiteInfo from "./components/site/SiteInfo";
+import ServicePolicies from "./components/site/ServicePolicies";
 import AnalyticsConsent from "./components/site/AnalyticsConsent";
 import { servicePages } from "./content/services";
 import "./home.css";
@@ -26,6 +27,8 @@ export default function App({ path = "/" }: { path?: string }) {
         <ServicePage page={page} />
       ) : path === "/guias/ia-y-automatizacion-para-pymes" ? (
         <BusinessGuide />
+      ) : path === "/politicas-de-servicio" ? (
+        <ServicePolicies />
       ) : (
         <SiteInfo page={path} />
       )}

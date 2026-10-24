@@ -12,7 +12,6 @@ import { SITE_URL, whatsappUrl } from "../lib/site";
 
 type NicheProposal = {
   service: string;
-  price: string;
   plazo: string;
   incluye: string[];
   problema: string;
@@ -32,7 +31,6 @@ function detectProposal(niche: string): NicheProposal {
   ) {
     return {
       service: "Link Bio Vivo + Kit WhatsApp Business",
-      price: "desde $350",
       plazo: "3 – 5 días hábiles",
       incluye: [
         "Mini landing mobile-first para Instagram",
@@ -61,7 +59,6 @@ function detectProposal(niche: string): NicheProposal {
   ) {
     return {
       service: "Menú Digital QR + Link Bio",
-      price: "desde $300",
       plazo: "3 – 5 días hábiles",
       incluye: [
         "Menú digital responsive adaptado al celular",
@@ -87,7 +84,6 @@ function detectProposal(niche: string): NicheProposal {
   ) {
     return {
       service: "Landing Page de Ventas",
-      price: "desde $400",
       plazo: "5 – 7 días hábiles",
       incluye: [
         "Página de ventas enfocada en conversión",
@@ -116,7 +112,6 @@ function detectProposal(niche: string): NicheProposal {
   ) {
     return {
       service: "Sitio Web Profesional",
-      price: "desde $500",
       plazo: "7 – 14 días hábiles",
       incluye: [
         "Sitio web de 5 páginas: inicio, servicios, equipo, contacto y citas",
@@ -144,7 +139,6 @@ function detectProposal(niche: string): NicheProposal {
   ) {
     return {
       service: "Tarjeta Digital + Sitio Web",
-      price: "desde $450",
       plazo: "5 – 10 días hábiles",
       incluye: [
         "Tarjeta digital profesional compartible por WhatsApp",
@@ -170,7 +164,6 @@ function detectProposal(niche: string): NicheProposal {
   ) {
     return {
       service: "Catálogo Digital Express",
-      price: "desde $350",
       plazo: "5 – 7 días hábiles",
       incluye: [
         "Catálogo digital responsive con categorías",
@@ -195,7 +188,6 @@ function detectProposal(niche: string): NicheProposal {
   ) {
     return {
       service: "Sitio Web Premium",
-      price: "desde $600",
       plazo: "10 – 14 días hábiles",
       incluye: [
         "Sitio web con galería de fotos profesional",
@@ -213,7 +205,6 @@ function detectProposal(niche: string): NicheProposal {
 
   return {
     service: "Landing Page de Ventas",
-    price: "desde $250",
     plazo: "3 – 5 días hábiles",
     incluye: [
       "Página de ventas enfocada en conversión",

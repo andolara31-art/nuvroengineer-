@@ -6,11 +6,13 @@ import {
   whatsappUrl,
 } from "../../lib/site";
 import { trackEvent } from "../../lib/analytics";
+import { commercialPackages } from "../../content/packages";
 import "./contact-links.css";
 
 export default function SiteContact() {
   const [messageUrl, setMessageUrl] = useState("");
   const [service, setService] = useState("");
+  const [selectedPackage, setSelectedPackage] = useState("");
   const readyLink = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -21,11 +23,23 @@ export default function SiteContact() {
       "diseno-web-costa-rica": "diseno-web",
       "automatizaciones-negocios": "automatizaciones",
       "menu-qr-restaurantes": "menu-qr",
+      "resenas-google-qr-nfc": "resenas-google",
+      "tiendas-online-shopify": "tienda-online",
+      "videos-publicidad-negocios": "contenido-publicitario",
+      paquete: "paquetes",
       "ia-para-negocios": "ia",
     };
     const selection = requested ? aliases[requested] || requested : "";
     if (SERVICE_OPTIONS.some((option) => option.value === selection))
       setService(selection);
+    const packageId = new URLSearchParams(window.location.search).get(
+      "paquete",
+    );
+    const matchedPackage = commercialPackages.find(
+      (item) => item.id === packageId,
+    );
+    if (selection === "paquetes" && matchedPackage)
+      setSelectedPackage(matchedPackage.name);
   }, []);
 
   useEffect(() => {
@@ -55,6 +69,9 @@ export default function SiteContact() {
     const message = [
       "Hola NUVRO ENGINEER, me gustaría conversar sobre mi negocio.",
       selectedService ? "Me interesa: " + selectedService.label : "",
+      selectedService?.value === "paquetes" && selectedPackage
+        ? "Paquete: " + selectedPackage
+        : "",
       business ? "Mi negocio: " + business : "",
       "",
       body,
@@ -94,6 +111,9 @@ export default function SiteContact() {
                 Acordamos qué vamos a resolver, qué incluye el trabajo y cuánto
                 cuesta.
               </p>
+              <a className="underlink" href="/politicas-de-servicio">
+                Conocé las políticas de servicio
+              </a>
             </div>
             <div className="corp-contact-direct-block">
               <a
@@ -142,6 +162,12 @@ export default function SiteContact() {
                 </option>
               ))}
             </select>
+            {service === "paquetes" && selectedPackage && (
+              <p className="contact-form-note">
+                Paquete de interés: <strong>{selectedPackage}</strong>.{" "}
+                <a href="#paquetes">Volver a ver los paquetes</a>.
+              </p>
+            )}
             <div className="corp-contact-field-pair">
               <div>
                 <label htmlFor="nuvro-business">Tu negocio (opcional)</label>
@@ -178,7 +204,11 @@ export default function SiteContact() {
             />
             <p className="contact-form-note">
               Este formulario prepara tu mensaje. Lo revisás y enviás desde
-              WhatsApp; todavía no se envía ninguna solicitud.
+              WhatsApp; todavía no se envía ninguna solicitud.{" "}
+              <a href="/politicas-de-servicio">
+                Conocé las condiciones del servicio
+              </a>
+              .
             </p>
             <button className="button" type="submit">
               Preparar mi consulta <ArrowUpRight aria-hidden="true" />

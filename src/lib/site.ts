@@ -6,6 +6,11 @@ export const SERVICE_OPTIONS = [
   { value: "diseno-web", label: "Diseño web" },
   { value: "automatizaciones", label: "Automatizaciones" },
   { value: "menu-qr", label: "Menú QR" },
+  { value: "resenas-google", label: "Reseñas Google · QR/NFC" },
+  { value: "tienda-online", label: "Tienda online / Shopify" },
+  { value: "contenido-publicitario", label: "Videos y piezas publicitarias" },
+  { value: "presencia-digital", label: "Presencia digital" },
+  { value: "paquetes", label: "Un paquete para mi negocio" },
   { value: "ia", label: "IA para mi negocio" },
   { value: "otro", label: "Quiero orientación" },
 ] as const;

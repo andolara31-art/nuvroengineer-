@@ -21,7 +21,7 @@ npm run check:site
 npm run preview
 ```
 
-Vite genera el sitio en `dist/`. `scripts/build.mjs` prepara HTML completo con React para inicio, cuatro servicios, una guía, sobre NUVRO, privacidad y error 404. Cada URL tiene título, descripción, canonical y metadatos propios. Sitemap y JSON-LD se generan con la misma fuente de contenido.
+Vite genera el sitio en `dist/`. `scripts/build.mjs` prepara HTML completo con React para inicio, siete servicios, políticas de servicio, una guía, sobre NUVRO, privacidad y error 404. Cada URL tiene título, descripción, canonical y metadatos propios. Sitemap y JSON-LD se generan con la misma fuente de contenido.
 Vercel usa `cleanUrls` para servir las páginas sin extensión y una respuesta 404 real para rutas inexistentes. La ruta independiente `/propuesta` conserva sus parámetros y se excluye de indexación con meta y cabecera `noindex`.
 La portada no necesita una API de IA ni variables privadas.
 
@@ -36,6 +36,15 @@ La portada no necesita una API de IA ni variables privadas.
 
 El contacto se centraliza en `src/lib/site.ts`: WhatsApp +506 7175 7171 para todas las rutas activas. El formulario permite correo y nombre de negocio opcionales, servicio contextual y un mensaje. Prepara el texto y muestra un enlace para revisarlo y enviarlo desde WhatsApp. No registra solicitudes en un servidor.
 
+## Información comercial pública y privada
+
+- La web no muestra tarifas comerciales. Los ejemplos de menú conservan precios ficticios identificados como demostración.
+- `src/content/packages.ts` contiene los cuatro paquetes públicos, sin importes: Presencia Rápida, Campaña que Vende, Web Premium y Sistema a Medida. La combinación y el alcance se acuerdan en una propuesta, no se presume que todas las opciones estén incluidas.
+- La consulta de un paquete conserva su nombre con parámetros validados contra los paquetes existentes. No añade el mensaje del cliente a los eventos de medición.
+- Las páginas de reseñas QR/NFC, e-commerce/Shopify y videos explican entregables, proceso y límites. La creación de piezas no incluye por defecto gestión de anuncios ni inversión publicitaria.
+- `/politicas-de-servicio` detalla alcance, anticipo, medios de pago, costos externos, revisiones, entrega y soporte postentrega. No establece penalizaciones ni una regla de anticipo no reembolsable no proporcionada por el propietario.
+- El catálogo de precios del propietario se entrega como archivo local fuera de este repositorio. No se debe copiar a `public/`, `dist/`, el código fuente, los metadatos ni la configuración. `check:site` rechaza hojas de cálculo, catálogos privados y los nuevos importes comerciales en el artefacto publicado.
+
 ## Medición y Google
 
 - Google Analytics queda preparado, sin activar ni crear cuenta, por indicación del propietario. Cuando se disponga de un ID real, configurar `VITE_GA_MEASUREMENT_ID` en Vercel y volver a desplegar. No se incluye un ID ficticio.
@@ -46,6 +55,7 @@ El contacto se centraliza en `src/lib/site.ts`: WhatsApp +506 7175 7171 para tod
 ## Nuevas páginas
 
 - `/diseno-web-costa-rica`, `/automatizaciones-negocios`, `/menu-qr-restaurantes`, `/ia-para-negocios`.
+- `/resenas-google-qr-nfc`, `/tiendas-online-shopify`, `/videos-publicidad-negocios`, `/politicas-de-servicio`.
 - `/guias/ia-y-automatizacion-para-pymes`: guía editorial con instrucción copiable y criterios para probar una primera automatización.
 - `/#demostraciones`: menú con resumen, página comercial interactiva y simulación de seguimiento. Todos los datos son ficticios; no se hacen pedidos ni se envían avisos reales.
 - `/sobre-nuvro` y `/privacidad`.

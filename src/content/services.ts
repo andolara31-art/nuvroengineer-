@@ -206,6 +206,198 @@ export const servicePages: ServicePageContent[] = [
     demoId: "menu-qr",
   },
   {
+    path: "/resenas-google-qr-nfc",
+    title: "Bases QR y NFC para reseñas de Google en Costa Rica | NUVRO",
+    description:
+      "Facilitá el acceso al formulario de reseñas de tu negocio con una base o tarjeta QR y NFC. Diseño, enlace y soporte físico acordados con NUVRO en Costa Rica.",
+    name: "Una base QR o NFC para que opinar sobre tu negocio sea más fácil.",
+    eyebrow: "Reseñas de Google / QR y NFC",
+    intro:
+      "Después de atender a un cliente, dale una forma sencilla de compartir su experiencia. Preparamos bases o tarjetas que llevan al enlace de reseñas de tu negocio: por QR o, en dispositivos compatibles, acercando el celular al NFC.",
+    deliverables: [
+      "Revisión del enlace de reseñas del Perfil de Empresa de Google que tu negocio proporcione y autorice.",
+      "Diseño de la pieza con tu identidad y una invitación neutral a compartir una experiencia real.",
+      "Código QR como acceso visible y alternativa para quienes no utilicen NFC.",
+      "Configuración de NFC cuando se incluya en la propuesta y prueba de lectura en los dispositivos disponibles.",
+      "Base, tarjeta o archivo de impresión según el formato, material, acabado y cantidad que acordemos.",
+      "Indicaciones de uso y condiciones claras para impresión, entrega o envío y cambios posteriores del enlace.",
+    ],
+    steps: [
+      {
+        title: "Confirmamos el destino",
+        body: "Nos compartís el enlace válido de tu perfil y comprobamos que corresponde a tu negocio. Si el perfil necesita verificación o tiene restricciones, primero aclaramos esa situación; la pieza no resuelve los requisitos de Google.",
+      },
+      {
+        title: "Elegimos dónde y cómo usarla",
+        body: "Definimos si necesitás una base para el mostrador, una tarjeta u otro soporte. Acordamos cantidad, material, acabado, identidad visual e impresión, además de si el acceso será por QR, NFC o ambos.",
+      },
+      {
+        title: "Probamos antes de entregar",
+        body: "Revisamos el diseño y probamos que el QR y el NFC incluido abran la dirección correcta. La lectura NFC depende del celular y su configuración; por eso mantenemos un QR como alternativa y definimos qué dispositivos se prueban.",
+      },
+      {
+        title: "La incorporás a la atención",
+        body: "Ubicás la pieza donde tenga sentido al terminar el servicio. Tu equipo puede invitar a todos los clientes a dejar su opinión con libertad, sin ofrecer premios, pedir una calificación determinada ni excluir a quienes tuvieron una mala experiencia.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Esto garantiza reseñas o cinco estrellas?",
+        answer:
+          "No. La pieza facilita el acceso al formulario, pero cada persona decide si publica y qué opina. No compramos reseñas, no ofrecemos incentivos y no filtramos a los clientes según su satisfacción. Google determina qué contenido publica o retira.",
+      },
+      {
+        question: "¿Cuál es la diferencia entre QR y NFC?",
+        answer:
+          "El QR se escanea con la cámara o una aplicación compatible. El NFC permite abrir el enlace al acercar un celular compatible, siempre que su configuración lo permita. Definimos el soporte y probamos la lectura; el QR queda como alternativa visible.",
+      },
+      {
+        question: "¿Necesito tener un Perfil de Empresa de Google?",
+        answer:
+          "Necesitamos un enlace válido que permita acceder a las reseñas de tu negocio. La creación, verificación o recuperación del perfil es un alcance distinto y depende de los requisitos de Google. NUVRO no es un representante oficial de Google.",
+      },
+      {
+        question: "¿La impresión, la base física y el envío están incluidos?",
+        answer:
+          "La propuesta especifica si recibís un archivo, una tarjeta o una base terminada, así como sus cantidades, material y acabado. También detalla impresión, entrega, envío y reposiciones. No se asume que todos esos conceptos están incluidos en cualquier solicitud.",
+      },
+      {
+        question: "¿Puedo cambiar el enlace después?",
+        answer:
+          "Depende de cómo se haya configurado el acceso. Un QR impreso con una dirección directa no cambia por sí solo; el NFC puede tener restricciones de reescritura según la pieza. Si necesitás un enlace administrable, lo definimos antes de producir, junto con su mantenimiento y responsable.",
+      },
+    ],
+    demoId: "resenas-google-qr-nfc",
+  },
+  {
+    path: "/tiendas-online-shopify",
+    title: "Tiendas online y Shopify para negocios en Costa Rica | NUVRO",
+    description:
+      "Diseño de e-commerce y tiendas Shopify para negocios de Costa Rica. Ordená tu catálogo y definí pagos, envíos y administración según tu operación.",
+    name: "Tu catálogo, tus pedidos y una tienda pensada para tu negocio.",
+    eyebrow: "E-commerce / Tiendas online y Shopify",
+    intro:
+      "Si vendés productos, una tienda online puede reunir tu catálogo y darle al cliente un recorrido claro para comprar. Diseñamos e-commerce y tiendas Shopify a partir de lo que realmente necesitás operar: productos, cobros, entregas y atención después de la compra.",
+    deliverables: [
+      "Definición del alcance: tipo de producto, cantidad de productos y variantes, categorías y forma de gestionar el catálogo.",
+      "Diseño de la tienda para celular y escritorio, con navegación y fichas que expliquen lo que vendés.",
+      "Carga o preparación de los productos acordados a partir de textos, precios, fotografías y existencias que vos confirmes.",
+      "Evaluación y preparación de pagos y envíos según el país, los proveedores disponibles y las cuentas autorizadas de tu negocio.",
+      "Páginas informativas y políticas a partir de las condiciones comerciales que vos apruebes para tu tienda.",
+      "Pruebas del recorrido acordado y explicación de cómo administrar productos y pedidos, con accesos bajo propiedad del cliente.",
+    ],
+    steps: [
+      {
+        title: "Revisamos cómo vendés",
+        body: "Definimos qué productos vas a ofrecer, dónde vendés, cómo manejás existencias y quién prepara los pedidos. Comparamos la necesidad con el alcance de Shopify u otra solución, sin asumir que toda función viene incluida.",
+      },
+      {
+        title: "Acordamos plataforma y operación",
+        body: "Confirmamos proveedores de pago y envío compatibles con tu caso antes de prometer una integración. La propuesta separa diseño, carga de productos y configuración de las suscripciones, aplicaciones, comisiones, dominio y otros servicios de terceros.",
+      },
+      {
+        title: "Construimos y probamos",
+        body: "Diseñamos las páginas y preparamos el catálogo acordado. Revisamos navegación, variantes y el recorrido de compra disponible; las pruebas de cobro y entrega se coordinan con tus cuentas y las opciones del proveedor.",
+      },
+      {
+        title: "Entregamos con control de tus cuentas",
+        body: "Tu negocio revisa productos, condiciones y datos antes de publicar. Dejamos identificados los accesos, las renovaciones y las tareas de administración; cualquier mantenimiento o ampliación queda definido por separado.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Pueden hacer mi tienda en Shopify?",
+        answer:
+          "Sí, podemos trabajar una tienda Shopify y definir qué necesita tu negocio antes de configurarla. La plataforma y sus aplicaciones tienen condiciones y cargos propios. Esta oferta no implica una afiliación oficial de NUVRO con Shopify ni incluye automáticamente sus planes o servicios.",
+      },
+      {
+        question: "¿Puedo cobrar con cualquier método de pago en Costa Rica?",
+        answer:
+          "No todos los métodos están disponibles en todas las plataformas o cuentas. Primero revisamos el proveedor, su disponibilidad para tu negocio, requisitos, comisiones y la forma de confirmar el pedido. No damos por integrada una pasarela o un método local hasta comprobar su compatibilidad.",
+      },
+      {
+        question: "¿Incluye todos mis productos, fotografías y envíos?",
+        answer:
+          "Definimos la cantidad de productos y variantes, quién aporta textos y fotos, y qué información necesita cada ficha. La logística puede requerir reglas de cobertura, tarifas o un proveedor externo. Fotografía, redacción, carga adicional y conexiones especiales solo se incluyen si aparecen en la propuesta.",
+      },
+      {
+        question: "¿Qué pagos recurrentes tiene una tienda online?",
+        answer:
+          "Depende de la solución elegida. Puede haber una suscripción de plataforma, aplicaciones, dominio, alojamiento, comisiones por cobro y mantenimiento. Te presentamos los conceptos que correspondan a tu alcance y quién los contrata; el desarrollo no elimina esos cargos.",
+      },
+      {
+        question: "¿La tienda queda a mi nombre y voy a poder administrarla?",
+        answer:
+          "Las cuentas y accesos de tu negocio deben quedar bajo tu control. Acordamos qué tareas vas a gestionar y la explicación de entrega que necesitás. Una tienda requiere mantener productos, existencias, pedidos y políticas actualizados; el soporte continuo y las nuevas funciones se pactan por separado.",
+      },
+    ],
+    demoId: "tiendas-online-shopify",
+  },
+  {
+    path: "/videos-publicidad-negocios",
+    title: "Videos simples y piezas publicitarias para negocios | NUVRO CR",
+    description:
+      "Videos verticales, edición y piezas comerciales para negocios en Costa Rica. Presentá servicios y promociones con un mensaje claro y formatos acordados.",
+    name: "Videos simples para mostrar lo que vendés, sin darle tantas vueltas.",
+    eyebrow: "Contenido comercial / Video y publicidad",
+    intro:
+      "Un producto, un servicio o una promoción necesita entenderse rápido. Preparamos videos simples y piezas comerciales para redes, estados o tu web, a partir del material y la información que tu negocio aporte y apruebe.",
+    deliverables: [
+      "Objetivo y mensaje principal definidos: qué ofrecés, para quién y cuál es el siguiente paso.",
+      "Guion o estructura breve para ordenar la información y el material disponible de tu negocio.",
+      "Edición sencilla de fotos y clips, con textos legibles y llamados a la acción relacionados con la oferta.",
+      "Formato, duración, cantidad de piezas y variantes acordados para los canales donde vas a utilizarlas.",
+      "Revisión de los recursos aportados y de los permisos de imagen, música y uso comercial necesarios.",
+      "Archivos finales y rondas de revisión según la propuesta, con condiciones claras para cambios y entregables editables.",
+    ],
+    steps: [
+      {
+        title: "Elegimos una oferta concreta",
+        body: "Nos contás qué querés comunicar y a quién. Tu negocio confirma precios de productos, condiciones de la promoción, fechas y datos de contacto antes de convertirlos en una pieza publicitaria.",
+      },
+      {
+        title: "Revisamos el material",
+        body: "Evaluamos las fotos, clips, logo y textos que tenés. Acordamos qué se puede hacer con ese material, qué hace falta preparar y los formatos, duración y número de piezas; no asumimos una sesión de filmación profesional.",
+      },
+      {
+        title: "Editamos y revisamos",
+        body: "Armamos una propuesta con un mensaje principal, ritmo y textos fáciles de leer. Revisás que la información represente tu oferta y utilizamos las rondas de cambios acordadas para ajustar la pieza.",
+      },
+      {
+        title: "Entregamos para tus canales",
+        body: "Recibís los archivos en los formatos pactados para publicarlos donde corresponda. La contratación de pauta, la administración de campañas y el presupuesto de anuncios no forman parte de una edición simple y requieren un alcance distinto.",
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Qué tipo de videos pueden preparar?",
+        answer:
+          "Podemos trabajar piezas sencillas para presentar un servicio, mostrar productos, explicar una oferta o anunciar una promoción. También versiones verticales para redes y estados. El resultado depende del material disponible y del guion, duración y estilo que acordemos.",
+      },
+      {
+        question: "¿Tengo que enviar fotos o videos?",
+        answer:
+          "Revisamos primero lo que tenés y qué permisos de uso acompañan ese material. Si necesitás recursos adicionales o apoyo para prepararlos, lo dejamos definido. La edición de material del cliente no incluye automáticamente filmación profesional, actores, locución o fotografía.",
+      },
+      {
+        question: "¿Incluye publicar anuncios o administrar mis redes?",
+        answer:
+          "No por defecto. Crear una pieza, publicarla, contratar anuncios y administrar una campaña son trabajos distintos. Las cuentas publicitarias, la pauta, la segmentación y el seguimiento solo se contemplan si existe una propuesta específica que los incluya.",
+      },
+      {
+        question: "¿Puedo usar cualquier canción o imagen?",
+        answer:
+          "No debemos asumir que un recurso está autorizado porque aparece en Internet o en una red social. Antes de usarlo revisamos quién aporta la licencia y para qué canales permite utilizarlo, especialmente en anuncios. Tu negocio también debe contar con autorización para las personas y marcas que aparezcan en el material que entregue.",
+      },
+      {
+        question: "¿Cuántos cambios incluye y qué resultados puedo esperar?",
+        answer:
+          "La propuesta establece las rondas de revisión, los formatos finales y si se entregan archivos editables. Una pieza clara ayuda a presentar tu oferta, pero no garantiza visitas, ventas ni un volumen de consultas. Los resultados también dependen de la oferta, la distribución y el seguimiento comercial.",
+      },
+    ],
+    demoId: "videos-publicidad-negocios",
+  },
+  {
     path: "/ia-para-negocios",
     title:
       "IA para negocios en Costa Rica: aprendizaje práctico | NUVRO Engineer",

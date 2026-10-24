@@ -171,6 +171,20 @@ body {
 .service-related a {
   border-radius: 2px;
 }
+.service-policy-note {
+  padding-block: 24px;
+}
+.service-policy-note p {
+  color: #555;
+  font-size: 12px;
+  line-height: 1.9;
+  max-width: 900px;
+}
+.service-policy-note a,
+.contact-form-note a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .site-info {
   padding-top: 45px;
 }

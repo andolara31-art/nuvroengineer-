@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import DemoSection from "./DemoSection";
 import LearningSection from "./LearningSection";
+import CommercialPackages from "./CommercialPackages";
 import "./corporate-sections.css";
 
 const solutions = [
@@ -14,11 +15,11 @@ const solutions = [
   },
   {
     number: "02",
-    title: "Automatización.",
-    body: "Hay tareas que tu negocio no debería seguir haciendo a mano.",
-    deliverables: "Consultas · Avisos · Seguimiento",
-    href: "/automatizaciones-negocios",
-    action: "Ver automatizaciones",
+    title: "Tiendas online.",
+    body: "Pasá de enviar fotos por mensaje a un catálogo con un recorrido de compra definido.",
+    deliverables: "E-commerce · Shopify · Catálogo y compra",
+    href: "/tiendas-online-shopify",
+    action: "Ver tiendas online y Shopify",
   },
   {
     number: "03",
@@ -30,10 +31,34 @@ const solutions = [
   },
   {
     number: "04",
+    title: "Reseñas a un toque.",
+    body: "Una base QR o NFC en tu mostrador para que tus clientes compartan su experiencia en Google.",
+    deliverables: "Base o tarjeta · QR y NFC · Enlace de reseñas",
+    href: "/resenas-google-qr-nfc",
+    action: "Ver bases QR y NFC para reseñas de Google",
+  },
+  {
+    number: "05",
+    title: "Videos y publicidad.",
+    body: "Mostrá una promoción, un producto o tu servicio con una pieza que se entienda desde el celular.",
+    deliverables: "Videos simples · Edición · Piezas comerciales",
+    href: "/videos-publicidad-negocios",
+    action: "Ver videos y piezas publicitarias",
+  },
+  {
+    number: "06",
+    title: "Automatización.",
+    body: "Hay tareas que tu negocio no debería seguir haciendo a mano.",
+    deliverables: "Consultas · Avisos · Seguimiento",
+    href: "/automatizaciones-negocios",
+    action: "Ver automatizaciones",
+  },
+  {
+    number: "07",
     title: "Presencia digital.",
-    body: "Que tus enlaces, productos y reseñas tengan un lugar claro.",
-    deliverables: "Link Bio · Catálogos · Acceso a reseñas",
-    href: "#contacto",
+    body: "Ordená tus enlaces, productos y formas de contacto en un lugar fácil de compartir.",
+    deliverables: "Link Bio · Catálogos · Kit WhatsApp Business",
+    href: "/?servicio=presencia-digital#contacto",
     action: "Consultar presencia digital",
   },
 ];
@@ -47,9 +72,9 @@ const sectors = [
   },
   {
     title: "Comercios locales",
-    body: "Lo que vendés, bien presentado. Un camino claro para consultar.",
-    href: "/diseno-web-costa-rica",
-    action: "Ver diseño web",
+    body: "Lo que vendés, bien presentado. Una tienda o un catálogo según cómo compren tus clientes.",
+    href: "/tiendas-online-shopify",
+    action: "Ver tiendas online",
   },
   {
     title: "Servicios y profesionales",
@@ -73,7 +98,7 @@ const process = [
   {
     number: "03",
     title: "Trabajo que podés usar.",
-    body: "Diseñamos, construimos y revisamos con vos. Al entregar, te explicamos cómo funciona.",
+    body: "Con el anticipo y los materiales confirmados, construimos y revisamos con vos. Te explicamos el uso e incluimos 30 días de soporte postentrega.",
   },
 ];
 
@@ -177,6 +202,8 @@ export default function CorporateSections() {
           </div>
         </div>
       </section>
+
+      <CommercialPackages />
 
       <DemoSection />
 

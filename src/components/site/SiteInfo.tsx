@@ -94,16 +94,39 @@ export default function SiteInfo({ page }: { page: string }) {
       ) : about ? (
         <>
           <p>
-            NUVRO ENGINEER ofrece diseño web, presencia digital, IA aplicada y
-            automatización para negocios de todo Costa Rica. Partimos de cómo
-            trabajás y de lo que necesita tu cliente para definir una solución
-            con un propósito concreto.
+            NUVRO ENGINEER es una firma de soluciones digitales operada por
+            Anderson Lara desde Palmares, Alajuela. Trabajamos de forma remota
+            con negocios de todo Costa Rica: atención directa para entender qué
+            necesitás, definir el proyecto y llevarlo a una entrega concreta.
+          </p>
+          <p>
+            Creamos páginas web, tiendas online y Shopify, menús y catálogos,
+            presencia digital, bases QR o NFC para invitar a dejar reseñas
+            auténticas en Google, y videos simples y piezas publicitarias.
+            También resolvemos tareas repetitivas con automatizaciones e IA
+            aplicada cuando la operación realmente lo necesita.
           </p>
           <h2>Cómo trabajamos</h2>
           <p>
             Primero conversamos sobre tu negocio. Después definimos alcance,
-            entregables y costo. La propuesta debe aclarar qué se construye, qué
-            requiere herramientas de terceros y cómo vas a utilizarlo.
+            entregables, plazos, revisiones y costo en una cotización. La
+            propuesta aclara qué se construye, qué requiere herramientas de
+            terceros y cómo vas a utilizarlo. Empezamos con el anticipo
+            confirmado y los materiales necesarios; revisamos el resultado con
+            vos antes de la entrega.
+          </p>
+          <h2>No termina al publicar</h2>
+          <p>
+            Todo servicio incluye 30 días de soporte postentrega. Si necesitás
+            mantenimiento continuo, podés contratar un plan NUVRO CARE de forma
+            opcional, con tareas y límites definidos. No prometemos cambios
+            ilimitados ni resultados de ventas garantizados.
+          </p>
+          <p>
+            Consultá nuestras{" "}
+            <a href="/politicas-de-servicio">políticas de servicio</a> para
+            conocer el proceso, los pagos, los accesos y el soporte antes de
+            cotizar.
           </p>
           <h2>Qué podés evaluar antes de conversar</h2>
           <p>

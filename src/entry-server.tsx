@@ -8,9 +8,15 @@ export const pages = [
     path: "/",
     title: "Diseño web y automatización en Costa Rica | NUVRO Engineer",
     description:
-      "Diseño web, menús QR, IA y automatizaciones para negocios en Costa Rica. Conocé qué incluye cada servicio y consultá tu proyecto por WhatsApp.",
+      "Webs, tiendas Shopify, menús QR, bases QR/NFC para reseñas y videos para negocios de Costa Rica. Explorá servicios, paquetes y condiciones claras.",
   },
   ...servicePages,
+  {
+    path: "/politicas-de-servicio",
+    title: "Políticas de servicio, pagos y soporte | NUVRO Engineer",
+    description:
+      "Cómo trabajamos en NUVRO: alcance por escrito, anticipo, revisiones, costos de plataformas, entrega y 30 días de soporte postentrega. Atención directa con Anderson.",
+  },
   {
     path: "/guias/ia-y-automatizacion-para-pymes",
     title: "IA y automatización para pymes: guía para empezar | NUVRO",
@@ -62,7 +68,7 @@ export function structuredData(
     telephone: `+${BUSINESS_WHATSAPP}`,
     sameAs: ["https://www.instagram.com/nuvroengineer/"],
     description:
-      "Diseño web, presencia digital, IA aplicada y automatización para negocios de Costa Rica.",
+      "Diseño web, tiendas online, QR/NFC para reseñas, contenido comercial y automatización para negocios de Costa Rica.",
   };
   const graph: Record<string, unknown>[] = [
     organization,

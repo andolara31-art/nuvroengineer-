@@ -149,7 +149,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         aria-labelledby="service-process-title"
       >
         <div className="service-section-heading">
-          <p className="eyebrow">03 / Cómo lo hacemos</p>
+          <p className="eyebrow">{example ? "03" : "02"} / Cómo lo hacemos</p>
           <h2 id="service-process-title">
             Del problema
             <br />
@@ -174,7 +174,9 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
       <section className="service-faq" aria-labelledby="service-faq-title">
         <div className="shell service-section">
           <div className="service-section-heading">
-            <p className="eyebrow">04 / Antes de empezar</p>
+            <p className="eyebrow">
+              {example ? "04" : "03"} / Antes de empezar
+            </p>
             <h2 id="service-faq-title">
               Preguntas
               <br />
@@ -224,6 +226,41 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
           </a>
         </div>
       </section>
+      <div className="shell service-policy-note">
+        <p>
+          Alcance y condiciones por escrito, atención directa con Anderson y 30
+          días de soporte postentrega.{" "}
+          <a href="/politicas-de-servicio">
+            Conocé nuestras políticas de servicio ↗
+          </a>
+        </p>
+        {page.path === "/resenas-google-qr-nfc" && (
+          <p>
+            Las opiniones deben reflejar experiencias reales, sin premios ni
+            selección de reseñas positivas.{" "}
+            <a
+              href="https://support.google.com/contributionpolicy/answer/7400114?hl=es"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Política oficial de Google Maps ↗
+            </a>
+          </p>
+        )}
+        {page.path === "/tiendas-online-shopify" && (
+          <p>
+            La contratación de NUVRO y los cargos de la plataforma se acuerdan
+            por separado.{" "}
+            <a
+              href="https://help.shopify.com/en/manual/your-account/manage-billing/billing-charges"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Información de facturación de Shopify ↗
+            </a>
+          </p>
+        )}
+      </div>
     </main>
   );
 }

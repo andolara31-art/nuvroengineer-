@@ -51,11 +51,15 @@ export default function SiteFooter() {
             <a href="/diseno-web-costa-rica">Diseño web</a>
             <a href="/automatizaciones-negocios">Automatizaciones</a>
             <a href="/menu-qr-restaurantes">Menú QR</a>
+            <a href="/resenas-google-qr-nfc">Reseñas Google · QR/NFC</a>
+            <a href="/tiendas-online-shopify">Tiendas online / Shopify</a>
+            <a href="/videos-publicidad-negocios">Videos y publicidad</a>
             <a href="/ia-para-negocios">IA para negocios</a>
           </div>
           <div className="corp-footer-group">
             <h2>Conocé NUVRO</h2>
             <a href="/sobre-nuvro">Nosotros</a>
+            <a href="/#paquetes">Paquetes para tu negocio</a>
             <a href="/#demostraciones">Demostraciones</a>
             <a href="/#proceso">Cómo trabajamos</a>
             <a href="/#aprende">Aprendé IA</a>
@@ -84,6 +88,7 @@ export default function SiteFooter() {
           <span>© 2026 NUVRO ENGINEER. Costa Rica.</span>
           <div>
             <a href="/privacidad">Privacidad</a>
+            <a href="/politicas-de-servicio">Políticas de servicio</a>
             <a href="/#contacto">Contacto</a>
           </div>
           <span>Tecnología simple para negocios reales.</span>

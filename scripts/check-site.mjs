@@ -14,7 +14,16 @@ async function walk(folder) {
   );
   return files.flat();
 }
-const files = (await walk(dist)).filter((file) => file.endsWith(".html"));
+const publishedFiles = await walk(dist);
+assert.ok(
+  !publishedFiles.some(
+    (file) =>
+      /\.(?:xlsx|xls|csv|tsv)$/i.test(file) ||
+      /lista-precios|base-conocimiento/i.test(path.basename(file)),
+  ),
+  "No se deben publicar catálogos privados ni bases de conocimiento",
+);
+const files = publishedFiles.filter((file) => file.endsWith(".html"));
 const sitemap = await readFile(path.join(dist, "sitemap.xml"), "utf8");
 const robots = await readFile(path.join(dist, "robots.txt"), "utf8");
 assert.match(robots, /Sitemap: https:\/\/nuvroenginer\.site\/sitemap\.xml/);
@@ -39,6 +48,26 @@ for (const file of files) {
     ),
   );
   assert.match(html, /<meta name="description" content="[^"]+"/);
+  assert.ok(
+    !/(?:₡|CRC)\s*(?:16[ .,&]?900|30[ .,&]?000|65[ .,&]?000|70[ .,&]?000)|desde\s*\$\s*\d/i.test(
+      html,
+    ),
+    `Precios comerciales privados en ${route}`,
+  );
+  if (
+    [
+      "/resenas-google-qr-nfc",
+      "/tiendas-online-shopify",
+      "/videos-publicidad-negocios",
+      "/politicas-de-servicio",
+    ].includes(route)
+  ) {
+    assert.ok(
+      !html.includes("₡"),
+      `La página de servicio debe mantenerse sin tarifas públicas: ${route}`,
+    );
+    assert.match(html, /politicas-de-servicio/);
+  }
   const socialImage = html.match(
     /<meta property="og:image" content="([^"]+)"/,
   )?.[1];
@@ -50,6 +79,14 @@ for (const file of files) {
     `Imagen social ausente: ${route}`,
   );
   if (route === "/") {
+    assert.match(html, /id="paquetes"/);
+    for (const name of [
+      "Presencia Rápida",
+      "Campaña que Vende",
+      "Web Premium",
+      "Sistema a Medida",
+    ])
+      assert.ok(html.includes(name), `Paquete ausente: ${name}`);
     assert.ok(
       !/nuvro-corporate-cr-v1|nuvro-negocio-cr-tecnologia-v1/.test(html),
       "La portada no debe mostrar las imágenes generadas anteriores",
