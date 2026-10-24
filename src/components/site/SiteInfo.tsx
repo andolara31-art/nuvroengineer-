@@ -108,9 +108,10 @@ export default function SiteInfo({ page }: { page: string }) {
           <h2>Qué podés evaluar antes de conversar</h2>
           <p>
             Podés explorar las páginas de servicios y probar las demostraciones.
-            Los ejemplos están identificados como demos. La portada utiliza una
-            imagen editorial generada con IA inspirada en negocios de Costa
-            Rica.
+            Los ejemplos están identificados como demos y no representan
+            proyectos de clientes. La muestra de cafetería de la portada es un
+            negocio ficticio; utiliza una fotografía de Veronika Martinelli en
+            Lisboa, con el crédito y la fuente junto al ejemplo.
           </p>
           <a className="button" href="/#demostraciones">
             Probá las demostraciones <span aria-hidden="true">↗</span>

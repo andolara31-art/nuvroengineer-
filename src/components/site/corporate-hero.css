@@ -1,259 +1,498 @@
-.corp-hero {
-  position: relative;
-  isolation: isolate;
-  background: #142c3b;
+.craft-hero {
+  background: #080808;
   color: #fff;
-  min-height: 610px;
   overflow: hidden;
 }
-.corp-hero-image,
-.corp-hero-shade {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
-.corp-hero-image {
-  object-fit: cover;
-  object-position: center;
-}
-.corp-hero-shade {
-  z-index: -1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(9, 27, 40, 0.91) 0%,
-      rgba(10, 27, 40, 0.8) 27%,
-      rgba(10, 27, 40, 0.35) 58%,
-      rgba(9, 27, 40, 0.05) 100%
-    ),
-    linear-gradient(0deg, rgba(8, 25, 37, 0.6), transparent 35%);
-}
-.corp-shell {
-  max-width: 1416px;
-  padding-inline: 48px;
+.craft-container {
+  max-width: 1440px;
   margin-inline: auto;
+  padding-inline: 56px;
 }
-.corp-hero-layout {
-  min-height: 610px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 83px;
-  padding-bottom: 34px;
+.craft-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 65px;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
-.corp-hero-copy {
-  max-width: 700px;
-}
-.corp-hero-label {
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 5px;
-  background: #0066ff;
-  color: white;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  margin: 0 0 23px;
-}
-.corp-hero h1 {
+.craft-eyebrow {
   font:
-    600 clamp(42px, 4.65vw, 68px)/1.07 Inter,
+    500 10px/1.7 Inter,
     Arial,
     sans-serif;
-  letter-spacing: -0.048em;
-  margin: 0 0 24px;
-  max-width: 690px;
-  text-wrap: balance;
-}
-.corp-hero-description {
-  font-size: 16px;
-  line-height: 1.75;
-  color: #e1e8ed;
-  max-width: 600px;
-  margin: 0;
-}
-.corp-hero-actions {
+  letter-spacing: 0.13em;
+  color: #c7c7c7;
+  margin: 0 0 28px;
   display: flex;
   align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin-top: 32px;
+  gap: 10px;
 }
-.corp-primary {
+.craft-eyebrow > span {
+  width: 6px;
+  height: 6px;
+  background: #0066ff;
+}
+.craft-hero h1 {
+  font-family: "Archivo Black", Arial, sans-serif;
+  font-size: clamp(46px, 5vw, 76px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  margin: 0 0 30px;
+}
+.craft-hero h1 > span {
+  color: #c7c7c7;
+}
+.craft-hero-description {
+  font:
+    400 14px/1.85 Inter,
+    Arial,
+    sans-serif;
+  max-width: 420px;
+  color: #b8b8b8;
+  margin: 0;
+}
+.craft-hero-actions {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 33px;
+}
+.craft-action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
-  border: 1px solid #0066ff;
-  background: #0066ff;
-  color: #fff;
-  border-radius: 100px;
-  padding: 15px 24px;
+  gap: 20px;
+  padding: 16px 20px;
+  background: #fff;
+  color: #080808;
   min-height: 50px;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
-  line-height: 1.4;
-  transition: background 0.2s;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
-.corp-primary:hover {
-  background: #0052cd;
-  border-color: #0052cd;
+.craft-action svg {
+  color: #0066ff;
 }
-.corp-hero-secondary {
+.craft-action:hover {
+  background: #eaeaea;
+  border-color: #eaeaea;
+}
+.craft-action-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  font-size: 13px;
-  font-weight: 500;
-  min-height: 48px;
+  gap: 12px;
+  min-height: 46px;
+  color: #ddd;
+  font-size: 11px;
 }
-.corp-hero-secondary:hover {
+.craft-action-secondary:hover {
+  color: white;
   text-decoration: underline;
-  text-underline-offset: 5px;
+  text-underline-offset: 6px;
 }
-.corp-hero-bottom {
+.craft-hero-signature {
+  font-size: 10px;
+  color: #999;
+  margin: 30px 0 0;
+  letter-spacing: 0.02em;
+}
+.craft-sample-wrap {
+  min-width: 0;
+}
+.craft-sample-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
-  margin-top: 58px;
-}
-.corp-hero-tabs {
-  display: flex;
-  gap: 30px;
-}
-.corp-hero-tabs button {
-  border: 0;
-  border-top: 2px solid #ffffff40;
-  padding: 13px 0 0;
-  background: transparent;
-  color: #c6d0d7;
+  gap: 15px;
   font:
-    500 12px/1.5 Inter,
+    500 9px/1.6 Inter,
     Arial,
     sans-serif;
-  text-align: left;
-  min-width: 145px;
-  cursor: pointer;
+  color: #9a9a9a;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
 }
-.corp-hero-tabs button span {
-  margin-right: 10px;
-  font-size: 10px;
-  opacity: 0.7;
+.craft-sample-label > span:last-child {
+  color: #ccc;
 }
-.corp-hero-tabs button[aria-pressed="true"] {
-  color: white;
-  border-color: #67a9ff;
+.craft-browser {
+  border: 1px solid #b8b8b8;
+  background: #f2f2ef;
+  box-shadow: 10px 12px 0 #171717;
+  border-radius: 6px;
+  overflow: hidden;
 }
-.corp-hero-controls {
+.craft-browser-bar {
+  background: #e7e7e3;
+  color: #666;
+  min-height: 34px;
+  border-bottom: 1px solid #d5d5d0;
+  padding: 0 14px;
   display: flex;
-  gap: 9px;
-  padding-right: 5px;
-}
-.corp-hero-controls button {
-  background: #ffffff0a;
-  border: 1px solid #ffffff66;
-  border-radius: 50%;
-  color: white;
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-}
-.corp-hero-controls button:hover {
-  background: #ffffff25;
-}
-.corp-hero-credit {
-  position: absolute;
-  right: 48px;
-  bottom: 8px;
-  color: #dce3e7;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   font-size: 8px;
 }
+.craft-browser-bar > div {
+  display: flex;
+  gap: 5px;
+}
+.craft-browser-bar i {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #b9b9b4;
+  border-radius: 50%;
+}
+.craft-browser-bar > span {
+  margin-right: auto;
+  margin-left: 6px;
+}
+.craft-sample-site {
+  color: #21211d;
+  background: #f2f2ef;
+}
+.craft-sample-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 26px;
+}
+.craft-sample-brand {
+  font:
+    400 26px/0.9 "Archivo Black",
+    Arial,
+    sans-serif;
+  letter-spacing: -0.065em;
+}
+.craft-sample-brand > span {
+  display: block;
+  font:
+    500 6px/1.7 Inter,
+    Arial,
+    sans-serif;
+  letter-spacing: 0.15em;
+  margin-top: 7px;
+}
+.craft-sample-nav > button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  padding: 10px 0 10px 12px;
+  font:
+    500 9px/1.5 Inter,
+    Arial,
+    sans-serif;
+  cursor: pointer;
+  color: #21211d;
+}
+.craft-sample-main {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 315px;
+  border-top: 1px solid #d6d6cf;
+}
+.craft-sample-photo {
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+.craft-sample-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+  position: absolute;
+  inset: 0;
+}
+.craft-sample-content {
+  padding: 30px 23px;
+  min-width: 0;
+}
+.craft-sample-overline {
+  font:
+    500 6px/1.6 Inter,
+    Arial,
+    sans-serif;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 22px;
+  color: #71716a;
+}
+.craft-sample-content h2 {
+  font:
+    600 clamp(24px, 2.45vw, 36px)/1.1 Inter,
+    Arial,
+    sans-serif;
+  letter-spacing: -0.055em;
+  margin: 0 0 20px;
+}
+.craft-sample-content h2 em {
+  font-style: normal;
+  font-weight: 400;
+}
+.craft-sample-content > p {
+  font:
+    400 11px/1.7 Inter,
+    Arial,
+    sans-serif;
+  color: #666;
+  margin: 0 0 20px;
+  max-width: 160px;
+}
+.craft-sample-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  border-bottom: 1px solid #333;
+  background: transparent;
+  color: #21211d;
+  font:
+    600 11px/1.5 Inter,
+    Arial,
+    sans-serif;
+  min-height: 44px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+.craft-sample-menu {
+  display: grid;
+  margin-top: 4px;
+}
+.craft-sample-menu > button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  border-top: 1px solid #d5d5cd;
+  background: transparent;
+  color: #21211d;
+  padding: 12px 0;
+  text-align: left;
+  cursor: pointer;
+  min-height: 48px;
+}
+.craft-sample-menu strong {
+  font:
+    500 11px/1.5 Inter,
+    Arial,
+    sans-serif;
+  display: block;
+}
+.craft-sample-menu small {
+  font:
+    400 9px/1.5 Inter,
+    Arial,
+    sans-serif;
+  display: block;
+  color: #666;
+}
+.craft-sample-menu > button[aria-pressed="true"] {
+  color: #0059db;
+}
+.craft-sample-menu svg {
+  flex-shrink: 0;
+}
+.craft-sample-status {
+  padding: 13px 20px;
+  border-top: 1px solid #d5d5ce;
+  min-height: 40px;
+  text-align: center;
+  font:
+    400 9px/1.8 Inter,
+    Arial,
+    sans-serif;
+  letter-spacing: 0.02em;
+  color: #666;
+}
+.craft-sample-caption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 8px;
+  color: #888;
+  line-height: 1.6;
+}
+.craft-sample-caption a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #888;
+}
+.craft-hero-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  border-top: 1px solid #292929;
+  min-height: 66px;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #999;
+}
+.craft-hero-foot a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #c7c7c7;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+}
 @media (min-width: 1600px) {
-  .corp-hero,
-  .corp-hero-layout {
-    min-height: 680px;
-  }
-  .corp-hero-layout {
-    padding-top: 115px;
+  .craft-hero-grid {
+    padding-top: 100px;
+    padding-bottom: 95px;
+    gap: 90px;
   }
 }
-@media (max-width: 900px) {
-  .corp-hero-copy {
+@media (max-width: 1050px) {
+  .craft-hero-grid {
+    gap: 36px;
+  }
+  .craft-container {
+    padding-inline: 36px;
+  }
+  .craft-hero h1 {
+    font-size: clamp(44px, 5.6vw, 62px);
+  }
+  .craft-sample-nav {
+    padding: 22px 19px;
+  }
+  .craft-sample-content {
+    padding-inline: 16px;
+  }
+  .craft-sample-main {
+    min-height: 325px;
+  }
+}
+@media (max-width: 800px) {
+  .craft-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    padding-top: 55px;
+    padding-bottom: 48px;
+  }
+  .craft-hero-copy {
     max-width: 620px;
   }
-  .corp-hero-shade {
-    background: linear-gradient(90deg, #102536eb, #102536aa 65%, #10253655);
+  .craft-hero h1 {
+    font-size: clamp(48px, 8.2vw, 72px);
   }
-  .corp-hero-image {
-    object-position: 65% center;
+  .craft-sample-wrap {
+    width: 100%;
+    max-width: 590px;
   }
-  .corp-hero-controls {
+  .craft-sample-main {
+    min-height: 330px;
+  }
+  .craft-sample-content h2 {
+    font-size: 34px;
+  }
+  .craft-sample-content {
+    padding: 30px 25px;
+  }
+  .craft-hero-foot > span:last-child {
     display: none;
   }
 }
-@media (max-width: 700px) {
-  .corp-shell {
+@media (max-width: 520px) {
+  .craft-container {
     padding-inline: 22px;
   }
-  .corp-hero,
-  .corp-hero-layout {
-    min-height: 650px;
+  .craft-hero h1 {
+    font-size: clamp(39px, 10.6vw, 55px);
+    letter-spacing: -0.055em;
   }
-  .corp-hero-layout {
-    padding-top: 65px;
-    padding-bottom: 35px;
+  .craft-hero-description {
+    font-size: 13px;
+    max-width: 360px;
   }
-  .corp-hero-image {
-    object-position: 66% center;
-    opacity: 0.7;
-  }
-  .corp-hero-shade {
-    background:
-      linear-gradient(90deg, #102536ed, #102536a6),
-      linear-gradient(0deg, #102536e6, transparent);
-  }
-  .corp-hero h1 {
-    font-size: clamp(39px, 9vw, 50px);
-    letter-spacing: -0.04em;
-  }
-  .corp-hero-description {
-    font-size: 14px;
-    line-height: 1.8;
-    max-width: 450px;
-  }
-  .corp-hero-label {
-    font-size: 9px;
-  }
-  .corp-hero-actions {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 26px;
-  }
-  .corp-hero-bottom {
-    margin-top: 40px;
-  }
-  .corp-hero-tabs {
-    width: 100%;
+  .craft-hero-actions {
     gap: 14px;
   }
-  .corp-hero-tabs button {
-    min-width: 0;
-    flex: 1;
+  .craft-action {
+    padding: 15px 17px;
     font-size: 10px;
-    padding-top: 11px;
   }
-  .corp-hero-tabs button span {
-    display: block;
-    margin-bottom: 4px;
+  .craft-action-secondary {
+    font-size: 10px;
   }
-  .corp-hero-credit {
-    right: 22px;
+  .craft-sample-label {
     font-size: 7px;
+  }
+  .craft-sample-main {
+    min-height: 305px;
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+  .craft-sample-content {
+    padding: 25px 15px;
+  }
+  .craft-sample-content h2 {
+    font-size: clamp(24px, 6.5vw, 30px);
+  }
+  .craft-sample-overline {
+    font-size: 7px;
+    margin-bottom: 20px;
+  }
+  .craft-sample-content > p {
+    font-size: 11px;
+  }
+  .craft-sample-nav {
+    padding: 20px;
+  }
+  .craft-sample-brand {
+    font-size: 23px;
+  }
+  .craft-sample-menu > button {
+    padding: 11px 0;
+  }
+  .craft-sample-menu strong {
+    font-size: 11px;
+  }
+  .craft-sample-menu small {
+    font-size: 9px;
+  }
+  .craft-sample-caption {
+    font-size: 9px;
+  }
+  .craft-hero-foot {
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-block: 20px;
+    font-size: 7px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .craft-hero-copy,
+  .craft-sample-wrap {
+    animation: craft-reveal 0.65s ease-out both;
+  }
+  .craft-sample-wrap {
+    animation-delay: 0.08s;
+  }
+  @keyframes craft-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }

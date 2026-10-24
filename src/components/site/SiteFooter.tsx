@@ -23,16 +23,13 @@ export default function SiteFooter() {
               href="/"
               aria-label="NUVRO ENGINEER, inicio"
             >
-              <span className="corp-footer-symbol" aria-hidden="true">
-                N
-              </span>
               <span className="corp-footer-word">
                 NUVRO<small>ENGINEER</small>
               </span>
             </a>
             <p>
-              Impulsamos tu negocio con tecnología que hace más simple el día a
-              día.
+              Webs claras. Procesos en orden. Más fácil para vos y para tus
+              clientes.
             </p>
             <span className="corp-footer-coverage">
               <MapPin size={15} aria-hidden="true" /> Atención en todo Costa
@@ -45,7 +42,8 @@ export default function SiteFooter() {
               rel="noopener noreferrer"
               aria-label="NUVRO Engineer en Instagram"
             >
-              <Instagram size={18} aria-hidden="true" />
+              <Instagram size={17} aria-hidden="true" /> @nuvroengineer
+              <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           </div>
           <div className="corp-footer-group">
@@ -64,8 +62,8 @@ export default function SiteFooter() {
             <a href="/guias/ia-y-automatizacion-para-pymes">Guía para pymes</a>
           </div>
           <div className="corp-footer-group corp-footer-contact">
-            <h2>Conversemos</h2>
-            <p>Contanos qué querés mejorar en tu negocio.</p>
+            <h2>Tu próximo paso</h2>
+            <p>Contanos qué está frenando tu negocio. Empezamos por ahí.</p>
             <a className="corp-footer-phone" href={`tel:+${BUSINESS_WHATSAPP}`}>
               <Phone size={16} aria-hidden="true" /> {BUSINESS_WHATSAPP_DISPLAY}
             </a>
@@ -88,7 +86,7 @@ export default function SiteFooter() {
             <a href="/privacidad">Privacidad</a>
             <a href="/#contacto">Contacto</a>
           </div>
-          <span>Tecnología simple. Negocios que avanzan.</span>
+          <span>Tecnología simple para negocios reales.</span>
         </div>
       </div>
     </footer>

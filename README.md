@@ -1,7 +1,7 @@
 # NUVRO ENGINEER
 
 Web comercial de NUVRO ENGINEER: tecnología simple para negocios reales.
-Diseño corporativo con base blanca y navy, acento azul #0066FF y tipografía Inter. Cabecera con búsqueda real de soluciones, navegación por categorías y portada fotográfica panorámica.
+Diseño editorial en negro #080808, blanco y papel #f2f2ef, con azul #0066FF limitado a detalles. Tipografías Archivo Black e Inter. Cabecera con búsqueda real y portada con una muestra interactiva de diseño web.
 
 ## Desarrollo
 
@@ -28,9 +28,9 @@ La portada no necesita una API de IA ni variables privadas.
 ## Edición
 
 - `src/components/site/`: contenido, navegación y contacto de la nueva web.
-- `CorporateHero.tsx`, `CorporateSections.tsx` y `src/corporate.css`: portada y secciones corporativas inspiradas en la jerarquía visual de la referencia facilitada por el propietario (Bash Seguridad), con identidad y contenido propios de NUVRO. El banner cambia solo mediante controles manuales y el buscador filtra páginas existentes.
+- `CorporateHero.tsx`, `CorporateSections.tsx` y `src/corporate.css`: portada y secciones editoriales alineadas con la identidad original de NUVRO. La muestra permite abrir una carta y seleccionar productos sin enviar pedidos; el buscador filtra páginas existentes.
 - `src/home.css`: identidad visual y adaptación a móvil.
-- `public/assets/brand/`: imagen editorial mejorada con IA, versiones WebP responsivas y atribución de la fuente original.
+- `public/assets/brand/`: fotografía editorial acreditada, imagen social de la web y versiones anteriores conservadas. Las imágenes generadas anteriores ya no se muestran en la portada.
 - `src/components/site/LearningSection.tsx`: ejemplos educativos de IA y automatización; instrucciones copiables y guías desplegables. No presenta cursos, precios ni integraciones activas ficticias.
 - `src/components/ProposalPage.tsx`: ruta de propuestas existente.
 

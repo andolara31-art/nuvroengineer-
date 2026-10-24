@@ -39,6 +39,24 @@ for (const file of files) {
     ),
   );
   assert.match(html, /<meta name="description" content="[^"]+"/);
+  const socialImage = html.match(
+    /<meta property="og:image" content="([^"]+)"/,
+  )?.[1];
+  assert.ok(socialImage, `Falta imagen social: ${route}`);
+  const socialPath = new URL(socialImage).pathname;
+  assert.ok(socialPath.startsWith("/assets/brand/"));
+  assert.ok(
+    (await stat(path.join(dist, socialPath.slice(1)))).isFile(),
+    `Imagen social ausente: ${route}`,
+  );
+  if (route === "/") {
+    assert.ok(
+      !/nuvro-corporate-cr-v1|nuvro-negocio-cr-tecnologia-v1/.test(html),
+      "La portada no debe mostrar las imágenes generadas anteriores",
+    );
+    assert.match(html, /Ejemplo interactivo/);
+    assert.match(html, /negocio ficticio/);
+  }
   assert.ok(!html.includes("<!--seo:"));
   if (route === "/propuesta") {
     assert.match(html, /noindex, follow/);

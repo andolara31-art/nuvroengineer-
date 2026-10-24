@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { ArrowUpRight, Check, MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import {
   BUSINESS_WHATSAPP_DISPLAY,
   SERVICE_OPTIONS,
@@ -81,57 +81,42 @@ export default function SiteContact() {
           <div className="corp-contact-intro">
             <p className="eyebrow">
               <span aria-hidden="true" />
-              Hablemos de tu proyecto
+              El siguiente paso
             </p>
-            <h2 id="contact-title">Conversemos sobre tu próximo proyecto.</h2>
+            <h2 id="contact-title">Contanos qué necesita tu negocio.</h2>
             <p className="contact-description">
-              Un sitio web, una automatización o una mejor forma de atender a
-              tus clientes. Contanos qué necesita tu negocio y encontremos por
-              dónde empezar.
+              Qué ofrecés, cómo trabajás y qué te gustaría mejorar. Empezamos
+              por entender eso.
             </p>
-            <ul className="corp-contact-benefits">
-              <li>
-                <Check aria-hidden="true" />
-                <span>
-                  <strong>Soluciones a tu medida</strong>Tecnología pensada para
-                  lo que necesitás resolver.
-                </span>
-              </li>
-              <li>
-                <Check aria-hidden="true" />
-                <span>
-                  <strong>Una propuesta clara</strong>Definimos el alcance y los
-                  siguientes pasos con vos.
-                </span>
-              </li>
-              <li>
-                <Check aria-hidden="true" />
-                <span>
-                  <strong>Cobertura en Costa Rica</strong>Atención para negocios
-                  en todo el país.
-                </span>
-              </li>
-            </ul>
-            <a
-              className="button white contact-direct"
-              href={whatsappUrl(
-                "Hola NUVRO, quiero orientación para mejorar la presencia digital de mi negocio.",
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-analytics-location="contact-direct"
-            >
-              <MessageCircle aria-hidden="true" /> Escribir por WhatsApp{" "}
-              <ArrowUpRight aria-hidden="true" />
-            </a>
-            <a
-              className="underlink contact-number"
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {BUSINESS_WHATSAPP_DISPLAY} <ArrowUpRight aria-hidden="true" />
-            </a>
+            <div className="corp-contact-process">
+              <p>Antes de empezar</p>
+              <p>
+                Acordamos qué vamos a resolver, qué incluye el trabajo y cuánto
+                cuesta.
+              </p>
+            </div>
+            <div className="corp-contact-direct-block">
+              <a
+                className="button white contact-direct"
+                href={whatsappUrl(
+                  "Hola NUVRO, quiero orientación para mejorar la presencia digital de mi negocio.",
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics-location="contact-direct"
+              >
+                Escribir por WhatsApp <ArrowUpRight aria-hidden="true" />
+              </a>
+              <a
+                className="underlink contact-number"
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {BUSINESS_WHATSAPP_DISPLAY}
+              </a>
+              <p className="corp-contact-location">Costa Rica · Todo el país</p>
+            </div>
           </div>
           <form
             className="contactform corp-contact-form"
@@ -140,10 +125,8 @@ export default function SiteContact() {
             onChange={() => setMessageUrl("")}
           >
             <div className="corp-contact-form-heading">
-              <h3>Contanos tu idea</h3>
-              <p>
-                Prepará tu consulta y continuá la conversación por WhatsApp.
-              </p>
+              <h3>Prepará tu consulta.</h3>
+              <p>Podés usar este formulario o escribirnos directamente.</p>
             </div>
             <label htmlFor="nuvro-service">¿En qué te podemos ayudar?</label>
             <select
@@ -159,43 +142,43 @@ export default function SiteContact() {
                 </option>
               ))}
             </select>
-            <label htmlFor="nuvro-business">
-              Nombre de tu negocio (opcional)
-            </label>
-            <input
-              id="nuvro-business"
-              name="business"
-              autoComplete="organization"
-              maxLength={120}
-              placeholder="¿Cómo se llama tu negocio?"
-            />
-            <label htmlFor="nuvro-email">
-              Tu correo electrónico (opcional)
-            </label>
-            <input
-              id="nuvro-email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              maxLength={254}
-              placeholder="tu@correo.com"
-            />
-            <label htmlFor="nuvro-message">
-              Tu negocio y lo que querés mejorar
-            </label>
+            <div className="corp-contact-field-pair">
+              <div>
+                <label htmlFor="nuvro-business">Tu negocio (opcional)</label>
+                <input
+                  id="nuvro-business"
+                  name="business"
+                  autoComplete="organization"
+                  maxLength={120}
+                  placeholder="Nombre del negocio"
+                />
+              </div>
+              <div>
+                <label htmlFor="nuvro-email">Tu correo (opcional)</label>
+                <input
+                  id="nuvro-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  maxLength={254}
+                  placeholder="tu@correo.com"
+                />
+              </div>
+            </div>
+            <label htmlFor="nuvro-message">¿Qué querés mejorar?</label>
             <textarea
               id="nuvro-message"
               name="message"
               required
               minLength={5}
               maxLength={1800}
-              rows={4}
+              rows={5}
               onInput={(event) => event.currentTarget.setCustomValidity("")}
               placeholder="Tengo un restaurante y quiero ordenar el menú y las consultas…"
             />
             <p className="contact-form-note">
-              El formulario prepara el mensaje en este dispositivo. Revisalo y
-              envialo desde WhatsApp; todavía no se envía ninguna solicitud.
+              Este formulario prepara tu mensaje. Lo revisás y enviás desde
+              WhatsApp; todavía no se envía ninguna solicitud.
             </p>
             <button className="button" type="submit">
               Preparar mi consulta <ArrowUpRight aria-hidden="true" />

@@ -3,7 +3,6 @@ import {
   ArrowUpRight,
   ChevronDown,
   Instagram,
-  MapPin,
   Menu,
   MessageCircle,
   Phone,
@@ -90,7 +89,7 @@ function ServiceSearch({ compact = false }: { compact?: boolean }) {
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="¿Qué necesita tu negocio?"
+          placeholder="Buscá una solución"
           maxLength={100}
           aria-controls={submittedQuery !== null ? `${id}-results` : undefined}
           autoComplete="off"
@@ -144,9 +143,6 @@ function ServiceSearch({ compact = false }: { compact?: boolean }) {
 function Brand() {
   return (
     <a className="corp-brand" href="/" aria-label="NUVRO ENGINEER, inicio">
-      <span className="corp-brand-symbol" aria-hidden="true">
-        N
-      </span>
       <span className="corp-brand-word">
         NUVRO<small>ENGINEER</small>
       </span>
@@ -165,10 +161,7 @@ export default function SiteHeader() {
       </a>
       <div className="corp-utility">
         <div className="corp-header-shell corp-utility-inner">
-          <span>
-            <MapPin size={13} aria-hidden="true" /> Tecnología para negocios de
-            todo Costa Rica
-          </span>
+          <span>Hecho para negocios ticos.</span>
           <div>
             <a href={contact} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={14} aria-hidden="true" /> WhatsApp
@@ -195,11 +188,11 @@ export default function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="corp-phone-circle">
-              <Phone size={21} aria-hidden="true" />
+            <span className="corp-phone-icon">
+              <Phone size={19} aria-hidden="true" />
             </span>
             <span>
-              <small>Asesoría para tu negocio</small>
+              <small>Hablemos de tu negocio</small>
               <strong>{BUSINESS_WHATSAPP_DISPLAY}</strong>
             </span>
           </a>
@@ -208,7 +201,16 @@ export default function SiteHeader() {
               <Menu size={25} aria-hidden="true" />
               <span>Menú</span>
             </summary>
-            <div className="corp-mobile-panel">
+            <div
+              className="corp-mobile-panel"
+              onClick={(event) => {
+                if ((event.target as Element).closest("a")) {
+                  event.currentTarget
+                    .closest("details")
+                    ?.removeAttribute("open");
+                }
+              }}
+            >
               <ServiceSearch compact />
               <nav aria-label="Navegación principal móvil">
                 <a href="/">Inicio</a>
@@ -236,8 +238,7 @@ export default function SiteHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Hablemos de tu proyecto{" "}
-                <ArrowUpRight size={17} aria-hidden="true" />
+                Hablemos <ArrowUpRight size={17} aria-hidden="true" />
               </a>
             </div>
           </details>
@@ -274,8 +275,7 @@ export default function SiteHeader() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Hablemos de tu proyecto{" "}
-              <ArrowUpRight size={16} aria-hidden="true" />
+              Hablemos <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>

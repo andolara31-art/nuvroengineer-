@@ -38,8 +38,8 @@ try {
       `<meta property="og:title" content="${escape(page.title)}" />`,
       `<meta property="og:description" content="${escape(page.description)}" />`,
       `<meta property="og:url" content="${url}" />`,
-      `<meta property="og:image" content="${base}/assets/brand/nuvro-corporate-cr-v1-1920.webp" />`,
-      `<meta property="og:image:alt" content="Imagen editorial generada con IA de un negocio tropical con herramientas digitales" />`,
+      `<meta property="og:image" content="${base}/assets/brand/nuvro-editorial-social-v1.jpg" />`,
+      `<meta property="og:image:alt" content="Portada de NUVRO ENGINEER en blanco y negro con una muestra interactiva de diseño web" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
       env.GOOGLE_SITE_VERIFICATION
         ? `<meta name="google-site-verification" content="${escape(env.GOOGLE_SITE_VERIFICATION)}" />`
