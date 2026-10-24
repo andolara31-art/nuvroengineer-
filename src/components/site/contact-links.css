@@ -1,46 +1,301 @@
-.contactform .contact-form-note {
-  color: #aaa;
-  font-size: 10px;
-  line-height: 1.8;
-  margin: 2px 0;
+.corp-contact.contact {
+  background: #f3f6f8;
+  color: #142c3b;
+  padding: 96px 0;
+  scroll-margin-top: 100px;
 }
 
-.contactform select {
+.corp-contact .corp-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.04fr;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #e2e9ee;
+  box-shadow: 0 16px 50px rgb(20 44 59 / 5%);
+}
+
+.corp-contact .corp-contact-intro {
+  background: #142c3b;
+  color: #fff;
+  padding: 56px 48px;
+}
+
+.corp-contact .eyebrow {
+  color: #b6d0e0;
+  font-size: 11px;
+  margin-bottom: 24px;
+}
+
+.corp-contact .eyebrow span {
+  border-radius: 50%;
+  background: #69a6ff;
+}
+
+.corp-contact h2 {
+  font-family: inherit;
+  font-size: clamp(32px, 3.3vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  max-width: 470px;
+  margin: 0;
+}
+
+.corp-contact .contact-description {
+  color: #c2d0d8;
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 430px;
+  margin: 24px 0 0;
+}
+
+.corp-contact .corp-contact-benefits {
+  display: grid;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 36px 0;
+}
+
+.corp-contact .corp-contact-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  color: #c2d0d8;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.corp-contact .corp-contact-benefits svg {
+  color: #a0c8ff;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.corp-contact .corp-contact-benefits strong {
+  display: block;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.corp-contact .button {
+  border-radius: 10px;
+  min-height: 52px;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 14px;
+  padding: 15px 21px;
+  text-decoration: none;
+  background: #0066ff;
+  border-color: #0066ff;
+  color: #fff;
+}
+
+.corp-contact .button:hover {
+  background: #0053d0;
+  border-color: #0053d0;
+  color: #fff;
+}
+
+.corp-contact .button svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.corp-contact .contact-direct {
+  width: 100%;
+  max-width: 365px;
+  justify-content: flex-start;
+  background: #fff;
+  border-color: #fff;
+  color: #142c3b;
+  margin: 0;
+  padding: 18px 22px;
+}
+
+.corp-contact .contact-direct svg:last-child {
+  margin-left: auto;
+}
+
+.corp-contact .contact-direct:hover {
+  background: #eaf2ff;
+  border-color: #eaf2ff;
+  color: #142c3b;
+}
+
+.corp-contact .contact-number {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c2d0d8;
+  font-size: 15px;
+  margin-top: 20px;
+  border: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.corp-contact .contact-number svg {
+  width: 16px;
+  height: 16px;
+}
+
+.corp-contact .corp-contact-form {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 48px;
+  min-width: 0;
+  background: #fff;
+}
+
+.corp-contact .corp-contact-form-heading {
+  margin-bottom: 14px;
+}
+
+.corp-contact .corp-contact-form-heading h3 {
+  color: #142c3b;
+  font-family: inherit;
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+
+.corp-contact .corp-contact-form-heading p {
+  font-size: 14px;
+  color: #5b6e7a;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.corp-contact .contactform label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #263e4d;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.corp-contact .contactform input,
+.corp-contact .contactform select,
+.corp-contact .contactform textarea {
   width: 100%;
   min-width: 0;
-  background: #111;
-  border: 1px solid #333;
-  color: #fff;
-  padding: 14px;
+  border-radius: 9px;
+  background: #f8fafc;
+  border: 1px solid #dce4eb;
+  color: #142c3b;
+  padding: 13px 14px;
   font-family: inherit;
-  font-size: 12px;
-  border-radius: 0;
-  color-scheme: dark;
+  font-size: 14px;
+  line-height: 1.5;
+  color-scheme: light;
+  resize: vertical;
 }
 
-.contactform input:focus-visible,
-.contactform select:focus-visible,
-.contactform textarea:focus-visible,
-.contact-ready a:focus-visible {
-  outline: 2px solid #82afff;
-  outline-offset: 4px;
+.corp-contact .contactform select {
+  min-height: 49px;
 }
 
-.contact-direct {
-  margin-top: 25px;
+.corp-contact .contactform input::placeholder,
+.corp-contact .contactform textarea::placeholder {
+  color: #71818d;
+  opacity: 1;
 }
 
-.contact-number {
-  display: table;
-  margin-top: 20px;
+.corp-contact .contactform input:focus-visible,
+.corp-contact .contactform select:focus-visible,
+.corp-contact .contactform textarea:focus-visible,
+.corp-contact a:focus-visible,
+.corp-contact button:focus-visible {
+  outline: 3px solid #73aaff;
+  outline-offset: 3px;
 }
 
-.contact-ready {
-  border-top: 1px solid #333;
-  margin-top: 10px;
-  padding-top: 14px;
+.corp-contact .contactform .contact-form-note {
+  color: #667985;
+  font-size: 11px;
+  line-height: 1.65;
+  margin: 5px 0;
 }
 
-.contact-ready p {
-  color: #c7c7c7;
+.corp-contact .contactform .button {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.corp-contact .contact-ready {
+  border: 1px solid #d6e5fa;
+  border-radius: 12px;
+  background: #f2f7ff;
+  margin-top: 12px;
+  padding: 18px;
+}
+
+.corp-contact .contact-ready p {
+  color: #2c4d65;
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 1050px) {
+  .corp-contact .corp-contact-intro,
+  .corp-contact .corp-contact-form {
+    padding: 36px 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .corp-contact.contact {
+    padding: 64px 0;
+  }
+
+  .corp-contact .corp-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-radius: 20px;
+  }
+
+  .corp-contact .corp-contact-intro,
+  .corp-contact .corp-contact-form {
+    padding: 32px 25px;
+  }
+
+  .corp-contact h2 {
+    font-size: 34px;
+  }
+
+  .corp-contact .contact-description {
+    font-size: 14px;
+  }
+
+  .corp-contact .corp-contact-benefits {
+    margin: 28px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .corp-contact .corp-contact-intro,
+  .corp-contact .corp-contact-form {
+    padding: 28px 20px;
+  }
+
+  .corp-contact h2 {
+    font-size: 30px;
+  }
+
+  .corp-contact .contact-direct {
+    padding: 16px;
+    gap: 10px;
+    font-size: 13px;
+  }
 }

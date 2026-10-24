@@ -1,0 +1,150 @@
+:root {
+  --paper: #fff;
+  --black: #142c3b;
+  --line: #dfe7ec;
+  --blue: #0066ff;
+}
+body {
+  color: #243c4b;
+  background: #fff;
+}
+.shell {
+  max-width: 1416px;
+  padding-inline: 48px;
+}
+.button {
+  border-radius: 100px;
+  padding: 15px 24px;
+  min-height: 50px;
+  font-size: 12px;
+  gap: 24px;
+}
+.button.white {
+  background: white;
+  color: #142c3b;
+}
+.underlink {
+  font-size: 12px;
+}
+.eyebrow {
+  color: #1764b1;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+.section-head h2,
+.service-page h2,
+.site-info h1,
+.nuvro-guide h1 {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.section-head h2 {
+  font-size: clamp(30px, 3vw, 44px);
+}
+.section-sub {
+  font-size: 14px;
+  color: #647784;
+  line-height: 1.8;
+}
+.nuvro-demos {
+  background: #f5f8fa;
+  border: 0;
+}
+.nuvro-demos .shell,
+.learn .shell {
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+.nuvro-demos h2 span,
+.learn-head h2 span {
+  color: #496775;
+}
+.nuvro-demo-card,
+.learn-card {
+  border: 1px solid #dce5eb;
+  border-radius: 14px;
+  background: #fff;
+}
+.nuvro-demo-surface {
+  border-color: #dce5eb;
+  border-radius: 9px;
+  background: #f8fbfd;
+}
+.nuvro-demo-categories button,
+.nuvro-demo-menu button,
+.nuvro-demo-action,
+.learn-copy {
+  border-radius: 7px;
+}
+.learn {
+  background: #fff;
+  border: 0;
+}
+.learn-card {
+  background: #f8fafc;
+}
+.learn-card > p,
+.learn-card-label,
+.nuvro-demo-intro,
+.nuvro-demo-label {
+  color: #5e7482;
+}
+.learn-example pre {
+  border-radius: 8px;
+}
+.learn-bottom {
+  border-top-color: #dfe7ec;
+}
+.service-hero {
+  background: #142c3b;
+}
+.service-example {
+  background: #f3f7fa;
+  border-color: #e3ebf0;
+}
+.service-example-card {
+  border: 1px solid #dbe5ec;
+  border-radius: 14px;
+  box-shadow: 0 8px 36px #16394f08;
+}
+.service-hero h1 {
+  font-weight: 600;
+}
+.service-related a {
+  border-radius: 12px;
+}
+.site-info {
+  padding-top: 45px;
+}
+.site-info h1 {
+  font-size: clamp(34px, 4vw, 56px);
+}
+.site-info p {
+  color: #526a79;
+}
+.nuvro-guide {
+  background: #fff;
+}
+.nuvro-guide-contact {
+  border-radius: 14px;
+}
+.analytics-consent {
+  border-radius: 12px;
+}
+.analytics-consent button {
+  border-radius: 50px;
+}
+@media (max-width: 700px) {
+  .shell {
+    padding-inline: 22px;
+  }
+  .nuvro-demos .shell,
+  .learn .shell {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .button {
+    max-width: 100%;
+  }
+}

@@ -1,7 +1,7 @@
 # NUVRO ENGINEER
 
 Web comercial de NUVRO ENGINEER: tecnología simple para negocios reales.
-Portada editorial, acento azul #0066FF, Archivo Black e Inter.
+Diseño corporativo con base blanca y navy, acento azul #0066FF y tipografía Inter. Cabecera con búsqueda real de soluciones, navegación por categorías y portada fotográfica panorámica.
 
 ## Desarrollo
 
@@ -28,6 +28,7 @@ La portada no necesita una API de IA ni variables privadas.
 ## Edición
 
 - `src/components/site/`: contenido, navegación y contacto de la nueva web.
+- `CorporateHero.tsx`, `CorporateSections.tsx` y `src/corporate.css`: portada y secciones corporativas inspiradas en la jerarquía visual de la referencia facilitada por el propietario (Bash Seguridad), con identidad y contenido propios de NUVRO. El banner cambia solo mediante controles manuales y el buscador filtra páginas existentes.
 - `src/home.css`: identidad visual y adaptación a móvil.
 - `public/assets/brand/`: imagen editorial mejorada con IA, versiones WebP responsivas y atribución de la fuente original.
 - `src/components/site/LearningSection.tsx`: ejemplos educativos de IA y automatización; instrucciones copiables y guías desplegables. No presenta cursos, precios ni integraciones activas ficticias.

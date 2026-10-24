@@ -38,7 +38,7 @@ try {
       `<meta property="og:title" content="${escape(page.title)}" />`,
       `<meta property="og:description" content="${escape(page.description)}" />`,
       `<meta property="og:url" content="${url}" />`,
-      `<meta property="og:image" content="${base}/assets/brand/nuvro-negocio-cr-tecnologia-v1-1080.webp" />`,
+      `<meta property="og:image" content="${base}/assets/brand/nuvro-corporate-cr-v1-1920.webp" />`,
       `<meta property="og:image:alt" content="Imagen editorial generada con IA de un negocio tropical con herramientas digitales" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
       env.GOOGLE_SITE_VERIFICATION

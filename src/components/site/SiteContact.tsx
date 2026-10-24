@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { ArrowUpRight, Check, MessageCircle } from "lucide-react";
 import {
   BUSINESS_WHATSAPP_DISPLAY,
   SERVICE_OPTIONS,
@@ -70,119 +71,155 @@ export default function SiteContact() {
   }
 
   return (
-    <section className="contact" id="contacto" aria-labelledby="contact-title">
-      <div className="shell contact-inner">
-        <div>
-          <p className="eyebrow">
-            <span aria-hidden="true" />
-            07 / Hablemos de tu negocio
-          </p>
-          <h2 id="contact-title">
-            ¿Qué parte de tu negocio podría funcionar mejor?
-          </h2>
-          <p className="contact-description">
-            Contanos qué hacés y qué querés resolver. Empecemos por una
-            conversación que tenga sentido. Podés escribirnos directamente por
-            WhatsApp o preparar una consulta con el formulario.
-          </p>
-          <a
-            className="button white contact-direct"
-            href={whatsappUrl(
-              "Hola NUVRO, quiero orientación para mejorar la presencia digital de mi negocio.",
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-analytics-location="contact-direct"
+    <section
+      className="contact corp-contact"
+      id="contacto"
+      aria-labelledby="contact-title"
+    >
+      <div className="shell">
+        <div className="contact-inner corp-contact-grid">
+          <div className="corp-contact-intro">
+            <p className="eyebrow">
+              <span aria-hidden="true" />
+              Hablemos de tu proyecto
+            </p>
+            <h2 id="contact-title">Conversemos sobre tu próximo proyecto.</h2>
+            <p className="contact-description">
+              Un sitio web, una automatización o una mejor forma de atender a
+              tus clientes. Contanos qué necesita tu negocio y encontremos por
+              dónde empezar.
+            </p>
+            <ul className="corp-contact-benefits">
+              <li>
+                <Check aria-hidden="true" />
+                <span>
+                  <strong>Soluciones a tu medida</strong>Tecnología pensada para
+                  lo que necesitás resolver.
+                </span>
+              </li>
+              <li>
+                <Check aria-hidden="true" />
+                <span>
+                  <strong>Una propuesta clara</strong>Definimos el alcance y los
+                  siguientes pasos con vos.
+                </span>
+              </li>
+              <li>
+                <Check aria-hidden="true" />
+                <span>
+                  <strong>Cobertura en Costa Rica</strong>Atención para negocios
+                  en todo el país.
+                </span>
+              </li>
+            </ul>
+            <a
+              className="button white contact-direct"
+              href={whatsappUrl(
+                "Hola NUVRO, quiero orientación para mejorar la presencia digital de mi negocio.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-analytics-location="contact-direct"
+            >
+              <MessageCircle aria-hidden="true" /> Escribir por WhatsApp{" "}
+              <ArrowUpRight aria-hidden="true" />
+            </a>
+            <a
+              className="underlink contact-number"
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {BUSINESS_WHATSAPP_DISPLAY} <ArrowUpRight aria-hidden="true" />
+            </a>
+          </div>
+          <form
+            className="contactform corp-contact-form"
+            method="post"
+            onSubmit={prepareMessage}
+            onChange={() => setMessageUrl("")}
           >
-            Escribir por WhatsApp <span aria-hidden="true">↗</span>
-          </a>
-          <a
-            className="underlink contact-number"
-            href={whatsappUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {BUSINESS_WHATSAPP_DISPLAY} <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <form
-          className="contactform"
-          method="post"
-          onSubmit={prepareMessage}
-          onChange={() => setMessageUrl("")}
-        >
-          <label htmlFor="nuvro-service">¿En qué te podemos ayudar?</label>
-          <select
-            id="nuvro-service"
-            name="service"
-            value={service}
-            onChange={(event) => setService(event.target.value)}
-          >
-            <option value="">Elegí un servicio (opcional)</option>
-            {SERVICE_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <label htmlFor="nuvro-business">
-            Nombre de tu negocio (opcional)
-          </label>
-          <input
-            id="nuvro-business"
-            name="business"
-            autoComplete="organization"
-            maxLength={120}
-            placeholder="¿Cómo se llama tu negocio?"
-          />
-          <label htmlFor="nuvro-email">Tu correo electrónico (opcional)</label>
-          <input
-            id="nuvro-email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            maxLength={254}
-            placeholder="tu@correo.com"
-          />
-          <label htmlFor="nuvro-message">
-            Tu negocio y lo que querés mejorar
-          </label>
-          <textarea
-            id="nuvro-message"
-            name="message"
-            required
-            minLength={5}
-            maxLength={1800}
-            rows={4}
-            onInput={(event) => event.currentTarget.setCustomValidity("")}
-            placeholder="Tengo un restaurante y quiero ordenar el menú y las consultas…"
-          />
-          <p className="contact-form-note">
-            El formulario prepara el mensaje en este dispositivo. Revisalo y
-            envialo desde WhatsApp; todavía no se envía ninguna solicitud.
-          </p>
-          <button className="button" type="submit">
-            Preparar mensaje <span aria-hidden="true">↗</span>
-          </button>
-          {messageUrl && (
-            <div className="contact-ready" role="status">
+            <div className="corp-contact-form-heading">
+              <h3>Contanos tu idea</h3>
               <p>
-                Tu mensaje está listo. Continuá a WhatsApp para revisarlo y
-                enviarlo.
+                Prepará tu consulta y continuá la conversación por WhatsApp.
               </p>
-              <a
-                className="button white"
-                ref={readyLink}
-                data-analytics-location="contact-prepared"
-                href={messageUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Continuar en WhatsApp <span aria-hidden="true">↗</span>
-              </a>
             </div>
-          )}
-        </form>
+            <label htmlFor="nuvro-service">¿En qué te podemos ayudar?</label>
+            <select
+              id="nuvro-service"
+              name="service"
+              value={service}
+              onChange={(event) => setService(event.target.value)}
+            >
+              <option value="">Elegí un servicio (opcional)</option>
+              {SERVICE_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <label htmlFor="nuvro-business">
+              Nombre de tu negocio (opcional)
+            </label>
+            <input
+              id="nuvro-business"
+              name="business"
+              autoComplete="organization"
+              maxLength={120}
+              placeholder="¿Cómo se llama tu negocio?"
+            />
+            <label htmlFor="nuvro-email">
+              Tu correo electrónico (opcional)
+            </label>
+            <input
+              id="nuvro-email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              maxLength={254}
+              placeholder="tu@correo.com"
+            />
+            <label htmlFor="nuvro-message">
+              Tu negocio y lo que querés mejorar
+            </label>
+            <textarea
+              id="nuvro-message"
+              name="message"
+              required
+              minLength={5}
+              maxLength={1800}
+              rows={4}
+              onInput={(event) => event.currentTarget.setCustomValidity("")}
+              placeholder="Tengo un restaurante y quiero ordenar el menú y las consultas…"
+            />
+            <p className="contact-form-note">
+              El formulario prepara el mensaje en este dispositivo. Revisalo y
+              envialo desde WhatsApp; todavía no se envía ninguna solicitud.
+            </p>
+            <button className="button" type="submit">
+              Preparar mi consulta <ArrowUpRight aria-hidden="true" />
+            </button>
+            {messageUrl && (
+              <div className="contact-ready" role="status">
+                <p>
+                  Tu mensaje está listo. Continuá a WhatsApp para revisarlo y
+                  enviarlo.
+                </p>
+                <a
+                  className="button white"
+                  ref={readyLink}
+                  data-analytics-location="contact-prepared"
+                  href={messageUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Continuar en WhatsApp <ArrowUpRight aria-hidden="true" />
+                </a>
+              </div>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   );

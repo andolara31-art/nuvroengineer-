@@ -1,5 +1,6 @@
 import SiteHeader from "./components/site/SiteHeader";
-import EditorialSections from "./components/site/EditorialSections";
+import CorporateHero from "./components/site/CorporateHero";
+import CorporateSections from "./components/site/CorporateSections";
 import SiteContact from "./components/site/SiteContact";
 import SiteFooter from "./components/site/SiteFooter";
 import ServicePage from "./components/site/ServicePage";
@@ -8,6 +9,7 @@ import SiteInfo from "./components/site/SiteInfo";
 import AnalyticsConsent from "./components/site/AnalyticsConsent";
 import { servicePages } from "./content/services";
 import "./home.css";
+import "./corporate.css";
 
 export default function App({ path = "/" }: { path?: string }) {
   const page = servicePages.find((service) => service.path === path);
@@ -16,7 +18,8 @@ export default function App({ path = "/" }: { path?: string }) {
       <SiteHeader />
       {path === "/" ? (
         <main id="contenido">
-          <EditorialSections />
+          <CorporateHero />
+          <CorporateSections />
           <SiteContact />
         </main>
       ) : page ? (
