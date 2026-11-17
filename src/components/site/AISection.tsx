@@ -33,45 +33,44 @@ const tools: { name: string; icon: LucideIcon }[] = [
   { name: "Shopify", icon: ShoppingBag },
 ];
 
-const uses: { icon: LucideIcon; title: string; body: string; tag: string }[] =
-  [
-    {
-      icon: MessageCircle,
-      title: "Un asistente para WhatsApp",
-      body: "Responde lo que siempre te preguntan, como horarios o ubicación, y te pasa lo que necesita una persona.",
-      tag: "Atención",
-    },
-    {
-      icon: PenLine,
-      title: "Contenido para tus redes",
-      body: "Ideas, textos y un calendario de publicaciones con la voz de tu negocio. Vos revisás antes de publicar.",
-      tag: "Redes",
-    },
-    {
-      icon: ImagePlus,
-      title: "Fotos y piezas de producto",
-      body: "Fondos limpios y variaciones para campañas, a partir de tus propias fotos de producto.",
-      tag: "Imagen",
-    },
-    {
-      icon: BarChart3,
-      title: "Resúmenes semanales",
-      body: "Lo que entró en la semana, lo que falta responder y lo que más te preguntan, en un solo resumen.",
-      tag: "Orden",
-    },
-    {
-      icon: FileText,
-      title: "Cotizaciones en borrador",
-      body: "Propuestas, correos y fichas de producto listas para revisar, sin empezar desde la página en blanco.",
-      tag: "Tiempo",
-    },
-    {
-      icon: Bot,
-      title: "Un agente para tu negocio",
-      body: "Un asistente que conoce tus servicios y políticas, para tu equipo o tus clientes, con límites claros.",
-      tag: "A medida",
-    },
-  ];
+const uses: { icon: LucideIcon; title: string; body: string; tag: string }[] = [
+  {
+    icon: MessageCircle,
+    title: "Un asistente para WhatsApp",
+    body: "Responde lo que siempre te preguntan, como horarios o ubicación, y te pasa lo que necesita una persona.",
+    tag: "Atención",
+  },
+  {
+    icon: PenLine,
+    title: "Contenido para tus redes",
+    body: "Ideas, textos y un calendario de publicaciones con la voz de tu negocio. Vos revisás antes de publicar.",
+    tag: "Redes",
+  },
+  {
+    icon: ImagePlus,
+    title: "Fotos y piezas de producto",
+    body: "Fondos limpios y variaciones para campañas, a partir de tus propias fotos de producto.",
+    tag: "Imagen",
+  },
+  {
+    icon: BarChart3,
+    title: "Resúmenes semanales",
+    body: "Lo que entró en la semana, lo que falta responder y lo que más te preguntan, en un solo resumen.",
+    tag: "Orden",
+  },
+  {
+    icon: FileText,
+    title: "Cotizaciones en borrador",
+    body: "Propuestas, correos y fichas de producto listas para revisar, sin empezar desde la página en blanco.",
+    tag: "Tiempo",
+  },
+  {
+    icon: Bot,
+    title: "Un agente para tu negocio",
+    body: "Un asistente que conoce tus servicios y políticas, para tu equipo o tus clientes, con límites claros.",
+    tag: "A medida",
+  },
+];
 
 function ToolList({ hidden = false }: { hidden?: boolean }) {
   return (
@@ -109,7 +108,10 @@ export default function AISection() {
               qué se automatiza y qué sigue pasando por tus manos.
             </p>
             <div className="ai-heading-actions">
-              <a className="brand-btn brand-btn-primary" href="/ia-para-negocios">
+              <a
+                className="brand-btn brand-btn-primary"
+                href="/ia-para-negocios"
+              >
                 Conocé IA para negocios
                 <ArrowUpRight size={18} aria-hidden="true" />
               </a>
@@ -123,7 +125,8 @@ export default function AISection() {
 
         <div className="ai-tools">
           <p className="corp-sr-only">
-            Herramientas con las que trabajamos: {tools.map((t) => t.name).join(", ")}.
+            Herramientas con las que trabajamos:{" "}
+            {tools.map((t) => t.name).join(", ")}.
           </p>
           <div className="ai-tools-window" aria-hidden="true">
             <ToolList hidden />
@@ -156,7 +159,9 @@ export default function AISection() {
                     Sí, el domingo abrimos de 7 a. m. a 2 p. m. ¿Querés ver la
                     carta o la ubicación?
                   </li>
-                  <li className="ai-bubble ai-bubble-client">La carta, porfa</li>
+                  <li className="ai-bubble ai-bubble-client">
+                    La carta, porfa
+                  </li>
                   <li className="ai-bubble ai-bubble-bot">
                     Aquí está. Si querés encargar algo, te paso con alguien del
                     equipo para confirmarlo.

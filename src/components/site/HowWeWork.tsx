@@ -176,8 +176,8 @@ export default function HowWeWork() {
           </div>
           <div className="brand-how-lead">
             <p>
-              Tu negocio ya tiene una forma de hacer las cosas. Nuestra tarea
-              es entenderla y diseñar lo que le hace falta.
+              Tu negocio ya tiene una forma de hacer las cosas. Nuestra tarea es
+              entenderla y diseñar lo que le hace falta.
             </p>
             <p className="brand-note">Te explicamos todo en palabras simples</p>
           </div>
@@ -193,15 +193,17 @@ export default function HowWeWork() {
                   {number}
                 </span>
                 <h3>
-                  <span className="brand-how-verb">{verb}</span>{" "}
-                  {title}
+                  <span className="brand-how-verb">{verb}</span> {title}
                 </h3>
                 <p>{body}</p>
               </div>
             </li>
           ))}
         </ol>
-        <a className="brand-btn brand-btn-primary brand-how-cta" href="#contacto">
+        <a
+          className="brand-btn brand-btn-primary brand-how-cta"
+          href="#contacto"
+        >
           Hablemos de tu proyecto
           <ArrowUpRight size={18} aria-hidden="true" />
         </a>

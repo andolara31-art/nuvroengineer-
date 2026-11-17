@@ -168,8 +168,8 @@ export default function CorporateHero() {
             Webs, menús QR e IA para negocios de Costa Rica.
           </h1>
           <p className="craft-hero-description">
-            Te ayudamos a ordenar lo que ofrecés, mostrarlo bien y atender
-            mejor a tus clientes desde el celular.
+            Te ayudamos a ordenar lo que ofrecés, mostrarlo bien y atender mejor
+            a tus clientes desde el celular.
           </p>
           <div className="craft-hero-actions">
             <a

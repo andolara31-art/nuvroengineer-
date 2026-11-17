@@ -1,4 +1,10 @@
-import { ArrowUpRight, AtSign, MapPin, MessageCircle, Phone } from "lucide-react";
+import {
+  ArrowUpRight,
+  AtSign,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from "lucide-react";
 import {
   BUSINESS_WHATSAPP,
   BUSINESS_WHATSAPP_DISPLAY,
@@ -58,7 +64,9 @@ export default function SiteFooter() {
             <p>Contanos qué querés ordenar en tu negocio. Empezamos por ahí.</p>
             <a
               className="corp-footer-button"
-              href={whatsappUrl("Hola NUVRO, quiero conversar sobre mi negocio.")}
+              href={whatsappUrl(
+                "Hola NUVRO, quiero conversar sobre mi negocio.",
+              )}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -30,17 +30,19 @@ export default function WhatsAppFab() {
     return () => observer.disconnect();
   }, []);
   return (
-    <a
-      className={`wa-fab${visible ? " is-visible" : ""}`}
-      href={whatsappUrl("Hola NUVRO, quiero conversar sobre mi negocio.")}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Escribinos por WhatsApp"
-      tabIndex={visible ? undefined : -1}
-      aria-hidden={visible ? undefined : true}
-    >
-      <MessageCircle size={22} strokeWidth={2.3} aria-hidden="true" />
-      <span>WhatsApp</span>
-    </a>
+    <aside className="wa-fab-region" aria-label="Contacto por WhatsApp">
+      <a
+        className={`wa-fab${visible ? " is-visible" : ""}`}
+        href={whatsappUrl("Hola NUVRO, quiero conversar sobre mi negocio.")}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Escribinos por WhatsApp"
+        tabIndex={visible ? undefined : -1}
+        aria-hidden={visible ? undefined : true}
+      >
+        <MessageCircle size={22} strokeWidth={2.3} aria-hidden="true" />
+        <span>WhatsApp</span>
+      </a>
+    </aside>
   );
 }

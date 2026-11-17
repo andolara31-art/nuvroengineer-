@@ -140,7 +140,10 @@ body {
   color: var(--brand-ink);
   border: 4px solid var(--brand-ink);
   box-shadow: 5px 5px 0 var(--brand-ink);
-  font: 700 13px/1.2 Inter, Arial, sans-serif;
+  font:
+    700 13px/1.2 Inter,
+    Arial,
+    sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transform: rotate(-1.5deg);
@@ -255,7 +258,10 @@ body {
   min-height: 56px;
   padding: 14px 26px;
   color: var(--brand-ink);
-  font: 700 16px/1.2 Inter, Arial, sans-serif;
+  font:
+    700 16px/1.2 Inter,
+    Arial,
+    sans-serif;
   text-align: center;
 }
 
@@ -459,7 +465,10 @@ body {
   background: var(--brand-blue);
   color: #fff;
   border: 3px solid var(--brand-ink);
-  font: 800 13px/1 Inter, Arial, sans-serif;
+  font:
+    800 13px/1 Inter,
+    Arial,
+    sans-serif;
   transform: rotate(-8deg);
   animation: brand-wobble 2.4s ease-in-out infinite;
 }
@@ -833,7 +842,10 @@ body {
   padding: 5px 10px;
   border: 3px solid var(--brand-ink);
   color: var(--brand-ink);
-  font: 700 12px/1.2 Inter, Arial, sans-serif;
+  font:
+    700 12px/1.2 Inter,
+    Arial,
+    sans-serif;
   white-space: nowrap;
   box-shadow: 3px 3px 0 var(--brand-ink);
   animation:
@@ -1327,7 +1339,10 @@ body {
     color: var(--brand-ink);
     border: 4px solid var(--brand-ink);
     box-shadow: 5px 5px 0 var(--brand-ink);
-    font: 700 15px/1 Inter, Arial, sans-serif;
+    font:
+      700 15px/1 Inter,
+      Arial,
+      sans-serif;
     opacity: 0;
     transform: translateY(24px) scale(0.9);
     pointer-events: none;
@@ -1448,4 +1463,116 @@ body {
 
 .nuvro-demo-service-options label {
   min-height: 44px;
+}
+
+/* ---------- Páginas de servicio, guía, políticas e información ---------- */
+main :is(h1, h2):not(.corp-sr-only),
+.corp-contact h2 {
+  font-family: var(--brand-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.005em !important;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.service-hero {
+  background: var(--brand-grain), var(--brand-blue);
+  color: #fff;
+}
+
+.service-hero :is(p, a, span, nav) {
+  color: #fff;
+}
+
+.service-hero .eyebrow {
+  color: #fff;
+}
+
+.service-hero .eyebrow span {
+  background: var(--brand-yellow);
+}
+
+.service-hero h1 {
+  font-size: clamp(48px, 5.6vw, 88px);
+  line-height: 0.9;
+}
+
+/* Botón heredado .button con el mismo lenguaje cómic */
+.button {
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 14px 22px;
+  background: var(--brand-yellow);
+  color: var(--brand-ink) !important;
+  border: 4px solid var(--brand-ink);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--brand-ink);
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform 160ms ease;
+}
+
+.button:hover {
+  background: var(--brand-yellow);
+  border-color: var(--brand-ink);
+  transform: translate(-2px, -2px);
+}
+
+.button.black,
+.button.white,
+.service-hero .button,
+.corp-contact .button.white {
+  background: #fff;
+  border-color: var(--brand-ink);
+}
+
+.button.black:hover,
+.button.white:hover,
+.service-hero .button:hover {
+  background: #fff;
+  border-color: var(--brand-ink);
+}
+
+.service-hero .button,
+.service-hero .button * {
+  color: var(--brand-ink) !important;
+}
+
+.policies-layout {
+  margin-top: 40px;
+  border-top: 3px solid var(--brand-ink);
+}
+
+.policies-summary {
+  border-top: 3px solid var(--brand-ink);
+}
+
+.shell.service-section {
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+
+.service-hero .service-hero-copy > p,
+.service-hero .service-hero-note,
+.service-hero .service-breadcrumbs,
+.service-hero .service-breadcrumbs a {
+  color: #fff;
+}
+
+.service-cta {
+  background: var(--brand-grain), var(--brand-blue);
+}
+
+.service-cta .eyebrow,
+.service-cta h2,
+.service-cta p {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .shell.service-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }

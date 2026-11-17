@@ -242,7 +242,7 @@ export default function SiteHeader() {
       <a className="corp-skip" href="#contenido">
         Saltar al contenido
       </a>
-      <div className="corp-utility">
+      <aside className="corp-utility" aria-label="Contacto rápido">
         <div className="corp-header-shell corp-utility-inner">
           <span>
             Hecho para negocios ticos.{" "}
@@ -269,7 +269,7 @@ export default function SiteHeader() {
             </a>
           </div>
         </div>
-      </div>
+      </aside>
       <header className="corp-header">
         <div className="corp-header-shell corp-header-main">
           <Brand />
@@ -345,9 +345,7 @@ export default function SiteHeader() {
         <div className="corp-header-nav-border">
           <div className="corp-header-shell corp-header-nav-row">
             <nav className="corp-desktop-nav" aria-label="Navegación principal">
-              <a href="/">
-                Inicio
-              </a>
+              <a href="/">Inicio</a>
               <details className="corp-solutions-menu">
                 <summary>
                   Soluciones <ChevronDown size={14} aria-hidden="true" />
@@ -359,40 +357,31 @@ export default function SiteHeader() {
                       7
                     </span>
                   </p>
-                  {solutions.map(({ href, name, description, icon: Icon }, index) => (
-                    <a
-                      key={href}
-                      href={href}
-                     
-                      style={{ "--i": index } as CSSProperties}
-                    >
-                      <span className="pop-icon" aria-hidden="true">
-                        <Icon size={18} strokeWidth={1.8} />
-                      </span>
-                      <span>
-                        <strong>{name}</strong>
-                        <small>{description}</small>
-                      </span>
-                      <ArrowUpRight size={17} aria-hidden="true" />
-                    </a>
-                  ))}
+                  {solutions.map(
+                    ({ href, name, description, icon: Icon }, index) => (
+                      <a
+                        key={href}
+                        href={href}
+                        style={{ "--i": index } as CSSProperties}
+                      >
+                        <span className="pop-icon" aria-hidden="true">
+                          <Icon size={18} strokeWidth={1.8} />
+                        </span>
+                        <span>
+                          <strong>{name}</strong>
+                          <small>{description}</small>
+                        </span>
+                        <ArrowUpRight size={17} aria-hidden="true" />
+                      </a>
+                    ),
+                  )}
                 </div>
               </details>
-              <a href="/#paquetes">
-                Paquetes
-              </a>
-              <a href="/#ia">
-                IA para tu negocio
-              </a>
-              <a href="/#demostraciones">
-                Demostraciones
-              </a>
-              <a href="/#aprende">
-                Aprendé IA
-              </a>
-              <a href="/sobre-nuvro">
-                Nosotros
-              </a>
+              <a href="/#paquetes">Paquetes</a>
+              <a href="/#ia">IA para tu negocio</a>
+              <a href="/#demostraciones">Demostraciones</a>
+              <a href="/#aprende">Aprendé IA</a>
+              <a href="/sobre-nuvro">Nosotros</a>
             </nav>
             <a
               className="corp-nav-cta"
