@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import {
   ArrowUpRight,
   BarChart3,
@@ -6,96 +5,84 @@ import {
   FileText,
   ImagePlus,
   MessageCircle,
+  MessagesSquare,
   PenLine,
+  ShoppingBag,
+  Table2,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
-import { brandIcons, type BrandIcon } from "../../content/brand-icons";
+import TornEdge from "./TornEdge";
 import "./ai-section.css";
 
-const tools: (BrandIcon | { title: string; hex: string; path?: undefined })[] =
-  [
-    brandIcons.claude,
-    { title: "ChatGPT", hex: "#10A37F" },
-    brandIcons.gemini,
-    brandIcons.perplexity,
-    brandIcons.mistral,
-    brandIcons.huggingface,
-    brandIcons.n8n,
-    brandIcons.make,
-    brandIcons.zapier,
-    brandIcons.whatsapp,
-    brandIcons.notion,
-    brandIcons.sheets,
-    brandIcons.shopify,
-    brandIcons.meta,
-  ];
-
-const uses: {
-  icon: LucideIcon;
-  tone: string;
-  title: string;
-  body: string;
-  tag: string;
-}[] = [
-  {
-    icon: MessageCircle,
-    tone: "mint",
-    title: "Un asistente para WhatsApp",
-    body: "Responde lo que siempre te preguntan, como horarios, ubicación o lo que ofrecés, y te pasa lo que necesita una persona.",
-    tag: "Atención",
-  },
-  {
-    icon: PenLine,
-    tone: "pink",
-    title: "Contenido para tus redes",
-    body: "Ideas, textos y un calendario de publicaciones con la voz de tu negocio. Vos revisás antes de publicar.",
-    tag: "Marketing",
-  },
-  {
-    icon: ImagePlus,
-    tone: "yellow",
-    title: "Fotos y piezas de producto",
-    body: "Fondos limpios, variaciones para campañas y piezas cortas a partir de tus propias fotos.",
-    tag: "Imagen",
-  },
-  {
-    icon: BarChart3,
-    tone: "blue",
-    title: "Resúmenes que se leen en un minuto",
-    body: "Lo que entró en la semana, lo que falta responder y lo que más te preguntan, en un solo resumen.",
-    tag: "Orden",
-  },
-  {
-    icon: FileText,
-    tone: "violet",
-    title: "Cotizaciones y correos en borrador",
-    body: "Propuestas, respuestas y fichas de producto listas para revisar, sin empezar desde la página en blanco.",
-    tag: "Tiempo",
-  },
-  {
-    icon: Bot,
-    tone: "coral",
-    title: "Un agente con la información de tu negocio",
-    body: "Un asistente que conoce tus servicios y políticas, para tu equipo o para tus clientes, con límites claros.",
-    tag: "A medida",
-  },
+/*
+  Solo nombres en pastillas con íconos genéricos de categoría.
+  No se usan logotipos oficiales de ninguna marca.
+*/
+const tools: { name: string; icon: LucideIcon }[] = [
+  { name: "Claude", icon: MessagesSquare },
+  { name: "ChatGPT", icon: MessagesSquare },
+  { name: "Gemini", icon: MessagesSquare },
+  { name: "Perplexity", icon: MessagesSquare },
+  { name: "n8n", icon: Workflow },
+  { name: "Make", icon: Workflow },
+  { name: "Zapier", icon: Workflow },
+  { name: "WhatsApp Business", icon: MessageCircle },
+  { name: "Google Sheets", icon: Table2 },
+  { name: "Notion", icon: FileText },
+  { name: "Shopify", icon: ShoppingBag },
 ];
 
-function ToolChip({ tool }: { tool: (typeof tools)[number] }) {
+const uses: { icon: LucideIcon; title: string; body: string; tag: string }[] =
+  [
+    {
+      icon: MessageCircle,
+      title: "Un asistente para WhatsApp",
+      body: "Responde lo que siempre te preguntan, como horarios o ubicación, y te pasa lo que necesita una persona.",
+      tag: "Atención",
+    },
+    {
+      icon: PenLine,
+      title: "Contenido para tus redes",
+      body: "Ideas, textos y un calendario de publicaciones con la voz de tu negocio. Vos revisás antes de publicar.",
+      tag: "Redes",
+    },
+    {
+      icon: ImagePlus,
+      title: "Fotos y piezas de producto",
+      body: "Fondos limpios y variaciones para campañas, a partir de tus propias fotos de producto.",
+      tag: "Imagen",
+    },
+    {
+      icon: BarChart3,
+      title: "Resúmenes semanales",
+      body: "Lo que entró en la semana, lo que falta responder y lo que más te preguntan, en un solo resumen.",
+      tag: "Orden",
+    },
+    {
+      icon: FileText,
+      title: "Cotizaciones en borrador",
+      body: "Propuestas, correos y fichas de producto listas para revisar, sin empezar desde la página en blanco.",
+      tag: "Tiempo",
+    },
+    {
+      icon: Bot,
+      title: "Un agente para tu negocio",
+      body: "Un asistente que conoce tus servicios y políticas, para tu equipo o tus clientes, con límites claros.",
+      tag: "A medida",
+    },
+  ];
+
+function ToolList({ hidden = false }: { hidden?: boolean }) {
   return (
-    <li
-      className="ai-tool"
-      style={{ "--brand": tool.hex } as CSSProperties}
-    >
-      {tool.path ? (
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d={tool.path} />
-        </svg>
-      ) : (
-        <Bot size={18} strokeWidth={1.8} aria-hidden="true" />
-      )}
-      {tool.title}
-    </li>
+    <ul className="ai-tools-track" aria-hidden={hidden || undefined}>
+      {tools.map(({ name, icon: Icon }) => (
+        <li className="ai-tool" key={name}>
+          <Icon size={17} strokeWidth={2.2} aria-hidden="true" />
+          {name}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -106,97 +93,96 @@ export default function AISection() {
       id="ia"
       aria-labelledby="ai-title"
     >
+      <TornEdge fill="#F7F7F4" seed={13} />
       <div className="corp-container">
         <div className="ai-heading">
           <div>
-            <p className="corp-kicker">IA PARA TU NEGOCIO</p>
+            <p className="corp-kicker">IA para tu negocio</p>
             <h2 id="ai-title">
-              Inteligencia artificial
-              <br />
-              <span className="ai-mark">que trabaja</span> para vos.
+              IA que te da <span className="ai-mark">una mano.</span>
             </h2>
           </div>
           <div className="ai-heading-copy">
             <p>
-              Usamos herramientas como Claude, ChatGPT o Gemini para resolver
-              tareas concretas: responder consultas, crear contenido y ordenar
-              información. Vos decidís qué se automatiza y qué sigue pasando
-              por tus manos.
+              Usamos herramientas de IA para tareas concretas: responder
+              consultas, preparar contenido y ordenar información. Vos decidís
+              qué se automatiza y qué sigue pasando por tus manos.
             </p>
             <div className="ai-heading-actions">
-              <a className="pop-button" href="/ia-para-negocios">
-                Ver IA para negocios
-                <ArrowUpRight size={16} aria-hidden="true" />
+              <a className="brand-btn brand-btn-primary" href="/ia-para-negocios">
+                Conocé IA para negocios
+                <ArrowUpRight size={18} aria-hidden="true" />
               </a>
-              <a
-                className="corp-text-link"
-                href="/?servicio=ia#contacto"
-              >
-                Quiero IA en mi negocio
+              <a className="corp-text-link" href="/?servicio=ia#contacto">
+                Contanos tu caso
                 <ArrowUpRight size={16} aria-hidden="true" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="ai-tools" aria-label="Herramientas de IA y automatización">
-          <ul className="ai-tools-track">
-            {tools.map((tool) => (
-              <ToolChip tool={tool} key={tool.title} />
-            ))}
-          </ul>
-          <ul className="ai-tools-track" aria-hidden="true">
-            {tools.map((tool) => (
-              <ToolChip tool={tool} key={tool.title} />
-            ))}
-          </ul>
+        <div className="ai-tools">
+          <p className="corp-sr-only">
+            Herramientas con las que trabajamos: {tools.map((t) => t.name).join(", ")}.
+          </p>
+          <div className="ai-tools-window" aria-hidden="true">
+            <ToolList hidden />
+            <ToolList hidden />
+          </div>
         </div>
 
         <div className="ai-layout">
-          <div className="ai-chat" aria-label="Ejemplo de conversación ficticia">
-            <div className="ai-chat-top">
-              <span className="ai-chat-avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d={brandIcons.claude.path} />
-                </svg>
-              </span>
-              <span>
-                <strong>Asistente de Soda La Esquina</strong>
-                <small>Ejemplo · conversación ficticia</small>
-              </span>
+          <figure className="ai-phone-wrap">
+            <span className="brand-label ai-phone-label">
+              Conversación ficticia
+            </span>
+            <div className="ai-phone">
+              <span className="ai-phone-notch" aria-hidden="true" />
+              <div className="ai-phone-screen">
+                <div className="ai-chat-top">
+                  <span className="ai-chat-avatar" aria-hidden="true">
+                    <Bot size={20} strokeWidth={2.2} />
+                  </span>
+                  <span>
+                    <strong>Soda La Esquina</strong>
+                    <small>Asistente · ejemplo</small>
+                  </span>
+                </div>
+                <ol className="ai-chat-list">
+                  <li className="ai-bubble ai-bubble-client">
+                    Hola, ¿abren el domingo?
+                  </li>
+                  <li className="ai-bubble ai-bubble-bot">
+                    Sí, el domingo abrimos de 7 a. m. a 2 p. m. ¿Querés ver la
+                    carta o la ubicación?
+                  </li>
+                  <li className="ai-bubble ai-bubble-client">La carta, porfa</li>
+                  <li className="ai-bubble ai-bubble-bot">
+                    Aquí está. Si querés encargar algo, te paso con alguien del
+                    equipo para confirmarlo.
+                  </li>
+                  <li className="ai-typing" aria-hidden="true">
+                    <i />
+                    <i />
+                    <i />
+                  </li>
+                </ol>
+              </div>
             </div>
-            <ol>
-              <li className="ai-bubble ai-bubble-client">
-                Hola, ¿abren el domingo?
-              </li>
-              <li className="ai-bubble ai-bubble-bot">
-                Sí, el domingo abrimos de 7 a. m. a 2 p. m. ¿Querés ver la
-                carta o la ubicación?
-              </li>
-              <li className="ai-bubble ai-bubble-client">La carta, porfa</li>
-              <li className="ai-bubble ai-bubble-bot">
-                Aquí está. Si querés encargar algo, te paso con Andrea para
-                confirmarlo.
-              </li>
-              <li className="ai-typing" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </li>
-            </ol>
-            <p className="ai-chat-note">
-              El asistente responde con la información que vos aprobás y
-              deriva a una persona lo que no debe decidir solo.
-            </p>
-          </div>
+            <figcaption className="brand-note">
+              Responde con lo que vos aprobás y pasa a una persona lo demás
+            </figcaption>
+          </figure>
 
           <ul className="ai-uses">
-            {uses.map(({ icon: Icon, tone, title, body, tag }) => (
-              <li className="ai-use" data-tone={tone} key={title}>
-                <span className="pop-icon" aria-hidden="true">
-                  <Icon size={20} strokeWidth={1.8} />
-                </span>
-                <span className="ai-use-tag">{tag}</span>
+            {uses.map(({ icon: Icon, title, body, tag }) => (
+              <li className="ai-use" key={title}>
+                <div className="ai-use-top">
+                  <span className="brand-icon" aria-hidden="true">
+                    <Icon size={20} strokeWidth={2.2} />
+                  </span>
+                  <span className="ai-use-tag">{tag}</span>
+                </div>
                 <h3>{title}</h3>
                 <p>{body}</p>
               </li>
@@ -205,9 +191,9 @@ export default function AISection() {
         </div>
 
         <p className="ai-disclaimer">
-          Las marcas mostradas pertenecen a sus respectivos dueños. NUVRO no
-          está afiliado a ellas: elegimos la herramienta según tu caso, sus
-          costos y el cuidado de tus datos.
+          Las marcas pertenecen a sus dueños. NUVRO no está afiliado a ninguna
+          de ellas: elegimos la herramienta según tu caso, sus costos y el
+          cuidado de tus datos.
         </p>
       </div>
     </section>
