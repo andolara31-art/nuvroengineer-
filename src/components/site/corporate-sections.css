@@ -1,8 +1,8 @@
 .corp-content {
-  --corp-ink: #080808;
-  --corp-paper: #f2f2ef;
+  --corp-ink: #121212;
+  --corp-paper: #ecece8;
   --corp-muted: #5c5c58;
-  --corp-blue: #0066ff;
+  --corp-blue: #2046f0;
   --corp-border: #cececa;
   color: var(--corp-ink);
   background: var(--corp-paper);
@@ -23,7 +23,7 @@
 .corp-section h2 {
   margin: 0;
   color: inherit;
-  font-family: "Archivo Black", Inter, Arial, sans-serif;
+  font-family: "Big Shoulders Display", Inter, Arial, sans-serif;
   font-size: clamp(36px, 4.2vw, 64px);
   font-weight: 400;
   line-height: 1.03;
@@ -127,7 +127,7 @@
 
 .corp-method strong {
   display: block;
-  font-family: "Archivo Black", Inter, Arial, sans-serif;
+  font-family: "Big Shoulders Display", Inter, Arial, sans-serif;
   font-size: clamp(26px, 3.6vw, 52px);
   font-weight: 400;
   line-height: 1.1;

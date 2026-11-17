@@ -22,8 +22,8 @@
   z-index: 100;
   padding: 15px 20px;
   background: #fff;
-  color: #080808;
-  border: 2px solid #0066ff;
+  color: #121212;
+  border: 2px solid #2046f0;
   border-radius: 4px;
 }
 .corp-skip:focus {
@@ -31,7 +31,7 @@
 }
 .corp-utility {
   font-family: Inter, Arial, sans-serif;
-  background: #080808;
+  background: #121212;
   color: #c7c7c7;
   font-size: 11px;
   line-height: 1.5;
@@ -54,7 +54,7 @@
   content: "";
   width: 5px;
   height: 5px;
-  background: #0066ff;
+  background: #2046f0;
   margin-right: 4px;
   flex: none;
 }
@@ -70,7 +70,7 @@
   position: relative;
   z-index: 30;
   background: #fff;
-  color: #080808;
+  color: #121212;
   font-family: Inter, Arial, sans-serif;
 }
 .corp-header-main {
@@ -84,10 +84,10 @@
   display: inline-flex;
   align-items: center;
   flex: none;
-  color: #080808;
+  color: #121212;
 }
 .corp-brand-word {
-  font-family: "Archivo Black", Arial, sans-serif;
+  font-family: "Big Shoulders Display", Arial, sans-serif;
   font-size: 34px;
   font-weight: 400;
   letter-spacing: -0.065em;
@@ -109,7 +109,7 @@
 }
 .corp-search {
   position: relative;
-  color: #080808;
+  color: #121212;
 }
 .corp-search-form {
   height: 42px;
@@ -122,14 +122,14 @@
   transition: border-color 180ms ease;
 }
 .corp-search-form:focus-within {
-  border-color: #080808;
-  outline: 2px solid #0066ff;
+  border-color: #121212;
+  outline: 2px solid #2046f0;
   outline-offset: 2px;
 }
 .corp-search-form input {
   font-family: inherit;
   font-size: 12px;
-  color: #080808;
+  color: #121212;
   border: 0;
   background: transparent;
   padding: 0 0 0 15px;
@@ -153,11 +153,11 @@
   flex: none;
   border: 0;
   background: transparent;
-  color: #080808;
+  color: #121212;
   cursor: pointer;
 }
 .corp-search-form button:hover {
-  color: #0066ff;
+  color: #2046f0;
 }
 .corp-search-results {
   position: absolute;
@@ -169,7 +169,7 @@
   background: #fff;
   border: 1px solid #d8d8d5;
   border-radius: 4px;
-  box-shadow: 0 14px 28px #08080812;
+  box-shadow: 0 14px 28px #12121212;
   overflow: auto;
   z-index: 50;
 }
@@ -196,8 +196,8 @@
   border-radius: 2px;
   height: 28px;
   width: 28px;
-  background: #f2f2ef;
-  color: #080808;
+  background: #ecece8;
+  color: #121212;
   cursor: pointer;
 }
 .corp-search-results ul {
@@ -213,10 +213,10 @@
   padding: 13px 18px;
 }
 .corp-search-results li > a:hover {
-  background: #f2f2ef;
+  background: #ecece8;
 }
 .corp-search-results li > a:hover > svg {
-  color: #0066ff;
+  color: #2046f0;
 }
 .corp-search-results strong {
   display: block;
@@ -238,7 +238,7 @@
   line-height: 1.7;
 }
 .corp-search-empty a {
-  color: #080808;
+  color: #121212;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -253,7 +253,7 @@
 .corp-phone-icon {
   display: grid;
   place-items: center;
-  color: #080808;
+  color: #121212;
 }
 .corp-header-contact small {
   display: block;
@@ -268,7 +268,7 @@
   letter-spacing: -0.025em;
 }
 .corp-header-contact:hover strong {
-  color: #0066ff;
+  color: #2046f0;
 }
 .corp-header-nav-border {
   border-top: 1px solid #e5e5e2;
@@ -299,7 +299,7 @@
 }
 .corp-desktop-nav > a:hover,
 .corp-solutions-menu > summary:hover {
-  color: #0066ff;
+  color: #2046f0;
 }
 .corp-solutions-menu {
   position: relative;
@@ -312,7 +312,7 @@
   display: none;
 }
 .corp-solutions-menu[open] > summary {
-  color: #0066ff;
+  color: #2046f0;
 }
 .corp-solutions-menu[open] > summary > svg {
   transform: rotate(180deg);
@@ -327,7 +327,7 @@
   background: #fff;
   border: 1px solid #d8d8d5;
   padding: 18px 0 8px;
-  box-shadow: 0 15px 30px #08080812;
+  box-shadow: 0 15px 30px #12121212;
   border-radius: 0 0 4px 4px;
   z-index: 45;
 }
@@ -347,10 +347,10 @@
   padding: 14px 20px;
 }
 .corp-solutions-panel > a:hover {
-  background: #f2f2ef;
+  background: #ecece8;
 }
 .corp-solutions-panel > a:hover > svg {
-  color: #0066ff;
+  color: #2046f0;
 }
 .corp-solutions-panel strong {
   display: block;
@@ -372,9 +372,9 @@
   gap: 24px;
   min-height: 38px;
   padding: 10px 16px;
-  border: 1px solid #080808;
+  border: 1px solid #121212;
   border-radius: 4px;
-  background: #080808;
+  background: #121212;
   color: #fff;
   font-size: 11px;
   font-weight: 500;
@@ -399,7 +399,7 @@
 }
 .corp-header :is(a, button, summary):focus-visible,
 .corp-utility a:focus-visible {
-  outline: 2px solid #0066ff;
+  outline: 2px solid #2046f0;
   outline-offset: 5px;
 }
 @media (min-width: 1400px) {
@@ -470,7 +470,7 @@
     border-top: 1px solid #e5e5e2;
     border-bottom: 1px solid #d8d8d5;
     padding: 24px 32px 28px;
-    box-shadow: 0 16px 28px #08080812;
+    box-shadow: 0 16px 28px #12121212;
     max-height: calc(100dvh - 112px);
     overflow: auto;
     z-index: 50;
@@ -504,7 +504,7 @@
     line-height: 1.5;
   }
   .corp-mobile-panel nav > a:hover {
-    color: #0066ff;
+    color: #2046f0;
   }
   .corp-mobile-solutions > summary {
     list-style: none;
@@ -518,7 +518,7 @@
   }
   .corp-mobile-solutions > div {
     padding: 5px 15px 10px;
-    background: #f2f2ef;
+    background: #ecece8;
   }
   .corp-mobile-solutions > div > a {
     display: flex;
@@ -530,7 +530,7 @@
     line-height: 1.5;
   }
   .corp-mobile-solutions > div > a:hover {
-    color: #0066ff;
+    color: #2046f0;
   }
   .corp-mobile-panel > .corp-nav-cta {
     min-height: 46px;

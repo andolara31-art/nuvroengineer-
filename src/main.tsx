@@ -1,3 +1,9 @@
+import "@fontsource/inter/latin-400";
+import "@fontsource/inter/latin-600";
+import "@fontsource/inter/latin-700";
+import "@fontsource/big-shoulders-display/latin-700";
+import "@fontsource/big-shoulders-display/latin-800";
+import "@fontsource/caveat/latin-700";
 import { lazy, StrictMode, Suspense } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App";

@@ -1,6 +1,6 @@
 .service-policies {
-  background: var(--paper, #f2f2ef);
-  color: var(--black, #080808);
+  background: var(--paper, #ecece8);
+  color: var(--black, #121212);
 }
 .policies-intro {
   padding-top: 36px;
@@ -22,7 +22,7 @@
   max-width: 950px;
   margin: 19px 0 26px;
   font:
-    400 clamp(36px, 5.1vw, 68px)/1.05 "Archivo Black",
+    400 clamp(36px, 5.1vw, 68px)/1.05 "Big Shoulders Display",
     Arial,
     sans-serif;
   letter-spacing: -0.055em;
@@ -50,7 +50,7 @@
 }
 .policies-summary strong {
   display: block;
-  color: #080808;
+  color: #121212;
   font-size: 15px;
 }
 .policies-layout {
@@ -113,7 +113,7 @@
 .policies-body h2 {
   margin: 0 0 21px;
   font:
-    400 clamp(23px, 2.1vw, 30px)/1.18 "Archivo Black",
+    400 clamp(23px, 2.1vw, 30px)/1.18 "Big Shoulders Display",
     Arial,
     sans-serif;
   letter-spacing: -0.045em;
@@ -159,7 +159,7 @@
 }
 .policies-next {
   padding: 34px;
-  border: 1px solid #080808;
+  border: 1px solid #121212;
   background: #fff;
 }
 .policies-next .eyebrow {

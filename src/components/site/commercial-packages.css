@@ -13,7 +13,7 @@
   padding: 38px;
   border-right: 1px solid #bdbdb7;
   border-bottom: 1px solid #bdbdb7;
-  background: #f2f2ef;
+  background: #ecece8;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -36,7 +36,7 @@
   max-width: 340px;
 }
 .commercial-packages .commercial-package h3 {
-  font-family: "Archivo Black", Arial, sans-serif;
+  font-family: "Big Shoulders Display", Arial, sans-serif;
   font-size: clamp(24px, 2.7vw, 36px);
   font-weight: 400;
   letter-spacing: -0.05em;
@@ -65,7 +65,7 @@
   content: "";
   width: 4px;
   height: 4px;
-  background: #0066ff;
+  background: #2046f0;
   position: absolute;
   left: 0;
   top: 21px;
