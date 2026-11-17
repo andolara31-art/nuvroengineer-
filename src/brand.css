@@ -854,14 +854,14 @@ body {
 }
 
 .pop-sticker-ai {
-  top: 12px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
   background: var(--brand-yellow);
   animation-delay: 500ms, 1.4s;
 }
 
 .pop-sticker-wa {
-  top: 44%;
+  top: 70%;
   right: 10px;
   --r: 5deg;
   background: var(--brand-mint);

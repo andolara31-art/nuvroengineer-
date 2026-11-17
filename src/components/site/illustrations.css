@@ -1,0 +1,175 @@
+/* Ilustraciones cómic: solo se animan transform y opacity */
+.art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.art text {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.art .art-chalk {
+  fill: #f7f7f4;
+  font-family: Caveat, "Comic Sans MS", cursive;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.art .art-chalk-big {
+  font-family: "Big Shoulders Display", Impact, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.art .art-label {
+  fill: #121212;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.art .art-label-big {
+  font-size: 11px;
+}
+
+.art .art-label-tiny {
+  font-size: 6px;
+}
+
+.art-swing {
+  transform-box: view-box;
+  animation: art-swing 3.6s ease-in-out infinite alternate;
+}
+
+.art-sway {
+  transform-box: view-box;
+  animation: art-sway 3s ease-in-out infinite alternate;
+}
+
+.art-spin {
+  transform-box: view-box;
+  animation: art-spin 9s linear infinite;
+}
+
+.art-needle {
+  transform-box: view-box;
+  animation: art-sway 1.6s ease-in-out infinite alternate;
+}
+
+.art-glow {
+  opacity: 0.28;
+  animation: art-glow 2.8s ease-in-out infinite alternate;
+}
+
+.art-steam path {
+  opacity: 0;
+  transform-box: fill-box;
+  animation: art-steam 2.4s ease-in infinite;
+}
+
+@keyframes art-swing {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes art-sway {
+  from {
+    transform: rotate(-4deg);
+  }
+  to {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes art-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes art-glow {
+  from {
+    opacity: 0.18;
+  }
+  to {
+    opacity: 0.34;
+  }
+}
+
+@keyframes art-steam {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scaleY(0.7);
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px) scaleY(1.1);
+  }
+}
+
+/* La escena del café llena el espacio de la antigua foto */
+.craft-sample-photo .cafe-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Sectores con su ilustración */
+.corp-sector-row {
+  display: grid !important;
+  grid-template-columns: 148px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.corp-sector-row .sector-art {
+  width: 148px;
+  box-shadow: 5px 5px 0 #f7f7f4;
+  transition: transform 200ms ease;
+}
+
+.corp-sector-row:hover .sector-art {
+  transform: rotate(-2deg) scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .corp-sector-row {
+    grid-template-columns: 96px minmax(0, 1fr) auto;
+    gap: 14px;
+  }
+  .corp-sector-row .sector-art {
+    width: 96px;
+    box-shadow: 3px 3px 0 #f7f7f4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art-swing,
+  .art-sway,
+  .art-spin,
+  .art-needle,
+  .art-glow,
+  .art-steam path {
+    animation: none !important;
+  }
+  .art-steam path {
+    opacity: 0.6;
+  }
+}
+
+/* En celular la escena es angosta: dos stickers alcanzan */
+@media (max-width: 600px) {
+  .pop-sticker-wa {
+    display: none;
+  }
+}

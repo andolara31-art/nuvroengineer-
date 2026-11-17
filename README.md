@@ -33,7 +33,8 @@ La portada no necesita una API de IA ni variables privadas.
 - `src/components/site/TornEdge.tsx`: borde de papel rasgado con semilla fija, usado entre secciones y en el pie.
 - `src/components/site/HowWeWork.tsx` y `AISection.tsx`: "Cómo trabajamos" con ilustraciones propias e "IA para tu negocio" con un chat ficticio en un teléfono dibujado. No se usan logotipos de marcas ajenas: solo nombres en pastillas con íconos genéricos y la nota de no afiliación.
 - `src/home.css`: estilos base heredados y adaptación a móvil.
-- `public/assets/brand/`: fotografía editorial acreditada, imagen social de la web y versiones anteriores conservadas. Las imágenes generadas anteriores ya no se muestran en la portada.
+- `src/components/site/Illustrations.tsx`: ilustraciones cómic dibujadas en SVG con animaciones suaves (cafetería del ejemplo MESA y los tres sectores). La portada ya no usa fotografías.
+- `public/assets/brand/`: imagen social de la web y versiones anteriores conservadas (incluida la fotografía editorial que usaba el ejemplo).
 - `src/components/site/LearningSection.tsx`: ejemplos educativos de IA y automatización; instrucciones copiables y guías desplegables. No presenta cursos, precios ni integraciones activas ficticias.
 - `src/components/ProposalPage.tsx`: ruta de propuestas existente.
 

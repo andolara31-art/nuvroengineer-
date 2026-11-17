@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { whatsappUrl } from "../../lib/site";
 import TornEdge from "./TornEdge";
+import { CafeScene } from "./Illustrations";
 import "./corporate-hero.css";
 
 const menu = [
@@ -70,13 +71,7 @@ function WebsiteSample() {
                   Menú QR
                 </span>
               </div>
-              <img
-                src="/assets/brand/cafe-counter-720.webp"
-                width="720"
-                height="960"
-                alt="Interior de cafetería fotografiado por Veronika Martinelli, usado como referencia editorial para una web de ejemplo"
-                fetchPriority="high"
-              />
+              <CafeScene />
             </div>
             <div className="craft-sample-content">
               {view === "inicio" ? (
@@ -143,13 +138,7 @@ function WebsiteSample() {
       </div>
       <div className="craft-sample-caption">
         <span>Ejemplo interactivo · negocio ficticio</span>
-        <a
-          href="https://unsplash.com/photos/brown-wooden-kitchen-cabinet-with-green-plants-WxfXOQEpyFg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Foto: V. Martinelli / Unsplash ↗
-        </a>
+        <span>Ilustración: NUVRO</span>
       </div>
     </div>
   );

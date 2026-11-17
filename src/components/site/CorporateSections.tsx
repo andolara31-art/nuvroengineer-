@@ -5,6 +5,7 @@ import CommercialPackages from "./CommercialPackages";
 import AISection from "./AISection";
 import HowWeWork from "./HowWeWork";
 import TornEdge from "./TornEdge";
+import { RestaurantArt, ServicesArt, ShopArt } from "./Illustrations";
 import "./corporate-sections.css";
 
 const solutions = [
@@ -69,18 +70,21 @@ const solutions = [
 const sectors = [
   {
     title: "Restaurantes y cafeterías",
+    Art: RestaurantArt,
     body: "El menú, el horario y cómo llegar. A mano, antes de preguntar.",
     href: "/menu-qr-restaurantes",
     action: "Ver menú QR",
   },
   {
     title: "Comercios locales",
+    Art: ShopArt,
     body: "Lo que vendés, bien presentado. Una tienda o un catálogo según cómo compren tus clientes.",
     href: "/tiendas-online-shopify",
     action: "Ver tiendas online",
   },
   {
     title: "Servicios y profesionales",
+    Art: ServicesArt,
     body: "Servicios que se entienden y consultas que podés seguir con orden.",
     href: "/automatizaciones-negocios",
     action: "Ver automatizaciones",
@@ -168,13 +172,14 @@ export default function CorporateSections() {
             </span>
           </div>
           <div className="corp-sector-list">
-            {sectors.map(({ title, body, href, action }) => (
+            {sectors.map(({ title, body, href, action, Art }) => (
               <a
                 href={href}
                 className="corp-sector-row"
                 key={title}
                 aria-label={`${title}: ${action}`}
               >
+                <Art />
                 <div>
                   <h3>{title}</h3>
                   <p>{body}</p>
