@@ -5,7 +5,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { whatsappUrl } from "../../lib/site";
-import { Anderson } from "./Characters";
+import { AndersonPhoto } from "./Characters";
 import TornEdge from "./TornEdge";
 import "./meet-anderson.css";
 
@@ -24,9 +24,6 @@ export default function MeetAnderson() {
     >
       <TornEdge fill="#2046F0" seed={61} />
       <div className="corp-container meet-layout">
-        <figure className="meet-figure">
-          <Anderson />
-        </figure>
         <div className="meet-copy">
           <p className="meet-kicker">Quién está detrás</p>
           <div className="meet-bubble">
@@ -75,6 +72,11 @@ export default function MeetAnderson() {
             </a>
           </div>
         </div>
+        <figure className="meet-figure">
+          <div className="anderson-card">
+            <AndersonPhoto />
+          </div>
+        </figure>
       </div>
     </section>
   );

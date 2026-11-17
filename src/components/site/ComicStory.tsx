@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Ana, AndersonHead } from "./Characters";
+import { Ana } from "./Characters";
 import "./comic-story.css";
 
 const INK = "#121212";
@@ -53,39 +53,49 @@ function Bubble({
   );
 }
 
-function AndersonMini() {
+function AndersonAvatar() {
   return (
     <g>
-      <path
-        d="M62 236Q66 178 98 170L130 164L162 170Q194 178 198 236Z"
-        fill="#1F1F1F"
+      <defs>
+        <clipPath id="comic-anderson-clip">
+          <circle cx="178" cy="132" r="50" />
+        </clipPath>
+      </defs>
+      <circle cx="178" cy="132" r="50" fill="#050505" />
+      <image
+        href="/assets/brand/anderson-nuvro-380.webp"
+        x="67"
+        y="72"
+        width="190"
+        height="344"
+        clipPath="url(#comic-anderson-clip)"
+        preserveAspectRatio="xMidYMin meet"
+      />
+      <circle
+        cx="178"
+        cy="132"
+        r="50"
+        fill="none"
         stroke={INK}
         strokeWidth="5"
-        strokeLinejoin="round"
       />
       <rect
-        x="142"
-        y="190"
-        width="27"
-        height="17"
-        rx="2"
-        fill={INK}
-        stroke={PAPER}
-        strokeWidth="2"
-      />
-      <text x="155.5" y="203" textAnchor="middle" className="comic-patch">
-        NE
-      </text>
-      <rect
-        x="114"
-        y="140"
-        width="32"
-        height="30"
-        fill="#F5CDB0"
+        x="140"
+        y="176"
+        width="76"
+        height="18"
+        fill={YELLOW}
         stroke={INK}
-        strokeWidth="4"
+        strokeWidth="3"
       />
-      <AndersonHead mood="talk" />
+      <text
+        x="178"
+        y="189"
+        textAnchor="middle"
+        className="comic-text comic-text-name"
+      >
+        Anderson
+      </text>
     </g>
   );
 }
@@ -167,9 +177,7 @@ function PanelTalk() {
       <g transform="translate(4 66) scale(0.9)">
         <Ana mood="happy" />
       </g>
-      <g transform="translate(104 58) scale(0.6)">
-        <AndersonMini />
-      </g>
+      <AndersonAvatar />
       <path
         d="M98 16h134v42H140l-10 14l-2-14H98Z"
         fill="#FFFFFF"

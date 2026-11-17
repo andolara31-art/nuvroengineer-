@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { whatsappUrl } from "../../lib/site";
-import { Anderson } from "./Characters";
+import { AndersonPhoto } from "./Characters";
 import { RestaurantArt, ServicesArt, ShopArt } from "./Illustrations";
 import TornEdge from "./TornEdge";
 import "./need-finder.css";
@@ -287,7 +287,9 @@ export default function NeedFinder() {
           <div className="need-guide-bubble">
             ¿No sabés por dónde empezar? <strong>Te ayudo.</strong>
           </div>
-          <Anderson />
+          <div className="anderson-card">
+            <AndersonPhoto />
+          </div>
         </figure>
       </div>
     </section>

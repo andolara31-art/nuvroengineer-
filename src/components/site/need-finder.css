@@ -211,6 +211,10 @@
   margin: 0;
 }
 
+.need-guide .anderson-card {
+  transform: rotate(-1.5deg);
+}
+
 .need-guide-bubble {
   position: relative;
   margin: 0 0 12px -24px;
