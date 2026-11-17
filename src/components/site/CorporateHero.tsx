@@ -1,13 +1,14 @@
 import { useState } from "react";
 import {
-  ArrowDown,
   ArrowUpRight,
   ArrowRight,
+  Bot,
   Check,
   MessageCircle,
   QrCode,
 } from "lucide-react";
-import { brandIcons } from "../../content/brand-icons";
+import { whatsappUrl } from "../../lib/site";
+import TornEdge from "./TornEdge";
 import "./corporate-hero.css";
 
 const menu = [
@@ -20,26 +21,12 @@ function WebsiteSample() {
   const [view, setView] = useState<"inicio" | "carta">("inicio");
   const [selection, setSelection] = useState("");
   return (
-    <div className="craft-sample-wrap">
-      <div className="pop-stickers" aria-hidden="true">
-        <span className="pop-sticker pop-sticker-ai">
-          <svg viewBox="0 0 24 24">
-            <path d={brandIcons.claude.path} />
-          </svg>
-          Con IA
-        </span>
-        <span className="pop-sticker pop-sticker-wa">
-          <MessageCircle size={15} strokeWidth={2} />
-          Directo a WhatsApp
-        </span>
-        <span className="pop-sticker pop-sticker-qr">
-          <QrCode size={15} strokeWidth={2} />
-          Menú QR
-        </span>
-      </div>
+    <div className="craft-sample-wrap" id="ejemplo-mesa">
       <div className="craft-sample-label">
-        <span>01 / UNA WEB QUE SE ENTIENDE</span>
-        <span>PROBALA ↙</span>
+        <span className="brand-label">Ejemplo · negocio ficticio</span>
+        <span className="brand-note brand-note-paper" aria-hidden="true">
+          ¡Probala! Tocá «La carta»
+        </span>
       </div>
       <div className="craft-browser">
         <div className="craft-browser-bar" aria-hidden="true">
@@ -69,6 +56,20 @@ function WebsiteSample() {
           </div>
           <div className="craft-sample-main">
             <div className="craft-sample-photo">
+              <div className="pop-stickers" aria-hidden="true">
+                <span className="pop-sticker pop-sticker-ai">
+                  <Bot size={15} strokeWidth={2.2} />
+                  Con IA
+                </span>
+                <span className="pop-sticker pop-sticker-wa">
+                  <MessageCircle size={15} strokeWidth={2.2} />
+                  WhatsApp
+                </span>
+                <span className="pop-sticker pop-sticker-qr">
+                  <QrCode size={15} strokeWidth={2.2} />
+                  Menú QR
+                </span>
+              </div>
               <img
                 src="/assets/brand/cafe-counter-720.webp"
                 width="720"
@@ -155,55 +156,45 @@ function WebsiteSample() {
 }
 
 export default function CorporateHero() {
+  const contact = whatsappUrl(
+    "Hola NUVRO, quiero conversar sobre la web o las herramientas para mi negocio.",
+  );
   return (
     <section className="craft-hero" aria-labelledby="hero-title">
       <div className="craft-container craft-hero-grid">
         <div className="craft-hero-copy">
-          <p className="craft-eyebrow">
-            <span aria-hidden="true" />
-            FIRMA DIGITAL / COSTA RICA
-          </p>
+          <p className="brand-label">Negocios en Costa Rica</p>
           <h1 id="hero-title">
-            Tu negocio
-            <br />
-            merece verse
-            <br />
-            <span className="pop-highlight">así de bien.</span>
+            Webs, menús QR e IA para negocios de Costa Rica.
           </h1>
           <p className="craft-hero-description">
-            Diseñamos páginas web y herramientas comerciales para que tus
-            clientes entiendan lo que ofrecés y sepan cómo contactarte.
+            Te ayudamos a ordenar lo que ofrecés, mostrarlo bien y atender
+            mejor a tus clientes desde el celular.
           </p>
           <div className="craft-hero-actions">
-            <a className="craft-action" href="/#soluciones">
-              Conocé las soluciones{" "}
-              <ArrowUpRight size={17} aria-hidden="true" />
+            <a
+              className="brand-btn brand-btn-primary"
+              href={contact}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle size={20} strokeWidth={2.2} aria-hidden="true" />
+              Hablemos por WhatsApp
             </a>
-            <a className="craft-action-secondary" href="/#contacto">
-              Hablemos de tu negocio{" "}
-              <ArrowUpRight size={16} aria-hidden="true" />
+            <a className="brand-btn brand-btn-ghost" href="/#soluciones">
+              Conocé las soluciones
+              <ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </div>
-          <p className="craft-hero-signature">
-            Diseño con criterio. Tecnología simple.{" "}
-            <span className="pop-dots" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <i />
-            </span>
-          </p>
+          <ul className="brand-hero-trust" aria-label="Cómo trabajamos">
+            <li>Atención directa</li>
+            <li>Propuesta por escrito antes de empezar</li>
+            <li>30 días de soporte al entregar</li>
+          </ul>
         </div>
         <WebsiteSample />
       </div>
-      <div className="craft-container craft-hero-foot">
-        <span>HECHO PARA NEGOCIOS TICOS.</span>
-        <a href="/#soluciones">
-          Mirá lo que podemos resolver{" "}
-          <ArrowDown size={14} aria-hidden="true" />
-        </a>
-        <span>NUVRO ENGINEER — 01</span>
-      </div>
+      <TornEdge fill="#ECECE8" seed={3} className="torn-edge-end" />
     </section>
   );
 }
