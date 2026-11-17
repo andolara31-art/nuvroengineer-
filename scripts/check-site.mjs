@@ -99,7 +99,7 @@ for (const file of files) {
       "proceso",
       "paquetes",
       "demostraciones",
-      "quien-soy",
+      "atencion",
       "preguntas",
       "contacto",
       "ejemplo-mesa",

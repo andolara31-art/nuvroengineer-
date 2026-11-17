@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Ana } from "./Characters";
+import Nuvi from "./Nuvi";
 import "./comic-story.css";
 
 const INK = "#121212";
@@ -48,53 +49,6 @@ function Bubble({
       />
       <text x={x + 6} y={y + 13.5} className="comic-text">
         {text}
-      </text>
-    </g>
-  );
-}
-
-function AndersonAvatar() {
-  return (
-    <g>
-      <defs>
-        <clipPath id="comic-anderson-clip">
-          <circle cx="178" cy="132" r="50" />
-        </clipPath>
-      </defs>
-      <circle cx="178" cy="132" r="50" fill="#050505" />
-      <image
-        href="/assets/brand/anderson-nuvro-380.webp"
-        x="67"
-        y="72"
-        width="190"
-        height="344"
-        clipPath="url(#comic-anderson-clip)"
-        preserveAspectRatio="xMidYMin meet"
-      />
-      <circle
-        cx="178"
-        cy="132"
-        r="50"
-        fill="none"
-        stroke={INK}
-        strokeWidth="5"
-      />
-      <rect
-        x="140"
-        y="176"
-        width="76"
-        height="18"
-        fill={YELLOW}
-        stroke={INK}
-        strokeWidth="3"
-      />
-      <text
-        x="178"
-        y="189"
-        textAnchor="middle"
-        className="comic-text comic-text-name"
-      >
-        Anderson
       </text>
     </g>
   );
@@ -162,7 +116,7 @@ function PanelMessages() {
 
 function PanelTalk() {
   return (
-    <Panel label="Doña Ana conversa con Anderson, de NUVRO, que le dice: ordenemos eso juntos">
+    <Panel label="Doña Ana le escribe a NUVRO y Nuvi, la mascota, le responde: ordenemos eso juntos">
       <rect x="0" y="0" width="240" height="200" fill="url(#comic-dots)" />
       <defs>
         <pattern
@@ -177,7 +131,7 @@ function PanelTalk() {
       <g transform="translate(4 66) scale(0.9)">
         <Ana mood="happy" />
       </g>
-      <AndersonAvatar />
+      <Nuvi pose="wave" x={136} y={74} width={98} />
       <path
         d="M98 16h134v42H140l-10 14l-2-14H98Z"
         fill="#FFFFFF"
@@ -466,7 +420,7 @@ export default function ComicStory() {
               Así se ve el trabajo de NUVRO, contado como un cómic. Doña Ana y
               su soda son un ejemplo inventado.
             </p>
-            <p className="brand-note">Anderson sí es de verdad</p>
+            <p className="brand-note">¿Te suena conocido?</p>
           </div>
         </div>
         <ol className="comic-strip">

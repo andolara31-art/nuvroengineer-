@@ -331,7 +331,7 @@ export default function SiteHeader() {
                 <a href="/#proceso">Cómo trabajamos</a>
                 <a href="/#demostraciones">Ejemplos</a>
                 <a href="/#preguntas">Preguntas</a>
-                <a href="/#quien-soy">Quién soy</a>
+                <a href="/#atencion">Atención</a>
               </nav>
               <a
                 className="corp-nav-cta"

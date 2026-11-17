@@ -211,8 +211,9 @@
   margin: 0;
 }
 
-.need-guide .anderson-card {
-  transform: rotate(-1.5deg);
+.need-guide .nuvi {
+  max-width: 260px;
+  margin: 8px auto 0;
 }
 
 .need-guide-bubble {
@@ -249,7 +250,31 @@
     grid-template-columns: 1fr;
   }
   .need-guide {
-    display: none;
+    order: -1;
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    max-width: 520px;
+  }
+  .need-guide .nuvi {
+    grid-row: 1;
+    grid-column: 1;
+    margin: 0;
+  }
+  .need-guide-bubble {
+    grid-column: 2;
+    margin: 0;
+  }
+  .need-guide-bubble::after {
+    bottom: auto;
+    top: 50%;
+    left: -15px;
+    margin-top: -11px;
+    border-right: 0;
+    border-top: 0;
+    border-left: 4px solid var(--brand-ink);
+    border-bottom: 4px solid var(--brand-ink);
   }
   .need-options-business {
     grid-template-columns: repeat(2, minmax(0, 1fr));

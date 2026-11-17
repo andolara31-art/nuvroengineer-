@@ -57,10 +57,10 @@
   );
 }
 
-.meet-figure .anderson-card {
-  max-width: 380px;
+.meet-figure .nuvi {
+  position: relative;
+  max-width: 360px;
   margin: 0 auto;
-  transform: rotate(1.5deg);
 }
 
 .meet-kicker {
@@ -157,8 +157,8 @@
   .meet-figure {
     order: -1;
   }
-  .meet-figure .anderson-card {
-    max-width: 260px;
+  .meet-figure .nuvi {
+    max-width: 200px;
   }
   .meet-bubble::before {
     right: auto;
@@ -167,8 +167,4 @@
     border-right: 0;
     border-left: 6px solid var(--brand-ink);
   }
-}
-
-.meet-figure .anderson-card {
-  box-shadow: 10px 10px 0 var(--brand-ink);
 }

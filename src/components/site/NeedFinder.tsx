@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { whatsappUrl } from "../../lib/site";
-import { AndersonPhoto } from "./Characters";
+import Nuvi from "./Nuvi";
 import { RestaurantArt, ServicesArt, ShopArt } from "./Illustrations";
 import TornEdge from "./TornEdge";
 import "./need-finder.css";
@@ -285,11 +285,17 @@ export default function NeedFinder() {
 
         <figure className="need-guide" aria-hidden="true">
           <div className="need-guide-bubble">
-            ¿No sabés por dónde empezar? <strong>Te ayudo.</strong>
+            {result ? (
+              <>
+                ¡Buena elección! <strong>Escribinos y lo vemos.</strong>
+              </>
+            ) : (
+              <>
+                ¿No sabés por dónde empezar? <strong>Te ayudo.</strong>
+              </>
+            )}
           </div>
-          <div className="anderson-card">
-            <AndersonPhoto />
-          </div>
+          <Nuvi pose={result ? "thumbs" : step === 2 ? "present" : "think"} />
         </figure>
       </div>
     </section>

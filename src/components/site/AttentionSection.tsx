@@ -5,33 +5,27 @@ import {
   Sparkles,
 } from "lucide-react";
 import { whatsappUrl } from "../../lib/site";
-import { AndersonPhoto } from "./Characters";
+import Nuvi from "./Nuvi";
 import TornEdge from "./TornEdge";
-import "./meet-anderson.css";
+import "./attention.css";
 
-export const SCHEDULE = {
-  whatsapp: "Por WhatsApp te respondemos todo el día.",
-  visits: "Visitas y reuniones en persona: de jueves a sábado.",
-  free: "La primera conversación no tiene costo.",
-};
-
-export default function MeetAnderson() {
+export default function AttentionSection() {
   return (
     <section
       className="corp-section meet-anderson"
-      id="quien-soy"
+      id="atencion"
       aria-labelledby="meet-title"
     >
       <TornEdge fill="#2046F0" seed={61} />
       <div className="corp-container meet-layout">
         <div className="meet-copy">
-          <p className="meet-kicker">Quién está detrás</p>
+          <p className="meet-kicker">Atención directa</p>
           <div className="meet-bubble">
-            <h2 id="meet-title">¡Hola! Soy Anderson.</h2>
+            <h2 id="meet-title">¡Pura vida! Hablemos.</h2>
             <p>
-              Detrás de NUVRO ENGINEER estoy yo, desde Palmares. Te atiendo
-              directo, te explico todo en palabras simples y trabajo con
-              negocios de todo Costa Rica.
+              En NUVRO ENGINEER te atiende una persona, no un call center.
+              Trabajamos desde Palmares con negocios de todo Costa Rica y te
+              explicamos todo en palabras simples.
             </p>
           </div>
           <ul className="meet-facts">
@@ -39,32 +33,32 @@ export default function MeetAnderson() {
               <span className="brand-icon" aria-hidden="true">
                 <Sparkles size={20} strokeWidth={2.2} />
               </span>
-              {SCHEDULE.free}
+              La primera conversación no tiene costo.
             </li>
             <li>
               <span className="brand-icon" aria-hidden="true">
                 <MessageCircle size={20} strokeWidth={2.2} />
               </span>
-              {SCHEDULE.whatsapp}
+              Por WhatsApp te respondemos todo el día.
             </li>
             <li>
               <span className="brand-icon" aria-hidden="true">
                 <CalendarDays size={20} strokeWidth={2.2} />
               </span>
-              {SCHEDULE.visits}
+              Visitas y reuniones en persona: de jueves a sábado.
             </li>
           </ul>
           <div className="meet-actions">
             <a
               className="brand-btn brand-btn-primary"
               href={whatsappUrl(
-                "Hola Anderson, quiero conversar sobre mi negocio.",
+                "Hola NUVRO, quiero conversar sobre mi negocio.",
               )}
               target="_blank"
               rel="noopener noreferrer"
             >
               <MessageCircle size={20} strokeWidth={2.2} aria-hidden="true" />
-              Escribime por WhatsApp
+              Escribinos por WhatsApp
             </a>
             <a className="meet-link" href="/sobre-nuvro">
               Conocé más de NUVRO
@@ -73,9 +67,7 @@ export default function MeetAnderson() {
           </div>
         </div>
         <figure className="meet-figure">
-          <div className="anderson-card">
-            <AndersonPhoto />
-          </div>
+          <Nuvi pose="wave" />
         </figure>
       </div>
     </section>

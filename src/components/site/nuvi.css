@@ -1,0 +1,126 @@
+/* Nuvi: solo se animan transform y opacity */
+.nuvi {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.nuvi .nuvi-badge {
+  fill: #121212;
+  font:
+    800 24px/1 "Big Shoulders Display",
+    Impact,
+    sans-serif;
+}
+
+.nuvi .nuvi-q {
+  fill: #121212;
+  font:
+    800 22px/1 "Big Shoulders Display",
+    Impact,
+    sans-serif;
+}
+
+.nuvi-bob {
+  animation: nuvi-bob 3s ease-in-out infinite alternate;
+}
+
+.nuvi-blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nuvi-blink 4.6s infinite;
+}
+
+.nuvi-antenna {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: nuvi-antenna 1.8s ease-in-out infinite alternate;
+}
+
+.nuvi-wave {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: nuvi-wave 0.9s ease-in-out infinite alternate;
+}
+
+.nuvi-thumb {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: nuvi-thumb 1.4s ease-in-out infinite alternate;
+}
+
+.nuvi-thought {
+  animation: nuvi-thought 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes nuvi-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes nuvi-blink {
+  0%,
+  90%,
+  100% {
+    transform: scaleY(1);
+  }
+  94% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes nuvi-antenna {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.25);
+    opacity: 0.8;
+  }
+}
+
+@keyframes nuvi-wave {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes nuvi-thumb {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes nuvi-thought {
+  from {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nuvi-bob,
+  .nuvi-blink,
+  .nuvi-antenna,
+  .nuvi-wave,
+  .nuvi-thumb,
+  .nuvi-thought {
+    animation: none !important;
+  }
+}

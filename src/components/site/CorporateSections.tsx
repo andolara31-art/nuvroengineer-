@@ -5,7 +5,7 @@ import AISection from "./AISection";
 import HowWeWork from "./HowWeWork";
 import ComicStory from "./ComicStory";
 import NeedFinder from "./NeedFinder";
-import MeetAnderson from "./MeetAnderson";
+import AttentionSection from "./AttentionSection";
 import TornEdge from "./TornEdge";
 import "./corporate-sections.css";
 
@@ -175,7 +175,7 @@ export default function CorporateSections() {
 
       <AISection />
 
-      <MeetAnderson />
+      <AttentionSection />
 
       <section
         className="corp-section corp-faq"

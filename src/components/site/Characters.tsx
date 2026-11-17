@@ -1,35 +1,11 @@
 /*
   Personajes cómic dibujados en SVG.
-  - Anderson: se usa la ilustración oficial (imagen), no un dibujo propio.
   - Doña Ana: personaje ficticio para la historia de ejemplo.
   Animaciones con transform y opacity; se apagan con prefers-reduced-motion.
 */
 import "./characters.css";
 
 const INK = "#121212";
-
-/* Anderson: ilustración oficial de NUVRO ENGINEER (imagen del propietario) */
-export function AndersonPhoto({
-  className = "",
-  priority = false,
-}: {
-  className?: string;
-  priority?: boolean;
-}) {
-  return (
-    <img
-      className={`anderson-photo ${className}`.trim()}
-      src="/assets/brand/anderson-nuvro-543.webp"
-      srcSet="/assets/brand/anderson-nuvro-380.webp 380w, /assets/brand/anderson-nuvro-543.webp 543w"
-      sizes="(max-width: 900px) 300px, 380px"
-      width="543"
-      height="983"
-      alt="Ilustración de Anderson, de NUVRO ENGINEER, con camisa negra y el logo NE, presentando con la mano"
-      loading={priority ? "eager" : "lazy"}
-      decoding="async"
-    />
-  );
-}
 
 /* Doña Ana (personaje ficticio): cabeza y hombros. Centro (60, 60) aprox. */
 export function Ana({ mood = "happy" }: { mood?: "happy" | "worried" }) {
