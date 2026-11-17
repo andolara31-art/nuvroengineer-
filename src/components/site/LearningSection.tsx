@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TornEdge from "./TornEdge";
 import { whatsappUrl } from "../../lib/site";
 import { trackEvent } from "../../lib/analytics";
 import "./learning.css";
@@ -30,6 +31,7 @@ export default function LearningSection() {
       id="aprende"
       aria-labelledby="learn-title"
     >
+      <TornEdge fill="#ECECE8" seed={37} />
       <div className="shell">
         <div className="section-head learn-head">
           <div>

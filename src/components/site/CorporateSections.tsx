@@ -3,12 +3,13 @@ import DemoSection from "./DemoSection";
 import LearningSection from "./LearningSection";
 import CommercialPackages from "./CommercialPackages";
 import AISection from "./AISection";
+import HowWeWork from "./HowWeWork";
+import TornEdge from "./TornEdge";
 import "./corporate-sections.css";
 
 const solutions = [
   {
     number: "01",
-    tone: "blue",
     title: "Diseño web.",
     body: "Que tu cliente entienda qué ofrecés y encuentre cómo contactarte.",
     deliverables: "Páginas web · Landing pages · Catálogos",
@@ -17,7 +18,6 @@ const solutions = [
   },
   {
     number: "02",
-    tone: "violet",
     title: "Tiendas online.",
     body: "Pasá de enviar fotos por mensaje a un catálogo con un recorrido de compra definido.",
     deliverables: "E-commerce · Shopify · Catálogo y compra",
@@ -26,7 +26,6 @@ const solutions = [
   },
   {
     number: "03",
-    tone: "yellow",
     title: "Menú QR.",
     body: "Tu menú a un escaneo. Fácil de consultar, fácil de actualizar.",
     deliverables: "Menú digital · Categorías · Acceso desde la mesa",
@@ -35,7 +34,6 @@ const solutions = [
   },
   {
     number: "04",
-    tone: "pink",
     title: "Reseñas a un toque.",
     body: "Una base QR o NFC en tu mostrador para que tus clientes compartan su experiencia en Google.",
     deliverables: "Base o tarjeta · QR y NFC · Enlace de reseñas",
@@ -44,7 +42,6 @@ const solutions = [
   },
   {
     number: "05",
-    tone: "coral",
     title: "Videos y publicidad.",
     body: "Mostrá una promoción, un producto o tu servicio con una pieza que se entienda desde el celular.",
     deliverables: "Videos simples · Edición · Piezas comerciales",
@@ -53,7 +50,6 @@ const solutions = [
   },
   {
     number: "06",
-    tone: "mint",
     title: "Automatización.",
     body: "Hay tareas que tu negocio no debería seguir haciendo a mano.",
     deliverables: "Consultas · Avisos · Seguimiento",
@@ -62,7 +58,6 @@ const solutions = [
   },
   {
     number: "07",
-    tone: "blue",
     title: "Presencia digital.",
     body: "Ordená tus enlaces, productos y formas de contacto en un lugar fácil de compartir.",
     deliverables: "Link Bio · Catálogos · Kit WhatsApp Business",
@@ -92,78 +87,9 @@ const sectors = [
   },
 ];
 
-const process = [
-  {
-    number: "01",
-    title: "Una conversación.",
-    body: "Nos contás cómo trabajás y qué necesitás resolver. Definimos por dónde empezar.",
-  },
-  {
-    number: "02",
-    title: "Una propuesta clara.",
-    body: "Acordamos qué vamos a construir, qué incluye y cuánto cuesta. Todo antes de empezar.",
-  },
-  {
-    number: "03",
-    title: "Trabajo que podés usar.",
-    body: "Con el anticipo y los materiales confirmados, construimos y revisamos con vos. Te explicamos el uso e incluimos 30 días de soporte postentrega.",
-  },
-];
-
 export default function CorporateSections() {
   return (
     <div className="corp-content">
-      <section
-        className="corp-section corp-intro"
-        aria-labelledby="corp-intro-title"
-      >
-        <div className="corp-container">
-          <div className="corp-intro-grid">
-            <div>
-              <p className="corp-kicker">LA FORMA NUVRO</p>
-              <h2 id="corp-intro-title">
-                Buen diseño.
-                <br />
-                Mejor criterio.
-              </h2>
-            </div>
-            <div className="corp-intro-copy">
-              <p>
-                Tu negocio ya tiene una forma de hacer las cosas. Nuestra tarea
-                es entenderla y diseñar lo que le hace falta.
-              </p>
-              <p>
-                Una web que explique bien. Un menú fácil de consultar. Un
-                proceso que deje de depender de tu memoria.
-              </p>
-              <a className="corp-text-link" href="/sobre-nuvro">
-                Conocé la firma <ArrowUpRight size={19} aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-          <div className="corp-method" aria-label="Nuestro criterio de trabajo">
-            <div>
-              <span>El negocio primero.</span>
-              <strong>
-                Entender<span>.</span>
-              </strong>
-            </div>
-            <div>
-              <span>Cada decisión cuenta.</span>
-              <strong>
-                Diseñar<span>.</span>
-              </strong>
-            </div>
-            <div>
-              <span>Que sirva todos los días.</span>
-              <strong>
-                Resolver<span>.</span>
-              </strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
         className="corp-section corp-solutions"
         id="soluciones"
@@ -172,7 +98,7 @@ export default function CorporateSections() {
         <div className="corp-container">
           <div className="corp-section-heading">
             <div>
-              <p className="corp-kicker">QUÉ PODEMOS HACER</p>
+              <p className="corp-kicker">Qué podemos hacer</p>
               <h2 id="corp-solutions-title">
                 El siguiente paso
                 <br />
@@ -186,10 +112,9 @@ export default function CorporateSections() {
           </div>
           <div className="corp-solution-list">
             {solutions.map(
-              ({ number, tone, title, body, deliverables, href, action }) => (
+              ({ number, title, body, deliverables, href, action }) => (
                 <a
                   className="corp-solution-row"
-                  data-tone={tone}
                   href={href}
                   key={number}
                   aria-label={action}
@@ -214,6 +139,8 @@ export default function CorporateSections() {
 
       <AISection />
 
+      <HowWeWork />
+
       <CommercialPackages />
 
       <DemoSection />
@@ -223,9 +150,10 @@ export default function CorporateSections() {
         id="sectores"
         aria-labelledby="corp-sectors-title"
       >
+        <TornEdge fill="#121212" seed={29} />
         <div className="corp-container corp-sector-layout">
           <div className="corp-sector-heading">
-            <p className="corp-kicker">HECHO PARA NEGOCIOS TICOS</p>
+            <p className="corp-kicker">Hecho para negocios ticos</p>
             <h2 id="corp-sectors-title">
               El contexto
               <br />
@@ -259,49 +187,14 @@ export default function CorporateSections() {
       </section>
 
       <section
-        className="corp-section corp-process"
-        id="proceso"
-        aria-labelledby="corp-process-title"
-      >
-        <div className="corp-container corp-process-layout">
-          <div className="corp-process-heading">
-            <p className="corp-kicker">ASÍ TRABAJAMOS</p>
-            <h2 id="corp-process-title">
-              Sabé qué
-              <br />
-              esperar.
-            </h2>
-            <a className="corp-text-link" href="#contacto">
-              Hablemos de tu proyecto{" "}
-              <ArrowUpRight size={19} aria-hidden="true" />
-            </a>
-          </div>
-          <ol className="corp-process-list">
-            {process.map(({ number, title, body }) => (
-              <li key={number}>
-                <span className="corp-step-number" aria-hidden="true">
-                  {number}
-                </span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <LearningSection />
-
-      <section
         className="corp-section corp-faq"
         id="preguntas"
         aria-labelledby="corp-faq-title"
       >
+        <TornEdge fill="#F7F7F4" seed={31} />
         <div className="corp-container corp-faq-grid">
           <div>
-            <p className="corp-kicker">ANTES DE EMPEZAR</p>
+            <p className="corp-kicker">Antes de empezar</p>
             <h2 id="corp-faq-title">
               Hablemos
               <br />
