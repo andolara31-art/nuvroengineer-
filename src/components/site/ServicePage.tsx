@@ -1,4 +1,5 @@
 import { servicePages, type ServicePageContent } from "../../content/services";
+import LearningSection from "./LearningSection";
 import "./services.css";
 
 const examples: Record<
@@ -214,6 +215,8 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
             ))}
         </div>
       </section>
+
+      {page.path === "/ia-para-negocios" && <LearningSection />}
 
       <section className="service-cta" aria-labelledby="service-cta-title">
         <div className="shell">

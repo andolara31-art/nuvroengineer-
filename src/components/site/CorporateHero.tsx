@@ -153,12 +153,11 @@ export default function CorporateHero() {
       <div className="craft-container craft-hero-grid">
         <div className="craft-hero-copy">
           <p className="brand-label">Negocios en Costa Rica</p>
-          <h1 id="hero-title">
-            Webs, menús QR e IA para negocios de Costa Rica.
-          </h1>
+          <h1 id="hero-title">Tu negocio, bien presentado en internet.</h1>
           <p className="craft-hero-description">
-            Te ayudamos a ordenar lo que ofrecés, mostrarlo bien y atender mejor
-            a tus clientes desde el celular.
+            Hacemos páginas web, menús con código QR y respuestas automáticas
+            para WhatsApp, para negocios de Costa Rica. Te explicamos todo en
+            palabras simples.
           </p>
           <div className="craft-hero-actions">
             <a
@@ -170,13 +169,13 @@ export default function CorporateHero() {
               <MessageCircle size={20} strokeWidth={2.2} aria-hidden="true" />
               Hablemos por WhatsApp
             </a>
-            <a className="brand-btn brand-btn-ghost" href="/#soluciones">
-              Conocé las soluciones
+            <a className="brand-btn brand-btn-ghost" href="/#que-necesito">
+              ¿Qué necesito?
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </div>
           <ul className="brand-hero-trust" aria-label="Cómo trabajamos">
-            <li>Atención directa</li>
+            <li>Primera conversación sin costo</li>
             <li>Propuesta por escrito antes de empezar</li>
             <li>30 días de soporte al entregar</li>
           </ul>

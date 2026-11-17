@@ -137,7 +137,14 @@ export default function SiteContact() {
               >
                 {BUSINESS_WHATSAPP_DISPLAY}
               </a>
-              <p className="corp-contact-location">Costa Rica · Todo el país</p>
+              <ul className="corp-contact-hours">
+                <li>La primera conversación no tiene costo.</li>
+                <li>Por WhatsApp te respondemos todo el día.</li>
+                <li>Visitas y reuniones en persona: de jueves a sábado.</li>
+              </ul>
+              <p className="corp-contact-location">
+                Desde Palmares, para todo Costa Rica
+              </p>
             </div>
           </div>
           <form

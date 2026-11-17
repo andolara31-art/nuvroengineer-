@@ -39,6 +39,9 @@ export default function CommercialPackages() {
               <p className="commercial-package-description">
                 {item.description}
               </p>
+              <p className="commercial-package-ideal">
+                <strong>Ideal si</strong> {item.ideal}
+              </p>
               <ul>
                 {item.items.map((point) => (
                   <li key={point}>{point}</li>

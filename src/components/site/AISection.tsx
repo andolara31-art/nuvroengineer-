@@ -92,7 +92,7 @@ export default function AISection() {
       id="ia"
       aria-labelledby="ai-title"
     >
-      <TornEdge fill="#F7F7F4" seed={13} />
+      <TornEdge fill="#ECECE8" seed={13} />
       <div className="corp-container">
         <div className="ai-heading">
           <div>
@@ -115,8 +115,8 @@ export default function AISection() {
                 Conocé IA para negocios
                 <ArrowUpRight size={18} aria-hidden="true" />
               </a>
-              <a className="corp-text-link" href="/?servicio=ia#contacto">
-                Contanos tu caso
+              <a className="corp-text-link" href="/ia-para-negocios#aprende">
+                Aprendé a usarla
                 <ArrowUpRight size={16} aria-hidden="true" />
               </a>
             </div>

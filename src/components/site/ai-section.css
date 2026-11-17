@@ -1,5 +1,5 @@
 .ai-section {
-  background: var(--brand-paper-torn, #f7f7f4);
+  background: var(--brand-grain), var(--brand-paper);
 }
 
 .ai-heading {

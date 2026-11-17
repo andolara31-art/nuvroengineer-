@@ -1,197 +1,181 @@
 import { ArrowUpRight } from "lucide-react";
 import DemoSection from "./DemoSection";
-import LearningSection from "./LearningSection";
 import CommercialPackages from "./CommercialPackages";
 import AISection from "./AISection";
 import HowWeWork from "./HowWeWork";
+import ComicStory from "./ComicStory";
+import NeedFinder from "./NeedFinder";
+import MeetAnderson from "./MeetAnderson";
 import TornEdge from "./TornEdge";
-import { RestaurantArt, ServicesArt, ShopArt } from "./Illustrations";
 import "./corporate-sections.css";
 
+/* Servicios explicados con palabras de todos los días */
 const solutions = [
   {
     number: "01",
-    title: "Diseño web.",
-    body: "Que tu cliente entienda qué ofrecés y encuentre cómo contactarte.",
-    deliverables: "Páginas web · Landing pages · Catálogos",
+    title: "Página web.",
+    body: "Una página con lo que ofrecés, tus horarios y un botón para escribirte.",
+    ideal:
+      "la gente te pregunta por Instagram o WhatsApp qué hacés o dónde estás.",
     href: "/diseno-web-costa-rica",
-    action: "Ver diseño web",
   },
   {
     number: "02",
-    title: "Tiendas online.",
-    body: "Pasá de enviar fotos por mensaje a un catálogo con un recorrido de compra definido.",
-    deliverables: "E-commerce · Shopify · Catálogo y compra",
+    title: "Tienda en línea.",
+    body: "Tus productos con foto, precio y carrito, para que te compren sin mandar fotos una por una.",
+    ideal: "vendés productos y querés que te puedan comprar a cualquier hora.",
     href: "/tiendas-online-shopify",
-    action: "Ver tiendas online y Shopify",
   },
   {
     number: "03",
-    title: "Menú QR.",
-    body: "Tu menú a un escaneo. Fácil de consultar, fácil de actualizar.",
-    deliverables: "Menú digital · Categorías · Acceso desde la mesa",
+    title: "Menú con código QR.",
+    body: "El cliente escanea un código con la cámara del celular y ve tu menú. Si cambia un precio, se actualiza fácil.",
+    ideal: "tenés soda, restaurante o cafetería.",
     href: "/menu-qr-restaurantes",
-    action: "Ver menú QR",
   },
   {
     number: "04",
-    title: "Reseñas a un toque.",
-    body: "Una base QR o NFC en tu mostrador para que tus clientes compartan su experiencia en Google.",
-    deliverables: "Base o tarjeta · QR y NFC · Enlace de reseñas",
+    title: "Reseñas en Google con un toque.",
+    body: "Una placa en tu mostrador: el cliente acerca el celular o escanea el código y llega directo a dejarte una reseña.",
+    ideal: "tus clientes salen contentos pero casi nadie te deja una reseña.",
     href: "/resenas-google-qr-nfc",
-    action: "Ver bases QR y NFC para reseñas de Google",
   },
   {
     number: "05",
     title: "Videos y publicidad.",
-    body: "Mostrá una promoción, un producto o tu servicio con una pieza que se entienda desde el celular.",
-    deliverables: "Videos simples · Edición · Piezas comerciales",
+    body: "Videos cortos e imágenes para mostrar una promoción en Instagram, Facebook o WhatsApp.",
+    ideal: "querés publicar algo que se vea profesional en redes.",
     href: "/videos-publicidad-negocios",
-    action: "Ver videos y piezas publicitarias",
   },
   {
     number: "06",
-    title: "Automatización.",
-    body: "Hay tareas que tu negocio no debería seguir haciendo a mano.",
-    deliverables: "Consultas · Avisos · Seguimiento",
+    title: "Respuestas automáticas.",
+    body: "Que las preguntas que siempre se repiten se respondan solas y que ninguna consulta se te olvide.",
+    ideal: "pasás mucho tiempo contestando lo mismo.",
     href: "/automatizaciones-negocios",
-    action: "Ver automatizaciones",
   },
   {
     number: "07",
-    title: "Presencia digital.",
-    body: "Ordená tus enlaces, productos y formas de contacto en un lugar fácil de compartir.",
-    deliverables: "Link Bio · Catálogos · Kit WhatsApp Business",
+    title: "Todo en un solo enlace.",
+    body: "Un enlace para tu Instagram con tu WhatsApp, menú o catálogo y ubicación, todo en un mismo lugar.",
+    ideal: "estás empezando y querés verte ordenado desde el primer día.",
     href: "/?servicio=presencia-digital#contacto",
-    action: "Consultar presencia digital",
   },
 ];
 
-const sectors = [
+/* Preguntas de alguien que no sabe nada de tecnología */
+const faqs = [
   {
-    title: "Restaurantes y cafeterías",
-    Art: RestaurantArt,
-    body: "El menú, el horario y cómo llegar. A mano, antes de preguntar.",
-    href: "/menu-qr-restaurantes",
-    action: "Ver menú QR",
+    question: "¿La primera conversación tiene costo?",
+    answer:
+      "No. Nos contás qué necesita tu negocio y te orientamos sobre por dónde empezar, sin compromiso.",
   },
   {
-    title: "Comercios locales",
-    Art: ShopArt,
-    body: "Lo que vendés, bien presentado. Una tienda o un catálogo según cómo compren tus clientes.",
-    href: "/tiendas-online-shopify",
-    action: "Ver tiendas online",
+    question: "¿Tengo que saber de tecnología?",
+    answer:
+      "No. Necesitamos conocer tu negocio. Te explicamos las opciones en palabras simples y, al entregar, cómo usar lo que construimos.",
   },
   {
-    title: "Servicios y profesionales",
-    Art: ServicesArt,
-    body: "Servicios que se entienden y consultas que podés seguir con orden.",
-    href: "/automatizaciones-negocios",
-    action: "Ver automatizaciones",
+    question: "¿Cuánto cuesta?",
+    answer:
+      "Depende de lo que haya que resolver. Antes de empezar recibís una propuesta por escrito con lo que incluye, el costo y cualquier pago a otros proveedores.",
+  },
+  {
+    question: "¿Cuánto tarda?",
+    answer:
+      "Depende de lo que pidás. El plazo queda por escrito en la propuesta, antes de empezar.",
+  },
+  {
+    question: "¿Qué tengo que mandar para empezar?",
+    answer:
+      "Lo básico: el nombre de tu negocio, qué ofrecés, tus horarios y cómo te contactan. Si tenés logo y fotos, mejor; si no, vemos juntos cómo prepararlos.",
+  },
+  {
+    question: "¿Puedo empezar con algo pequeño?",
+    answer:
+      "Sí. Una página, un menú o una sola tarea. Empezamos por una necesidad concreta y acordamos qué incluye antes de construir.",
+  },
+  {
+    question: "¿Qué es un dominio?",
+    answer:
+      "Es la dirección de tu página, por ejemplo tunegocio.com. Se paga aparte, normalmente cada año. En la propuesta te decimos cuánto cuesta y a nombre de quién queda.",
+  },
+  {
+    question: "¿Y si después no sé usarlo?",
+    answer:
+      "Al entregar te explicamos cómo usarlo, e incluimos 30 días de soporte para dudas o problemas con lo que hicimos.",
+  },
+  {
+    question: "¿Se pueden reunir en persona?",
+    answer:
+      "Sí. Las visitas y reuniones en persona son de jueves a sábado. Por WhatsApp te respondemos todo el día.",
   },
 ];
 
 export default function CorporateSections() {
   return (
     <div className="corp-content">
+      <ComicStory />
+
+      <NeedFinder />
+
       <section
         className="corp-section corp-solutions"
         id="soluciones"
         aria-labelledby="corp-solutions-title"
       >
+        <TornEdge fill="#ECECE8" seed={5} />
         <div className="corp-container">
           <div className="corp-section-heading">
             <div>
-              <p className="corp-kicker">Qué podemos hacer</p>
+              <p className="corp-kicker">Servicios</p>
               <h2 id="corp-solutions-title">
-                El siguiente paso
+                Lo que podemos
                 <br />
-                de tu negocio.
+                hacer por vos.
               </h2>
             </div>
             <p>
-              Empezamos por una necesidad concreta. Definimos el alcance y
-              construimos una solución que tenga sentido para vos.
+              Explicado sin palabras raras. Tocá el que te interese para ver
+              cómo funciona.
             </p>
           </div>
           <div className="corp-solution-list">
-            {solutions.map(
-              ({ number, title, body, deliverables, href, action }) => (
-                <a
-                  className="corp-solution-row"
-                  href={href}
-                  key={number}
-                  aria-label={action}
-                >
-                  <span className="corp-solution-number" aria-hidden="true">
-                    {number}
-                  </span>
-                  <h3>{title}</h3>
-                  <div className="corp-solution-description">
-                    <p>{body}</p>
-                    <span>{deliverables}</span>
-                  </div>
-                  <span className="corp-solution-arrow" aria-hidden="true">
-                    <ArrowUpRight size={27} strokeWidth={1.5} />
-                  </span>
-                </a>
-              ),
-            )}
-          </div>
-        </div>
-      </section>
-
-      <AISection />
-
-      <HowWeWork />
-
-      <CommercialPackages />
-
-      <DemoSection />
-
-      <section
-        className="corp-section corp-sectors"
-        id="sectores"
-        aria-labelledby="corp-sectors-title"
-      >
-        <TornEdge fill="#121212" seed={29} />
-        <div className="corp-container corp-sector-layout">
-          <div className="corp-sector-heading">
-            <p className="corp-kicker">Hecho para negocios ticos</p>
-            <h2 id="corp-sectors-title">
-              El contexto
-              <br />
-              importa.
-            </h2>
-            <p>
-              No atiende igual una cafetería que un consultorio. La solución
-              tampoco debería ser igual.
-            </p>
-            <span className="corp-local-signature">
-              NUVRO ENGINEER · COSTA RICA
-            </span>
-          </div>
-          <div className="corp-sector-list">
-            {sectors.map(({ title, body, href, action, Art }) => (
+            {solutions.map(({ number, title, body, ideal, href }) => (
               <a
+                className="corp-solution-row"
                 href={href}
-                className="corp-sector-row"
-                key={title}
-                aria-label={`${title}: ${action}`}
+                key={number}
+                aria-label={`${title} ${body} Ideal si ${ideal} Ver cómo funciona.`}
               >
-                <Art />
-                <div>
-                  <h3>{title}</h3>
+                <span className="corp-solution-number" aria-hidden="true">
+                  {number}
+                </span>
+                <h3>{title}</h3>
+                <div className="corp-solution-description">
                   <p>{body}</p>
+                  <span className="corp-solution-ideal">
+                    <strong>Ideal si</strong> {ideal}
+                  </span>
                 </div>
-                <ArrowUpRight size={23} strokeWidth={1.5} aria-hidden="true" />
+                <span className="corp-solution-arrow" aria-hidden="true">
+                  <ArrowUpRight size={27} strokeWidth={1.5} />
+                </span>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      <LearningSection />
+      <HowWeWork />
+
+      <DemoSection />
+
+      <CommercialPackages />
+
+      <AISection />
+
+      <MeetAnderson />
 
       <section
         className="corp-section corp-faq"
@@ -201,65 +185,30 @@ export default function CorporateSections() {
         <TornEdge fill="#F7F7F4" seed={31} />
         <div className="corp-container corp-faq-grid">
           <div>
-            <p className="corp-kicker">Antes de empezar</p>
+            <p className="corp-kicker">Preguntas frecuentes</p>
             <h2 id="corp-faq-title">
-              Hablemos
+              Preguntá
               <br />
-              claro.
+              sin pena.
             </h2>
             <p className="corp-faq-intro">
-              Estas son algunas preguntas que vale la pena resolver desde el
-              principio.
+              Las dudas más comunes de quien empieza, respondidas en palabras
+              simples.
             </p>
             <a className="corp-text-link" href="#contacto">
               Tengo otra pregunta <ArrowUpRight size={19} aria-hidden="true" />
             </a>
           </div>
           <div className="corp-faq-list">
-            <details>
-              <summary>
-                ¿Qué necesito para empezar?
-                <span aria-hidden="true">+</span>
-              </summary>
-              <p>
-                Contanos qué hace tu negocio y qué querés mejorar. Si ya tenés
-                logo, fotografías o una web, los revisamos. Juntos definimos qué
-                información falta.
-              </p>
-            </details>
-            <details>
-              <summary>
-                ¿Puedo empezar con algo pequeño?
-                <span aria-hidden="true">+</span>
-              </summary>
-              <p>
-                Sí. Una página, un menú o un proceso específico. Definimos una
-                necesidad concreta y acordamos qué incluye el trabajo antes de
-                construir.
-              </p>
-            </details>
-            <details>
-              <summary>
-                ¿Cuánto cuesta?
-                <span aria-hidden="true">+</span>
-              </summary>
-              <p>
-                Depende de lo que haya que resolver. La propuesta detalla los
-                entregables, el costo y cualquier servicio externo o pago
-                recurrente que corresponda.
-              </p>
-            </details>
-            <details>
-              <summary>
-                ¿Tengo que saber de tecnología?
-                <span aria-hidden="true">+</span>
-              </summary>
-              <p>
-                No. Necesitamos conocer tu negocio. Te explicamos las opciones
-                en palabras simples y, al entregar, cómo usar lo que
-                construimos.
-              </p>
-            </details>
+            {faqs.map(({ question, answer }) => (
+              <details key={question}>
+                <summary>
+                  {question}
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <p>{answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
