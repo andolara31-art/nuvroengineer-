@@ -17,7 +17,7 @@ export const servicePages: ServicePageContent[] = [
     title: "Diseño web en Costa Rica para negocios | NUVRO Engineer",
     description:
       "Diseño de páginas web para negocios de Costa Rica. Presentá tus servicios, respondé dudas y facilitá las cotizaciones desde el celular con NUVRO Engineer.",
-    name: "Diseño web en Costa Rica para presentar y hacer crecer tu negocio.",
+    name: "Diseño web en Costa Rica para mostrar tu negocio con claridad.",
     eyebrow: "Diseño web / Costa Rica",
     intro:
       "Cuando alguien descubre tu negocio, necesita entender qué ofrecés, si le sirve y cómo dar el siguiente paso. Diseñamos páginas comerciales que reúnen esa información y hacen fácil consultar desde el celular.",
