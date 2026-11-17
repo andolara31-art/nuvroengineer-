@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import TornEdge from "./TornEdge";
 import { ArrowUpRight } from "lucide-react";
 import {
   BUSINESS_WHATSAPP_DISPLAY,
@@ -93,6 +94,7 @@ export default function SiteContact() {
       id="contacto"
       aria-labelledby="contact-title"
     >
+      <TornEdge fill="#ECECE8" seed={43} />
       <div className="shell">
         <div className="contact-inner corp-contact-grid">
           <div className="corp-contact-intro">

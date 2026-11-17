@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { commercialPackages } from "../../content/packages";
+import TornEdge from "./TornEdge";
 import "./commercial-packages.css";
 
 export default function CommercialPackages() {
@@ -9,10 +10,11 @@ export default function CommercialPackages() {
       className="corp-section commercial-packages"
       aria-labelledby="packages-title"
     >
+      <TornEdge fill="#F7F7F4" seed={19} />
       <div className="corp-container">
         <div className="corp-section-heading">
           <div>
-            <p className="corp-kicker">UN PUNTO DE PARTIDA</p>
+            <p className="corp-kicker">Un punto de partida</p>
             <h2 id="packages-title">
               Un paquete.
               <br />

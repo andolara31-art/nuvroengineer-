@@ -1,15 +1,15 @@
 :root {
-  --paper: #f2f2ef;
-  --black: #080808;
+  --paper: #ecece8;
+  --black: #121212;
   --line: #d5d5d0;
-  --blue: #0066ff;
+  --blue: #2046f0;
 }
 html {
-  background: #f2f2ef;
+  background: #ecece8;
 }
 body {
-  color: #080808;
-  background: #f2f2ef;
+  color: #121212;
+  background: #ecece8;
   font-family: Inter, Arial, sans-serif;
 }
 .shell {
@@ -24,9 +24,9 @@ body {
   gap: 24px;
   min-height: 50px;
   border-radius: 2px;
-  border: 1px solid #080808;
+  border: 1px solid #121212;
   padding: 15px 22px;
-  background: #080808;
+  background: #121212;
   color: #fff;
   font-size: 12px;
   font-weight: 500;
@@ -39,7 +39,7 @@ body {
 }
 .button.white {
   background: #fff;
-  color: #080808;
+  color: #121212;
   border-color: #fff;
 }
 .underlink {
@@ -54,7 +54,7 @@ body {
 .service-page h2,
 .site-info h1,
 .nuvro-guide h1 {
-  font-family: "Archivo Black", Arial, sans-serif;
+  font-family: "Big Shoulders Display", Arial, sans-serif;
   font-weight: 400;
   letter-spacing: -0.05em;
 }
@@ -83,7 +83,7 @@ body {
 .learn-card {
   border: 1px solid #d5d5d0;
   border-radius: 2px;
-  background: #f2f2ef;
+  background: #ecece8;
 }
 .nuvro-demo-card {
   padding: 28px 23px;
@@ -100,14 +100,14 @@ body {
   border-radius: 2px;
 }
 .nuvro-demo-categories button[aria-pressed="true"] {
-  background: #080808;
-  border-color: #080808;
+  background: #121212;
+  border-color: #121212;
 }
 .nuvro-demo-shop-name {
   border-color: #d5d5d0;
 }
 .nuvro-demo-shop-name > span {
-  color: #080808;
+  color: #121212;
 }
 .nuvro-demo-label,
 .nuvro-demo-intro,
@@ -123,7 +123,7 @@ body {
   color: #666;
 }
 .learn {
-  background: #f2f2ef;
+  background: #ecece8;
   border: 0;
 }
 .learn-card {
@@ -139,14 +139,14 @@ body {
   color: #666;
 }
 .service-hero {
-  background: #080808;
+  background: #121212;
 }
 .service-hero .eyebrow {
   color: #b8b8b8;
 }
 .service-hero .button {
   background: #fff;
-  color: #080808;
+  color: #121212;
   border-color: #fff;
 }
 .service-hero .button:hover {
@@ -154,7 +154,7 @@ body {
   border-color: #e9e9e4;
 }
 .service-hero h1 {
-  font-family: "Archivo Black", Arial, sans-serif;
+  font-family: "Big Shoulders Display", Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(34px, 4.1vw, 62px);
   letter-spacing: -0.05em;
@@ -195,10 +195,10 @@ body {
   color: #555;
 }
 .nuvro-guide {
-  background: #f2f2ef;
+  background: #ecece8;
 }
 .nuvro-guide-header h1 {
-  font-family: "Archivo Black", Arial, sans-serif;
+  font-family: "Big Shoulders Display", Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(34px, 4.7vw, 62px);
   letter-spacing: -0.05em;

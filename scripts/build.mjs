@@ -38,8 +38,10 @@ try {
       `<meta property="og:title" content="${escape(page.title)}" />`,
       `<meta property="og:description" content="${escape(page.description)}" />`,
       `<meta property="og:url" content="${url}" />`,
-      `<meta property="og:image" content="${base}/assets/brand/nuvro-editorial-social-v1.jpg" />`,
-      `<meta property="og:image:alt" content="Portada de NUVRO ENGINEER en blanco y negro con una muestra interactiva de diseño web" />`,
+      `<meta property="og:image" content="${base}/assets/brand/nuvro-og-marca-v2.jpg" />`,
+      `<meta property="og:image:width" content="1200" />`,
+      `<meta property="og:image:height" content="630" />`,
+      `<meta property="og:image:alt" content="NUVRO ENGINEER: webs, menús QR e IA para negocios en Costa Rica, en azul con borde de papel rasgado" />`,
       `<meta name="twitter:card" content="summary_large_image" />`,
       env.GOOGLE_SITE_VERIFICATION
         ? `<meta name="google-site-verification" content="${escape(env.GOOGLE_SITE_VERIFICATION)}" />`

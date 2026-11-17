@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ArrowUpRight, Coffee, QrCode, Wrench } from "lucide-react";
+import TornEdge from "./TornEdge";
 import "./demos.css";
 
 const menuItems = [
@@ -47,6 +49,27 @@ const flowSteps = [
   },
 ];
 
+const examples = [
+  {
+    href: "/#ejemplo-mesa",
+    title: "Web de café MESA",
+    body: "Una portada con carta para un café de barrio ficticio.",
+    icon: Coffee,
+  },
+  {
+    href: "#demo-menu",
+    title: "Menú QR de una soda",
+    body: "Categorías y resumen de consumo con productos inventados.",
+    icon: QrCode,
+  },
+  {
+    href: "#demo-web",
+    title: "Página de un taller",
+    body: "Elegí un servicio y prepará una consulta de ejemplo.",
+    icon: Wrench,
+  },
+];
+
 function colones(amount: number) {
   return `₡${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}`;
 }
@@ -74,7 +97,11 @@ function MenuDemo() {
   }
 
   return (
-    <article className="nuvro-demo-card" aria-labelledby="demo-menu-title">
+    <article
+      className="nuvro-demo-card"
+      id="demo-menu"
+      aria-labelledby="demo-menu-title"
+    >
       <p className="nuvro-demo-label">01 / MENÚ DIGITAL · DEMO FICTICIA</p>
       <h3 id="demo-menu-title">Del menú al pedido claro.</h3>
       <p className="nuvro-demo-intro">
@@ -171,7 +198,11 @@ function WebsiteDemo() {
   const [summary, setSummary] = useState("");
 
   return (
-    <article className="nuvro-demo-card" aria-labelledby="demo-site-title">
+    <article
+      className="nuvro-demo-card"
+      id="demo-web"
+      aria-labelledby="demo-site-title"
+    >
       <p className="nuvro-demo-label">02 / PÁGINA COMERCIAL · DEMO FICTICIA</p>
       <h3 id="demo-site-title">Un siguiente paso fácil.</h3>
       <p className="nuvro-demo-intro">
@@ -315,18 +346,12 @@ export default function DemoSection() {
       id="demostraciones"
       aria-labelledby="demos-title"
     >
+      <TornEdge fill="#ECECE8" seed={23} />
       <div className="shell">
         <div className="section-head">
           <div>
-            <p className="eyebrow">
-              <span aria-hidden="true" />
-              Probá una idea
-            </p>
-            <h2 id="demos-title">
-              Así podría funcionar
-              <br />
-              <span>en tu negocio.</span>
-            </h2>
+            <p className="corp-kicker">Demostraciones</p>
+            <h2 id="demos-title">Probalo antes de decidir.</h2>
           </div>
           <p className="section-sub">
             Tres demostraciones interactivas para entender qué podés construir
@@ -334,6 +359,23 @@ export default function DemoSection() {
             ejemplos son ficticios.
           </p>
         </div>
+        <ul className="brand-examples" aria-label="Ejemplos para probar">
+          {examples.map(({ href, title, body, icon: Icon }) => (
+            <li key={href}>
+              <a className="brand-example" href={href}>
+                <span className="brand-label">Ejemplo</span>
+                <span className="brand-icon" aria-hidden="true">
+                  <Icon size={22} strokeWidth={2.2} />
+                </span>
+                <strong>{title}</strong>
+                <span>{body}</span>
+                <span className="brand-example-go">
+                  Probalo <ArrowUpRight size={16} aria-hidden="true" />
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
         <div className="nuvro-demo-grid">
           <MenuDemo />
           <WebsiteDemo />
@@ -345,8 +387,9 @@ export default function DemoSection() {
             <br />
             <strong>Contanos cómo trabajás hoy.</strong>
           </p>
-          <a className="button" href="/#contacto">
-            Quiero algo así para mi negocio <span aria-hidden="true">↗</span>
+          <a className="brand-btn brand-btn-primary" href="/#contacto">
+            Quiero algo así para mi negocio
+            <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>
       </div>

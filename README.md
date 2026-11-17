@@ -1,7 +1,7 @@
 # NUVRO ENGINEER
 
 Web comercial de NUVRO ENGINEER: tecnología simple para negocios reales.
-Diseño editorial en negro #080808, blanco y papel #f2f2ef, con azul #0066FF limitado a detalles. Tipografías Archivo Black e Inter. Cabecera con búsqueda real y portada con una muestra interactiva de diseño web.
+Identidad de marca con papel #ECECE8 con grano, azul eléctrico #2046F0, tinta #121212, blanco y papel rasgado #F7F7F4. Colores de apoyo solo en detalles (máximo dos por sección): amarillo #FFC83D, coral #FF5A4E y menta #5EDBB0. Títulos en Big Shoulders Display (mayúsculas, condensada), interfaz en Inter 600/700 y notas a mano en Caveat azul; las fuentes se cargan desde `@fontsource`, sin CDN. Estilo cómic: bordes gruesos de tinta, sombras duras, semitono, rótulos amarillos y bordes de papel rasgado generados con SVG (`TornEdge.tsx`). Cabecera con búsqueda real y portada azul con una muestra interactiva de diseño web.
 
 ## Desarrollo
 
@@ -29,8 +29,12 @@ La portada no necesita una API de IA ni variables privadas.
 
 - `src/components/site/`: contenido, navegación y contacto de la nueva web.
 - `CorporateHero.tsx`, `CorporateSections.tsx` y `src/corporate.css`: portada y secciones editoriales alineadas con la identidad original de NUVRO. La muestra permite abrir una carta y seleccionar productos sin enviar pedidos; el buscador filtra páginas existentes.
-- `src/home.css`: identidad visual y adaptación a móvil.
-- `public/assets/brand/`: fotografía editorial acreditada, imagen social de la web y versiones anteriores conservadas. Las imágenes generadas anteriores ya no se muestran en la portada.
+- `src/brand.css`: capa final de identidad (colores, tipografía, estilo cómic, menú, botones, botón fijo de WhatsApp y movimiento reducido). Las animaciones usan solo `transform` y `opacity`.
+- `src/components/site/TornEdge.tsx`: borde de papel rasgado con semilla fija, usado entre secciones y en el pie.
+- `src/components/site/HowWeWork.tsx` y `AISection.tsx`: "Cómo trabajamos" con ilustraciones propias e "IA para tu negocio" con un chat ficticio en un teléfono dibujado. No se usan logotipos de marcas ajenas: solo nombres en pastillas con íconos genéricos y la nota de no afiliación.
+- `src/home.css`: estilos base heredados y adaptación a móvil.
+- `src/components/site/Illustrations.tsx`: ilustraciones cómic dibujadas en SVG con animaciones suaves (cafetería del ejemplo MESA y los tres sectores). La portada ya no usa fotografías.
+- `public/assets/brand/`: imagen social de la web y versiones anteriores conservadas (incluida la fotografía editorial que usaba el ejemplo).
 - `src/components/site/LearningSection.tsx`: ejemplos educativos de IA y automatización; instrucciones copiables y guías desplegables. No presenta cursos, precios ni integraciones activas ficticias.
 - `src/components/ProposalPage.tsx`: ruta de propuestas existente.
 

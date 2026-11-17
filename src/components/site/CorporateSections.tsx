@@ -2,6 +2,10 @@ import { ArrowUpRight } from "lucide-react";
 import DemoSection from "./DemoSection";
 import LearningSection from "./LearningSection";
 import CommercialPackages from "./CommercialPackages";
+import AISection from "./AISection";
+import HowWeWork from "./HowWeWork";
+import TornEdge from "./TornEdge";
+import { RestaurantArt, ServicesArt, ShopArt } from "./Illustrations";
 import "./corporate-sections.css";
 
 const solutions = [
@@ -66,96 +70,30 @@ const solutions = [
 const sectors = [
   {
     title: "Restaurantes y cafeterías",
+    Art: RestaurantArt,
     body: "El menú, el horario y cómo llegar. A mano, antes de preguntar.",
     href: "/menu-qr-restaurantes",
     action: "Ver menú QR",
   },
   {
     title: "Comercios locales",
+    Art: ShopArt,
     body: "Lo que vendés, bien presentado. Una tienda o un catálogo según cómo compren tus clientes.",
     href: "/tiendas-online-shopify",
     action: "Ver tiendas online",
   },
   {
     title: "Servicios y profesionales",
+    Art: ServicesArt,
     body: "Servicios que se entienden y consultas que podés seguir con orden.",
     href: "/automatizaciones-negocios",
     action: "Ver automatizaciones",
   },
 ];
 
-const process = [
-  {
-    number: "01",
-    title: "Una conversación.",
-    body: "Nos contás cómo trabajás y qué necesitás resolver. Definimos por dónde empezar.",
-  },
-  {
-    number: "02",
-    title: "Una propuesta clara.",
-    body: "Acordamos qué vamos a construir, qué incluye y cuánto cuesta. Todo antes de empezar.",
-  },
-  {
-    number: "03",
-    title: "Trabajo que podés usar.",
-    body: "Con el anticipo y los materiales confirmados, construimos y revisamos con vos. Te explicamos el uso e incluimos 30 días de soporte postentrega.",
-  },
-];
-
 export default function CorporateSections() {
   return (
     <div className="corp-content">
-      <section
-        className="corp-section corp-intro"
-        aria-labelledby="corp-intro-title"
-      >
-        <div className="corp-container">
-          <div className="corp-intro-grid">
-            <div>
-              <p className="corp-kicker">LA FORMA NUVRO</p>
-              <h2 id="corp-intro-title">
-                Buen diseño.
-                <br />
-                Mejor criterio.
-              </h2>
-            </div>
-            <div className="corp-intro-copy">
-              <p>
-                Tu negocio ya tiene una forma de hacer las cosas. Nuestra tarea
-                es entenderla y diseñar lo que le hace falta.
-              </p>
-              <p>
-                Una web que explique bien. Un menú fácil de consultar. Un
-                proceso que deje de depender de tu memoria.
-              </p>
-              <a className="corp-text-link" href="/sobre-nuvro">
-                Conocé la firma <ArrowUpRight size={19} aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-          <div className="corp-method" aria-label="Nuestro criterio de trabajo">
-            <div>
-              <span>El negocio primero.</span>
-              <strong>
-                Entender<span>.</span>
-              </strong>
-            </div>
-            <div>
-              <span>Cada decisión cuenta.</span>
-              <strong>
-                Diseñar<span>.</span>
-              </strong>
-            </div>
-            <div>
-              <span>Que sirva todos los días.</span>
-              <strong>
-                Resolver<span>.</span>
-              </strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section
         className="corp-section corp-solutions"
         id="soluciones"
@@ -164,7 +102,7 @@ export default function CorporateSections() {
         <div className="corp-container">
           <div className="corp-section-heading">
             <div>
-              <p className="corp-kicker">QUÉ PODEMOS HACER</p>
+              <p className="corp-kicker">Qué podemos hacer</p>
               <h2 id="corp-solutions-title">
                 El siguiente paso
                 <br />
@@ -203,6 +141,10 @@ export default function CorporateSections() {
         </div>
       </section>
 
+      <AISection />
+
+      <HowWeWork />
+
       <CommercialPackages />
 
       <DemoSection />
@@ -212,9 +154,10 @@ export default function CorporateSections() {
         id="sectores"
         aria-labelledby="corp-sectors-title"
       >
+        <TornEdge fill="#121212" seed={29} />
         <div className="corp-container corp-sector-layout">
           <div className="corp-sector-heading">
-            <p className="corp-kicker">HECHO PARA NEGOCIOS TICOS</p>
+            <p className="corp-kicker">Hecho para negocios ticos</p>
             <h2 id="corp-sectors-title">
               El contexto
               <br />
@@ -229,13 +172,14 @@ export default function CorporateSections() {
             </span>
           </div>
           <div className="corp-sector-list">
-            {sectors.map(({ title, body, href, action }) => (
+            {sectors.map(({ title, body, href, action, Art }) => (
               <a
                 href={href}
                 className="corp-sector-row"
                 key={title}
                 aria-label={`${title}: ${action}`}
               >
+                <Art />
                 <div>
                   <h3>{title}</h3>
                   <p>{body}</p>
@@ -247,40 +191,6 @@ export default function CorporateSections() {
         </div>
       </section>
 
-      <section
-        className="corp-section corp-process"
-        id="proceso"
-        aria-labelledby="corp-process-title"
-      >
-        <div className="corp-container corp-process-layout">
-          <div className="corp-process-heading">
-            <p className="corp-kicker">ASÍ TRABAJAMOS</p>
-            <h2 id="corp-process-title">
-              Sabé qué
-              <br />
-              esperar.
-            </h2>
-            <a className="corp-text-link" href="#contacto">
-              Hablemos de tu proyecto{" "}
-              <ArrowUpRight size={19} aria-hidden="true" />
-            </a>
-          </div>
-          <ol className="corp-process-list">
-            {process.map(({ number, title, body }) => (
-              <li key={number}>
-                <span className="corp-step-number" aria-hidden="true">
-                  {number}
-                </span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <LearningSection />
 
       <section
@@ -288,9 +198,10 @@ export default function CorporateSections() {
         id="preguntas"
         aria-labelledby="corp-faq-title"
       >
+        <TornEdge fill="#F7F7F4" seed={31} />
         <div className="corp-container corp-faq-grid">
           <div>
-            <p className="corp-kicker">ANTES DE EMPEZAR</p>
+            <p className="corp-kicker">Antes de empezar</p>
             <h2 id="corp-faq-title">
               Hablemos
               <br />

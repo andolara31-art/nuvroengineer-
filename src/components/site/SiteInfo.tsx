@@ -133,8 +133,8 @@ export default function SiteInfo({ page }: { page: string }) {
             Podés explorar las páginas de servicios y probar las demostraciones.
             Los ejemplos están identificados como demos y no representan
             proyectos de clientes. La muestra de cafetería de la portada es un
-            negocio ficticio; utiliza una fotografía de Veronika Martinelli en
-            Lisboa, con el crédito y la fuente junto al ejemplo.
+            negocio ficticio, dibujado por NUVRO como ilustración, sin fotos de
+            personas ni de negocios reales.
           </p>
           <a className="button" href="/#demostraciones">
             Probá las demostraciones <span aria-hidden="true">↗</span>

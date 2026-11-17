@@ -1,6 +1,6 @@
 import {
   ArrowUpRight,
-  Instagram,
+  AtSign,
   MapPin,
   MessageCircle,
   Phone,
@@ -10,42 +10,36 @@ import {
   BUSINESS_WHATSAPP_DISPLAY,
   whatsappUrl,
 } from "../../lib/site";
+import TornEdge from "./TornEdge";
 import "./corporate-footer.css";
+
+const INSTAGRAM_HANDLE = "@nuvroengineer";
+const INSTAGRAM_URL = "https://www.instagram.com/nuvroengineer/";
 
 export default function SiteFooter() {
   return (
     <footer className="corp-footer">
+      <TornEdge fill="#2046F0" seed={41} />
       <div className="corp-footer-shell">
-        <div className="corp-footer-main">
-          <div className="corp-footer-about">
-            <a
-              className="corp-footer-brand"
-              href="/"
-              aria-label="NUVRO ENGINEER, inicio"
-            >
-              <span className="corp-footer-word">
-                NUVRO<small>ENGINEER</small>
-              </span>
+        <div className="corp-footer-sign">
+          <div className="corp-footer-box">
+            <a className="corp-footer-brand" href="/">
+              NUVRO ENGINEER
             </a>
-            <p>
-              Webs claras. Procesos en orden. Más fácil para vos y para tus
-              clientes.
-            </p>
-            <span className="corp-footer-coverage">
-              <MapPin size={15} aria-hidden="true" /> Atención en todo Costa
-              Rica
-            </span>
-            <a
-              className="corp-footer-instagram"
-              href="https://www.instagram.com/nuvroengineer/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="NUVRO Engineer en Instagram"
-            >
-              <Instagram size={17} aria-hidden="true" /> @nuvroengineer
-              <ArrowUpRight size={14} aria-hidden="true" />
-            </a>
+            <p>Hecho para negocios ticos.</p>
           </div>
+          <a
+            className="corp-footer-handle"
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Instagram ${INSTAGRAM_HANDLE}`}
+          >
+            {INSTAGRAM_HANDLE}
+          </a>
+        </div>
+
+        <div className="corp-footer-main">
           <div className="corp-footer-group">
             <h2>Soluciones</h2>
             <a href="/diseno-web-costa-rica">Diseño web</a>
@@ -66,11 +60,8 @@ export default function SiteFooter() {
             <a href="/guias/ia-y-automatizacion-para-pymes">Guía para pymes</a>
           </div>
           <div className="corp-footer-group corp-footer-contact">
-            <h2>Tu próximo paso</h2>
-            <p>Contanos qué está frenando tu negocio. Empezamos por ahí.</p>
-            <a className="corp-footer-phone" href={`tel:+${BUSINESS_WHATSAPP}`}>
-              <Phone size={16} aria-hidden="true" /> {BUSINESS_WHATSAPP_DISPLAY}
-            </a>
+            <h2>Contacto</h2>
+            <p>Contanos qué querés ordenar en tu negocio. Empezamos por ahí.</p>
             <a
               className="corp-footer-button"
               href={whatsappUrl(
@@ -79,19 +70,35 @@ export default function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircle size={16} aria-hidden="true" /> Escribinos por
-              WhatsApp <ArrowUpRight size={15} aria-hidden="true" />
+              <MessageCircle size={18} aria-hidden="true" /> Escribinos por
+              WhatsApp <ArrowUpRight size={16} aria-hidden="true" />
             </a>
+            <a className="corp-footer-line" href={`tel:+${BUSINESS_WHATSAPP}`}>
+              <Phone size={16} aria-hidden="true" /> {BUSINESS_WHATSAPP_DISPLAY}
+            </a>
+            <a
+              className="corp-footer-line"
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AtSign size={16} aria-hidden="true" /> Instagram{" "}
+              {INSTAGRAM_HANDLE}
+            </a>
+            <span className="corp-footer-line">
+              <MapPin size={16} aria-hidden="true" /> Desde Palmares, para todo
+              Costa Rica
+            </span>
           </div>
         </div>
+
         <div className="corp-footer-bottom">
-          <span>© 2026 NUVRO ENGINEER. Costa Rica.</span>
+          <span>© 2026 NUVRO ENGINEER · Costa Rica</span>
           <div>
             <a href="/privacidad">Privacidad</a>
             <a href="/politicas-de-servicio">Políticas de servicio</a>
             <a href="/#contacto">Contacto</a>
           </div>
-          <span>Tecnología simple para negocios reales.</span>
         </div>
       </div>
     </footer>

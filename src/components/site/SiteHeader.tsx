@@ -1,38 +1,64 @@
-import { useId, useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useId,
+  useState,
+  type CSSProperties,
+  type FormEvent,
+} from "react";
 import {
   ArrowUpRight,
+  Bot,
   ChevronDown,
-  Instagram,
+  Clapperboard,
+  AtSign,
+  LayoutTemplate,
   Menu,
   MessageCircle,
   Phone,
+  QrCode,
   Search,
+  ShoppingBag,
+  Star,
+  Workflow,
   X,
+  type LucideIcon,
 } from "lucide-react";
 import { BUSINESS_WHATSAPP_DISPLAY, whatsappUrl } from "../../lib/site";
 import "./corporate-header.css";
 
-const solutions = [
+type Solution = {
+  name: string;
+  href: string;
+  description: string;
+  terms: string;
+  icon: LucideIcon;
+};
+
+const solutions: Solution[] = [
   {
     name: "Diseño web",
+    icon: LayoutTemplate,
     href: "/diseno-web-costa-rica",
     description: "Tu negocio en una web clara y profesional.",
     terms: "pagina paginas sitio presencia digital negocio landing catalogo",
   },
   {
     name: "Automatizaciones",
+    icon: Workflow,
     href: "/automatizaciones-negocios",
     description: "Conectá tareas y ordená el trabajo diario.",
     terms: "automatizacion whatsapp consultas clientes procesos",
   },
   {
     name: "Menú QR",
+    icon: QrCode,
     href: "/menu-qr-restaurantes",
     description: "Una carta digital fácil de consultar.",
     terms: "restaurante restaurantes cafeteria soda carta comida",
   },
   {
     name: "Reseñas Google · QR/NFC",
+    icon: Star,
     href: "/resenas-google-qr-nfc",
     description: "Un acceso directo para que tus clientes dejen su reseña.",
     terms:
@@ -40,6 +66,7 @@ const solutions = [
   },
   {
     name: "Tiendas online / Shopify",
+    icon: ShoppingBag,
     href: "/tiendas-online-shopify",
     description: "Productos, carrito y una forma clara de comprar.",
     terms:
@@ -47,6 +74,7 @@ const solutions = [
   },
   {
     name: "Videos y piezas publicitarias",
+    icon: Clapperboard,
     href: "/videos-publicidad-negocios",
     description: "Contenido sencillo para mostrar lo que ofrecés.",
     terms:
@@ -54,12 +82,13 @@ const solutions = [
   },
   {
     name: "IA para negocios",
+    icon: Bot,
     href: "/ia-para-negocios",
     description: "Aplicá inteligencia artificial a tu negocio.",
     terms: "inteligencia artificial ai aprender formacion",
   },
 ];
-const searchablePages = [
+const searchablePages: Omit<Solution, "icon">[] = [
   ...solutions,
   {
     name: "Paquetes para tu negocio",
@@ -171,14 +200,40 @@ function ServiceSearch({ compact = false }: { compact?: boolean }) {
 function Brand() {
   return (
     <a className="corp-brand" href="/" aria-label="NUVRO ENGINEER, inicio">
-      <span className="corp-brand-word">
-        NUVRO<small>ENGINEER</small>
-      </span>
+      <span className="corp-brand-word">NUVRO ENGINEER</span>
     </a>
   );
 }
 
+function useCloseMenusOnOutsideClick() {
+  useEffect(() => {
+    const menus = () =>
+      document.querySelectorAll<HTMLDetailsElement>(
+        ".corp-solutions-menu[open], .corp-mobile-menu[open]",
+      );
+    const onClick = (event: MouseEvent) => {
+      menus().forEach((menu) => {
+        if (!menu.contains(event.target as Node)) menu.removeAttribute("open");
+      });
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      menus().forEach((menu) => {
+        menu.removeAttribute("open");
+        menu.querySelector("summary")?.focus();
+      });
+    };
+    document.addEventListener("click", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+}
+
 export default function SiteHeader() {
+  useCloseMenusOnOutsideClick();
   const contact = whatsappUrl(
     "Hola, me gustaría conocer las soluciones de NUVRO para mi negocio.",
   );
@@ -187,23 +242,34 @@ export default function SiteHeader() {
       <a className="corp-skip" href="#contenido">
         Saltar al contenido
       </a>
-      <div className="corp-utility">
+      <aside className="corp-utility" aria-label="Contacto rápido">
         <div className="corp-header-shell corp-utility-inner">
-          <span>Hecho para negocios ticos.</span>
+          <span>
+            Hecho para negocios ticos.{" "}
+            <a className="pop-utility-new" href="/#ia">
+              Nuevo: IA para tu negocio
+            </a>
+          </span>
           <div>
-            <a href={contact} target="_blank" rel="noopener noreferrer">
+            <a
+              href={contact}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Escribinos por WhatsApp"
+            >
               <MessageCircle size={14} aria-hidden="true" /> WhatsApp
             </a>
             <a
               href="https://www.instagram.com/nuvroengineer/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram @nuvroengineer"
             >
-              <Instagram size={14} aria-hidden="true" /> Instagram
+              <AtSign size={14} aria-hidden="true" /> nuvroengineer
             </a>
           </div>
         </div>
-      </div>
+      </aside>
       <header className="corp-header">
         <div className="corp-header-shell corp-header-main">
           <Brand />
@@ -226,7 +292,8 @@ export default function SiteHeader() {
           </a>
           <details className="corp-mobile-menu">
             <summary aria-label="Menú principal">
-              <Menu size={25} aria-hidden="true" />
+              <Menu className="pop-menu-open" size={22} aria-hidden="true" />
+              <X className="pop-menu-close" size={22} aria-hidden="true" />
               <span>Menú</span>
             </summary>
             <div
@@ -247,15 +314,19 @@ export default function SiteHeader() {
                     Soluciones <ChevronDown size={16} aria-hidden="true" />
                   </summary>
                   <div>
-                    {solutions.map((solution) => (
-                      <a key={solution.href} href={solution.href}>
-                        {solution.name}
+                    {solutions.map(({ href, name, icon: Icon }) => (
+                      <a key={href} href={href}>
+                        <span className="pop-icon" aria-hidden="true">
+                          <Icon size={16} strokeWidth={1.8} />
+                        </span>
+                        <span className="pop-mobile-label">{name}</span>
                         <ArrowUpRight size={15} aria-hidden="true" />
                       </a>
                     ))}
                   </div>
                 </details>
                 <a href="/#paquetes">Paquetes</a>
+                <a href="/#ia">IA para tu negocio</a>
                 <a href="/#demostraciones">Demostraciones</a>
                 <a href="/#aprende">Aprendé IA</a>
                 <a href="/sobre-nuvro">Nosotros</a>
@@ -280,19 +351,34 @@ export default function SiteHeader() {
                   Soluciones <ChevronDown size={14} aria-hidden="true" />
                 </summary>
                 <div className="corp-solutions-panel">
-                  <p>Soluciones digitales</p>
-                  {solutions.map((solution) => (
-                    <a key={solution.href} href={solution.href}>
-                      <span>
-                        <strong>{solution.name}</strong>
-                        <small>{solution.description}</small>
-                      </span>
-                      <ArrowUpRight size={17} aria-hidden="true" />
-                    </a>
-                  ))}
+                  <p>
+                    Soluciones digitales
+                    <span className="pop-burst" aria-hidden="true">
+                      7
+                    </span>
+                  </p>
+                  {solutions.map(
+                    ({ href, name, description, icon: Icon }, index) => (
+                      <a
+                        key={href}
+                        href={href}
+                        style={{ "--i": index } as CSSProperties}
+                      >
+                        <span className="pop-icon" aria-hidden="true">
+                          <Icon size={18} strokeWidth={1.8} />
+                        </span>
+                        <span>
+                          <strong>{name}</strong>
+                          <small>{description}</small>
+                        </span>
+                        <ArrowUpRight size={17} aria-hidden="true" />
+                      </a>
+                    ),
+                  )}
                 </div>
               </details>
               <a href="/#paquetes">Paquetes</a>
+              <a href="/#ia">IA para tu negocio</a>
               <a href="/#demostraciones">Demostraciones</a>
               <a href="/#aprende">Aprendé IA</a>
               <a href="/sobre-nuvro">Nosotros</a>

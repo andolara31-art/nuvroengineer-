@@ -8,9 +8,11 @@ import BusinessGuide from "./components/site/BusinessGuide";
 import SiteInfo from "./components/site/SiteInfo";
 import ServicePolicies from "./components/site/ServicePolicies";
 import AnalyticsConsent from "./components/site/AnalyticsConsent";
+import WhatsAppFab from "./components/site/WhatsAppFab";
 import { servicePages } from "./content/services";
 import "./home.css";
 import "./corporate.css";
+import "./brand.css";
 
 export default function App({ path = "/" }: { path?: string }) {
   const page = servicePages.find((service) => service.path === path);
@@ -34,6 +36,7 @@ export default function App({ path = "/" }: { path?: string }) {
       )}
       <SiteFooter />
       <AnalyticsConsent />
+      <WhatsAppFab />
     </>
   );
 }
