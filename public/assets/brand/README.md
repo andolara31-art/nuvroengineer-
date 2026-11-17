@@ -8,7 +8,8 @@
 - Fuente: https://unsplash.com/photos/brown-wooden-kitchen-cabinet-with-green-plants-WxfXOQEpyFg
 - Licencia de la fuente: https://unsplash.com/license
 - La fuente y la autoría aparecen visibles junto al ejemplo.
-- `nuvro-editorial-social-v1.jpg`: captura de la portada para los metadatos de redes sociales.
+- `nuvro-og-marca-v2.jpg`: imagen Open Graph actual (1200 × 630) con la identidad azul y papel rasgado.
+- `nuvro-editorial-social-v1.jpg`: imagen social anterior, conservada como referencia.
 
 ## Versiones anteriores conservadas
 
