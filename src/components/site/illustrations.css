@@ -142,17 +142,6 @@
   transform: rotate(-2deg) scale(1.03);
 }
 
-@media (max-width: 600px) {
-  .corp-sector-row {
-    grid-template-columns: 96px minmax(0, 1fr) auto;
-    gap: 14px;
-  }
-  .corp-sector-row .sector-art {
-    width: 96px;
-    box-shadow: 3px 3px 0 #f7f7f4;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .art-swing,
   .art-sway,
@@ -171,5 +160,31 @@
 @media (max-width: 600px) {
   .pop-sticker-wa {
     display: none;
+  }
+}
+
+/* En celular el dibujo va arriba y el título usa todo el ancho */
+@media (max-width: 600px) {
+  .corp-sector-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "art art"
+      "text arrow";
+    row-gap: 16px;
+    column-gap: 12px;
+  }
+  .corp-sector-row .sector-art {
+    grid-area: art;
+    width: 128px;
+    box-shadow: 4px 4px 0 #f7f7f4;
+  }
+  .corp-sector-row > div {
+    grid-area: text;
+  }
+  .corp-sector-row > svg:last-child {
+    grid-area: arrow;
+  }
+  .corp-sector-row h3 {
+    font-size: 30px;
   }
 }
