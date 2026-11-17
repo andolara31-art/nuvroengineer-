@@ -91,6 +91,21 @@ for (const file of files) {
       !/nuvro-corporate-cr-v1|nuvro-negocio-cr-tecnologia-v1/.test(html),
       "La portada no debe mostrar las imágenes generadas anteriores",
     );
+    for (const anchor of [
+      "soluciones",
+      "ia",
+      "proceso",
+      "paquetes",
+      "demostraciones",
+      "aprende",
+      "preguntas",
+      "contacto",
+      "ejemplo-mesa",
+    ])
+      assert.ok(
+        html.includes(`id="${anchor}"`),
+        `Falta la sección enlazada #${anchor} en la portada`,
+      );
     assert.match(html, /Ejemplo interactivo/);
     assert.match(html, /negocio ficticio/);
   }

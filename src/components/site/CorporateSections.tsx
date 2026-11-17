@@ -186,6 +186,8 @@ export default function CorporateSections() {
         </div>
       </section>
 
+      <LearningSection />
+
       <section
         className="corp-section corp-faq"
         id="preguntas"
