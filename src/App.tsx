@@ -11,6 +11,7 @@ import AnalyticsConsent from "./components/site/AnalyticsConsent";
 import { servicePages } from "./content/services";
 import "./home.css";
 import "./corporate.css";
+import "./pop.css";
 
 export default function App({ path = "/" }: { path?: string }) {
   const page = servicePages.find((service) => service.path === path);

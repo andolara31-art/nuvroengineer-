@@ -1,38 +1,69 @@
-import { useId, useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useId,
+  useState,
+  type CSSProperties,
+  type FormEvent,
+} from "react";
 import {
   ArrowUpRight,
+  Bot,
   ChevronDown,
+  Clapperboard,
   Instagram,
+  LayoutTemplate,
   Menu,
   MessageCircle,
   Phone,
+  QrCode,
   Search,
+  ShoppingBag,
+  Star,
+  Workflow,
   X,
+  type LucideIcon,
 } from "lucide-react";
 import { BUSINESS_WHATSAPP_DISPLAY, whatsappUrl } from "../../lib/site";
 import "./corporate-header.css";
 
-const solutions = [
+type Solution = {
+  name: string;
+  href: string;
+  description: string;
+  terms: string;
+  icon: LucideIcon;
+  tone: string;
+};
+
+const solutions: Solution[] = [
   {
     name: "Diseño web",
+    icon: LayoutTemplate,
+    tone: "blue",
     href: "/diseno-web-costa-rica",
     description: "Tu negocio en una web clara y profesional.",
     terms: "pagina paginas sitio presencia digital negocio landing catalogo",
   },
   {
     name: "Automatizaciones",
+    icon: Workflow,
+    tone: "mint",
     href: "/automatizaciones-negocios",
     description: "Conectá tareas y ordená el trabajo diario.",
     terms: "automatizacion whatsapp consultas clientes procesos",
   },
   {
     name: "Menú QR",
+    icon: QrCode,
+    tone: "yellow",
     href: "/menu-qr-restaurantes",
     description: "Una carta digital fácil de consultar.",
     terms: "restaurante restaurantes cafeteria soda carta comida",
   },
   {
     name: "Reseñas Google · QR/NFC",
+    icon: Star,
+    tone: "pink",
     href: "/resenas-google-qr-nfc",
     description: "Un acceso directo para que tus clientes dejen su reseña.",
     terms:
@@ -40,6 +71,8 @@ const solutions = [
   },
   {
     name: "Tiendas online / Shopify",
+    icon: ShoppingBag,
+    tone: "violet",
     href: "/tiendas-online-shopify",
     description: "Productos, carrito y una forma clara de comprar.",
     terms:
@@ -47,6 +80,8 @@ const solutions = [
   },
   {
     name: "Videos y piezas publicitarias",
+    icon: Clapperboard,
+    tone: "coral",
     href: "/videos-publicidad-negocios",
     description: "Contenido sencillo para mostrar lo que ofrecés.",
     terms:
@@ -54,12 +89,14 @@ const solutions = [
   },
   {
     name: "IA para negocios",
+    icon: Bot,
+    tone: "claude",
     href: "/ia-para-negocios",
     description: "Aplicá inteligencia artificial a tu negocio.",
     terms: "inteligencia artificial ai aprender formacion",
   },
 ];
-const searchablePages = [
+const searchablePages: Omit<Solution, "icon" | "tone">[] = [
   ...solutions,
   {
     name: "Paquetes para tu negocio",
@@ -178,7 +215,35 @@ function Brand() {
   );
 }
 
+function useCloseMenusOnOutsideClick() {
+  useEffect(() => {
+    const menus = () =>
+      document.querySelectorAll<HTMLDetailsElement>(
+        ".corp-solutions-menu[open], .corp-mobile-menu[open]",
+      );
+    const onClick = (event: MouseEvent) => {
+      menus().forEach((menu) => {
+        if (!menu.contains(event.target as Node)) menu.removeAttribute("open");
+      });
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      menus().forEach((menu) => {
+        menu.removeAttribute("open");
+        menu.querySelector("summary")?.focus();
+      });
+    };
+    document.addEventListener("click", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+}
+
 export default function SiteHeader() {
+  useCloseMenusOnOutsideClick();
   const contact = whatsappUrl(
     "Hola, me gustaría conocer las soluciones de NUVRO para mi negocio.",
   );
@@ -189,7 +254,12 @@ export default function SiteHeader() {
       </a>
       <div className="corp-utility">
         <div className="corp-header-shell corp-utility-inner">
-          <span>Hecho para negocios ticos.</span>
+          <span>
+            Hecho para negocios ticos.{" "}
+            <a className="pop-utility-new" href="/#ia">
+              Nuevo: IA para tu negocio
+            </a>
+          </span>
           <div>
             <a href={contact} target="_blank" rel="noopener noreferrer">
               <MessageCircle size={14} aria-hidden="true" /> WhatsApp
@@ -226,7 +296,8 @@ export default function SiteHeader() {
           </a>
           <details className="corp-mobile-menu">
             <summary aria-label="Menú principal">
-              <Menu size={25} aria-hidden="true" />
+              <Menu className="pop-menu-open" size={22} aria-hidden="true" />
+              <X className="pop-menu-close" size={22} aria-hidden="true" />
               <span>Menú</span>
             </summary>
             <div
@@ -247,15 +318,19 @@ export default function SiteHeader() {
                     Soluciones <ChevronDown size={16} aria-hidden="true" />
                   </summary>
                   <div>
-                    {solutions.map((solution) => (
-                      <a key={solution.href} href={solution.href}>
-                        {solution.name}
+                    {solutions.map(({ href, name, icon: Icon, tone }) => (
+                      <a key={href} href={href} data-tone={tone}>
+                        <span className="pop-icon" aria-hidden="true">
+                          <Icon size={16} strokeWidth={1.8} />
+                        </span>
+                        <span className="pop-mobile-label">{name}</span>
                         <ArrowUpRight size={15} aria-hidden="true" />
                       </a>
                     ))}
                   </div>
                 </details>
                 <a href="/#paquetes">Paquetes</a>
+                <a href="/#ia">IA para tu negocio</a>
                 <a href="/#demostraciones">Demostraciones</a>
                 <a href="/#aprende">Aprendé IA</a>
                 <a href="/sobre-nuvro">Nosotros</a>
@@ -274,28 +349,54 @@ export default function SiteHeader() {
         <div className="corp-header-nav-border">
           <div className="corp-header-shell corp-header-nav-row">
             <nav className="corp-desktop-nav" aria-label="Navegación principal">
-              <a href="/">Inicio</a>
-              <details className="corp-solutions-menu">
+              <a href="/" data-tone="blue">
+                Inicio
+              </a>
+              <details className="corp-solutions-menu" data-tone="yellow">
                 <summary>
                   Soluciones <ChevronDown size={14} aria-hidden="true" />
                 </summary>
                 <div className="corp-solutions-panel">
-                  <p>Soluciones digitales</p>
-                  {solutions.map((solution) => (
-                    <a key={solution.href} href={solution.href}>
+                  <p>
+                    Soluciones digitales
+                    <span className="pop-burst" aria-hidden="true">
+                      7
+                    </span>
+                  </p>
+                  {solutions.map(({ href, name, description, icon: Icon, tone }, index) => (
+                    <a
+                      key={href}
+                      href={href}
+                      data-tone={tone}
+                      style={{ "--i": index } as CSSProperties}
+                    >
+                      <span className="pop-icon" aria-hidden="true">
+                        <Icon size={18} strokeWidth={1.8} />
+                      </span>
                       <span>
-                        <strong>{solution.name}</strong>
-                        <small>{solution.description}</small>
+                        <strong>{name}</strong>
+                        <small>{description}</small>
                       </span>
                       <ArrowUpRight size={17} aria-hidden="true" />
                     </a>
                   ))}
                 </div>
               </details>
-              <a href="/#paquetes">Paquetes</a>
-              <a href="/#demostraciones">Demostraciones</a>
-              <a href="/#aprende">Aprendé IA</a>
-              <a href="/sobre-nuvro">Nosotros</a>
+              <a href="/#paquetes" data-tone="pink">
+                Paquetes
+              </a>
+              <a href="/#ia" data-tone="coral">
+                IA para tu negocio
+              </a>
+              <a href="/#demostraciones" data-tone="mint">
+                Demostraciones
+              </a>
+              <a href="/#aprende" data-tone="violet">
+                Aprendé IA
+              </a>
+              <a href="/sobre-nuvro" data-tone="blue">
+                Nosotros
+              </a>
             </nav>
             <a
               className="corp-nav-cta"

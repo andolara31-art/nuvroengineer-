@@ -2,11 +2,13 @@ import { ArrowUpRight } from "lucide-react";
 import DemoSection from "./DemoSection";
 import LearningSection from "./LearningSection";
 import CommercialPackages from "./CommercialPackages";
+import AISection from "./AISection";
 import "./corporate-sections.css";
 
 const solutions = [
   {
     number: "01",
+    tone: "blue",
     title: "Diseño web.",
     body: "Que tu cliente entienda qué ofrecés y encuentre cómo contactarte.",
     deliverables: "Páginas web · Landing pages · Catálogos",
@@ -15,6 +17,7 @@ const solutions = [
   },
   {
     number: "02",
+    tone: "violet",
     title: "Tiendas online.",
     body: "Pasá de enviar fotos por mensaje a un catálogo con un recorrido de compra definido.",
     deliverables: "E-commerce · Shopify · Catálogo y compra",
@@ -23,6 +26,7 @@ const solutions = [
   },
   {
     number: "03",
+    tone: "yellow",
     title: "Menú QR.",
     body: "Tu menú a un escaneo. Fácil de consultar, fácil de actualizar.",
     deliverables: "Menú digital · Categorías · Acceso desde la mesa",
@@ -31,6 +35,7 @@ const solutions = [
   },
   {
     number: "04",
+    tone: "pink",
     title: "Reseñas a un toque.",
     body: "Una base QR o NFC en tu mostrador para que tus clientes compartan su experiencia en Google.",
     deliverables: "Base o tarjeta · QR y NFC · Enlace de reseñas",
@@ -39,6 +44,7 @@ const solutions = [
   },
   {
     number: "05",
+    tone: "coral",
     title: "Videos y publicidad.",
     body: "Mostrá una promoción, un producto o tu servicio con una pieza que se entienda desde el celular.",
     deliverables: "Videos simples · Edición · Piezas comerciales",
@@ -47,6 +53,7 @@ const solutions = [
   },
   {
     number: "06",
+    tone: "mint",
     title: "Automatización.",
     body: "Hay tareas que tu negocio no debería seguir haciendo a mano.",
     deliverables: "Consultas · Avisos · Seguimiento",
@@ -55,6 +62,7 @@ const solutions = [
   },
   {
     number: "07",
+    tone: "blue",
     title: "Presencia digital.",
     body: "Ordená tus enlaces, productos y formas de contacto en un lugar fácil de compartir.",
     deliverables: "Link Bio · Catálogos · Kit WhatsApp Business",
@@ -178,9 +186,10 @@ export default function CorporateSections() {
           </div>
           <div className="corp-solution-list">
             {solutions.map(
-              ({ number, title, body, deliverables, href, action }) => (
+              ({ number, tone, title, body, deliverables, href, action }) => (
                 <a
                   className="corp-solution-row"
+                  data-tone={tone}
                   href={href}
                   key={number}
                   aria-label={action}
@@ -202,6 +211,8 @@ export default function CorporateSections() {
           </div>
         </div>
       </section>
+
+      <AISection />
 
       <CommercialPackages />
 

@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { ArrowDown, ArrowUpRight, ArrowRight, Check } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  ArrowRight,
+  Check,
+  MessageCircle,
+  QrCode,
+} from "lucide-react";
+import { brandIcons } from "../../content/brand-icons";
 import "./corporate-hero.css";
 
 const menu = [
@@ -13,6 +21,22 @@ function WebsiteSample() {
   const [selection, setSelection] = useState("");
   return (
     <div className="craft-sample-wrap">
+      <div className="pop-stickers" aria-hidden="true">
+        <span className="pop-sticker pop-sticker-ai">
+          <svg viewBox="0 0 24 24">
+            <path d={brandIcons.claude.path} />
+          </svg>
+          Con IA
+        </span>
+        <span className="pop-sticker pop-sticker-wa">
+          <MessageCircle size={15} strokeWidth={2} />
+          Directo a WhatsApp
+        </span>
+        <span className="pop-sticker pop-sticker-qr">
+          <QrCode size={15} strokeWidth={2} />
+          Menú QR
+        </span>
+      </div>
       <div className="craft-sample-label">
         <span>01 / UNA WEB QUE SE ENTIENDE</span>
         <span>PROBALA ↙</span>
@@ -144,7 +168,7 @@ export default function CorporateHero() {
             <br />
             merece verse
             <br />
-            <span>así de bien.</span>
+            <span className="pop-highlight">así de bien.</span>
           </h1>
           <p className="craft-hero-description">
             Diseñamos páginas web y herramientas comerciales para que tus
@@ -161,7 +185,13 @@ export default function CorporateHero() {
             </a>
           </div>
           <p className="craft-hero-signature">
-            Diseño con criterio. Tecnología simple.
+            Diseño con criterio. Tecnología simple.{" "}
+            <span className="pop-dots" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
           </p>
         </div>
         <WebsiteSample />
