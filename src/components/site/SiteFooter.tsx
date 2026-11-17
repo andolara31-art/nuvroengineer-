@@ -2,6 +2,7 @@ import {
   ArrowUpRight,
   AtSign,
   MapPin,
+  Clock,
   MessageCircle,
   Phone,
 } from "lucide-react";
@@ -53,10 +54,12 @@ export default function SiteFooter() {
           <div className="corp-footer-group">
             <h2>Conocé NUVRO</h2>
             <a href="/sobre-nuvro">Nosotros</a>
+            <a href="/#que-necesito">¿Qué necesito?</a>
             <a href="/#paquetes">Paquetes para tu negocio</a>
-            <a href="/#demostraciones">Demostraciones</a>
+            <a href="/#demostraciones">Ejemplos</a>
             <a href="/#proceso">Cómo trabajamos</a>
-            <a href="/#aprende">Aprendé IA</a>
+            <a href="/#preguntas">Preguntas frecuentes</a>
+            <a href="/ia-para-negocios#aprende">Aprendé IA</a>
             <a href="/guias/ia-y-automatizacion-para-pymes">Guía para pymes</a>
           </div>
           <div className="corp-footer-group corp-footer-contact">
@@ -88,6 +91,10 @@ export default function SiteFooter() {
             <span className="corp-footer-line">
               <MapPin size={16} aria-hidden="true" /> Desde Palmares, para todo
               Costa Rica
+            </span>
+            <span className="corp-footer-line">
+              <Clock size={16} aria-hidden="true" /> WhatsApp: todo el día ·
+              Visitas: jueves a sábado
             </span>
           </div>
         </div>

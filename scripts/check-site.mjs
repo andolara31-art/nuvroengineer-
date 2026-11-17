@@ -92,12 +92,14 @@ for (const file of files) {
       "La portada no debe mostrar las imágenes generadas anteriores",
     );
     for (const anchor of [
+      "historia",
+      "que-necesito",
       "soluciones",
       "ia",
       "proceso",
       "paquetes",
       "demostraciones",
-      "aprende",
+      "atencion",
       "preguntas",
       "contacto",
       "ejemplo-mesa",
@@ -109,6 +111,8 @@ for (const file of files) {
     assert.match(html, /Ejemplo interactivo/);
     assert.match(html, /negocio ficticio/);
   }
+  if (route === "/ia-para-negocios")
+    assert.match(html, /id="aprende"/, "Falta Aprendé IA en /ia-para-negocios");
   assert.ok(!html.includes("<!--seo:"));
   if (route === "/propuesta") {
     assert.match(html, /noindex, follow/);

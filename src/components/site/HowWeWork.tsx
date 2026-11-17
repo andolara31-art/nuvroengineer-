@@ -167,7 +167,7 @@ export default function HowWeWork() {
       id="proceso"
       aria-labelledby="how-title"
     >
-      <TornEdge fill="#ECECE8" seed={17} />
+      <TornEdge fill="#F7F7F4" seed={17} />
       <div className="corp-container">
         <div className="corp-section-heading">
           <div>

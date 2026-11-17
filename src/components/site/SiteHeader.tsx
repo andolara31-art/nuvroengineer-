@@ -36,55 +36,57 @@ type Solution = {
 
 const solutions: Solution[] = [
   {
-    name: "Diseño web",
+    name: "Página web",
     icon: LayoutTemplate,
     href: "/diseno-web-costa-rica",
-    description: "Tu negocio en una web clara y profesional.",
-    terms: "pagina paginas sitio presencia digital negocio landing catalogo",
+    description: "Lo que ofrecés, tus horarios y cómo escribirte.",
+    terms:
+      "diseno web pagina paginas sitio presencia digital negocio landing catalogo",
   },
   {
-    name: "Automatizaciones",
+    name: "Respuestas automáticas",
     icon: Workflow,
     href: "/automatizaciones-negocios",
-    description: "Conectá tareas y ordená el trabajo diario.",
-    terms: "automatizacion whatsapp consultas clientes procesos",
+    description: "Que lo que siempre te preguntan se responda solo.",
+    terms:
+      "automatizaciones automatizacion whatsapp consultas clientes procesos",
   },
   {
-    name: "Menú QR",
+    name: "Menú con código QR",
     icon: QrCode,
     href: "/menu-qr-restaurantes",
-    description: "Una carta digital fácil de consultar.",
-    terms: "restaurante restaurantes cafeteria soda carta comida",
+    description: "Tus clientes ven el menú escaneando un código.",
+    terms: "menu qr restaurante restaurantes cafeteria soda carta comida",
   },
   {
-    name: "Reseñas Google · QR/NFC",
+    name: "Reseñas en Google",
     icon: Star,
     href: "/resenas-google-qr-nfc",
-    description: "Un acceso directo para que tus clientes dejen su reseña.",
+    description: "Una placa para que te dejen reseñas con un toque.",
     terms:
       "resena resenas google qr nfc base soporte placa tarjeta opiniones reputacion",
   },
   {
-    name: "Tiendas online / Shopify",
+    name: "Tienda en línea",
     icon: ShoppingBag,
     href: "/tiendas-online-shopify",
-    description: "Productos, carrito y una forma clara de comprar.",
+    description: "Tus productos con precio y carrito para comprar.",
     terms:
       "tienda tiendas ecommerce e-commerce shopify comercio electronico vender productos catalogo carrito pagos",
   },
   {
-    name: "Videos y piezas publicitarias",
+    name: "Videos y publicidad",
     icon: Clapperboard,
     href: "/videos-publicidad-negocios",
-    description: "Contenido sencillo para mostrar lo que ofrecés.",
+    description: "Videos e imágenes para tus redes.",
     terms:
       "video videos publicidad anuncios promocion contenido redes sociales reels piezas negocios",
   },
   {
-    name: "IA para negocios",
+    name: "Inteligencia artificial (IA)",
     icon: Bot,
     href: "/ia-para-negocios",
-    description: "Aplicá inteligencia artificial a tu negocio.",
+    description: "Herramientas que te ahorran tareas repetidas.",
     terms: "inteligencia artificial ai aprender formacion",
   },
 ];
@@ -246,8 +248,8 @@ export default function SiteHeader() {
         <div className="corp-header-shell corp-utility-inner">
           <span>
             Hecho para negocios ticos.{" "}
-            <a className="pop-utility-new" href="/#ia">
-              Nuevo: IA para tu negocio
+            <a className="pop-utility-new" href="/#que-necesito">
+              ¿Qué necesito? Descubrilo en 2 preguntas
             </a>
           </span>
           <div>
@@ -311,7 +313,7 @@ export default function SiteHeader() {
                 <a href="/">Inicio</a>
                 <details className="corp-mobile-solutions">
                   <summary>
-                    Soluciones <ChevronDown size={16} aria-hidden="true" />
+                    Servicios <ChevronDown size={16} aria-hidden="true" />
                   </summary>
                   <div>
                     {solutions.map(({ href, name, icon: Icon }) => (
@@ -325,11 +327,11 @@ export default function SiteHeader() {
                     ))}
                   </div>
                 </details>
-                <a href="/#paquetes">Paquetes</a>
-                <a href="/#ia">IA para tu negocio</a>
-                <a href="/#demostraciones">Demostraciones</a>
-                <a href="/#aprende">Aprendé IA</a>
-                <a href="/sobre-nuvro">Nosotros</a>
+                <a href="/#que-necesito">¿Qué necesito?</a>
+                <a href="/#proceso">Cómo trabajamos</a>
+                <a href="/#demostraciones">Ejemplos</a>
+                <a href="/#preguntas">Preguntas</a>
+                <a href="/#atencion">Atención</a>
               </nav>
               <a
                 className="corp-nav-cta"
@@ -345,14 +347,13 @@ export default function SiteHeader() {
         <div className="corp-header-nav-border">
           <div className="corp-header-shell corp-header-nav-row">
             <nav className="corp-desktop-nav" aria-label="Navegación principal">
-              <a href="/">Inicio</a>
               <details className="corp-solutions-menu">
                 <summary>
-                  Soluciones <ChevronDown size={14} aria-hidden="true" />
+                  Servicios <ChevronDown size={14} aria-hidden="true" />
                 </summary>
                 <div className="corp-solutions-panel">
                   <p>
-                    Soluciones digitales
+                    Servicios
                     <span className="pop-burst" aria-hidden="true">
                       7
                     </span>
@@ -377,11 +378,10 @@ export default function SiteHeader() {
                   )}
                 </div>
               </details>
-              <a href="/#paquetes">Paquetes</a>
-              <a href="/#ia">IA para tu negocio</a>
-              <a href="/#demostraciones">Demostraciones</a>
-              <a href="/#aprende">Aprendé IA</a>
-              <a href="/sobre-nuvro">Nosotros</a>
+              <a href="/#que-necesito">¿Qué necesito?</a>
+              <a href="/#proceso">Cómo trabajamos</a>
+              <a href="/#demostraciones">Ejemplos</a>
+              <a href="/#preguntas">Preguntas</a>
             </nav>
             <a
               className="corp-nav-cta"

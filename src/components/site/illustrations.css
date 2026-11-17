@@ -124,24 +124,6 @@
   height: 100%;
 }
 
-/* Sectores con su ilustración */
-.corp-sector-row {
-  display: grid !important;
-  grid-template-columns: 148px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 24px;
-}
-
-.corp-sector-row .sector-art {
-  width: 148px;
-  box-shadow: 5px 5px 0 #f7f7f4;
-  transition: transform 200ms ease;
-}
-
-.corp-sector-row:hover .sector-art {
-  transform: rotate(-2deg) scale(1.03);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .art-swing,
   .art-sway,
@@ -153,6 +135,13 @@
   }
   .art-steam path {
     opacity: 0.6;
+  }
+}
+
+/* En celular la escena es angosta: dos stickers alcanzan */
+@media (max-width: 600px) {
+  .pop-sticker-wa {
+    display: none;
   }
 }
 
