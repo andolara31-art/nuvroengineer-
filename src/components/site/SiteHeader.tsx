@@ -10,7 +10,7 @@ import {
   Bot,
   ChevronDown,
   Clapperboard,
-  Instagram,
+  AtSign,
   LayoutTemplate,
   Menu,
   MessageCircle,
@@ -32,14 +32,12 @@ type Solution = {
   description: string;
   terms: string;
   icon: LucideIcon;
-  tone: string;
 };
 
 const solutions: Solution[] = [
   {
     name: "Diseño web",
     icon: LayoutTemplate,
-    tone: "blue",
     href: "/diseno-web-costa-rica",
     description: "Tu negocio en una web clara y profesional.",
     terms: "pagina paginas sitio presencia digital negocio landing catalogo",
@@ -47,7 +45,6 @@ const solutions: Solution[] = [
   {
     name: "Automatizaciones",
     icon: Workflow,
-    tone: "mint",
     href: "/automatizaciones-negocios",
     description: "Conectá tareas y ordená el trabajo diario.",
     terms: "automatizacion whatsapp consultas clientes procesos",
@@ -55,7 +52,6 @@ const solutions: Solution[] = [
   {
     name: "Menú QR",
     icon: QrCode,
-    tone: "yellow",
     href: "/menu-qr-restaurantes",
     description: "Una carta digital fácil de consultar.",
     terms: "restaurante restaurantes cafeteria soda carta comida",
@@ -63,7 +59,6 @@ const solutions: Solution[] = [
   {
     name: "Reseñas Google · QR/NFC",
     icon: Star,
-    tone: "pink",
     href: "/resenas-google-qr-nfc",
     description: "Un acceso directo para que tus clientes dejen su reseña.",
     terms:
@@ -72,7 +67,6 @@ const solutions: Solution[] = [
   {
     name: "Tiendas online / Shopify",
     icon: ShoppingBag,
-    tone: "violet",
     href: "/tiendas-online-shopify",
     description: "Productos, carrito y una forma clara de comprar.",
     terms:
@@ -81,7 +75,6 @@ const solutions: Solution[] = [
   {
     name: "Videos y piezas publicitarias",
     icon: Clapperboard,
-    tone: "coral",
     href: "/videos-publicidad-negocios",
     description: "Contenido sencillo para mostrar lo que ofrecés.",
     terms:
@@ -90,13 +83,12 @@ const solutions: Solution[] = [
   {
     name: "IA para negocios",
     icon: Bot,
-    tone: "claude",
     href: "/ia-para-negocios",
     description: "Aplicá inteligencia artificial a tu negocio.",
     terms: "inteligencia artificial ai aprender formacion",
   },
 ];
-const searchablePages: Omit<Solution, "icon" | "tone">[] = [
+const searchablePages: Omit<Solution, "icon">[] = [
   ...solutions,
   {
     name: "Paquetes para tu negocio",
@@ -208,9 +200,7 @@ function ServiceSearch({ compact = false }: { compact?: boolean }) {
 function Brand() {
   return (
     <a className="corp-brand" href="/" aria-label="NUVRO ENGINEER, inicio">
-      <span className="corp-brand-word">
-        NUVRO<small>ENGINEER</small>
-      </span>
+      <span className="corp-brand-word">NUVRO ENGINEER</span>
     </a>
   );
 }
@@ -261,15 +251,21 @@ export default function SiteHeader() {
             </a>
           </span>
           <div>
-            <a href={contact} target="_blank" rel="noopener noreferrer">
+            <a
+              href={contact}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Escribinos por WhatsApp"
+            >
               <MessageCircle size={14} aria-hidden="true" /> WhatsApp
             </a>
             <a
               href="https://www.instagram.com/nuvroengineer/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram @nuvroengineer"
             >
-              <Instagram size={14} aria-hidden="true" /> Instagram
+              <AtSign size={14} aria-hidden="true" /> nuvroengineer
             </a>
           </div>
         </div>
@@ -318,8 +314,8 @@ export default function SiteHeader() {
                     Soluciones <ChevronDown size={16} aria-hidden="true" />
                   </summary>
                   <div>
-                    {solutions.map(({ href, name, icon: Icon, tone }) => (
-                      <a key={href} href={href} data-tone={tone}>
+                    {solutions.map(({ href, name, icon: Icon }) => (
+                      <a key={href} href={href}>
                         <span className="pop-icon" aria-hidden="true">
                           <Icon size={16} strokeWidth={1.8} />
                         </span>
@@ -349,10 +345,10 @@ export default function SiteHeader() {
         <div className="corp-header-nav-border">
           <div className="corp-header-shell corp-header-nav-row">
             <nav className="corp-desktop-nav" aria-label="Navegación principal">
-              <a href="/" data-tone="blue">
+              <a href="/">
                 Inicio
               </a>
-              <details className="corp-solutions-menu" data-tone="yellow">
+              <details className="corp-solutions-menu">
                 <summary>
                   Soluciones <ChevronDown size={14} aria-hidden="true" />
                 </summary>
@@ -363,11 +359,11 @@ export default function SiteHeader() {
                       7
                     </span>
                   </p>
-                  {solutions.map(({ href, name, description, icon: Icon, tone }, index) => (
+                  {solutions.map(({ href, name, description, icon: Icon }, index) => (
                     <a
                       key={href}
                       href={href}
-                      data-tone={tone}
+                     
                       style={{ "--i": index } as CSSProperties}
                     >
                       <span className="pop-icon" aria-hidden="true">
@@ -382,19 +378,19 @@ export default function SiteHeader() {
                   ))}
                 </div>
               </details>
-              <a href="/#paquetes" data-tone="pink">
+              <a href="/#paquetes">
                 Paquetes
               </a>
-              <a href="/#ia" data-tone="coral">
+              <a href="/#ia">
                 IA para tu negocio
               </a>
-              <a href="/#demostraciones" data-tone="mint">
+              <a href="/#demostraciones">
                 Demostraciones
               </a>
-              <a href="/#aprende" data-tone="violet">
+              <a href="/#aprende">
                 Aprendé IA
               </a>
-              <a href="/sobre-nuvro" data-tone="blue">
+              <a href="/sobre-nuvro">
                 Nosotros
               </a>
             </nav>
