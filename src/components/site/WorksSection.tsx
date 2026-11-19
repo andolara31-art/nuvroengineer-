@@ -15,6 +15,7 @@ import {
 import { whatsappUrl } from "../../lib/site";
 import TornEdge from "./TornEdge";
 import { VideoCard } from "./WorkMedia";
+import DeferredImg from "./DeferredImg";
 import "./works.css";
 
 type TabId = "videos" | "webs" | "menus";
@@ -63,11 +64,9 @@ function SiteCard({ site }: { site: WorkSite }) {
         height: 1688,
       };
   const picture = (
-    <img
+    <DeferredImg
       {...image}
-      sizes="(max-width: 600px) 45vw, (max-width: 1200px) 30vw, 200px"
-      loading="lazy"
-      decoding="async"
+      sizes="(max-width: 600px) 75vw, (max-width: 1200px) 30vw, 200px"
       alt={`Captura en celular de ${site.name}${showSection ? ", otra sección" : ""}`}
     />
   );

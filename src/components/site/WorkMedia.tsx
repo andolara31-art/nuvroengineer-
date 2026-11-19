@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Play, X } from "lucide-react";
 import type { WorkVideo } from "../../content/works";
 import { registerLoop, suspendLoops } from "../../lib/media";
+import DeferredImg from "./DeferredImg";
 import "./work-media.css";
 
 /* ---------- Reproductor a pantalla completa (uno para toda la web) ---------- */
@@ -154,14 +155,7 @@ export function LoopVideo({
       className={`loop-media${playing ? " is-playing" : ""} ${className}`.trim()}
     >
       {/* El poster es una imagen diferida: no compite con la carga inicial */}
-      <img
-        src={item.posterSmall}
-        width={300}
-        height={533}
-        loading="lazy"
-        decoding="async"
-        alt=""
-      />
+      <DeferredImg src={item.posterSmall} width={300} height={533} alt="" />
       <video
         ref={ref}
         data-src={item.preview}
@@ -198,14 +192,7 @@ export function VideoCard({
         aria-label={`Ver video con sonido: ${item.title}`}
       >
         <span className="phone-notch" aria-hidden="true" />
-        <img
-          src={item.poster}
-          width={540}
-          height={960}
-          loading="lazy"
-          decoding="async"
-          alt=""
-        />
+        <DeferredImg src={item.poster} width={540} height={960} alt="" />
         <span className="phone-play" aria-hidden="true">
           <Play size={26} strokeWidth={2.6} fill="currentColor" />
         </span>
