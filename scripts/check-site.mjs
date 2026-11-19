@@ -98,6 +98,7 @@ for (const file of files) {
       "ia",
       "proceso",
       "paquetes",
+      "trabajos",
       "demostraciones",
       "atencion",
       "preguntas",
@@ -110,6 +111,15 @@ for (const file of files) {
       );
     assert.match(html, /Ejemplo interactivo/);
     assert.match(html, /negocio ficticio/);
+  }
+  if (route === "/") {
+    assert.match(html, /Ejemplo · marca ficticia/, "Faltan rótulos de ejemplo");
+    assert.match(html, /Propuesta de diseño/, "Faltan rótulos de propuesta");
+    assert.match(html, /hechas con IA/, "Falta la nota de IA en Trabajos");
+  }
+  if (route === "/videos-publicidad-negocios") {
+    assert.match(html, /¿La persona es real\?/, "Falta la pregunta sobre IA");
+    assert.match(html, /hecha con IA y lo decimos claro/);
   }
   if (route === "/ia-para-negocios")
     assert.match(html, /id="aprende"/, "Falta Aprendé IA en /ia-para-negocios");
