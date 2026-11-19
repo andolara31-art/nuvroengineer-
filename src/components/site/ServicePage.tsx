@@ -98,9 +98,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         <div className="service-section-heading">
           <p className="eyebrow">01 / Qué trabajamos</p>
           <h2 id="service-scope-title">
-            Un alcance claro.
-            <br />
-            Un siguiente paso útil.
+            Un alcance claro. Un siguiente paso útil.
           </h2>
           <p>
             Estos son los puntos que revisamos para preparar tu propuesta. Los
@@ -157,9 +155,11 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         <div className="service-section-heading">
           <p className="eyebrow">{hasSecond ? "03" : "02"} / Cómo lo hacemos</p>
           <h2 id="service-process-title">
-            Del problema
-            <br />
-            al proceso.
+            {page.demoId === "videos-publicidad-negocios" ? (
+              "Así lo hacemos."
+            ) : (
+              <>Del problema al proceso.</>
+            )}
           </h2>
         </div>
         <ol className="service-steps">
@@ -183,11 +183,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
             <p className="eyebrow">
               {hasSecond ? "04" : "03"} / Antes de empezar
             </p>
-            <h2 id="service-faq-title">
-              Preguntas
-              <br />
-              con respuesta.
-            </h2>
+            <h2 id="service-faq-title">Preguntas con respuesta.</h2>
           </div>
           <div className="service-faq-list">
             {page.faqs.map((faq) => (
