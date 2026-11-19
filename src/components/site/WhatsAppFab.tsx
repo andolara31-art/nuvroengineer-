@@ -153,12 +153,18 @@ export default function WhatsAppFab({ page = "/" }: { page?: string }) {
       .map((id) => document.getElementById(id))
       .forEach((element) => element && middle.observe(element));
 
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule);
-    document.addEventListener("click", schedule);
-    small.addEventListener?.("change", schedule);
-    schedule();
+    // Nada de cálculos durante la carga: se empieza cuando la página terminó.
+    const start = () => {
+      window.addEventListener("scroll", schedule, { passive: true });
+      window.addEventListener("resize", schedule);
+      document.addEventListener("click", schedule);
+      small.addEventListener?.("change", schedule);
+      schedule();
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
     return () => {
+      window.removeEventListener("load", start);
       cancelAnimationFrame(frame);
       middle.disconnect();
       window.removeEventListener("scroll", schedule);

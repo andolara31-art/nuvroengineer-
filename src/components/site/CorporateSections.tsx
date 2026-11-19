@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ArrowUpRight } from "lucide-react";
 import DemoSection from "./DemoSection";
 import CommercialPackages from "./CommercialPackages";
@@ -117,13 +118,21 @@ const faqs = [
 export default function CorporateSections() {
   return (
     <div className="corp-content">
-      <WorksSection />
+      <Suspense fallback={null}>
+        <WorksSection />
+      </Suspense>
 
-      <MesaSection />
+      <Suspense fallback={null}>
+        <MesaSection />
+      </Suspense>
 
-      <ComicStory />
+      <Suspense fallback={null}>
+        <ComicStory />
+      </Suspense>
 
-      <NeedFinder />
+      <Suspense fallback={null}>
+        <NeedFinder />
+      </Suspense>
 
       <section
         className="corp-section corp-solutions"
@@ -169,15 +178,25 @@ export default function CorporateSections() {
         </div>
       </section>
 
-      <HowWeWork />
+      <Suspense fallback={null}>
+        <HowWeWork />
+      </Suspense>
 
-      <DemoSection />
+      <Suspense fallback={null}>
+        <DemoSection />
+      </Suspense>
 
-      <CommercialPackages />
+      <Suspense fallback={null}>
+        <CommercialPackages />
+      </Suspense>
 
-      <AISection />
+      <Suspense fallback={null}>
+        <AISection />
+      </Suspense>
 
-      <AttentionSection />
+      <Suspense fallback={null}>
+        <AttentionSection />
+      </Suspense>
 
       <section
         className="corp-section corp-faq"
