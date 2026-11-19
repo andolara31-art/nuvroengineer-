@@ -156,9 +156,8 @@ export default function CorporateHero() {
           <p className="brand-label">Negocios en Costa Rica</p>
           <h1 id="hero-title">Tu negocio, bien presentado en internet.</h1>
           <p className="craft-hero-description">
-            Hacemos páginas web, menús con código QR y respuestas automáticas
-            para WhatsApp, para negocios de Costa Rica. Te explicamos todo en
-            palabras simples.
+            Hacemos páginas web, menús QR y videos con IA para negocios de Costa
+            Rica. Te explicamos todo en palabras simples.
           </p>
           <div className="craft-hero-actions">
             <a
@@ -180,11 +179,34 @@ export default function CorporateHero() {
             <li>Propuesta por escrito antes de empezar</li>
             <li>30 días de soporte al entregar</li>
           </ul>
-          <HeroFan />
+        </div>
+        <HeroFan />
+      </div>
+      <TornEdge fill="#121212" seed={3} className="torn-edge-end" />
+    </section>
+  );
+}
+
+/* Demo MESA: va después de Trabajos, como bloque propio */
+export function MesaSection() {
+  return (
+    <section className="corp-section mesa-section" aria-labelledby="mesa-title">
+      <TornEdge fill="#ECECE8" seed={71} />
+      <div className="corp-container mesa-layout">
+        <div className="mesa-copy">
+          <p className="corp-kicker">Probá una web</p>
+          <h2 id="mesa-title">Tocá y mirá cómo funciona.</h2>
+          <p>
+            MESA es un café inventado para que pruebes una página como la que
+            usarían tus clientes: abrí la carta y elegí algo.
+          </p>
+          <a className="corp-text-link" href="/diseno-web-costa-rica">
+            Conocé cómo hacemos páginas web
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
         </div>
         <WebsiteSample />
       </div>
-      <TornEdge fill="#ECECE8" seed={3} className="torn-edge-end" />
     </section>
   );
 }

@@ -8,6 +8,7 @@ import NeedFinder from "./NeedFinder";
 import AttentionSection from "./AttentionSection";
 import TornEdge from "./TornEdge";
 import WorksSection from "./WorksSection";
+import { MesaSection } from "./CorporateHero";
 import "./corporate-sections.css";
 
 /* Servicios explicados con palabras de todos los días */
@@ -116,6 +117,10 @@ const faqs = [
 export default function CorporateSections() {
   return (
     <div className="corp-content">
+      <WorksSection />
+
+      <MesaSection />
+
       <ComicStory />
 
       <NeedFinder />
@@ -130,11 +135,7 @@ export default function CorporateSections() {
           <div className="corp-section-heading">
             <div>
               <p className="corp-kicker">Servicios</p>
-              <h2 id="corp-solutions-title">
-                Lo que podemos
-                <br />
-                hacer por vos.
-              </h2>
+              <h2 id="corp-solutions-title">Lo que podemos hacer por vos.</h2>
             </div>
             <p>
               Explicado sin palabras raras. Tocá el que te interese para ver
@@ -170,8 +171,6 @@ export default function CorporateSections() {
 
       <HowWeWork />
 
-      <WorksSection />
-
       <DemoSection />
 
       <CommercialPackages />
@@ -189,11 +188,7 @@ export default function CorporateSections() {
         <div className="corp-container corp-faq-grid">
           <div>
             <p className="corp-kicker">Preguntas frecuentes</p>
-            <h2 id="corp-faq-title">
-              Preguntá
-              <br />
-              sin pena.
-            </h2>
+            <h2 id="corp-faq-title">Preguntá sin pena.</h2>
             <p className="corp-faq-intro">
               Las dudas más comunes de quien empieza, respondidas en palabras
               simples.
