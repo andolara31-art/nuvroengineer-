@@ -1,6 +1,7 @@
 // Optional VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX. No GA script loads before opt-in.
-// Vercel Web Analytics: sin cookies; no se carga si la persona eligió "Solo necesarias".
-import { inject, track } from "@vercel/analytics";
+// Vercel Web Analytics (plan gratuito: solo visitas, sin eventos personalizados).
+// Sin cookies; no se carga si la persona eligió "Solo necesarias".
+import { inject } from "@vercel/analytics";
 export type AnalyticsConsent = "granted" | "denied" | "unknown";
 type EventParams = Record<string, string | number | boolean | undefined>;
 type Attribution = Partial<
@@ -169,20 +170,6 @@ function startVercelAnalytics(): void {
   });
 }
 
-/** Evento personalizado de Vercel Web Analytics (solo etiquetas cortas, sin datos personales). */
-export function trackVercel(
-  name: string,
-  properties: Record<string, string> = {},
-): void {
-  if (!vercelStarted || getAnalyticsConsent() === "denied") return;
-  const safe: Record<string, string> = {};
-  for (const [field, value] of Object.entries(properties)) {
-    const token = safeToken(value);
-    if (token) safe[field] = token;
-  }
-  track(name, safe);
-}
-
 export function trackEvent(name: string, params: EventParams = {}): void {
   if (
     !browserAvailable() ||
@@ -219,7 +206,6 @@ export function trackEvent(name: string, params: EventParams = {}): void {
 export function trackWhatsApp(location = "site"): void {
   // A click is intent to contact, not a submitted lead or a confirmed sale.
   trackEvent("whatsapp_click", { location, link_type: "whatsapp" });
-  trackVercel("WhatsApp", { ubicacion: location });
 }
 
 function reportPage(): void {
@@ -288,7 +274,6 @@ function onContactClick(event: MouseEvent): void {
   if (target.dataset.analyticsEvent === "ver_en_vivo") {
     const site = target.dataset.analyticsSite || url.hostname;
     trackEvent("ver_en_vivo", { location, content_type: site });
-    trackVercel("Ver en vivo", { sitio: site });
   } else if (url.hostname === "wa.me" || url.hostname === "api.whatsapp.com") {
     trackWhatsApp(location);
   } else if (

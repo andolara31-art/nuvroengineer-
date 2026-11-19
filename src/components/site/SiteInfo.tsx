@@ -40,9 +40,8 @@ export default function SiteInfo({ page }: { page: string }) {
           </p>
           <h2>Medición de visitas</h2>
           <p>
-            Usamos Vercel Web Analytics para contar visitas y clics en algunos
-            botones, como WhatsApp o «Ver en vivo». No usa cookies, no te
-            identifica como persona y la dirección de la página se envía sin
+            Usamos Vercel Web Analytics para contar visitas. No usa cookies, no
+            te identifica como persona y la dirección de la página se envía sin
             parámetros. Si elegís «Solo necesarias», no se envía nada.
           </p>
           <p>
