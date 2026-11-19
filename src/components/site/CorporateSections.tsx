@@ -7,6 +7,7 @@ import ComicStory from "./ComicStory";
 import NeedFinder from "./NeedFinder";
 import AttentionSection from "./AttentionSection";
 import TornEdge from "./TornEdge";
+import WorksSection from "./WorksSection";
 import "./corporate-sections.css";
 
 /* Servicios explicados con palabras de todos los días */
@@ -42,9 +43,9 @@ const solutions = [
   },
   {
     number: "05",
-    title: "Videos y publicidad.",
-    body: "Videos cortos e imágenes para mostrar una promoción en Instagram, Facebook o WhatsApp.",
-    ideal: "querés publicar algo que se vea profesional en redes.",
+    title: "Videos con IA.",
+    body: "Con fotos de tu celular hacemos videos para Reels, TikTok y WhatsApp: una creadora hecha con IA que presenta tu negocio, un comercial de tu producto o el recorrido de una propiedad.",
+    ideal: "querés mostrar tu negocio en redes sin tener que grabarte.",
     href: "/videos-publicidad-negocios",
   },
   {
@@ -168,6 +169,8 @@ export default function CorporateSections() {
       </section>
 
       <HowWeWork />
+
+      <WorksSection />
 
       <DemoSection />
 

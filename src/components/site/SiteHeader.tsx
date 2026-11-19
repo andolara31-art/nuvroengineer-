@@ -75,12 +75,12 @@ const solutions: Solution[] = [
       "tienda tiendas ecommerce e-commerce shopify comercio electronico vender productos catalogo carrito pagos",
   },
   {
-    name: "Videos y publicidad",
+    name: "Videos con IA",
     icon: Clapperboard,
     href: "/videos-publicidad-negocios",
-    description: "Videos e imágenes para tus redes.",
+    description: "Videos para Reels, TikTok y WhatsApp.",
     terms:
-      "video videos publicidad anuncios promocion contenido redes sociales reels piezas negocios",
+      "video videos ia inteligencia artificial ugc tiktok reels comercial inmobiliario publicidad anuncios promocion contenido redes sociales piezas negocios",
   },
   {
     name: "Inteligencia artificial (IA)",
@@ -92,6 +92,13 @@ const solutions: Solution[] = [
 ];
 const searchablePages: Omit<Solution, "icon">[] = [
   ...solutions,
+  {
+    name: "Trabajos de NUVRO",
+    href: "/#trabajos",
+    description: "Videos con IA, páginas web y menús QR hechos por NUVRO.",
+    terms:
+      "trabajos portafolio ejemplos proyectos videos webs paginas menus qr reels",
+  },
   {
     name: "Paquetes para tu negocio",
     href: "/#paquetes",
@@ -329,6 +336,7 @@ export default function SiteHeader() {
                 </details>
                 <a href="/#que-necesito">¿Qué necesito?</a>
                 <a href="/#proceso">Cómo trabajamos</a>
+                <a href="/#trabajos">Trabajos</a>
                 <a href="/#demostraciones">Ejemplos</a>
                 <a href="/#preguntas">Preguntas</a>
                 <a href="/#atencion">Atención</a>
@@ -380,6 +388,7 @@ export default function SiteHeader() {
               </details>
               <a href="/#que-necesito">¿Qué necesito?</a>
               <a href="/#proceso">Cómo trabajamos</a>
+              <a href="/#trabajos">Trabajos</a>
               <a href="/#demostraciones">Ejemplos</a>
               <a href="/#preguntas">Preguntas</a>
             </nav>
