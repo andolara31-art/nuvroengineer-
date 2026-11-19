@@ -1815,3 +1815,8 @@ main :is(h1, h2):not(.corp-sr-only):not(.craft-sample-site *),
     gap: 32px;
   }
 }
+
+/* Contraste AA de la etiqueta chica de la demo MESA */
+.craft-sample-overline {
+  color: #4f4f49 !important;
+}
