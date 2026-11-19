@@ -250,7 +250,7 @@ export default function ServicePolicies() {
 
           <div className="policies-next">
             <p className="eyebrow">ATENCIÓN DIRECTA CON ANDERSON</p>
-            <h2>¿Hay algo que querés aclarar?</h2>
+            <h2 className="title-question">¿Hay algo que querés aclarar?</h2>
             <p>Hablemos del alcance antes de que tomés una decisión.</p>
             <a
               className="button"
