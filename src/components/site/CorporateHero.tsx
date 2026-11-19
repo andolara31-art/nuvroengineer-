@@ -10,6 +10,7 @@ import {
 import { whatsappUrl } from "../../lib/site";
 import TornEdge from "./TornEdge";
 import { CafeScene } from "./Illustrations";
+import HeroFan from "./HeroFan";
 import "./corporate-hero.css";
 
 const menu = [
@@ -179,6 +180,7 @@ export default function CorporateHero() {
             <li>Propuesta por escrito antes de empezar</li>
             <li>30 días de soporte al entregar</li>
           </ul>
+          <HeroFan />
         </div>
         <WebsiteSample />
       </div>
