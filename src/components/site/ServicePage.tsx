@@ -1,5 +1,6 @@
 import { servicePages, type ServicePageContent } from "../../content/services";
 import LearningSection from "./LearningSection";
+import VideoTypes from "./VideoTypes";
 import "./services.css";
 
 const examples: Record<
@@ -55,6 +56,8 @@ const examples: Record<
 export default function ServicePage({ page }: { page: ServicePageContent }) {
   const contactHref = `/?servicio=${page.path.slice(1)}#contacto`;
   const example = examples[page.demoId];
+  const hasSecond =
+    Boolean(example) || page.demoId === "videos-publicidad-negocios";
 
   return (
     <main id="contenido" className="service-page">
@@ -95,9 +98,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         <div className="service-section-heading">
           <p className="eyebrow">01 / Qué trabajamos</p>
           <h2 id="service-scope-title">
-            Un alcance claro.
-            <br />
-            Un siguiente paso útil.
+            Un alcance claro. Un siguiente paso útil.
           </h2>
           <p>
             Estos son los puntos que revisamos para preparar tu propuesta. Los
@@ -115,6 +116,8 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
           ))}
         </ul>
       </section>
+
+      {page.demoId === "videos-publicidad-negocios" && <VideoTypes />}
 
       {example && (
         <section
@@ -150,11 +153,13 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         aria-labelledby="service-process-title"
       >
         <div className="service-section-heading">
-          <p className="eyebrow">{example ? "03" : "02"} / Cómo lo hacemos</p>
+          <p className="eyebrow">{hasSecond ? "03" : "02"} / Cómo lo hacemos</p>
           <h2 id="service-process-title">
-            Del problema
-            <br />
-            al proceso.
+            {page.demoId === "videos-publicidad-negocios" ? (
+              "Así lo hacemos."
+            ) : (
+              <>Del problema al proceso.</>
+            )}
           </h2>
         </div>
         <ol className="service-steps">
@@ -176,13 +181,9 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         <div className="shell service-section">
           <div className="service-section-heading">
             <p className="eyebrow">
-              {example ? "04" : "03"} / Antes de empezar
+              {hasSecond ? "04" : "03"} / Antes de empezar
             </p>
-            <h2 id="service-faq-title">
-              Preguntas
-              <br />
-              con respuesta.
-            </h2>
+            <h2 id="service-faq-title">Preguntas con respuesta.</h2>
           </div>
           <div className="service-faq-list">
             {page.faqs.map((faq) => (

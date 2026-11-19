@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ArrowUpRight } from "lucide-react";
 import DemoSection from "./DemoSection";
 import CommercialPackages from "./CommercialPackages";
@@ -7,6 +8,8 @@ import ComicStory from "./ComicStory";
 import NeedFinder from "./NeedFinder";
 import AttentionSection from "./AttentionSection";
 import TornEdge from "./TornEdge";
+import WorksSection from "./WorksSection";
+import { MesaSection } from "./CorporateHero";
 import "./corporate-sections.css";
 
 /* Servicios explicados con palabras de todos los días */
@@ -42,9 +45,9 @@ const solutions = [
   },
   {
     number: "05",
-    title: "Videos y publicidad.",
-    body: "Videos cortos e imágenes para mostrar una promoción en Instagram, Facebook o WhatsApp.",
-    ideal: "querés publicar algo que se vea profesional en redes.",
+    title: "Videos con IA.",
+    body: "Con fotos de tu celular hacemos videos para Reels, TikTok y WhatsApp: una creadora hecha con IA que presenta tu negocio, un comercial de tu producto o el recorrido de una propiedad.",
+    ideal: "querés mostrar tu negocio en redes sin tener que grabarte.",
     href: "/videos-publicidad-negocios",
   },
   {
@@ -115,9 +118,21 @@ const faqs = [
 export default function CorporateSections() {
   return (
     <div className="corp-content">
-      <ComicStory />
+      <Suspense fallback={null}>
+        <WorksSection />
+      </Suspense>
 
-      <NeedFinder />
+      <Suspense fallback={null}>
+        <MesaSection />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <ComicStory />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <NeedFinder />
+      </Suspense>
 
       <section
         className="corp-section corp-solutions"
@@ -129,11 +144,7 @@ export default function CorporateSections() {
           <div className="corp-section-heading">
             <div>
               <p className="corp-kicker">Servicios</p>
-              <h2 id="corp-solutions-title">
-                Lo que podemos
-                <br />
-                hacer por vos.
-              </h2>
+              <h2 id="corp-solutions-title">Lo que podemos hacer por vos.</h2>
             </div>
             <p>
               Explicado sin palabras raras. Tocá el que te interese para ver
@@ -167,15 +178,25 @@ export default function CorporateSections() {
         </div>
       </section>
 
-      <HowWeWork />
+      <Suspense fallback={null}>
+        <HowWeWork />
+      </Suspense>
 
-      <DemoSection />
+      <Suspense fallback={null}>
+        <DemoSection />
+      </Suspense>
 
-      <CommercialPackages />
+      <Suspense fallback={null}>
+        <CommercialPackages />
+      </Suspense>
 
-      <AISection />
+      <Suspense fallback={null}>
+        <AISection />
+      </Suspense>
 
-      <AttentionSection />
+      <Suspense fallback={null}>
+        <AttentionSection />
+      </Suspense>
 
       <section
         className="corp-section corp-faq"
@@ -186,11 +207,7 @@ export default function CorporateSections() {
         <div className="corp-container corp-faq-grid">
           <div>
             <p className="corp-kicker">Preguntas frecuentes</p>
-            <h2 id="corp-faq-title">
-              Preguntá
-              <br />
-              sin pena.
-            </h2>
+            <h2 id="corp-faq-title">Preguntá sin pena.</h2>
             <p className="corp-faq-intro">
               Las dudas más comunes de quien empieza, respondidas en palabras
               simples.

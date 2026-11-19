@@ -8,7 +8,7 @@ export const SERVICE_OPTIONS = [
   { value: "menu-qr", label: "Menú QR" },
   { value: "resenas-google", label: "Reseñas Google · QR/NFC" },
   { value: "tienda-online", label: "Tienda online / Shopify" },
-  { value: "contenido-publicitario", label: "Videos y piezas publicitarias" },
+  { value: "contenido-publicitario", label: "Videos con IA" },
   { value: "presencia-digital", label: "Presencia digital" },
   { value: "paquetes", label: "Un paquete para mi negocio" },
   { value: "ia", label: "IA para mi negocio" },
@@ -29,3 +29,18 @@ export const siteConfig = {
   whatsappDisplay: BUSINESS_WHATSAPP_DISPLAY,
   country: "Costa Rica",
 } as const;
+
+/*
+  Foto real del propietario para la sección "Atención directa".
+  Mientras sea null se muestra la mascota Nuvi. Para activarla, guardar la foto en
+  public/assets/brand/ (webp, unos 800 × 1000 px) y completar los datos, por ejemplo:
+  { src: "/assets/brand/anderson-foto.webp", width: 800, height: 1000,
+    alt: "Anderson, de NUVRO ENGINEER, en Palmares", caption: "Anderson · NUVRO ENGINEER" }
+*/
+export const OWNER_PHOTO: {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+} | null = null;

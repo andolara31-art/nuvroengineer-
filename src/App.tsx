@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import SiteHeader from "./components/site/SiteHeader";
 import CorporateHero from "./components/site/CorporateHero";
 import CorporateSections from "./components/site/CorporateSections";
@@ -9,6 +10,7 @@ import SiteInfo from "./components/site/SiteInfo";
 import ServicePolicies from "./components/site/ServicePolicies";
 import AnalyticsConsent from "./components/site/AnalyticsConsent";
 import WhatsAppFab from "./components/site/WhatsAppFab";
+import { VideoLightboxHost } from "./components/site/WorkMedia";
 import { servicePages } from "./content/services";
 import "./home.css";
 import "./corporate.css";
@@ -23,7 +25,9 @@ export default function App({ path = "/" }: { path?: string }) {
         <main id="contenido">
           <CorporateHero />
           <CorporateSections />
-          <SiteContact />
+          <Suspense fallback={null}>
+            <SiteContact />
+          </Suspense>
         </main>
       ) : page ? (
         <ServicePage page={page} />
@@ -34,9 +38,12 @@ export default function App({ path = "/" }: { path?: string }) {
       ) : (
         <SiteInfo page={path} />
       )}
-      <SiteFooter />
+      <Suspense fallback={null}>
+        <SiteFooter />
+      </Suspense>
       <AnalyticsConsent />
-      <WhatsAppFab />
+      <WhatsAppFab page={page?.path ?? path} />
+      <VideoLightboxHost />
     </>
   );
 }

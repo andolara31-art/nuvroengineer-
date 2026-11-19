@@ -38,7 +38,12 @@ export default function SiteInfo({ page }: { page: string }) {
             datos o pedir que dejemos de contactarte por el mismo canal de
             WhatsApp.
           </p>
-          <h2>Medición opcional</h2>
+          <h2>Medición de visitas</h2>
+          <p>
+            Usamos Vercel Web Analytics para contar visitas. No usa cookies, no
+            te identifica como persona y la dirección de la página se envía sin
+            parámetros. Si elegís «Solo necesarias», no se envía nada.
+          </p>
           <p>
             Si Google Analytics está configurado y lo permitís, se miden visitas
             y acciones como abrir un contacto. El texto de tus mensajes, tu

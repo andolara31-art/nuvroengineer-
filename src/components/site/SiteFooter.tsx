@@ -48,7 +48,7 @@ export default function SiteFooter() {
             <a href="/menu-qr-restaurantes">Menú QR</a>
             <a href="/resenas-google-qr-nfc">Reseñas Google · QR/NFC</a>
             <a href="/tiendas-online-shopify">Tiendas online / Shopify</a>
-            <a href="/videos-publicidad-negocios">Videos y publicidad</a>
+            <a href="/videos-publicidad-negocios">Videos con IA</a>
             <a href="/ia-para-negocios">IA para negocios</a>
           </div>
           <div className="corp-footer-group">
@@ -56,6 +56,7 @@ export default function SiteFooter() {
             <a href="/sobre-nuvro">Nosotros</a>
             <a href="/#que-necesito">¿Qué necesito?</a>
             <a href="/#paquetes">Paquetes para tu negocio</a>
+            <a href="/#trabajos">Trabajos</a>
             <a href="/#demostraciones">Ejemplos</a>
             <a href="/#proceso">Cómo trabajamos</a>
             <a href="/#preguntas">Preguntas frecuentes</a>

@@ -40,9 +40,7 @@ export default function LearningSection() {
               05 / Aprendé y aplicá
             </p>
             <h2 id="learn-title">
-              IA y automatizaciones.
-              <br />
-              <span>Para tu negocio.</span>
+              IA y automatizaciones. <span>Para tu negocio.</span>
             </h2>
           </div>
           <p className="section-sub">

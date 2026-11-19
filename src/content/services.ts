@@ -335,54 +335,59 @@ export const servicePages: ServicePageContent[] = [
   },
   {
     path: "/videos-publicidad-negocios",
-    title: "Videos simples y piezas publicitarias para negocios | NUVRO CR",
+    title: "Videos con IA para negocios en Costa Rica | NUVRO Engineer",
     description:
-      "Videos verticales, edición y piezas comerciales para negocios en Costa Rica. Presentá servicios y promociones con un mensaje claro y formatos acordados.",
-    name: "Videos simples para mostrar lo que vendés, sin darle tantas vueltas.",
-    eyebrow: "Contenido comercial / Video y publicidad",
+      "Videos verticales hechos con IA para tu negocio: una creadora que presenta tu producto, un comercial a partir de una foto o un recorrido de tu propiedad. Listos para Reels, TikTok y WhatsApp.",
+    name: "Videos con IA para mostrar lo que vendés, listos para tus redes.",
+    eyebrow: "Contenido comercial / Videos con IA",
     intro:
-      "Un producto, un servicio o una promoción necesita entenderse rápido. Preparamos videos simples y piezas comerciales para redes, estados o tu web, a partir del material y la información que tu negocio aporte y apruebe.",
+      "Con fotos de tu celular preparamos videos verticales con subtítulos, voz y música. Una creadora hecha con IA presenta tu negocio, tu producto se vuelve un comercial o tu propiedad se recorre espacio por espacio. Siempre decimos claro qué está hecho con IA.",
     deliverables: [
-      "Objetivo y mensaje principal definidos: qué ofrecés, para quién y cuál es el siguiente paso.",
-      "Guion o estructura breve para ordenar la información y el material disponible de tu negocio.",
-      "Edición sencilla de fotos y clips, con textos legibles y llamados a la acción relacionados con la oferta.",
-      "Formato, duración, cantidad de piezas y variantes acordados para los canales donde vas a utilizarlas.",
-      "Revisión de los recursos aportados y de los permisos de imagen, música y uso comercial necesarios.",
-      "Archivos finales y rondas de revisión según la propuesta, con condiciones claras para cambios y entregables editables.",
+      "Un video vertical listo para Reels, TikTok y estados de WhatsApp.",
+      "Subtítulos legibles, voz y música incluidos en el video.",
+      "Guion corto con el mensaje principal: qué ofrecés, para quién y cuál es el siguiente paso.",
+      "Personas y voces hechas con IA cuando el formato las usa, identificadas como tales.",
+      "Formato, duración, cantidad de videos y rondas de revisión acordados en la propuesta.",
+      "Revisión de los permisos de las fotos, la música y las marcas que aparecen.",
     ],
     steps: [
       {
-        title: "Elegimos una oferta concreta",
-        body: "Nos contás qué querés comunicar y a quién. Tu negocio confirma precios de productos, condiciones de la promoción, fechas y datos de contacto antes de convertirlos en una pieza publicitaria.",
+        title: "Elegimos el tipo de video",
+        body: "UGC con creadora, comercial con una foto o recorrido inmobiliario. Lo definimos según lo que querés mostrar y dónde lo vas a publicar.",
       },
       {
-        title: "Revisamos el material",
-        body: "Evaluamos las fotos, clips, logo y textos que tenés. Acordamos qué se puede hacer con ese material, qué hace falta preparar y los formatos, duración y número de piezas; no asumimos una sesión de filmación profesional.",
+        title: "Nos mandás tus fotos y datos",
+        body: "Las fotos del celular sirven si se ven claras. Tu negocio confirma precios, promociones, fechas y datos de contacto antes de que aparezcan en el video.",
       },
       {
-        title: "Editamos y revisamos",
-        body: "Armamos una propuesta con un mensaje principal, ritmo y textos fáciles de leer. Revisás que la información represente tu oferta y utilizamos las rondas de cambios acordadas para ajustar la pieza.",
+        title: "Creamos y revisás",
+        body: "Armamos el guion, la voz, los subtítulos y la música. Revisás que todo represente bien tu oferta y ajustamos con las rondas de cambios acordadas.",
       },
       {
-        title: "Entregamos para tus canales",
-        body: "Recibís los archivos en los formatos pactados para publicarlos donde corresponda. La contratación de pauta, la administración de campañas y el presupuesto de anuncios no forman parte de una edición simple y requieren un alcance distinto.",
+        title: "Recibís los archivos",
+        body: "Te entregamos el video listo para publicar. Contratar anuncios o administrar campañas es un trabajo distinto y no está incluido por defecto.",
       },
     ],
     faqs: [
       {
-        question: "¿Qué tipo de videos pueden preparar?",
+        question: "¿La persona es real?",
         answer:
-          "Podemos trabajar piezas sencillas para presentar un servicio, mostrar productos, explicar una oferta o anunciar una promoción. También versiones verticales para redes y estados. El resultado depende del material disponible y del guion, duración y estilo que acordemos.",
+          "No, está hecha con IA y lo decimos claro. Tampoco usamos la cara ni la voz de una persona real sin su permiso.",
       },
       {
-        question: "¿Tengo que enviar fotos o videos?",
+        question: "¿Qué tengo que mandar?",
         answer:
-          "Revisamos primero lo que tenés y qué permisos de uso acompañan ese material. Si necesitás recursos adicionales o apoyo para prepararlos, lo dejamos definido. La edición de material del cliente no incluye automáticamente filmación profesional, actores, locución o fotografía.",
+          "Fotos de tu producto, local o propiedad; las del celular sirven si se ven claras y con buena luz. También lo que querés decir: qué ofrecés, precio o promoción, horario y contacto, confirmados por vos.",
+      },
+      {
+        question: "¿Dónde lo puedo publicar?",
+        answer:
+          "El video es vertical, pensado para Reels de Instagram y Facebook, TikTok y estados de WhatsApp. Si lo necesitás en otro formato, lo acordamos en la propuesta.",
       },
       {
         question: "¿Incluye publicar anuncios o administrar mis redes?",
         answer:
-          "No por defecto. Crear una pieza, publicarla, contratar anuncios y administrar una campaña son trabajos distintos. Las cuentas publicitarias, la pauta, la segmentación y el seguimiento solo se contemplan si existe una propuesta específica que los incluya.",
+          "No por defecto. Crear un video, publicarlo, contratar anuncios y administrar una campaña son trabajos distintos. La pauta, la segmentación y el seguimiento solo se incluyen si una propuesta específica los contempla.",
       },
       {
         question: "¿Puedo usar cualquier canción o imagen?",
@@ -392,7 +397,7 @@ export const servicePages: ServicePageContent[] = [
       {
         question: "¿Cuántos cambios incluye y qué resultados puedo esperar?",
         answer:
-          "La propuesta establece las rondas de revisión, los formatos finales y si se entregan archivos editables. Una pieza clara ayuda a presentar tu oferta, pero no garantiza visitas, ventas ni un volumen de consultas. Los resultados también dependen de la oferta, la distribución y el seguimiento comercial.",
+          "La propuesta establece las rondas de revisión y los formatos finales. Un video claro ayuda a presentar tu oferta, pero no garantiza visitas, ventas ni un volumen de consultas. Los resultados también dependen de la oferta, la distribución y el seguimiento comercial.",
       },
     ],
     demoId: "videos-publicidad-negocios",

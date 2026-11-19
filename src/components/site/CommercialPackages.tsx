@@ -15,11 +15,7 @@ export default function CommercialPackages() {
         <div className="corp-section-heading">
           <div>
             <p className="corp-kicker">Un punto de partida</p>
-            <h2 id="packages-title">
-              Un paquete.
-              <br />
-              Una necesidad clara.
-            </h2>
+            <h2 id="packages-title">Un paquete. Una necesidad clara.</h2>
           </div>
           <p>
             Elegí el punto de partida que se parece a lo que necesitás.

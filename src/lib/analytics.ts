@@ -1,4 +1,7 @@
 // Optional VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX. No GA script loads before opt-in.
+// Vercel Web Analytics (plan gratuito: solo visitas, sin eventos personalizados).
+// Sin cookies; no se carga si la persona eligió "Solo necesarias".
+import { inject } from "@vercel/analytics";
 export type AnalyticsConsent = "granted" | "denied" | "unknown";
 type EventParams = Record<string, string | number | boolean | undefined>;
 type Attribution = Partial<
@@ -38,6 +41,7 @@ let consentRead = false;
 let initialized = false;
 let gaStarted = false;
 let pageReported = false;
+let vercelStarted = false;
 
 function browserAvailable(): boolean {
   return typeof window !== "undefined" && typeof document !== "undefined";
@@ -143,6 +147,29 @@ function startGoogleAnalytics(): void {
   document.head.appendChild(script);
 }
 
+function vercelAllowed(): boolean {
+  return (
+    browserAvailable() &&
+    getAnalyticsConsent() !== "denied" &&
+    !/^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(window.location.hostname)
+  );
+}
+
+function startVercelAnalytics(): void {
+  if (vercelStarted || !vercelAllowed()) return;
+  vercelStarted = true;
+  inject({
+    mode: "production",
+    framework: "vite",
+    beforeSend: (event) => {
+      if (getAnalyticsConsent() === "denied") return null;
+      // Nunca enviar parámetros: /propuesta puede llevar datos personales.
+      const url = new URL(event.url);
+      return { ...event, url: url.origin + url.pathname };
+    },
+  });
+}
+
 export function trackEvent(name: string, params: EventParams = {}): void {
   if (
     !browserAvailable() ||
@@ -202,6 +229,7 @@ export function setAnalyticsConsent(
     (window as unknown as Record<string, unknown>)[`ga-disable-${GA_ID}`] =
       consent !== "granted";
   }
+  if (consent !== "denied") startVercelAnalytics();
   if (consent === "granted") {
     captureAttribution();
     startGoogleAnalytics();
@@ -232,12 +260,21 @@ function onContactClick(event: MouseEvent): void {
       ? "contact"
       : target.closest("#aprende")
         ? "learning"
-        : target.closest("header")
-          ? "header"
-          : target.closest("footer")
-            ? "footer"
-            : "site");
-  if (url.hostname === "wa.me" || url.hostname === "api.whatsapp.com") {
+        : target.closest("#trabajos")
+          ? "trabajos"
+          : target.closest(".craft-hero")
+            ? "portada"
+            : target.closest("#que-necesito")
+              ? "que-necesito"
+              : target.closest("header")
+                ? "header"
+                : target.closest("footer")
+                  ? "footer"
+                  : "site");
+  if (target.dataset.analyticsEvent === "ver_en_vivo") {
+    const site = target.dataset.analyticsSite || url.hostname;
+    trackEvent("ver_en_vivo", { location, content_type: site });
+  } else if (url.hostname === "wa.me" || url.hostname === "api.whatsapp.com") {
     trackWhatsApp(location);
   } else if (
     url.origin === window.location.origin &&
@@ -250,6 +287,7 @@ function onContactClick(event: MouseEvent): void {
 export function initAnalytics(): () => void {
   if (!browserAvailable() || initialized) return () => {};
   initialized = true;
+  startVercelAnalytics();
   if (getAnalyticsConsent() === "granted") {
     captureAttribution();
     startGoogleAnalytics();
