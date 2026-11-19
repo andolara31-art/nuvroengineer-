@@ -9,6 +9,7 @@ import SiteInfo from "./components/site/SiteInfo";
 import ServicePolicies from "./components/site/ServicePolicies";
 import AnalyticsConsent from "./components/site/AnalyticsConsent";
 import WhatsAppFab from "./components/site/WhatsAppFab";
+import { VideoLightboxHost } from "./components/site/WorkMedia";
 import { servicePages } from "./content/services";
 import "./home.css";
 import "./corporate.css";
@@ -36,7 +37,8 @@ export default function App({ path = "/" }: { path?: string }) {
       )}
       <SiteFooter />
       <AnalyticsConsent />
-      <WhatsAppFab />
+      <WhatsAppFab page={page?.path ?? path} />
+      <VideoLightboxHost />
     </>
   );
 }

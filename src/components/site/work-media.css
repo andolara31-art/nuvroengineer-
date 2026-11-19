@@ -1,0 +1,342 @@
+/* Marcos de celular, tarjetas de trabajos y reproductor a pantalla completa */
+
+.phone-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 22px 8px 8px;
+  background: var(--brand-ink);
+  border: 0;
+  border-radius: 30px;
+  box-shadow: 7px 7px 0 var(--brand-blue);
+  cursor: pointer;
+  transition: transform 180ms ease;
+}
+
+.phone-frame:hover {
+  transform: translate(-2px, -3px) rotate(-0.6deg);
+}
+
+.phone-frame:focus-visible {
+  outline: 4px solid var(--brand-yellow);
+  outline-offset: 4px;
+}
+
+.phone-frame > img,
+.phone-frame > .loop-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 22px;
+  background: #222;
+}
+
+.phone-notch {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  z-index: 1;
+  width: 32%;
+  height: 9px;
+  border-radius: 999px;
+  background: #3a3a3a;
+  transform: translateX(-50%);
+}
+
+.phone-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  padding-left: 4px;
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+  border: 4px solid var(--brand-ink);
+  border-radius: 50%;
+  box-shadow: 4px 4px 0 var(--brand-ink);
+  transform: translate(-50%, -50%);
+  transition: transform 180ms ease;
+}
+
+.phone-frame:hover .phone-play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.work-card .phone-frame {
+  margin-bottom: 10px;
+}
+
+.work-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+  border: 3px solid var(--brand-ink);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.work-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.work-sector {
+  color: var(--brand-blue);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ---------- Reproductor ---------- */
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: max(12px, env(safe-area-inset-top)) 12px
+    max(12px, env(safe-area-inset-bottom));
+  background: rgba(10, 10, 10, 0.96);
+}
+
+.video-lightbox[hidden] {
+  display: none;
+}
+
+.video-lightbox-player {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 92px);
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border: 4px solid var(--brand-paper);
+  border-radius: 18px;
+}
+
+.video-lightbox-close {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top));
+  right: 12px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+  border: 4px solid var(--brand-ink);
+  cursor: pointer;
+}
+
+.video-lightbox-caption {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.video-lightbox-caption span {
+  margin-right: 6px;
+  padding: 2px 8px;
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+  font-weight: 700;
+}
+
+html[data-video-open] .wa-fab {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-frame,
+  .phone-play {
+    transition: none;
+  }
+}
+
+/* Loop: imagen fija debajo y el video encima cuando ya se reproduce */
+.loop-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #222;
+}
+
+.loop-media > img,
+.loop-media > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loop-media > video {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.loop-media.is-playing > video {
+  opacity: 1;
+}
+
+/* ---------- Abanico de celulares en la portada ---------- */
+.hero-fan {
+  margin-top: 36px;
+}
+
+.hero-fan-phones {
+  position: relative;
+  height: 280px;
+  max-width: 500px;
+  margin: 0 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-fan-item {
+  --x: 0px;
+  --r: 0deg;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 128px;
+  margin-left: -64px;
+  transform: translateX(var(--x)) rotate(var(--r));
+  transform-origin: 50% 100%;
+  transition: transform 220ms ease;
+}
+
+.hero-fan-0 {
+  --x: -168px;
+  --r: -12deg;
+  z-index: 1;
+}
+
+.hero-fan-1 {
+  --x: -84px;
+  --r: -6deg;
+  z-index: 2;
+}
+
+.hero-fan-2 {
+  z-index: 3;
+  bottom: 14px;
+}
+
+.hero-fan-3 {
+  --x: 84px;
+  --r: 6deg;
+  z-index: 2;
+}
+
+.hero-fan-4 {
+  --x: 168px;
+  --r: 12deg;
+  z-index: 1;
+}
+
+.hero-fan-item:hover,
+.hero-fan-item:focus-within {
+  z-index: 4;
+  transform: translateX(var(--x)) rotate(var(--r)) translateY(-10px);
+}
+
+.hero-fan .phone-frame {
+  padding: 16px 6px 6px;
+  border-radius: 22px;
+  box-shadow:
+    0 0 0 3px var(--brand-paper),
+    6px 6px 0 3px var(--brand-ink);
+}
+
+.hero-fan .phone-frame:hover {
+  transform: none;
+}
+
+.hero-fan .phone-notch {
+  top: 5px;
+  height: 7px;
+}
+
+.hero-fan .loop-media {
+  border-radius: 16px;
+}
+
+.hero-fan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 28px;
+}
+
+.hero-fan-button {
+  --face: var(--brand-paper);
+}
+
+.hero-fan-note {
+  margin: 0;
+  color: #fff;
+  font-family: var(--brand-hand);
+  font-size: 24px;
+  font-weight: 700;
+  transform: rotate(-2deg);
+}
+
+@media (max-width: 600px) {
+  .hero-fan-phones {
+    height: 220px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .hero-fan-item {
+    width: 104px;
+    margin-left: -52px;
+  }
+  .hero-fan-0,
+  .hero-fan-4 {
+    display: none;
+  }
+  .hero-fan-1 {
+    --x: -92px;
+  }
+  .hero-fan-3 {
+    --x: 92px;
+  }
+  .hero-fan-actions .brand-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fan-item {
+    transition: none;
+  }
+}
