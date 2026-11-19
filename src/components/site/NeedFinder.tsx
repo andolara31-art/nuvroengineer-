@@ -109,9 +109,9 @@ const recommendations: Record<
     why: "Una placa en tu mostrador: el cliente acerca el celular o escanea el código y llega directo a dejarte una reseña.",
   },
   ads: {
-    name: "Videos y publicidad",
+    name: "Videos con IA",
     href: "/videos-publicidad-negocios",
-    why: "Videos cortos e imágenes para mostrar tu promoción en redes, pensados para verse bien en el celular.",
+    why: "Videos verticales con subtítulos, voz y música, hechos a partir de fotos de tu celular. Listos para Reels, TikTok y WhatsApp.",
   },
   talk: {
     name: "Una conversación para orientarte",

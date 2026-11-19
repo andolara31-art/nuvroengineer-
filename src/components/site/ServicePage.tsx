@@ -1,5 +1,6 @@
 import { servicePages, type ServicePageContent } from "../../content/services";
 import LearningSection from "./LearningSection";
+import VideoTypes from "./VideoTypes";
 import "./services.css";
 
 const examples: Record<
@@ -55,6 +56,8 @@ const examples: Record<
 export default function ServicePage({ page }: { page: ServicePageContent }) {
   const contactHref = `/?servicio=${page.path.slice(1)}#contacto`;
   const example = examples[page.demoId];
+  const hasSecond =
+    Boolean(example) || page.demoId === "videos-publicidad-negocios";
 
   return (
     <main id="contenido" className="service-page">
@@ -116,6 +119,8 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         </ul>
       </section>
 
+      {page.demoId === "videos-publicidad-negocios" && <VideoTypes />}
+
       {example && (
         <section
           className="service-example"
@@ -150,7 +155,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         aria-labelledby="service-process-title"
       >
         <div className="service-section-heading">
-          <p className="eyebrow">{example ? "03" : "02"} / Cómo lo hacemos</p>
+          <p className="eyebrow">{hasSecond ? "03" : "02"} / Cómo lo hacemos</p>
           <h2 id="service-process-title">
             Del problema
             <br />
@@ -176,7 +181,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
         <div className="shell service-section">
           <div className="service-section-heading">
             <p className="eyebrow">
-              {example ? "04" : "03"} / Antes de empezar
+              {hasSecond ? "04" : "03"} / Antes de empezar
             </p>
             <h2 id="service-faq-title">
               Preguntas

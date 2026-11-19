@@ -4,7 +4,7 @@ import {
   MessageCircle,
   Sparkles,
 } from "lucide-react";
-import { whatsappUrl } from "../../lib/site";
+import { OWNER_PHOTO, whatsappUrl } from "../../lib/site";
 import Nuvi from "./Nuvi";
 import TornEdge from "./TornEdge";
 import "./attention.css";
@@ -67,7 +67,21 @@ export default function AttentionSection() {
           </div>
         </div>
         <figure className="meet-figure">
-          <Nuvi pose="wave" />
+          {OWNER_PHOTO ? (
+            <div className="owner-photo">
+              <img
+                src={OWNER_PHOTO.src}
+                width={OWNER_PHOTO.width}
+                height={OWNER_PHOTO.height}
+                alt={OWNER_PHOTO.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <span className="owner-photo-caption">{OWNER_PHOTO.caption}</span>
+            </div>
+          ) : (
+            <Nuvi pose="wave" />
+          )}
         </figure>
       </div>
     </section>

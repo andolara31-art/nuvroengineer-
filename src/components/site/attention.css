@@ -168,3 +168,34 @@
     border-left: 6px solid var(--brand-ink);
   }
 }
+
+/* Foto real del propietario (se activa con OWNER_PHOTO en src/lib/site.ts) */
+.owner-photo {
+  position: relative;
+  max-width: 360px;
+  margin: 0 auto;
+  background: #fff;
+  border: 6px solid var(--brand-ink);
+  box-shadow: 10px 10px 0 var(--brand-ink);
+  transform: rotate(1.5deg);
+}
+
+.owner-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.owner-photo-caption {
+  position: absolute;
+  left: -10px;
+  bottom: 18px;
+  padding: 6px 12px;
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+  border: 4px solid var(--brand-ink);
+  font-weight: 700;
+  transform: rotate(-3deg);
+}

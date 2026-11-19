@@ -1,0 +1,142 @@
+.video-types {
+  padding: 88px 0;
+  background: var(--brand-grain), var(--brand-paper-torn);
+  border-top: 3px solid var(--brand-ink);
+  border-bottom: 3px solid var(--brand-ink);
+}
+
+.video-types-heading {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.video-types-heading > p:last-child {
+  color: var(--brand-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.video-types-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 32px;
+  margin: 0 0 56px;
+  padding: 0;
+  list-style: none;
+}
+
+.video-type {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.video-type-number {
+  display: block;
+  color: var(--brand-blue);
+  font-family: var(--brand-display);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.video-type-copy h3 {
+  margin: 8px 0;
+  font-family: var(--brand-display);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.video-type-copy p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.video-type-ideal {
+  padding: 8px 12px;
+  background: #fffbea;
+  border-left: 5px solid var(--brand-yellow);
+}
+
+.video-type-ideal strong {
+  color: var(--brand-blue);
+}
+
+.video-io {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.video-io-box {
+  padding: 24px;
+  background: #fff;
+  border: 5px solid var(--brand-ink);
+  box-shadow: 8px 8px 0 var(--brand-ink);
+}
+
+.video-io-receive {
+  box-shadow: 8px 8px 0 var(--brand-blue);
+}
+
+.video-io-box h3 {
+  margin: 0 0 16px;
+  font-family: var(--brand-display);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.video-io-box ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.video-io-box li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .video-types-list {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+  }
+  .video-type {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .video-io {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-types {
+    padding: 64px 0;
+  }
+  .video-type {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .video-type-copy h3 {
+    font-size: 26px;
+  }
+  .video-io-box {
+    padding: 18px;
+    box-shadow: 6px 6px 0 var(--brand-ink);
+  }
+}
