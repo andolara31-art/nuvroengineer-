@@ -205,13 +205,6 @@
 }
 
 @media (max-width: 600px) {
-  .works-grid,
-  .works-grid-videos,
-  .works-grid-webs,
-  .works-grid-menus {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px 16px;
-  }
   .works-tab {
     padding: 8px 12px;
     font-size: 14px;
@@ -271,10 +264,79 @@
     font-size: 13px;
     text-align: center;
   }
-  /* El quinto video queda centrado en la grilla de 2 columnas */
-  .works-grid-videos > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc(50% - 8px);
+}
+
+/* ---------- Carrusel en celular ---------- */
+.works-dots {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .works-carousel {
+    margin-inline: -24px;
+  }
+  .works-grid,
+  .works-grid-videos,
+  .works-grid-webs,
+  .works-grid-menus {
+    display: flex;
+    gap: 16px;
+    max-width: none;
+    margin-top: 24px;
+    padding: 4px 24px 16px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .works-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .works-grid > .work-card {
+    flex: 0 0 75%;
+    scroll-snap-align: start;
+  }
+  .works-grid-videos > .work-card {
+    flex-basis: 62%;
+  }
+  .works-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 24px;
+  }
+  .works-dots > span:not(.works-swipe) {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 2px solid var(--brand-paper);
+    border-radius: 50%;
+    transition: transform 160ms ease;
+  }
+  .works-dots > span.is-on {
+    background: var(--brand-yellow);
+    border-color: var(--brand-yellow);
+    transform: scale(1.25);
+  }
+  .works-swipe {
+    margin-left: auto;
+    color: #8fb8ff;
+    font-family: var(--brand-hand);
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+/* Etiqueta en una sola línea */
+.work-tag {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .work-tag {
+    font-size: 11px;
+    padding: 2px 7px;
   }
 }

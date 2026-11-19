@@ -1,4 +1,10 @@
-import { useRef, useState, type KeyboardEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+  type ReactNode,
+} from "react";
 import { ArrowUpRight, MessageCircle, RefreshCw } from "lucide-react";
 import {
   workMenus,
@@ -110,6 +116,61 @@ function SiteCard({ site }: { site: WorkSite }) {
   );
 }
 
+/*
+  En computadora es una grilla; en celular, un carrusel horizontal con
+  scroll-snap (tarjetas al 75 % del ancho) y puntitos de posición.
+*/
+function Carousel({
+  kind,
+  label,
+  children,
+}: {
+  kind: string;
+  label: string;
+  children: ReactNode[];
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
+  const count = children.length;
+
+  useEffect(() => {
+    const track = ref.current;
+    if (!track || !("IntersectionObserver" in window)) return;
+    const cards = [...track.children] as HTMLElement[];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries)
+          if (entry.isIntersecting)
+            setCurrent(cards.indexOf(entry.target as HTMLElement));
+      },
+      { root: track, threshold: 0.6 },
+    );
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="works-carousel">
+      <div
+        ref={ref}
+        className={`works-grid works-grid-${kind}`}
+        role="group"
+        aria-label={`${label}: ${count} trabajos`}
+      >
+        {children}
+      </div>
+      <div className="works-dots" aria-hidden="true">
+        {children.map((_, index) => (
+          <span key={index} className={index === current ? "is-on" : ""} />
+        ))}
+        <span className="works-swipe">
+          {current < count - 1 ? "Deslizá para ver más →" : "← Volvé al inicio"}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function WorksSection() {
   const [active, setActive] = useState<TabId>("videos");
   const tabRefs = useRef<Record<TabId, HTMLButtonElement | null>>({
@@ -188,25 +249,25 @@ export default function WorksSection() {
           >
             <p className="works-note">{tab.note}</p>
             {tab.id === "videos" && (
-              <div className="works-grid works-grid-videos">
+              <Carousel kind="videos" label="Videos con IA">
                 {workVideos.map((item) => (
                   <VideoCard key={item.id} item={item} />
                 ))}
-              </div>
+              </Carousel>
             )}
             {tab.id === "webs" && (
-              <div className="works-grid works-grid-webs">
+              <Carousel kind="webs" label="Páginas web">
                 {workSites.map((site) => (
                   <SiteCard key={site.id} site={site} />
                 ))}
-              </div>
+              </Carousel>
             )}
             {tab.id === "menus" && (
-              <div className="works-grid works-grid-menus">
+              <Carousel kind="menus" label="Menús QR">
                 {workMenus.map((site) => (
                   <SiteCard key={site.id} site={site} />
                 ))}
-              </div>
+              </Carousel>
             )}
           </div>
         ))}
