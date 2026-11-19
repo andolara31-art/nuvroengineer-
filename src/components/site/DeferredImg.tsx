@@ -53,5 +53,16 @@ export default function DeferredImg({
     };
   }, [src, srcSet]);
 
-  return <img ref={ref} decoding="async" {...rest} />;
+  // Sin src, una imagen mide 0 de alto: la proporción reserva su lugar
+  // y evita que el contenido salte cuando la imagen llega.
+  const ratio =
+    rest.width && rest.height ? `${rest.width} / ${rest.height}` : undefined;
+  return (
+    <img
+      ref={ref}
+      decoding="async"
+      {...rest}
+      style={{ aspectRatio: ratio, ...rest.style }}
+    />
+  );
 }

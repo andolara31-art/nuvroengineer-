@@ -7,7 +7,7 @@ import { whatsappUrl } from "../../lib/site";
   Se muestra al pasar la portada y se esconde cuando:
   - ya hay otro botón o enlace de WhatsApp a la vista,
   - se ven Contacto o el pie,
-  - debajo del botón hay un botón, un enlace o el texto de una tarjeta.
+  - debajo del botón hay un botón, un enlace, una tarjeta o cualquier texto.
   El mensaje cambia según la sección de la portada o la página de servicio.
 */
 const DEFAULT_MESSAGE = "Hola NUVRO, quiero conversar sobre mi negocio.";
@@ -75,16 +75,29 @@ const SIZE = 56;
 const EDGE = 16;
 const MARGIN = 8;
 
+/* ¿El elemento muestra texto propio (no solo fondo de una sección)? */
+function hasOwnText(element: Element): boolean {
+  if (element instanceof SVGElement || element instanceof HTMLImageElement)
+    return true;
+  for (const node of element.childNodes)
+    if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim())
+      return true;
+  return false;
+}
+
 function covering(fab: HTMLElement): boolean {
   const right = window.innerWidth - EDGE + MARGIN;
   const bottom = window.innerHeight - EDGE + MARGIN;
   const left = right - SIZE - MARGIN * 2;
   const top = bottom - SIZE - MARGIN * 2;
-  for (const x of [left, (left + right) / 2, right - 1])
-    for (const y of [top, (top + bottom) / 2, bottom - 1]) {
+  const steps = [0, 0.25, 0.5, 0.75, 1];
+  for (const fx of steps)
+    for (const fy of steps) {
+      const x = Math.min(left + (right - left) * fx, window.innerWidth - 1);
+      const y = Math.min(top + (bottom - top) * fy, window.innerHeight - 1);
       for (const element of document.elementsFromPoint(x, y)) {
         if (fab.contains(element)) continue;
-        if (element.closest(BLOCKERS)) return true;
+        if (element.closest(BLOCKERS) || hasOwnText(element)) return true;
         break; // solo importa lo primero que hay debajo del botón
       }
     }

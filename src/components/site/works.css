@@ -124,7 +124,7 @@
 }
 
 .phone-frame-tall > img {
-  aspect-ratio: auto;
+  aspect-ratio: auto 780 / 1688;
   object-position: top;
 }
 

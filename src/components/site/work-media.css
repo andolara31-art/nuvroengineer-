@@ -415,3 +415,9 @@ html[data-video-open] .wa-fab {
     height: 240px;
   }
 }
+
+@media (max-width: 900px) {
+  .craft-hero .hero-fan {
+    margin-top: -24px;
+  }
+}
