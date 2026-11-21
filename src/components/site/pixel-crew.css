@@ -182,3 +182,10 @@
     height: 48px;
   }
 }
+
+/* Con el menú abierto, la tripulación se esconde */
+.corp-header:has(.corp-mobile-menu[open]) .pixel-crew,
+.corp-header:has(.corp-solutions-menu[open]) .pixel-crew {
+  opacity: 0;
+  transition: opacity 120ms ease;
+}

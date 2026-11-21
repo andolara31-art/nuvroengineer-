@@ -90,7 +90,8 @@ function covering(fab: HTMLElement): boolean {
   const bottom = window.innerHeight - EDGE + MARGIN;
   const left = right - SIZE - MARGIN * 2;
   const top = bottom - SIZE - MARGIN * 2;
-  const steps = [0, 0.25, 0.5, 0.75, 1];
+  // Cada 9 px: ningún renglón de texto (12 px o más) queda entre dos puntos.
+  const steps = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1];
   for (const fx of steps)
     for (const fy of steps) {
       const x = Math.min(left + (right - left) * fx, window.innerWidth - 1);
