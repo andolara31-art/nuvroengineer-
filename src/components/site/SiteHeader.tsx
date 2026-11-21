@@ -93,6 +93,14 @@ const solutions: Solution[] = [
 const searchablePages: Omit<Solution, "icon">[] = [
   ...solutions,
   {
+    name: "Caso real: kiss by may",
+    href: "/casos/kiss-by-may",
+    description:
+      "Logo nuevo, sistema de marca, historias y catálogo de perfumes.",
+    terms:
+      "caso casos cliente kiss by may kissbymay belleza perfumes maquillaje logo marca identidad catalogo historias instagram",
+  },
+  {
     name: "Trabajos de NUVRO",
     href: "/#trabajos",
     description: "Videos con IA, páginas web y menús QR hechos por NUVRO.",
