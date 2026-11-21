@@ -12,6 +12,12 @@ export const pages = [
   },
   ...servicePages,
   {
+    path: "/casos/kiss-by-may",
+    title: "Caso kiss by may: identidad visual y contenido | NUVRO Engineer",
+    description:
+      "Logo nuevo, sistema de marca, historias y un catálogo de 656 perfumes para kiss by may, tienda de belleza en Costa Rica. Mirá el antes y el después.",
+  },
+  {
     path: "/politicas-de-servicio",
     title: "Políticas de servicio, pagos y soporte | NUVRO Engineer",
     description:

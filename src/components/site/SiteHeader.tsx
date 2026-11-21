@@ -24,6 +24,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { BUSINESS_WHATSAPP_DISPLAY, whatsappUrl } from "../../lib/site";
+import PixelCrew from "./PixelCrew";
 import "./corporate-header.css";
 
 type Solution = {
@@ -92,6 +93,14 @@ const solutions: Solution[] = [
 ];
 const searchablePages: Omit<Solution, "icon">[] = [
   ...solutions,
+  {
+    name: "Caso real: kiss by may",
+    href: "/casos/kiss-by-may",
+    description:
+      "Logo nuevo, sistema de marca, historias y catálogo de perfumes.",
+    terms:
+      "caso casos cliente kiss by may kissbymay belleza perfumes maquillaje logo marca identidad catalogo historias instagram",
+  },
   {
     name: "Trabajos de NUVRO",
     href: "/#trabajos",
@@ -402,6 +411,7 @@ export default function SiteHeader() {
             </a>
           </div>
         </div>
+        <PixelCrew />
       </header>
     </>
   );

@@ -1,5 +1,15 @@
 import { Suspense } from "react";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Clapperboard,
+  MessageCircleQuestion,
+  Repeat,
+  ShoppingBag,
+  Sprout,
+  Star,
+  UtensilsCrossed,
+  type LucideIcon,
+} from "lucide-react";
 import DemoSection from "./DemoSection";
 import CommercialPackages from "./CommercialPackages";
 import AISection from "./AISection";
@@ -16,6 +26,8 @@ import "./corporate-sections.css";
 const solutions = [
   {
     number: "01",
+    idealIcon: MessageCircleQuestion,
+    tone: "yellow",
     title: "Página web.",
     body: "Una página con lo que ofrecés, tus horarios y un botón para escribirte.",
     ideal:
@@ -24,6 +36,8 @@ const solutions = [
   },
   {
     number: "02",
+    idealIcon: ShoppingBag,
+    tone: "mint",
     title: "Tienda en línea.",
     body: "Tus productos con foto, precio y carrito, para que te compren sin mandar fotos una por una.",
     ideal: "vendés productos y querés que te puedan comprar a cualquier hora.",
@@ -31,6 +45,8 @@ const solutions = [
   },
   {
     number: "03",
+    idealIcon: UtensilsCrossed,
+    tone: "coral",
     title: "Menú con código QR.",
     body: "El cliente escanea un código con la cámara del celular y ve tu menú. Si cambia un precio, se actualiza fácil.",
     ideal: "tenés soda, restaurante o cafetería.",
@@ -38,6 +54,8 @@ const solutions = [
   },
   {
     number: "04",
+    idealIcon: Star,
+    tone: "yellow",
     title: "Reseñas en Google con un toque.",
     body: "Una placa en tu mostrador: el cliente acerca el celular o escanea el código y llega directo a dejarte una reseña.",
     ideal: "tus clientes salen contentos pero casi nadie te deja una reseña.",
@@ -45,6 +63,8 @@ const solutions = [
   },
   {
     number: "05",
+    idealIcon: Clapperboard,
+    tone: "mint",
     title: "Videos con IA.",
     body: "Con fotos de tu celular hacemos videos para Reels, TikTok y WhatsApp: una creadora hecha con IA que presenta tu negocio, un comercial de tu producto o el recorrido de una propiedad.",
     ideal: "querés mostrar tu negocio en redes sin tener que grabarte.",
@@ -52,6 +72,8 @@ const solutions = [
   },
   {
     number: "06",
+    idealIcon: Repeat,
+    tone: "coral",
     title: "Respuestas automáticas.",
     body: "Que las preguntas que siempre se repiten se respondan solas y que ninguna consulta se te olvide.",
     ideal: "pasás mucho tiempo contestando lo mismo.",
@@ -59,6 +81,8 @@ const solutions = [
   },
   {
     number: "07",
+    idealIcon: Sprout,
+    tone: "yellow",
     title: "Todo en un solo enlace.",
     body: "Un enlace para tu Instagram con tu WhatsApp, menú o catálogo y ubicación, todo en un mismo lugar.",
     ideal: "estás empezando y querés verte ordenado desde el primer día.",
@@ -152,28 +176,42 @@ export default function CorporateSections() {
             </p>
           </div>
           <div className="corp-solution-list">
-            {solutions.map(({ number, title, body, ideal, href }) => (
-              <a
-                className="corp-solution-row"
-                href={href}
-                key={number}
-                aria-label={`${title} ${body} Ideal si ${ideal} Ver cómo funciona.`}
-              >
-                <span className="corp-solution-number" aria-hidden="true">
-                  {number}
-                </span>
-                <h3>{title}</h3>
-                <div className="corp-solution-description">
-                  <p>{body}</p>
-                  <span className="corp-solution-ideal">
-                    <strong>Ideal si</strong> {ideal}
+            {solutions.map(
+              ({
+                number,
+                title,
+                body,
+                ideal,
+                href,
+                idealIcon: IdealIcon,
+                tone,
+              }) => (
+                <a
+                  className="corp-solution-row"
+                  href={href}
+                  key={number}
+                  aria-label={`${title} ${body} Ideal si ${ideal} Ver cómo funciona.`}
+                >
+                  <span className="corp-solution-number" aria-hidden="true">
+                    {number}
                   </span>
-                </div>
-                <span className="corp-solution-arrow" aria-hidden="true">
-                  <ArrowUpRight size={27} strokeWidth={1.5} />
-                </span>
-              </a>
-            ))}
+                  <h3>{title}</h3>
+                  <div className="corp-solution-description">
+                    <p>{body}</p>
+                    <span className="ideal-tag" data-tone={tone}>
+                      <span className="ideal-tag-sticker">Ideal si</span>
+                      <span className="ideal-tag-icon" aria-hidden="true">
+                        <IdealIcon size={20} strokeWidth={2.2} />
+                      </span>
+                      <span className="ideal-tag-text">{ideal}</span>
+                    </span>
+                  </div>
+                  <span className="corp-solution-arrow" aria-hidden="true">
+                    <ArrowUpRight size={27} strokeWidth={1.5} />
+                  </span>
+                </a>
+              ),
+            )}
           </div>
         </div>
       </section>

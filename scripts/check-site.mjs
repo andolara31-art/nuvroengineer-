@@ -117,6 +117,28 @@ for (const file of files) {
     assert.match(html, /Propuesta de diseño/, "Faltan rótulos de propuesta");
     assert.match(html, /hechas con IA/, "Falta la nota de IA en Trabajos");
   }
+  if (route === "/") {
+    assert.match(
+      html,
+      /href="\/casos\/kiss-by-may"/,
+      "Falta la tarjeta del caso",
+    );
+  }
+  if (route === "/casos/kiss-by-may") {
+    assert.match(html, /Caso real/);
+    assert.ok(
+      (html.match(/>antes</g) || []).length === 3,
+      "Faltan rótulos antes",
+    );
+    assert.ok(
+      (html.match(/>después</g) || []).length === 3,
+      "Faltan rótulos después",
+    );
+    assert.ok(
+      !/<img(?![^>]*\salt=)/.test(html),
+      "Imagen sin texto alternativo",
+    );
+  }
   if (route === "/videos-publicidad-negocios") {
     assert.match(html, /¿La persona es real\?/, "Falta la pregunta sobre IA");
     assert.match(html, /hecha con IA y lo decimos claro/);

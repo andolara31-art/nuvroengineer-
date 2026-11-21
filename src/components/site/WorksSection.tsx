@@ -16,6 +16,7 @@ import { whatsappUrl } from "../../lib/site";
 import TornEdge from "./TornEdge";
 import { VideoCard } from "./WorkMedia";
 import DeferredImg from "./DeferredImg";
+import { kissByMay } from "../../content/cases";
 import "./works.css";
 
 type TabId = "videos" | "webs" | "menus";
@@ -214,6 +215,25 @@ export default function WorksSection() {
             <p className="brand-note">¡Dale play!</p>
           </div>
         </div>
+
+        <a className="works-case" href={kissByMay.path}>
+          <span className="works-case-art" aria-hidden="true">
+            <DeferredImg
+              src={`${kissByMay.logo.profile.base}-600.webp`}
+              width={600}
+              height={600}
+              alt=""
+            />
+          </span>
+          <span className="works-case-copy">
+            <span className="works-case-tag">Caso real · cliente</span>
+            <strong>{kissByMay.title}</strong>
+            <span>{kissByMay.service}.</span>
+            <span className="works-case-go">
+              Ver el caso <ArrowUpRight size={18} aria-hidden="true" />
+            </span>
+          </span>
+        </a>
 
         <div className="works-tabs" role="tablist" aria-label="Tipo de trabajo">
           {tabs.map((tab, index) => (
