@@ -1820,3 +1820,66 @@ main :is(h1, h2):not(.corp-sr-only):not(.craft-sample-site *),
 .craft-sample-overline {
   color: #4f4f49 !important;
 }
+
+/* ---------- Encabezado en tinta con NUVRO ENGINEER en blanco ---------- */
+.corp-header {
+  background: var(--brand-ink);
+  border-bottom: 5px solid var(--brand-ink);
+}
+
+.corp-header .corp-brand-word {
+  color: #fff;
+}
+
+.corp-header .corp-brand:hover .corp-brand-word {
+  color: var(--brand-yellow);
+}
+
+.corp-header .corp-brand:focus-visible,
+.corp-header .corp-header-main :is(a, button, summary):focus-visible {
+  outline: 3px solid var(--brand-yellow);
+  outline-offset: 4px;
+}
+
+/* La fila de navegación de escritorio sigue en papel */
+.corp-header .corp-header-nav-border {
+  background: var(--brand-grain), var(--brand-paper);
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.corp-header .corp-header-contact {
+  border-left-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.corp-header .corp-header-contact small {
+  color: #d6d6d0;
+}
+
+.corp-header .corp-header-contact strong {
+  color: #fff;
+}
+
+.corp-header .corp-header-contact:hover strong {
+  color: var(--brand-yellow);
+}
+
+.corp-header .corp-phone-icon {
+  color: var(--brand-yellow);
+}
+
+.corp-header .corp-search-form {
+  border-color: var(--brand-paper);
+}
+
+@media (max-width: 900px) {
+  .corp-header .corp-mobile-menu > summary {
+    color: var(--brand-ink);
+    border-color: var(--brand-paper);
+    box-shadow: 4px 4px 0 var(--brand-yellow);
+  }
+  .corp-header .corp-mobile-menu[open] > summary {
+    box-shadow: 4px 4px 0 var(--brand-paper);
+  }
+}

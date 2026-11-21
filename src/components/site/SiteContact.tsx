@@ -1,6 +1,20 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import TornEdge from "./TornEdge";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Bot,
+  Check,
+  Clapperboard,
+  LayoutTemplate,
+  Lightbulb,
+  Link2,
+  Package,
+  QrCode,
+  ShoppingBag,
+  Star,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 import {
   BUSINESS_WHATSAPP_DISPLAY,
   SERVICE_OPTIONS,
@@ -9,12 +23,46 @@ import {
 import { trackEvent } from "../../lib/analytics";
 import { commercialPackages } from "../../content/packages";
 import "./contact-links.css";
+import "./contact-form.css";
+
+const SERVICE_ICONS: Record<string, LucideIcon> = {
+  "diseno-web": LayoutTemplate,
+  automatizaciones: Workflow,
+  "menu-qr": QrCode,
+  "resenas-google": Star,
+  "tienda-online": ShoppingBag,
+  "contenido-publicitario": Clapperboard,
+  "presencia-digital": Link2,
+  paquetes: Package,
+  ia: Bot,
+  otro: Lightbulb,
+};
+
+/* Ideas para empezar el mensaje (solo completan el campo; se pueden editar) */
+const IDEAS = [
+  "Quiero que me encuentren y entiendan qué ofrezco.",
+  "Me escriben mucho por WhatsApp y quiero ordenarlo.",
+  "Quiero vender mis productos en línea.",
+  "Quiero mostrar mejor mi negocio en redes.",
+];
 
 export default function SiteContact() {
   const [messageUrl, setMessageUrl] = useState("");
   const [service, setService] = useState("");
   const [selectedPackage, setSelectedPackage] = useState("");
   const readyLink = useRef<HTMLAnchorElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const [length, setLength] = useState(0);
+
+  function addIdea(idea: string) {
+    const field = messageRef.current;
+    if (!field) return;
+    field.value = field.value.trim() ? `${field.value.trim()} ${idea}` : idea;
+    field.setCustomValidity("");
+    setLength(field.value.length);
+    setMessageUrl("");
+    field.focus();
+  }
 
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get(
@@ -157,60 +205,125 @@ export default function SiteContact() {
               <h3>Prepará tu consulta.</h3>
               <p>Podés usar este formulario o escribirnos directamente.</p>
             </div>
-            <label htmlFor="nuvro-service">¿En qué te podemos ayudar?</label>
-            <select
-              id="nuvro-service"
-              name="service"
-              value={service}
-              onChange={(event) => setService(event.target.value)}
-            >
-              <option value="">Elegí un servicio (opcional)</option>
-              {SERVICE_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+            <fieldset className="nf-step nf-services">
+              <legend>
+                <span className="nf-step-number" aria-hidden="true">
+                  1
+                </span>
+                ¿En qué te podemos ayudar?{" "}
+                <span className="nf-optional">(opcional)</span>
+              </legend>
+              <div className="nf-service-grid">
+                {SERVICE_OPTIONS.map((option) => {
+                  const Icon = SERVICE_ICONS[option.value] || Lightbulb;
+                  const checked = service === option.value;
+                  return (
+                    <label
+                      key={option.value}
+                      className={`nf-service${checked ? " is-checked" : ""}`}
+                    >
+                      <input
+                        type="radio"
+                        name="service"
+                        value={option.value}
+                        checked={checked}
+                        onChange={() => setService(option.value)}
+                        onClick={() => {
+                          // Tocar de nuevo la opción elegida la deselecciona.
+                          if (checked) setService("");
+                        }}
+                      />
+                      <span className="nf-service-icon" aria-hidden="true">
+                        <Icon size={20} strokeWidth={2.2} />
+                      </span>
+                      <span className="nf-service-name">{option.label}</span>
+                      <span className="nf-service-check" aria-hidden="true">
+                        <Check size={14} strokeWidth={3} />
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+            </fieldset>
             {service === "paquetes" && selectedPackage && (
               <p className="contact-form-note">
                 Paquete de interés: <strong>{selectedPackage}</strong>.{" "}
                 <a href="#paquetes">Volver a ver los paquetes</a>.
               </p>
             )}
-            <div className="corp-contact-field-pair">
-              <div>
-                <label htmlFor="nuvro-business">Tu negocio (opcional)</label>
-                <input
-                  id="nuvro-business"
-                  name="business"
-                  autoComplete="organization"
-                  maxLength={120}
-                  placeholder="Nombre del negocio"
-                />
-              </div>
-              <div>
-                <label htmlFor="nuvro-email">Tu correo (opcional)</label>
-                <input
-                  id="nuvro-email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  maxLength={254}
-                  placeholder="tu@correo.com"
-                />
+            <div className="nf-step nf-about">
+              <p className="nf-step-title" aria-hidden="true">
+                <span className="nf-step-number">2</span>
+                Sobre vos <span className="nf-optional">(opcional)</span>
+              </p>
+              <div className="corp-contact-field-pair">
+                <div>
+                  <label htmlFor="nuvro-business">Tu negocio (opcional)</label>
+                  <input
+                    id="nuvro-business"
+                    name="business"
+                    autoComplete="organization"
+                    maxLength={120}
+                    placeholder="Nombre del negocio"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="nuvro-email">Tu correo (opcional)</label>
+                  <input
+                    id="nuvro-email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    maxLength={254}
+                    placeholder="tu@correo.com"
+                  />
+                </div>
               </div>
             </div>
-            <label htmlFor="nuvro-message">¿Qué querés mejorar?</label>
-            <textarea
-              id="nuvro-message"
-              name="message"
-              required
-              minLength={5}
-              maxLength={1800}
-              rows={5}
-              onInput={(event) => event.currentTarget.setCustomValidity("")}
-              placeholder="Tengo un restaurante y quiero ordenar el menú y las consultas…"
-            />
+            <div className="nf-step nf-message">
+              <label htmlFor="nuvro-message" className="nf-step-title">
+                <span className="nf-step-number" aria-hidden="true">
+                  3
+                </span>
+                ¿Qué querés mejorar?
+              </label>
+              <div
+                className="nf-ideas"
+                role="group"
+                aria-label="Ideas para empezar tu mensaje"
+              >
+                {IDEAS.map((idea) => (
+                  <button
+                    key={idea}
+                    type="button"
+                    className="nf-idea"
+                    onClick={() => addIdea(idea)}
+                  >
+                    + {idea}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                id="nuvro-message"
+                name="message"
+                required
+                minLength={5}
+                maxLength={1800}
+                rows={5}
+                ref={messageRef}
+                aria-describedby="nuvro-message-count"
+                onInput={(event) => {
+                  event.currentTarget.setCustomValidity("");
+                  setLength(event.currentTarget.value.length);
+                }}
+                placeholder="Tengo un restaurante y quiero ordenar el menú y las consultas…"
+              />
+              <p className="nf-count" id="nuvro-message-count">
+                {length < 5
+                  ? "Escribí al menos 5 caracteres."
+                  : `${length} / 1800 caracteres`}
+              </p>
+            </div>
             <p className="contact-form-note">
               Este formulario prepara tu mensaje. Lo revisás y enviás desde
               WhatsApp; todavía no se envía ninguna solicitud.{" "}

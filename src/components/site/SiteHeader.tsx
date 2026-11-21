@@ -24,6 +24,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { BUSINESS_WHATSAPP_DISPLAY, whatsappUrl } from "../../lib/site";
+import PixelCrew from "./PixelCrew";
 import "./corporate-header.css";
 
 type Solution = {
@@ -410,6 +411,7 @@ export default function SiteHeader() {
             </a>
           </div>
         </div>
+        <PixelCrew />
       </header>
     </>
   );
