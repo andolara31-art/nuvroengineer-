@@ -10,6 +10,7 @@ import SiteInfo from "./components/site/SiteInfo";
 import ServicePolicies from "./components/site/ServicePolicies";
 import AnalyticsConsent from "./components/site/AnalyticsConsent";
 import WhatsAppFab from "./components/site/WhatsAppFab";
+import CaseKissByMay from "./components/site/CaseKissByMay";
 import { VideoLightboxHost } from "./components/site/WorkMedia";
 import { servicePages } from "./content/services";
 import "./home.css";
@@ -33,6 +34,8 @@ export default function App({ path = "/" }: { path?: string }) {
         <ServicePage page={page} />
       ) : path === "/guias/ia-y-automatizacion-para-pymes" ? (
         <BusinessGuide />
+      ) : path === "/casos/kiss-by-may" ? (
+        <CaseKissByMay />
       ) : path === "/politicas-de-servicio" ? (
         <ServicePolicies />
       ) : (
