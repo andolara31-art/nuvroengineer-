@@ -14,17 +14,10 @@ const DEFAULT_MESSAGE = "Hola NUVRO, quiero conversar sobre mi negocio.";
 
 const sectionMessages: Record<string, string> = {
   trabajos: "Hola NUVRO, vi sus trabajos y quiero algo así para mi negocio.",
-  historia: DEFAULT_MESSAGE,
   "que-necesito":
     "Hola NUVRO, quiero que me orienten sobre qué necesita mi negocio.",
-  soluciones:
-    "Hola NUVRO, vi sus servicios y quiero orientación para mi negocio.",
   proceso: "Hola NUVRO, quiero saber cómo empezar un proyecto con ustedes.",
-  demostraciones:
-    "Hola NUVRO, probé los ejemplos de la web y quiero algo así para mi negocio.",
   paquetes: "Hola NUVRO, quiero información sobre los paquetes.",
-  ia: "Hola NUVRO, quiero saber cómo usar IA en mi negocio.",
-  atencion: DEFAULT_MESSAGE,
   preguntas: "Hola NUVRO, tengo una pregunta sobre sus servicios.",
 };
 

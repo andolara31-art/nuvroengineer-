@@ -2036,3 +2036,66 @@ main :is(h1, h2):not(.corp-sr-only):not(.craft-sample-site *),
   font-size: inherit;
   font-weight: inherit;
 }
+
+/* ---------- Portada: la demo MESA solo en computadora ---------- */
+@media (max-width: 900px) {
+  .craft-hero .hero-mesa {
+    display: none;
+  }
+  .craft-hero .craft-hero-grid {
+    padding-bottom: 72px;
+  }
+}
+
+/* Paquetes: enlace a políticas en lugar de la franja de promesas */
+.commercial-policies {
+  margin-top: 32px;
+}
+
+/* ---------- Celular: paquetes en carrusel y pasos compactos ---------- */
+@media (max-width: 600px) {
+  .commercial-package-grid {
+    display: flex !important;
+    gap: 16px;
+    margin-inline: -24px;
+    padding: 8px 24px 18px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    scrollbar-width: none;
+  }
+  .commercial-package-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .commercial-package-grid > .commercial-package {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
+  .commercial-package-grid::after {
+    content: "";
+    flex: 0 0 8px;
+  }
+
+  .brand-how-step {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+  .brand-how-art {
+    padding: 10px;
+    border-bottom: 0;
+    border-right: 5px solid var(--brand-ink);
+  }
+  .brand-how-text {
+    padding: 14px 14px 16px;
+  }
+  .brand-how-verb {
+    font-size: 32px;
+  }
+  .brand-how-text .brand-step-number {
+    font-size: 36px;
+  }
+  .brand-how-text p {
+    font-size: 14px;
+  }
+}

@@ -150,12 +150,4 @@ export const workMenus: WorkSite[] = [
     url: "https://lacatrina-azul-website.vercel.app",
     section: shot("lacatrina-azul-website", "seccion"),
   },
-  {
-    id: "sabor-tico-menu",
-    name: "Sabor Tico",
-    sector: "Soda",
-    url: "",
-    section: "/trabajos/posters/menu-qr-sabor-tico",
-    fictional: true,
-  },
 ];

@@ -426,3 +426,84 @@
     box-shadow: 6px 6px 0 var(--brand-blue);
   }
 }
+
+/* ---------- Probalo vos: una demostración a la vez ---------- */
+.works-anchor {
+  display: block;
+  position: relative;
+  top: -24px;
+}
+
+.works-play {
+  margin-top: 28px;
+}
+
+.works-play-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.works-play-picker button {
+  min-height: 44px;
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--brand-paper);
+  border: 3px solid var(--brand-paper);
+  border-radius: 999px;
+  font:
+    700 14px/1.2 Inter,
+    Arial,
+    sans-serif;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.works-play-picker button[aria-pressed="true"] {
+  background: var(--brand-yellow);
+  color: var(--brand-ink);
+  border-color: var(--brand-yellow);
+}
+
+.works-play-picker button:focus-visible {
+  outline: 3px solid var(--brand-yellow);
+  outline-offset: 3px;
+}
+
+.works-play-stage {
+  max-width: 460px;
+  animation: works-play-in 240ms ease both;
+}
+
+.works-play-stage .da-phone {
+  box-shadow: 6px 6px 0 var(--brand-yellow);
+}
+
+@keyframes works-play-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .works-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .works-play-picker button {
+    flex: 1 1 auto;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .works-play-stage {
+    animation: none;
+  }
+}

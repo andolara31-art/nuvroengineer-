@@ -58,7 +58,7 @@ export default function SiteFooter() {
             <a href="/#paquetes">Paquetes para tu negocio</a>
             <a href="/#trabajos">Trabajos</a>
             <a href="/casos/kiss-by-may">Caso kiss by may</a>
-            <a href="/#demostraciones">Ejemplos</a>
+            <a href="/#demostraciones">Probá las demos</a>
             <a href="/#proceso">Cómo trabajamos</a>
             <a href="/#preguntas">Preguntas frecuentes</a>
             <a href="/ia-para-negocios#aprende">Aprendé IA</a>
