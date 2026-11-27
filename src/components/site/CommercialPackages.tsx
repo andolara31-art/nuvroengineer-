@@ -61,27 +61,18 @@ export default function CommercialPackages() {
             promocionar tu negocio? También podemos trabajar una de esas
             soluciones por separado.
           </p>
-          <a className="corp-text-link" href="#soluciones">
-            Explorá los servicios <ArrowUpRight size={19} aria-hidden="true" />
+          <a className="corp-text-link" href="#que-necesito">
+            Encontrá tu primer paso{" "}
+            <ArrowUpRight size={19} aria-hidden="true" />
           </a>
         </div>
-        <div className="commercial-assurance">
-          <div>
-            <span>ATENCIÓN</span>
-            <strong>Directa con Anderson.</strong>
-          </div>
-          <div>
-            <span>ENTREGA</span>
-            <strong>30 días de soporte.</strong>
-          </div>
-          <div>
-            <span>ANTES DE EMPEZAR</span>
-            <strong>Alcance y pagos por escrito.</strong>
-          </div>
-          <a href="/politicas-de-servicio">
-            Leé cómo trabajamos <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
-        </div>
+        <a
+          className="corp-text-link commercial-policies"
+          href="/politicas-de-servicio"
+        >
+          Leé cómo trabajamos: alcance, pagos y soporte{" "}
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
       </div>
     </section>
   );

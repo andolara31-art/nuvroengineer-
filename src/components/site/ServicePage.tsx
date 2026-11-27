@@ -66,7 +66,7 @@ export default function ServicePage({ page }: { page: ServicePageContent }) {
           <nav aria-label="Ruta de navegación" className="service-breadcrumbs">
             <a href="/">Inicio</a>
             <span aria-hidden="true">/</span>
-            <a href="/#soluciones">Soluciones</a>
+            <a href="/#trabajos">Trabajos</a>
             <span aria-hidden="true">/</span>
             <span aria-current="page">{page.eyebrow.split(" / ")[0]}</span>
           </nav>

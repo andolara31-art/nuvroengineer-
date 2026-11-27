@@ -16,10 +16,11 @@ import { whatsappUrl } from "../../lib/site";
 import TornEdge from "./TornEdge";
 import { VideoCard } from "./WorkMedia";
 import DeferredImg from "./DeferredImg";
+import { FlowApp, MenuApp, WebsiteApp } from "./DemoApps";
 import { kissByMay } from "../../content/cases";
 import "./works.css";
 
-type TabId = "videos" | "webs" | "menus";
+type TabId = "videos" | "webs" | "menus" | "probalo";
 
 const tabs: {
   id: TabId;
@@ -43,10 +44,74 @@ const tabs: {
   {
     id: "menus",
     label: "Menús QR",
-    note: "Propuestas de diseño de menús para ver desde el celular. Sabor Tico es un ejemplo con marca ficticia.",
+    note: "Propuestas de diseño de menús para ver desde el celular. Abrilos en vivo y probalos.",
     message: "Hola NUVRO, vi sus menús QR y quiero uno así para mi negocio.",
   },
+  {
+    id: "probalo",
+    label: "Probalo vos",
+    note: "Demostraciones interactivas con negocios y datos ficticios. No se hacen pedidos, no se envían mensajes y no hay integraciones reales.",
+    message:
+      "Hola NUVRO, probé las demostraciones de la web y quiero algo así para mi negocio.",
+  },
 ];
+
+const demos = [
+  {
+    id: "menu",
+    label: "Menú digital",
+    App: MenuApp,
+    href: "/menu-qr-restaurantes",
+    link: "Conocé el menú QR",
+  },
+  {
+    id: "web",
+    label: "Página comercial",
+    App: WebsiteApp,
+    href: "/diseno-web-costa-rica",
+    link: "Conocé el diseño web",
+  },
+  {
+    id: "flow",
+    label: "Seguimiento",
+    App: FlowApp,
+    href: "/automatizaciones-negocios",
+    link: "Conocé las automatizaciones",
+  },
+] as const;
+
+/* Una demostración a la vez, para que no se haga eterno en el celular */
+function Playground() {
+  const [demo, setDemo] = useState<(typeof demos)[number]["id"]>("menu");
+  const current = demos.find((item) => item.id === demo)!;
+  const App = current.App;
+  return (
+    <div className="works-play">
+      <div
+        className="works-play-picker"
+        role="group"
+        aria-label="Elegí una demostración"
+      >
+        {demos.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            aria-pressed={demo === item.id}
+            onClick={() => setDemo(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+      <div className="works-play-stage" key={demo}>
+        <App />
+        <a className="work-live" href={current.href}>
+          {current.link} <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+  );
+}
 
 function SiteCard({ site }: { site: WorkSite }) {
   const [showSection, setShowSection] = useState(false);
@@ -177,7 +242,18 @@ export default function WorksSection() {
     videos: null,
     webs: null,
     menus: null,
+    probalo: null,
   });
+
+  // Los enlaces viejos a /#demostraciones abren directo "Probalo vos".
+  useEffect(() => {
+    const open = () => {
+      if (window.location.hash === "#demostraciones") setActive("probalo");
+    };
+    open();
+    window.addEventListener("hashchange", open);
+    return () => window.removeEventListener("hashchange", open);
+  }, []);
   const current = tabs.find((tab) => tab.id === active)!;
 
   function onTabKey(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -209,8 +285,8 @@ export default function WorksSection() {
           </div>
           <div className="works-lead">
             <p>
-              Videos con IA, páginas web y menús QR hechos por NUVRO. Tocá
-              cualquiera para verlo de cerca.
+              Videos con IA, páginas web y menús QR hechos por NUVRO, y
+              demostraciones para que lo probés vos.
             </p>
             <p className="brand-note">¡Dale play!</p>
           </div>
@@ -235,6 +311,7 @@ export default function WorksSection() {
           </span>
         </a>
 
+        <span id="demostraciones" className="works-anchor" aria-hidden="true" />
         <div className="works-tabs" role="tablist" aria-label="Tipo de trabajo">
           {tabs.map((tab, index) => (
             <button
@@ -281,6 +358,7 @@ export default function WorksSection() {
                 ))}
               </Carousel>
             )}
+            {tab.id === "probalo" && active === "probalo" && <Playground />}
             {tab.id === "menus" && (
               <Carousel kind="menus" label="Menús QR">
                 {workMenus.map((site) => (

@@ -116,7 +116,7 @@ const recommendations: Record<
   talk: {
     name: "Una conversación para orientarte",
     href: "/#contacto",
-    why: "Nos contás cómo trabajás y te decimos por dónde empezar. La primera conversación no tiene costo.",
+    why: "Nos contás cómo trabajás y te decimos por dónde empezar.",
   },
 };
 
@@ -264,8 +264,7 @@ export default function NeedFinder() {
                     )}
                   </div>
                   <p className="need-small">
-                    Es una sugerencia. En la primera conversación, que no tiene
-                    costo, lo confirmamos juntos.
+                    Es una sugerencia. Lo confirmamos juntos cuando hablemos.
                   </p>
                   <button
                     type="button"

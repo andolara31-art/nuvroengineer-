@@ -10,7 +10,6 @@ import {
 import { whatsappUrl } from "../../lib/site";
 import TornEdge from "./TornEdge";
 import { CafeScene } from "./Illustrations";
-import HeroFan from "./HeroFan";
 import "./corporate-hero.css";
 
 const menu = [
@@ -180,33 +179,11 @@ export default function CorporateHero() {
             <li>30 días de soporte al entregar</li>
           </ul>
         </div>
-        <HeroFan />
+        <div className="hero-mesa">
+          <WebsiteSample />
+        </div>
       </div>
       <TornEdge fill="#121212" seed={3} className="torn-edge-end" />
-    </section>
-  );
-}
-
-/* Demo MESA: va después de Trabajos, como bloque propio */
-export function MesaSection() {
-  return (
-    <section className="corp-section mesa-section" aria-labelledby="mesa-title">
-      <TornEdge fill="#ECECE8" seed={71} />
-      <div className="corp-container mesa-layout">
-        <div className="mesa-copy">
-          <p className="corp-kicker">Probá una web</p>
-          <h2 id="mesa-title">Tocá y mirá cómo funciona.</h2>
-          <p>
-            MESA es un café inventado para que pruebes una página como la que
-            usarían tus clientes: abrí la carta y elegí algo.
-          </p>
-          <a className="corp-text-link" href="/diseno-web-costa-rica">
-            Conocé cómo hacemos páginas web
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
-        </div>
-        <WebsiteSample />
-      </div>
     </section>
   );
 }

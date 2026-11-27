@@ -1,94 +1,11 @@
 import { Suspense } from "react";
-import {
-  ArrowUpRight,
-  Clapperboard,
-  MessageCircleQuestion,
-  Repeat,
-  ShoppingBag,
-  Sprout,
-  Star,
-  UtensilsCrossed,
-  type LucideIcon,
-} from "lucide-react";
-import DemoSection from "./DemoSection";
+import { ArrowUpRight } from "lucide-react";
 import CommercialPackages from "./CommercialPackages";
-import AISection from "./AISection";
 import HowWeWork from "./HowWeWork";
-import ComicStory from "./ComicStory";
 import NeedFinder from "./NeedFinder";
-import AttentionSection from "./AttentionSection";
 import TornEdge from "./TornEdge";
 import WorksSection from "./WorksSection";
-import { MesaSection } from "./CorporateHero";
 import "./corporate-sections.css";
-
-/* Servicios explicados con palabras de todos los días */
-const solutions = [
-  {
-    number: "01",
-    idealIcon: MessageCircleQuestion,
-    tone: "yellow",
-    title: "Página web.",
-    body: "Una página con lo que ofrecés, tus horarios y un botón para escribirte.",
-    ideal:
-      "la gente te pregunta por Instagram o WhatsApp qué hacés o dónde estás.",
-    href: "/diseno-web-costa-rica",
-  },
-  {
-    number: "02",
-    idealIcon: ShoppingBag,
-    tone: "mint",
-    title: "Tienda en línea.",
-    body: "Tus productos con foto, precio y carrito, para que te compren sin mandar fotos una por una.",
-    ideal: "vendés productos y querés que te puedan comprar a cualquier hora.",
-    href: "/tiendas-online-shopify",
-  },
-  {
-    number: "03",
-    idealIcon: UtensilsCrossed,
-    tone: "coral",
-    title: "Menú con código QR.",
-    body: "El cliente escanea un código con la cámara del celular y ve tu menú. Si cambia un precio, se actualiza fácil.",
-    ideal: "tenés soda, restaurante o cafetería.",
-    href: "/menu-qr-restaurantes",
-  },
-  {
-    number: "04",
-    idealIcon: Star,
-    tone: "yellow",
-    title: "Reseñas en Google con un toque.",
-    body: "Una placa en tu mostrador: el cliente acerca el celular o escanea el código y llega directo a dejarte una reseña.",
-    ideal: "tus clientes salen contentos pero casi nadie te deja una reseña.",
-    href: "/resenas-google-qr-nfc",
-  },
-  {
-    number: "05",
-    idealIcon: Clapperboard,
-    tone: "mint",
-    title: "Videos con IA.",
-    body: "Con fotos de tu celular hacemos videos para Reels, TikTok y WhatsApp: una creadora hecha con IA que presenta tu negocio, un comercial de tu producto o el recorrido de una propiedad.",
-    ideal: "querés mostrar tu negocio en redes sin tener que grabarte.",
-    href: "/videos-publicidad-negocios",
-  },
-  {
-    number: "06",
-    idealIcon: Repeat,
-    tone: "coral",
-    title: "Respuestas automáticas.",
-    body: "Que las preguntas que siempre se repiten se respondan solas y que ninguna consulta se te olvide.",
-    ideal: "pasás mucho tiempo contestando lo mismo.",
-    href: "/automatizaciones-negocios",
-  },
-  {
-    number: "07",
-    idealIcon: Sprout,
-    tone: "yellow",
-    title: "Todo en un solo enlace.",
-    body: "Un enlace para tu Instagram con tu WhatsApp, menú o catálogo y ubicación, todo en un mismo lugar.",
-    ideal: "estás empezando y querés verte ordenado desde el primer día.",
-    href: "/?servicio=presencia-digital#contacto",
-  },
-];
 
 /* Preguntas de alguien que no sabe nada de tecnología */
 const faqs = [
@@ -147,81 +64,7 @@ export default function CorporateSections() {
       </Suspense>
 
       <Suspense fallback={null}>
-        <MesaSection />
-      </Suspense>
-
-      <Suspense fallback={null}>
-        <ComicStory />
-      </Suspense>
-
-      <Suspense fallback={null}>
         <NeedFinder />
-      </Suspense>
-
-      <section
-        className="corp-section corp-solutions"
-        id="soluciones"
-        aria-labelledby="corp-solutions-title"
-      >
-        <TornEdge fill="#ECECE8" seed={5} />
-        <div className="corp-container">
-          <div className="corp-section-heading">
-            <div>
-              <p className="corp-kicker">Servicios</p>
-              <h2 id="corp-solutions-title">Lo que podemos hacer por vos.</h2>
-            </div>
-            <p>
-              Explicado sin palabras raras. Tocá el que te interese para ver
-              cómo funciona.
-            </p>
-          </div>
-          <div className="corp-solution-list">
-            {solutions.map(
-              ({
-                number,
-                title,
-                body,
-                ideal,
-                href,
-                idealIcon: IdealIcon,
-                tone,
-              }) => (
-                <a
-                  className="corp-solution-row"
-                  href={href}
-                  key={number}
-                  aria-label={`${title} ${body} Ideal si ${ideal} Ver cómo funciona.`}
-                >
-                  <span className="corp-solution-number" aria-hidden="true">
-                    {number}
-                  </span>
-                  <h3>{title}</h3>
-                  <div className="corp-solution-description">
-                    <p>{body}</p>
-                    <span className="ideal-tag" data-tone={tone}>
-                      <span className="ideal-tag-sticker">Ideal si</span>
-                      <span className="ideal-tag-icon" aria-hidden="true">
-                        <IdealIcon size={20} strokeWidth={2.2} />
-                      </span>
-                      <span className="ideal-tag-text">{ideal}</span>
-                    </span>
-                  </div>
-                  <span className="corp-solution-arrow" aria-hidden="true">
-                    <ArrowUpRight size={27} strokeWidth={1.5} />
-                  </span>
-                </a>
-              ),
-            )}
-          </div>
-        </div>
-      </section>
-
-      <Suspense fallback={null}>
-        <HowWeWork />
-      </Suspense>
-
-      <Suspense fallback={null}>
-        <DemoSection />
       </Suspense>
 
       <Suspense fallback={null}>
@@ -229,11 +72,7 @@ export default function CorporateSections() {
       </Suspense>
 
       <Suspense fallback={null}>
-        <AISection />
-      </Suspense>
-
-      <Suspense fallback={null}>
-        <AttentionSection />
+        <HowWeWork />
       </Suspense>
 
       <section

@@ -343,12 +343,12 @@ export default function SiteHeader() {
                     ))}
                   </div>
                 </details>
-                <a href="/#que-necesito">¿Qué necesito?</a>
-                <a href="/#proceso">Cómo trabajamos</a>
                 <a href="/#trabajos">Trabajos</a>
-                <a href="/#demostraciones">Ejemplos</a>
+                <a href="/#que-necesito">¿Qué necesito?</a>
+                <a href="/#paquetes">Paquetes</a>
+                <a href="/#proceso">Cómo trabajamos</a>
                 <a href="/#preguntas">Preguntas</a>
-                <a href="/#atencion">Atención</a>
+                <a href="/#contacto">Contacto</a>
               </nav>
               <a
                 className="corp-nav-cta"
@@ -395,10 +395,10 @@ export default function SiteHeader() {
                   )}
                 </div>
               </details>
-              <a href="/#que-necesito">¿Qué necesito?</a>
-              <a href="/#proceso">Cómo trabajamos</a>
               <a href="/#trabajos">Trabajos</a>
-              <a href="/#demostraciones">Ejemplos</a>
+              <a href="/#que-necesito">¿Qué necesito?</a>
+              <a href="/#paquetes">Paquetes</a>
+              <a href="/#proceso">Cómo trabajamos</a>
               <a href="/#preguntas">Preguntas</a>
             </nav>
             <a

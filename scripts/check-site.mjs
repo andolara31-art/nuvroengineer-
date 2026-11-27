@@ -92,15 +92,11 @@ for (const file of files) {
       "La portada no debe mostrar las imágenes generadas anteriores",
     );
     for (const anchor of [
-      "historia",
-      "que-necesito",
-      "soluciones",
-      "ia",
-      "proceso",
-      "paquetes",
       "trabajos",
       "demostraciones",
-      "atencion",
+      "que-necesito",
+      "paquetes",
+      "proceso",
       "preguntas",
       "contacto",
       "ejemplo-mesa",
