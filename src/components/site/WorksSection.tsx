@@ -31,7 +31,7 @@ const tabs: {
   {
     id: "videos",
     label: "Videos con IA",
-    note: "Las personas y las voces de las creadoras están hechas con IA. Las marcas de estos videos son ficticias.",
+    note: "Personas, voces y escenas hechas con IA. Los primeros cinco usan marcas ficticias; los anuncios de catálogo muestran productos de marcas que pertenecen a sus dueños y no son trabajos para esas marcas.",
     message:
       "Hola NUVRO, vi sus videos con IA y quiero uno así para mi negocio.",
   },
