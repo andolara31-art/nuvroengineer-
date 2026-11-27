@@ -97,7 +97,7 @@
 }
 
 .works-grid-videos {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .works-grid-webs {

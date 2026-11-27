@@ -113,8 +113,10 @@ export function VideoLightboxHost() {
       />
       {current && (
         <p className="video-lightbox-caption">
-          <span>Ejemplo · marca ficticia</span> Personas, voces y escenas hechas
-          con IA.
+          <span>{current.label ?? "Ejemplo · marca ficticia"}</span>{" "}
+          {current.kind === "catalogo"
+            ? "Escenas hechas con IA. Las marcas que aparecen son de sus dueños; no son clientes de NUVRO."
+            : "Personas, voces y escenas hechas con IA."}
         </p>
       )}
     </div>
@@ -197,7 +199,9 @@ export function VideoCard({
           <Play size={26} strokeWidth={2.6} fill="currentColor" />
         </span>
       </button>
-      <span className="work-tag">Ejemplo · marca ficticia</span>
+      <span className="work-tag">
+        {item.label ?? "Ejemplo · marca ficticia"}
+      </span>
       <Heading className="work-title">{item.title}</Heading>
       <span className="work-sector">{item.sector}</span>
     </article>

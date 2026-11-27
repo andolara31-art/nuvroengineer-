@@ -7,11 +7,13 @@ export type WorkVideo = {
   title: string;
   sector: string;
   /** Tipo de video para la página de videos con IA */
-  kind: "ugc" | "foto" | "inmobiliario";
+  kind: "ugc" | "foto" | "inmobiliario" | "catalogo";
   video: string;
   preview: string;
   poster: string;
   posterSmall: string;
+  /** Rótulo de la tarjeta; por defecto "Ejemplo · marca ficticia" */
+  label?: string;
 };
 
 const media = (id: string) => ({
@@ -58,6 +60,26 @@ export const workVideos: WorkVideo[] = [
     ...media("inmobiliario-casa-palma"),
   },
 ];
+
+/* Anuncios cortos de catálogo para tiendas (10 s). Muestran productos de marcas
+   que pertenecen a sus dueños: no son trabajos para esas marcas. */
+const ad = (id: string, title: string, sector: string): WorkVideo => ({
+  id,
+  title,
+  sector,
+  kind: "catalogo",
+  label: "Ejemplo de anuncio",
+  ...media(id),
+});
+
+workVideos.push(
+  ad("hamburguesa", "Una hamburguesa que da hambre", "Comida rápida"),
+  ad("ropa-deportiva", "Ropa deportiva en 10 segundos", "Ropa deportiva"),
+  ad("fajas-moldeadores", "Fajas y moldeadores, de cerca", "Ropa íntima"),
+  ad("jeans", "Jeans en la calle y en catálogo", "Ropa"),
+  ad("skincare", "Skincare explicado en 10 segundos", "Cuidado de la piel"),
+  ad("tenis-navidad", "Tu tienda lista para Navidad", "Zapatos y tenis"),
+);
 
 export const findVideo = (id: string) =>
   workVideos.find((item) => item.id === id)!;
